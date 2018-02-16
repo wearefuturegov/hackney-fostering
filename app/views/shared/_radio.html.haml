@@ -1,0 +1,1 @@
+= form.input question['name'], as: :radio_buttons, collection: question['answers'].map { |q| [q['title'], q['value']]}, label: question['title']

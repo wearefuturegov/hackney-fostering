@@ -1,0 +1,1 @@
+= form.input question['name'], as: :check_boxes, collection: question['answers'].map { |q| [q['title'], q['value']]}, label: question['title']

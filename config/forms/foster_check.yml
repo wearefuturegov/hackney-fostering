@@ -1,0 +1,161 @@
+form:
+  name: 'Check if you can foster'
+  template: :check_if_you_can_foster
+  steps:
+    type_of_fostering:
+      template: :single_question
+      next_question: :spare_room
+      questions:
+      - name: :type_of_fostering
+        title: What type of fostering are you interested in?
+        widget: :radio
+        answers:
+          - title: Emergency Fostering
+            value: :emergency_fostering
+            help: Some help text here
+          - title: Short Term Fostering
+            value: :short_term_fostering
+            help: Some help text here
+          - title: Long Term Fostering
+            value: :long_term_fostering
+            help: Some help text here
+          - title: I don't know
+            value: :dont_know
+            help: Some help text here
+    spare_room:
+      template: :single_question
+      next_question: :next_step
+      rules:
+        spare_room:
+          'yes': :over_21
+          'no': :other_ways
+          'not_yet': :other_ways
+      questions:
+      - name: :spare_room
+        title: Do you have a spare room?
+        help: You are required to have a spare room in order to foster, to ensure the child you foster has the privacy and space you requite
+        widget: :radio
+        answers:
+          - title: 'Yes'
+            value: :yes
+          - title: 'No'
+            value: :no
+          - title: Not Yet
+            value: :not_yet
+    other_ways:
+      title: Other ways you can help children or young people in Hackney
+      template: :single_question
+      next_question: :more_about_you
+      questions:
+        - name: :other_ways
+          title: Sorry, you are unable to be a foster carer at the moment
+          widget: :radio
+          next_button_label: Provide contact details
+          answers:
+            - title: Mentoring
+              value: :mentoring
+            - title: Specialist Support Worker
+              value: :specialist_support
+            - title: Other Support
+              value: :other_support
+    more_about_you:
+      title: A bit more about you
+      help: Please provide more information about yourself...
+      next_question: :contact_details
+      template: :questions
+      questions:
+        - name: :name
+          title: Your full name
+          widget: :input
+        - name: :postcode
+          title: Your postcode
+          widget: :input
+    contact_details:
+      title: Your contact details
+      next_question: :thank_you
+      template: :questions
+      questions:
+        - name: :email
+          title: Email
+          widget: :email
+        - name: :phone_number
+          title: Phone Number
+          widget: :tel
+        - name: :good_time_to_contact
+          widget: :select
+          answers:
+            - title: Morning
+              value: :morning
+            - title: Afternoon
+              value: :afternoon
+            - title: Evening
+              value: :evening
+    thank_you:
+      template: :thank_you
+    over_21:
+      template: :single_question
+      next_question: :experience
+      questions:
+        - name: :over_21
+          widget: :boolean
+    experience:
+      template: :single_question
+      next_question: :ages
+      questions:
+        - name: :experience
+          title: How experienced are you working with children or young people
+          help: Any level of experience...
+          widget: :radio
+          answers:
+            - title: Very experienced
+              value: :very
+              help: I work with children as part of my job / I have children
+            - title: Somewhat experienced
+              value: :somewhat
+              help: I may volunteer with young children / I often have parental responsibility
+            - title: A little experienced
+              value: :little
+              help: I may babysit occasionally
+            - title: No experience
+              value: :no_experience
+    ages:
+      template: :single_question
+      next_question: :housing
+      questions:
+        - name: :ages
+          title: What ages have you the most experience with?
+          help: Hackney is looking for new foster carers who can help with...
+          widget: :checkbox
+          answers:
+            - title: 0-2 years old
+              value: :0_2
+            - title: 2-10 years old
+              value: :2_10
+            - title: 11-18 years old
+              value: :11_18
+    housing:
+      template: :single_question
+      next_question: :like_to_be_in_touch
+      questions:
+        - name: :housing
+          title: What type of housing do you live in?
+          widget: :radio
+          answers:
+            - title: You own the house
+              value: :owner
+            - title: Renting (Council housing association)
+              value: :housing_association
+            - title: Renting (Private landlord)
+              value: :renting
+    like_to_be_in_touch:
+      template: single_question
+      rules:
+        like_to_be_in_touch:
+          '1': :more_about_you
+          '0': :information_pack
+      questions:
+        - name: :like_to_be_in_touch
+          title: We would like to be in touch
+          widget: :boolean
+          yes_value: Yes, I would like to be contacted
+          no_value: No, I would just like to download an information pack
