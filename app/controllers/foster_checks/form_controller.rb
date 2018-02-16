@@ -4,10 +4,6 @@ module FosterChecks
     expose :foster_check
 
     form 'foster_check'
-    
-    def index
-      redirect_to wizard_path(steps.first, foster_check_id: foster_check.id)
-    end
 
     def show
       render_wizard nil, template: "shared/#{template}"
@@ -16,6 +12,10 @@ module FosterChecks
     def update
       foster_check.update_attributes(permitted_params)
       render_wizard foster_check
+    end
+    
+    def new
+      redirect_to wizard_path(steps.first, foster_check_id: foster_check.id)
     end
     
     private
