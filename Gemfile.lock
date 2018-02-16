@@ -1,5 +1,6 @@
-PATH
-  remote: ../incredible
+GIT
+  remote: https://github.com/wearefuturegov/incredible.git
+  revision: 654e0715d12c0e52f9531c9a056ec0da4ec86a17
   specs:
     incredible (0.1.0)
       rails (~> 5.1.4)
