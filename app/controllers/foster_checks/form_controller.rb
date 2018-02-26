@@ -22,6 +22,21 @@ module FosterChecks
     
     def permitted_params
       params.require(:foster_check).permit(
+        :what_is_your_name,
+        :gender,
+        :dob,
+        :day,
+        :month,
+        :year,
+        :size,
+        :neutered,
+        :are_you_practicing,
+        :what_do_you_practice,
+        :relationship,
+        :language,
+        :nationality,
+        :practicing,
+        :non_practicing,
         :type_of_fostering,
         :spare_room,
         :other_ways,
@@ -31,7 +46,10 @@ module FosterChecks
         :ages,
         :housing,
         :like_to_be_in_touch,
+        :section,
+        :sub_section,
         :name,
+        :last_name,
         :postcode,
         :email,
         :phone_number

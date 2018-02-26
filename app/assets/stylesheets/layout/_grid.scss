@@ -1,0 +1,36 @@
+body {
+  // @include grid-visual;
+  @include grid-container;
+}
+
+header.header {
+  @include grid-container;
+}
+
+nav.nav {
+  @include grid-column(3);
+  padding: 0 $gutter;
+  margin-left: 0;
+  width: calc(25% - 5px);
+
+}
+
+main.main {
+  @include grid-column(6);
+  form {
+    .foster_check_day,
+    .foster_check_month,
+    .foster_check_year {
+      @include grid-column(2 of 6);
+      width: calc(33.3333333333% - 13.3333333333px);
+    }
+    .foster_check_day {
+      margin-left: 0;
+    }
+  }
+}
+
+footer.footer {
+  @include grid-column(12);
+}
+
