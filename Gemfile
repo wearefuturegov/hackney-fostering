@@ -49,6 +49,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'rspec_junit_formatter'
 end
 
 group :development do
