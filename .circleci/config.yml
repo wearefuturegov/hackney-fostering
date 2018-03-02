@@ -55,6 +55,7 @@ jobs:
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format documentation \
+                            -r turnip/rspec \
                             $TEST_FILES
       
       - run:
