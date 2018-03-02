@@ -20,7 +20,7 @@ module FosterChecks
     
     private
     
-    def permitted_params
+    def permitted_params # rubocop:disable Metrics/MethodLength
       params.require(:foster_check).permit(
         :what_is_your_name,
         :gender,
