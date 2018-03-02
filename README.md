@@ -1,5 +1,6 @@
 [![Build Status](http://img.shields.io/circleci/project/github/wearefuturegov/hackney-fostering.svg?style=flat-square)](https://circleci.com/gh/wearefuturegov/hackney-fostering)
 [![Coverage Status](http://img.shields.io/coveralls/wearefuturegov/hackney-fostering.svg?style=flat-square)](https://coveralls.io/r/wearefuturegov/hackney-fostering)
+[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 # Hackney Fostering
 
