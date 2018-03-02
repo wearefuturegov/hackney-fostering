@@ -1,24 +1,42 @@
-# README
+[![Dependency Status](http://img.shields.io/gemnasium/wearefuturegov/hackney-fostering.svg?style=flat-square)](https://gemnasium.com/wearefuturegov/hackney-fostering)
+[![Coverage Status](http://img.shields.io/coveralls/wearefuturegov/hackney-fostering.svg?style=flat-square)](https://coveralls.io/r/wearefuturegov/hackney-fostering)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Hackney Fostering
 
-Things you may want to cover:
+An MVP carried out in conjunction with the London Borough of Hackney's Fostering
+Team and FutureGov to make checking eligibility for, and applying to be, a foster carer.
 
-* Ruby version
+# Development
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+* PostgreSQL
+* Ruby 2.4+
 
-* Database creation
+## Setup
 
-* Database initialization
+### Clone the repo
 
-* How to run the test suite
+```
+git clone https://github.com/wearefuturegov/hackney-fostering.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Install dependencies
 
-* Deployment instructions
+```
+bundle install
+```
 
-* ...
+### Setup database
+
+```
+bundle exec db:create && bundle exec db:migrate
+```
+
+### Run server
+
+```
+bundle exec rails s
+```
+
+The server is now running at http://localhost:3000
