@@ -51,6 +51,10 @@ group :development, :test do
   gem 'pry'
   gem 'rspec_junit_formatter'
   gem 'coveralls'
+  gem 'fabrication'
+  gem 'turnip'
+  gem 'capybara-selenium'
+  gem 'chromedriver-helper'
 end
 
 group :development do
