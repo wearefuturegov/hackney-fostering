@@ -50,6 +50,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry'
   gem 'rspec_junit_formatter'
+  gem 'coveralls'
 end
 
 group :development do
