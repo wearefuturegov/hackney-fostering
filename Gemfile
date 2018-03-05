@@ -55,6 +55,7 @@ group :development, :test do
   gem 'turnip'
   gem 'capybara-selenium'
   gem 'chromedriver-helper'
+  gem 'launchy'
 end
 
 group :development do
