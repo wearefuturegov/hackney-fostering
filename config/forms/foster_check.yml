@@ -76,6 +76,10 @@ form:
       title: Are you practicing?
       help: help
       next_question: :what_do_you_practice
+      rules:
+        are_you_practicing:
+          practicing: :what_do_you_practice
+          non_practicing: :language
       questions:
         - name: :section
           heading: Tell us about yourself

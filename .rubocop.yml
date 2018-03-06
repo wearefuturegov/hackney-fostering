@@ -6,3 +6,12 @@ Layout/TrailingWhitespace:
   Enabled: false
 Layout/IndentArray:
   EnforcedStyle: consistent
+Metrics/BlockLength:
+  Exclude:
+    - 'db/**/*.rb'
+Metrics/MethodLength:
+  Exclude:
+    - 'db/**/*.rb'
+Metrics/AbcSize:
+  Exclude:
+    - 'db/**/*.rb'
