@@ -107,7 +107,7 @@ form:
           widget: :title
         - name: :what_do_you_practice
           title: What religion do you practice?
-          widget: :radio
+          widget: :checkbox
           answers:
             - title: Christianity
               value: :Christianity
