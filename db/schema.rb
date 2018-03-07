@@ -16,6 +16,10 @@ ActiveRecord::Schema.define(version: 20180214112952) do
   enable_extension "plpgsql"
 
   create_table "foster_checks", force: :cascade do |t|
+    t.integer "what_type"
+    t.integer "emergency"
+    t.integer "short_term"
+    t.integer "long_term"
     t.integer "gender"
     t.integer "dob"
     t.integer "day"

@@ -1,6 +1,10 @@
 class CreateFosterChecks < ActiveRecord::Migration[5.1]
   def change
     create_table :foster_checks do |t|
+      t.integer :what_type
+      t.integer :emergency
+      t.integer :short_term
+      t.integer :long_term
       t.integer :gender
       t.integer :dob
       t.integer :day

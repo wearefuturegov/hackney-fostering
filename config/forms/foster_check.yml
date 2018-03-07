@@ -2,6 +2,44 @@ form:
   name: 'Continue'
   template: :check_if_you_can_foster
   steps:
+    what_type:
+      template: :questions
+      title: What type of fostering are you interested in?
+      help: help
+      questions:
+        - name: :section
+          heading: What type of fostering are you interested in?
+          widget: :title
+        - name: :section
+          widget: :radio
+          answers:
+            - title: Emergency fostering
+              value: :ememergency
+            - title: Short-term fostering
+              value: :short_term
+            - title: Long-term fostering
+              value: :long_term
+            - title: I don't know
+              value: :dont_know
+    spare_room:
+      template: questions
+      title: Do you have a spare room?
+      help: help
+      next_question: :spare_room
+      questions:
+        - name: :section
+          heading: Do you have a spare room?
+          intro: You are required to have a spare bedroom  in order to foster, to ensure the child you foster has the privacy and space they require.
+          widget: :title
+        - name: section
+          widget: :radio
+          answers:
+          - title: 'Yes'
+            value: :yes
+          - title: 'No'
+            value: :no
+          - title: Not yet
+            value: :not_yet
     what_is_your_name:
       template: :questions
       title: Tell us about yourself
