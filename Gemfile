@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'haml'
-gem 'incredible', git: 'https://github.com/wearefuturegov/incredible.git'
+gem 'incredible'
 gem 'decent_exposure', '3.0.0'
 gem 'simple_form'
 # gem 'geff', git: 'https://github.com/wearefuturegov/geff.git'
