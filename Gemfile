@@ -37,8 +37,8 @@ gem 'incredible', git: 'https://github.com/wearefuturegov/incredible.git'
 gem 'decent_exposure', '3.0.0'
 gem 'simple_form'
 # gem 'geff', git: 'https://github.com/wearefuturegov/geff.git'
-gem 'geff', path: '~/futuregov/geff'
-# gem 'geff', git: 'https://github.com/wearefuturegov/geff', branch: 'basic'
+# gem 'geff', path: '~/futuregov/geff'
+gem 'geff', git: 'https://github.com/wearefuturegov/geff', branch: 'basic'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
