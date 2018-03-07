@@ -1,21 +1,19 @@
 GIT
-  remote: https://github.com/wearefuturegov/geff
-  revision: 8e11fd06e833ce16bd0af8ffebf358222fa1b257
-  branch: basic
-  specs:
-    geff (0.1.0)
-      bourbon
-      font-awesome-rails
-      mountain_view (~> 0.12)
-      neat
-
-GIT
   remote: https://github.com/wearefuturegov/incredible.git
   revision: 654e0715d12c0e52f9531c9a056ec0da4ec86a17
   specs:
     incredible (0.1.0)
       rails (~> 5.1.4)
       wicked (~> 1.3.2)
+
+PATH
+  remote: ../geff
+  specs:
+    geff (0.1.0)
+      bourbon
+      font-awesome-rails
+      mountain_view (~> 0.12)
+      neat
 
 GEM
   remote: https://rubygems.org/

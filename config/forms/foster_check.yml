@@ -9,6 +9,8 @@ form:
       questions:
         - name: :section
           heading: What type of fostering are you interested in?
+          intro: Something goes here that can include a link to the types of fostering
+          notice: This is a notice of imformation appearing inside a box
           widget: :title
         - name: :section
           widget: :radio
@@ -22,16 +24,19 @@ form:
             - title: I don't know
               value: :dont_know
     spare_room:
-      template: questions
-      title: Do you have a spare room?
-      help: help
-      next_question: :spare_room
+      template: single_question
+      next_question: :next_step
+      rules:
+        spare_room:
+          'yes': :over_21
+          'no': :other_ways
+          'not_yet': :other_ways
       questions:
         - name: :section
           heading: Do you have a spare room?
           intro: You are required to have a spare bedroom  in order to foster, to ensure the child you foster has the privacy and space they require.
           widget: :title
-        - name: section
+        - name: :spare_room
           widget: :radio
           answers:
           - title: 'Yes'
@@ -40,15 +45,35 @@ form:
             value: :no
           - title: Not yet
             value: :not_yet
-    what_is_your_name:
-      template: :questions
-      title: Tell us about yourself
-      help: help
-      next_question: :gender
+    other_ways:
+      template: :single_question
+      next_question: :what_is_your_name
       questions:
         - name: :section
-          heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Other ways you can help children and young people in Hackney
+          intro: Sorry, you are unable to be a foster carer at the moment. Having a spare bedroom is a policy requirement. There are other ways of supporting children and young people in Hackney.
+          extra: 'If interested, please select your preference and provide your contact details:'
+          widget: :title
+        - name: :other_ways
+          title: Sorry, you are unable to be a foster carer at the moment
+          widget: :radio
+          next_button_label: Provide contact details
+          answers:
+            - title: Mentoring
+              value: :mentoring
+            - title: Specialist Support Worker
+              value: :specialist_support
+            - title: Other Support
+              value: :other_support
+    what_is_your_name:
+      template: :questions
+      title: A bit more about you
+      help: help
+      next_question: :address
+      questions:
+        - name: :section
+          heading: A bit more about you
+          intro: Please provide your details and someone from our Fostering Team will get back to you within 1-2 working days.
           widget: :title
         - name: :sub_section
           title: What is your full name?
@@ -59,6 +84,22 @@ form:
         - name: :last_name
           title: Last name
           widget: :input
+    address:
+      template: :questions
+      title: Tell us about your home
+      help: help
+      next_question: :address_period
+      questions:
+        - name: :section
+          heading: Tell us about your home
+          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          widget: :title
+        - name: :sub_section
+          title: What is your postcode?
+          widget: :title
+        - name: :name
+          title: Find your address
+          widget: :find_input
     gender:
       template: :single_question
       title: Gender
@@ -196,7 +237,7 @@ form:
       template: questions
       title: What is your nationality?
       help: help
-      next_question: :address
+      next_question: :address_period
       questions:
         - name: :section
           heading: Tell us about yourself
@@ -219,22 +260,6 @@ form:
               value: :french
         - name: :nationality
           title: Other
-          widget: :input
-    address:
-      template: :questions
-      title: Tell us about your home
-      help: help
-      next_question: :address_period
-      questions:
-        - name: :section
-          heading: Tell us about your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
-          widget: :title
-        - name: :sub_section
-          title: What is your postcode?
-          widget: :title
-        - name: :name
-          title: Find your address
           widget: :input
     address_period:
       template: :questions
