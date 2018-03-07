@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180214112952) do
     t.integer "spare_room"
     t.integer "other_ways"
     t.integer "good_time_to_contact"
+    t.integer "contacting_you"
     t.boolean "over_21"
     t.integer "experience"
     t.integer "ages"

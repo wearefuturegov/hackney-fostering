@@ -28,7 +28,7 @@ form:
       next_question: :next_step
       rules:
         spare_room:
-          'yes': :over_21
+          'yes': :what_is_your_name
           'no': :other_ways
           'not_yet': :other_ways
       questions:
@@ -88,7 +88,7 @@ form:
       template: :questions
       title: Tell us about your home
       help: help
-      next_question: :address_period
+      next_question: :contacting_you
       questions:
         - name: :section
           heading: Tell us about your home
@@ -100,6 +100,23 @@ form:
         - name: :name
           title: Find your address
           widget: :find_input
+    contacting_you:
+      template: :questions
+      title: What is the best way for us to contact you?
+      help: help
+      questions:
+        - name: :section
+          heading: What is the best way for us to contact you?
+          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          widget: :title
+        - name: :contacting_you
+          title: Other
+          widget: :radio
+          answers:
+            - title: Phone
+              value: :phone
+            - title: E-mail
+              value: :email
     gender:
       template: :single_question
       title: Gender
