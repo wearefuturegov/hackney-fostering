@@ -1,0 +1,20 @@
+Fabricator(:application) do
+  type_of_fostering   1
+  spare_room          false
+  applicant_id        1
+  address_id          1
+  best_way_to_contact 1
+  practicing          false
+  religion            1
+  other_religion      'MyString'
+  beliefs             'MyString'
+  primary_language    1
+  other_language      'MyString'
+  secondary_languages 'MyString'
+  nationality         1
+  other_nationality   'MyString'
+  children_at_home    false
+  number_of_children  1
+  number_of_adults    1
+  have_pets           false
+end

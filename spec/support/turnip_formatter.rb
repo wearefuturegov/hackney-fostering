@@ -8,9 +8,9 @@ module Turnip
       def run_step(feature_file, step) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         output = "    #{step}"
         begin
-          instance_eval <<-EOS, feature_file, step.line
+          instance_eval <<-STEP, feature_file, step.line
             step(step)
-          EOS
+          STEP
         rescue Turnip::Pending => e
           example = ::RSpec.current_example
           example.metadata[:line_number] = step.line
@@ -45,13 +45,13 @@ module Turnip
 
       feature.scenarios.each do |scenario|
         context.describe scenario.name, scenario.metadata_hash do
-          instance_eval <<-EOS, filename, scenario.line
+          instance_eval <<-SCENARIO, filename, scenario.line
             it ' ' do
               scenario.steps.each do |step|
                 run_step(filename, step)
               end
             end
-          EOS
+          SCENARIO
         end
       end
     end

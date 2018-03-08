@@ -1,5 +1,5 @@
 step 'I click Continue' do
-  click_on 'Continue'
+  click_on 'Continue to questions'
 end
 
 step 'I :whether_to see :text' do |positive, text|

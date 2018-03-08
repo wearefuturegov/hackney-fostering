@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-describe FosterChecksController, type: :controller do
+describe ApplicationsController, type: :controller do
   
   describe 'POST create' do
     let(:subject) { post(:create) }
     
-    it 'creates a foster check' do
+    it 'creates an application' do
       subject
-      expect(FosterCheck.count).to eq(1)
+      expect(Application.count).to eq(1)
     end
     
   end

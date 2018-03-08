@@ -1,0 +1,53 @@
+Application:
+  type_of_fostering
+  spare_room
+  applicant - Person
+  practicing
+  religion
+  primary_language
+  other_languages
+  town_of_birth
+  country_of_birth
+  nationality
+  employment
+  ni_number
+  occupation
+  employer
+  employer_contact
+  addresses >-- Address
+  number_of_children
+  children >-- Person
+  number_of_adults
+  number_of_pets
+  pets >-- Pet
+  
+Address:
+  UPRN
+  line_1
+  line_2
+  line_3
+  post_town
+  postcode
+  type (current / previous)
+  date from
+  date to
+
+People:
+  First Name
+  Surname
+  Previous First Name
+  Previous Surname
+  Date Changed
+  Gender
+  dob
+  relationship
+  
+Names:
+  First Name
+  Surname
+  
+Pets:
+  pet_type
+  size
+  neutered
+  

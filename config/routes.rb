@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   resources :what, only: [:index]
   resources :why, only: [:index]
   resources :who, only: [:index]
-  resources :eligibility, only: [:index]
+  resources :legibility, only: [:index]
   resources :contact, only: [:index]
 
-  get '/', to: 'application#index', as: 'application_index'
+  get '/', to: 'main#index'
   
-  resources :foster_checks do
-    resources :form, controller: 'foster_checks/form'
+  resources :applications do
+    resources :form, controller: 'applications/form'
   end
 end
