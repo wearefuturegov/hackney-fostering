@@ -1,4 +1,3 @@
-class WhoController < ApplicationController
-  def index
-  end
+class WhoController < MainController
+  def index; end
 end

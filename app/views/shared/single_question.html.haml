@@ -1,4 +1,4 @@
-= simple_form_for foster_check, url: wizard_path, method: :put do |f|
+= simple_form_for application, url: wizard_path, method: :put do |f|
   - @questions.each do |q|
     = render partial: "shared/#{q['widget']}", locals: { form: f, question: q }
   %section.actions

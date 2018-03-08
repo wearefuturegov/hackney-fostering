@@ -1,4 +1,3 @@
-class WhatController < ApplicationController
-  def index
-  end
+class WhatController < MainController
+  def index; end
 end
