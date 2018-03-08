@@ -466,7 +466,7 @@ form:
 =======
         - name: :date_of_birth
           model: :applicant
-          widget: :date
+          widget: :dob
     are_you_practicing:
       template: :questions
       title: Are you practicing?
