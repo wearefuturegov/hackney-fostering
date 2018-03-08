@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'haml'
-gem 'incredible', git: 'https://github.com/wearefuturegov/incredible.git'
+gem 'incredible'
 gem 'decent_exposure', '3.0.0'
 gem 'simple_form'
 
@@ -52,6 +52,13 @@ group :development, :test do
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'rspec_junit_formatter'
+  gem 'coveralls'
+  gem 'fabrication'
+  gem 'turnip'
+  gem 'capybara-selenium'
+  gem 'chromedriver-helper'
+  gem 'launchy'
 end
 
 group :development do
