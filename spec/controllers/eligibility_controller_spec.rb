@@ -1,6 +1,6 @@
-require 'rails_helper'
+irequire 'rails_helper'
 
-RSpec.describe LegibilityController, type: :controller do
+RSpec.describe EligibilityController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do
