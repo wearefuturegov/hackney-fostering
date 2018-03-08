@@ -59,6 +59,7 @@ group :development, :test do
   gem 'capybara-selenium'
   gem 'chromedriver-helper'
   gem 'launchy'
+  gem 'ffaker'
 end
 
 group :development do
