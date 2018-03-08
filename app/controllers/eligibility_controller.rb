@@ -1,4 +1,3 @@
-class EligibilityController < ApplicationController
-  def index
-  end
+class EligibilityController < MainController
+  def index; end
 end
