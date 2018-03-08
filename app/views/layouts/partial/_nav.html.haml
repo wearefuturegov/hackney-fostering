@@ -1,1 +1,29 @@
-%nav.nav
+%nav.nav.side
+  %ul
+    %li
+      = link_to 'Check your eligibility', '/eligibility'
+    %li
+      = link_to 'Tell us about yourself', 'name_change'
+      %ul
+        %li
+          = link_to 'About you', 'name_change'
+        %li
+          = link_to 'Language', 'language'
+        %li
+          = link_to 'Religion', 'are_you_religious'
+        %li
+          = link_to 'Employment history', 'employment_history'
+        %li
+          = link_to 'Address history', 'postcode'
+        %li
+          = link_to 'Your family & friends', 'adults_living_at_home'
+    %li
+      = link_to 'Tell about your pets', 'pets'
+    %li
+      = link_to 'Legal History', '#'
+    %li
+      = link_to 'References', '#'
+    %li
+      = link_to 'Support Carer', '#'
+    %li
+      = link_to 'Checks & Consent', '#'

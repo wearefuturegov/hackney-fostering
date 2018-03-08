@@ -2,15 +2,164 @@ form:
   name: 'Continue'
   template: :check_if_you_can_foster
   steps:
-    what_is_your_name:
+    fostering_type:
       template: :questions
-      title: Tell us about yourself
-      help: help
-      next_question: :gender
       questions:
         - name: :section
-          heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :sub_section
+          title: What type of fostering are you interested in?
+          widget: :title
+        - name: :section
+          widget: :radio
+          answers:
+            - title: Emergency fostering
+              value: :emergency_fostering
+            - title: Short-term fostering
+              value: :short_term_fostering
+            - title: Long-term fostering
+              value: :long_term_fostering
+            - title: I don't know
+              value: :dont_know
+    spare_room:
+      template: single_question
+      next_question: :next_step
+      rules:
+        spare_room:
+          'yes': :over_21
+          'no': :other_ways
+          'not_yet': :other_ways
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          title: Do you have a spare room?
+          widget: :title
+        - name: :spare_room
+          widget: :radio
+          answers:
+          - title: 'Yes'
+            value: :yes
+          - title: 'No'
+            value: :no
+          - title: Not yet
+            value: :not_yet
+    over_21:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          title: Are you over 21 years of age?
+          widget: :title
+        - name: :over_21
+          widget: :boolean
+    experience:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          title: How experienced are you working with children or young people?
+          widget: :title
+        - name: section
+          widget: radio
+          answers:
+            - title: Very experienced
+              value: :very_experienced
+            - title: Somewhat experienced
+              value: :somewhat_experienced
+            - title: Little experience
+              value: :little_experience
+            - title: 'No experience'
+              value: :no_experience
+    age_experience:
+      template: :single_question
+      next_question: :spare_room
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          title: What age of children have you had the most experience with?
+          widget: :title
+        - name: section
+          widget: checkbox
+          answers:
+            - title: 0-2 years old
+              value: :0_2_years
+            - title: 2-10 years old
+              value: :2_10_years
+            - title: 11-18 years old
+              value: :11_18_years
+    housing_type:
+      template: :questions
+      help: help
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          title: What type of housing do you live in?
+          widget: :title
+        - name: :section
+          widget: :radio
+          answers:
+            - title: You own the property
+              value: :own_property
+            - title: Renting (Council Housing Association)
+              value: :renting_council
+            - title: Renting (Private Landlord)
+              value: :renting_private
+    be_in_touch:
+      template: :questions
+      rules:
+        be_in_touch:
+          'contact_me': :what_is_your_name
+          'info_pack': :thank_you
+      questions:
+        - name: :section
+          heading: You have the potential to be a foster carer
+          widget: :title
+        - name: :section
+          title: Would you be interested in speaking to someone from the fostering team?
+          widget: :title
+        - name: :section
+          widget: :radio
+          answers:
+            - title: Yes, I would like to be contacted
+              value: :contact_me
+            - title: No, I would just like to download an information pack
+              value: :info_pack
+    other_ways:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Sorry, you are unable to be a foster carer at the moment
+          widget: :title
+        - name: :section
+          title: Other ways you can help children and young people in Hackney
+          widget: :title
+        - name: :other_ways
+          title: Sorry, you are unable to be a foster carer at the moment
+          widget: :radio
+          next_button_label: Provide contact details
+          answers:
+            - title: Mentoring
+              value: :mentoring
+            - title: Specialist Support Worker
+              value: :specialist_support
+            - title: Other Support
+              value: :other_support
+    what_is_your_name:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
           widget: :title
         - name: :sub_section
           title: What is your full name?
@@ -21,18 +170,137 @@ form:
         - name: :last_name
           title: Last name
           widget: :input
-    gender:
+    address:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :sub_section
+          title: What is your postcode?
+          widget: :title
+        - name: :name
+          title: Enter your postcode
+          widget: :find_input
+    contacting_you:
+      template: single_question
+      next_question: :next_step
+      rules:
+        contacting_you:
+          'phone': :contact_phone
+          'email': :contact_email
+          'either': :contact_either
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          title: What is the best way for us to contact you?
+          widget: :title
+        - name: :sub_section
+          widget: :radio
+          answers:
+            - title: Phone
+              value: :phone
+            - title: E-mail
+              value: :email
+    contact_phone:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :contact_phone
+          title: What is your phone number?
+          widget: :title
+        - name: :phone_number
+          title: Enter your phone number
+          widget: :tel
+    contact_phone_time:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          title: When is a good time to contact you?
+          widget: :title
+        - name: :contact_phone_time
+          widget: :radio
+          answers:
+            - title: Morning
+              value: :morning
+            - title: Afternoon
+              value: :afternoon
+            - title: Evening
+              value: :evening
+    contact_email:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :contact_email
+          title: What is your email address?
+          widget: :title
+        - name: :email
+          title: Enter your email address
+          widget: :email
+    thank_you:
+      template: :thank_you
+    contents:
+      template: :contents
+    name_change:
       template: :single_question
-      title: Gender
-      help: help
-      next_question: :dob
       questions:
         - name: :section
           heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          widget: :title
+        - name: :section
+          title: Have you ever had a name change?
+          widget: :title
+        - name: name
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    what_is_your_name_change:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about yourself
           widget: :title
         - name: :sub_section
-          title: Gender
+          title: What is your previous full name?
+          widget: :title
+        - name: :name
+          title: First name(s)
+          widget: :input
+        - name: :last_name
+          title: Last name
+          widget: :input
+    previous_name_period:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :section
+          title: What period was this previous name?
+          widget: :title
+        - name: :day
+          title: From
+          widget: :day
+        - name: :month
+          title: To
+          widget: :month
+    gender:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :sub_section
+          title: What is your gender?
           widget: :title
         - name: :gender
           widget: :radio
@@ -43,21 +311,17 @@ form:
             - title: Male
               value: :male
               help: help
-            - title: Unspecified
-              value: :unspecified
+            - title: Other
+              value: :other
               help: help
     dob:
       template: :questions
-      title: Date of birth
-      help: help
-      next_question: :are_you_practicing
       questions:
         - name: :section
           heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
           widget: :title
         - name: :sub_section
-          title: Date of birth
+          title: What is your date of birth?
           widget: :title
         - name: :day
           title: Day
@@ -71,24 +335,116 @@ form:
           title: Year
           widget: :year
           help: help
-    are_you_practicing:
-      template: :questions
-      title: Are you practicing?
-      help: help
-      next_question: :what_do_you_practice
-      rules:
-        are_you_practicing:
-          practicing: :what_do_you_practice
-          non_practicing: :language
+    country_of_birth:
+      template: questions
       questions:
         - name: :section
           heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          widget: :title
+        - name: :sub_section
+          title: What is your country of birth?
+          widget: :title
+        - name: :language
+          title: Enter your country of birth
+          widget: :input                                       
+    town_of_birth:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :sub_section
+          title: What is your town of birth?
+          widget: :title
+        - name: :language
+          title: Enter your town of birth
+          widget: :input
+    nationality:
+      template: questions
+      title: What is your nationality?
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :section
+          title: What is your nationality?
+          widget: :title
+        - name: :sub_section
+          title: Enter your nationality
+          widget: :input
+    language:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :sub_section
+          title: What is the primary language you speak at home?
+          widget: :title
+        - name: :section
+          title: Enter the primary languages you speak at home
+          widget: :input
+    other_language:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :sub_section
+          title: Are there other languages you speak at home?
+          widget: :title
+        - name: name
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    other_language_select:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :sub_section
+          title: What other languages do you speak at home?
+          widget: :title
+        - name: :language
+          title: Enter the other languages you speak at home
+          widget: :input
+    are_you_religious:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about yourself
+          widget: :title
+        - name: :sub_section
+          title: Are you religious?
+          widget: :title
+        - name: name
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    what_is_your_religion:
+      template: :questions
+      next_question: :language
+      questions:
+        - name: :section
+          heading: Tell us about your religious beliefs
+          widget: :title
+        - name: :sub_section
+          title: What is your religion?
+          widget: :title
+        - name: :what_is_your_religion
+          title: Enter your religion
+          widget: :input
+    are_you_practicing:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your religious beliefs
           widget: :title
         - name: :sub_section
           title: Are you practicing?
           widget: :title
-        - name: :are_you_practicing
+        - name: :name
           title: Other
           widget: :radio
           answers:
@@ -96,117 +452,100 @@ form:
               value: :practicing
             - title: Non-practicing
               value: :non_practicing
-    what_do_you_practice:
+    employment_history:
       template: :questions
-      title: What religion do you practice?
-      help: help
-      next_question: :language
       questions:
         - name: :section
-          heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about your employment history
           widget: :title
         - name: :sub_section
-          title: What religion do you practice?
+          title: Are you employed?
           widget: :title
-        - name: :what_do_you_practice
-          title: What religion do you practice?
+        - name: :name
           widget: :radio
           answers:
-            - title: Christianity
-              value: :Christianity
-              help: help
-            - title: Judaism
-              value: :judaism
-              help: help
-            - title: Buddhism
-              value: :buddhism
-              help: help
-        - name: :what_do_you_practice
-          title: Other
-          widget: :input
-        - name: :what_do_you_practice
-          title: What are your religious beliefs?
-          widget: :input
-    language:
+            - title: Full time
+            - title: Part time
+            - title: Self employed
+            - title: Director
+            - title: Unemployed
+    national_insurance:
       template: questions
-      title: What is your primary language?
-      help: help
-      next_question: :nationality
       questions:
         - name: :section
-          heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about your employment history
           widget: :title
         - name: :sub_section
-          title: What is your primary language?
+          title: What is your national insurance number?
           widget: :title
-        - name: :language
-          title: What is your primary language?
-          widget: :radio
-          answers:
-            - title: English
-              value: :english
-            - title: German
-              value: :german
-            - title: French
-              value: :french
-        - name: :language
-          title: What other languages are spoken at home?
+        - name: :sub_section
+          title: Enter your national insurance number
           widget: :input
-    nationality:
+    occupation:
       template: questions
-      title: What is your nationality?
-      help: help
-      next_question: :address
       questions:
         - name: :section
-          heading: Tell us about yourself
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about your employment history
+          widget: :title        
+        - name: :sub_section
+          title: What is current occupation?
           widget: :title
         - name: :sub_section
-          title: What is your nationality?
-          widget: :title
-        - name: :language
-          title: What is your nationality?
-          widget: :radio
-          answers:
-            - title: English
-              value: :english
-            - title: British
-              value: :british
-            - title: German
-              value: :german
-            - title: French
-              value: :french
-        - name: :nationality
-          title: Other
+          title: Enter your current occupation
           widget: :input
-    address:
+    name_of_employer:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about your employment history
+          widget: :title        
+        - name: :sub_section
+          title: What is the name of your employer or organisation?
+          widget: :title
+        - name: :sub_section
+          title: Enter your employer or organisation
+          widget: :input
+    name_of_employer_contact:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about your employment history
+          widget: :title
+        - name: :sub_section
+          title: Who is the contact at your employer or organisation?
+          widget: :title
+        - name: :sub_section
+          title: Enter your employer or organisation contact
+          widget: :input
+    number_for_employer_contact:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about your employment history
+          widget: :title
+        - name: :sub_section
+          title: What is the contact number for your employer or organisation?
+          widget: :title
+        - name: :sub_section
+          title: Enter your employer or organisation contact number
+          widget: :input
+    postcode:
       template: :questions
-      title: Tell us about your home
-      help: help
-      next_question: :address_period
       questions:
         - name: :section
           heading: Tell us about your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
           widget: :title
         - name: :sub_section
-          title: What is your postcode?
+          title: What is your current address?
           widget: :title
-        - name: :name
-          title: Find your address
+        - name: :sub_section
+          title: Enter your postcode
           widget: :input
     address_period:
       template: :questions
-      title: Tell us about your home
-      help: help
-      next_question: :previous_address
       questions:
         - name: :section
           heading: Tell us about your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
           widget: :title
         - name: :sub_section
           title: When did you move into this property?
@@ -225,29 +564,21 @@ form:
           help: help
     previous_address:
       template: :questions
-      title: Tell us about your previous address
-      help: help
-      next_question: :previous_address_period
       questions:
         - name: :section
-          heading: Tell us about your previous address
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about any previous addresses
           widget: :title
         - name: :sub_section
-          title: What is your previous postcode?
+          title: What is your previous address?
           widget: :title
         - name: :name
-          title: Find your previous address
+          title: Enter your previous postcode
           widget: :input
-    previous_address_period:
+    previous_address_from:
       template: :questions
-      title: Tell us about your previous address
-      help: help
-      next_question: :children_living_at_home
       questions:
         - name: :section
           heading: Tell us about your previous address
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
           widget: :title
         - name: :sub_section
           title: When did you move into this previous property?
@@ -264,15 +595,139 @@ form:
           title: Year
           widget: :year
           help: help
-    children_living_at_home:
-      template: questions
-      title: Living at home
-      help: help
-      next_question: :other_children_living_at_home
+    previous_address_to:
+      template: :questions
       questions:
         - name: :section
-          heading: Tell about who lives in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about your previous address
+          widget: :title
+        - name: :sub_section
+          title: When did you move out of this previous property?
+          widget: :title
+        - name: :day
+          title: Day
+          widget: :day
+          help: help
+        - name: :month
+          title: Month
+          widget: :month
+          help: help
+        - name: :year
+          title: Year
+          widget: :year
+          help: help
+    adults_living_at_home:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: Are there any oyther adults living in the household?
+          widget: :title
+        - name: name
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    how_many_adults_living_at_home:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: How many other adults are living in the household?
+          widget: :title
+        - name: name
+          title: Enter how many other adults are living in the household
+          widget: :input
+    what_is_adults_name:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults full name?
+          widget: :title
+        - name: :name
+          title: First name(s)
+          widget: :input
+        - name: :last_name
+          title: Last name
+          widget: :input
+    what_is_adults_gender:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults gender?
+          widget: :title
+        - name: :gender
+          widget: :radio
+          answers:
+            - title: Female
+              value: :female
+              help: help
+            - title: Male
+              value: :male
+              help: help
+            - title: Other
+              value: :other
+              help: help
+    what_is_adults_dob:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults date of birth?
+          widget: :title
+        - name: :day
+          title: Day
+          widget: :day
+          help: help
+        - name: :month
+          title: Month
+          widget: :month
+          help: help
+        - name: :year
+          title: Year
+          widget: :year
+          help: help
+    adults_relationship_to_applicant:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults relationship to you?
+          widget: :title
+        - name: :sub_section
+          title: Enter adults relationship to you
+          widget: :input
+    adults_living_elsewhere:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: Are there any adults from a previous relationship living elsewhere?
+          widget: :title
+        - name: :sub_section
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    children_living_at_home:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
           title: Are there any children under 18 living in the household?
@@ -281,61 +736,26 @@ form:
           widget: :boolean
           yes_value: Yes
           no_value: Yes
-        - name: :name
-          title: How many?
-          widget: :input
-    other_children_living_at_home:
+    how_many_children_living_at_home:
       template: questions
-      title: Living at home
-      help: help
-      next_question: :adults_living_at_home
       questions:
         - name: :section
-          heading: Tell about who lives in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: Are there children (under 18) from a current or previous relationship living elsewhere?
+          title: How many children under 18 are living in the household?
           widget: :title
         - name: name
-          widget: :boolean
-          yes_value: Yes
-          no_value: Yes
-        - name: :name
-          title: How many?
+          title: Enter how many under 18 children are living in the household
           widget: :input
-    adults_living_at_home:
-      template: questions
-      title: Living at home
-      help: help
-      next_question: :children_living_at_home_name
-      questions:
-        - name: :section
-          heading: Tell about who lives in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
-          widget: :title
-        - name: :sub_section
-          title: Are there any adults living in the household?
-          widget: :title
-        - name: name
-          widget: :boolean
-          yes_value: Yes
-          no_value: Yes
-        - name: :name
-          title: How many?
-          widget: :input
-    children_living_at_home_name:
+    what_is_childs_name:
       template: :questions
-      title: Tell us about yourself
-      help: help
-      next_question: :children_living_at_home_gender
       questions:
         - name: :section
-          heading: Tell us about the children in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: What is the childs name?
+          title: What is the childs full name?
           widget: :title
         - name: :name
           title: First name(s)
@@ -343,18 +763,14 @@ form:
         - name: :last_name
           title: Last name
           widget: :input
-    children_living_at_home_gender:
+    what_is_childs_gender:
       template: :single_question
-      title: Gender
-      help: help
-      next_question: :children_living_at_home_dob
       questions:
         - name: :section
-          heading: Tell us about the children in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: Gender
+          title: What is the childs gender?
           widget: :title
         - name: :gender
           widget: :radio
@@ -365,21 +781,17 @@ form:
             - title: Male
               value: :male
               help: help
-            - title: Unspecified
-              value: :unspecified
+            - title: Other
+              value: :other
               help: help
-    children_living_at_home_dob:
+    what_is_childs_dob:
       template: :questions
-      title: Date of birth
-      help: help
-      next_question: :living_in_your_home
       questions:
         - name: :section
-          heading: Tell us about the children in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: Date of birth
+          title: What is the childs date of birth?
           widget: :title
         - name: :day
           title: Day
@@ -393,109 +805,60 @@ form:
           title: Year
           widget: :year
           help: help
-        - name: :relationship
-          title: Relationship to applicant
-          widget: :input
-    living_in_your_home:
+    childs_relationship_to_applicant:
       template: :questions
-      title: Tell us who lives in your home
-      help: help
-      next_question: :are_you_practicing
       questions:
         - name: :section
-          heading: Tell us who lives in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: Where does your child go to school?
+          title: What is the childs relationship to you?
           widget: :title
-        - name: :name
-          title: Find school address
+        - name: :sub_section
+          title: Enter childs relationship to you
           widget: :input
-        - name: :name
-          title: Please provide the phone number
-          widget: :input
-    adults_living_at_home_name:
+    childs_school:
       template: :questions
-      title: Tell us about the other adults in your home
-      help: help
-      next_question: :adults_living_at_home_gender
       questions:
         - name: :section
-          heading: Tell us about the other adults in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: What is the adults name?
-          widget: :title
-        - name: :name
-          title: First name(s)
-          widget: :input
-        - name: :last_name
-          title: Last name
-          widget: :input
-    adults_living_at_home_gender:
-      template: :single_question
-      title: Gender
-      help: help
-      next_question: :adults_living_at_home_dob
-      questions:
-        - name: :section
-          heading: Tell us about the adults in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          title: Where does the child goto school?
           widget: :title
         - name: :sub_section
-          title: Gender
-          widget: :title
-        - name: :gender
-          widget: :radio
-          answers:
-            - title: Female
-              value: :female
-              help: help
-            - title: Male
-              value: :male
-              help: help
-            - title: Unspecified
-              value: :unspecified
-              help: help
-    adults_living_at_home_dob:
+          title: Enter childs school postcode
+          widget: :input
+    childs_school_number:
       template: :questions
-      title: Date of birth
-      help: help
-      next_question: :pets
       questions:
         - name: :section
-          heading: Tell us about the adults in your home
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: Date of birth
+          title: What is the childs school phone number?
           widget: :title
-        - name: :day
-          title: Day
-          widget: :day
-          help: help
-        - name: :month
-          title: Month
-          widget: :month
-          help: help
-        - name: :year
-          title: Year
-          widget: :year
-          help: help
-        - name: :relationship
-          title: Relationship to applicant
+        - name: :sub_section
+          title: Enter childs school phone numbder
           widget: :input
+    children_living_elsewhere:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: Are there any children under 18 from a previous relationship living elsewhere?
+          widget: :title
+        - name: :sub_section
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
     pets:
       template: :single_question
-      title: Pets
-      help: help
-      next_question: :pet_size
       questions:
         - name: :section
-          heading: Pets
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about your pets
           widget: :title
         - name: :sub_section
           title: Do you have any pets?
@@ -504,27 +867,41 @@ form:
           widget: :boolean
           yes_value: Yes
           no_value: Yes
-        - name: :name
-          title: What type of pets do you have?
+    how_many_pets:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: How many pets do you have?
+          widget: :title
+        - name: :sub_section
+          title: Enter how many pets you have
           widget: :input
-        - name: :name
-          title: What breed/species is your pet?
+    pet_types:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What types of pets do you have?
+          widget: :title
+        - name: :sub_section
+          title: Enter the type of pet you have
           widget: :input
     pet_size:
       template: :single_question
-      title: Pets
-      help: help
-      next_question: :pet_neutered
       questions:
         - name: :section
-          heading: Pets
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about your pets
           widget: :title
         - name: :sub_section
-          title: What is the size of your pet?
+          title: What are the size of your pets?
           widget: :title
         - name: :size
-          widget: :radio
+          widget: :checkbox
           answers:
             - title: Small
               value: :small
@@ -537,17 +914,121 @@ form:
               help: help
     pet_neutered:
       template: :single_question
-      title: Pets
-      help: help
       questions:
         - name: :section
-          heading: Pets
-          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+          heading: Tell us about your pets
           widget: :title
         - name: :sub_section
-          title: Has your pet been neutered?
+          title: Have your pets been neutered?
           widget: :title
-        - name: :neutered
+        - name: :size
+          widget: :radio
+          answers:
+            - title: All of them
+            - title: Some of them
+            - title: None of them
+    pet_age:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What are the age of your pets?
+          widget: :title
+        - name: :sub_section
+          title: Enter your pets age
+          widget: :input
+    pet_roam:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where in your house do you allow your pets?
+          widget: :title
+        - name: :sub_section
+          title: Enter where in your house you allow your pets
+          widget: :input
+    pet_exclusive:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Do you have any areas in the house only for your pets?
+          widget: :title
+        - name: name
           widget: :boolean
           yes_value: Yes
           no_value: Yes
+    pet_location:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where in your house is exclusive for your pet?
+          widget: :title
+        - name: :sub_section
+          title: Enter where in your house is exclusive for your pets
+          widget: :input
+    pet_sleep:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where does your pet sleep?
+          widget: :title
+        - name: :sub_section
+          title: Enter where you pet sleeps
+          widget: :input
+    pet_feeding:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where is your pet fed?
+          widget: :title
+        - name: :sub_section
+          title: Enter where your pet feeds
+          widget: :input
+    pet_feeding_safe:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Can food be removed from your pet safely?
+          widget: :title
+        - name: name
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    pet_temperament:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What is the temperament of your pet?
+          widget: :title
+        - name: :size
+          widget: :radio
+          answers:
+            - title: Disobedient
+            - title: Protective
+            - title: Possessive
+            - title: Boisterous
+            - title: Playful
+            - title: Placid
+            - title: Docile
