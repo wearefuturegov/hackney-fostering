@@ -11,8 +11,9 @@ form:
         - name: :sub_section
           title: What type of fostering are you interested in?
           widget: :title
-        - name: :section
+        - name: :type_of_fostering
           widget: :radio
+<<<<<<< HEAD:config/forms/foster_check.yml
           answers:
             - title: Emergency fostering
               value: :emergency_fostering
@@ -30,6 +31,11 @@ form:
           'yes': :over_21
           'no': :other_ways
           'not_yet': :other_ways
+=======
+    spare_room:
+      template: single_question
+      next_question: :next_step
+>>>>>>> Rename foster_check form:config/forms/application.yml
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -39,6 +45,7 @@ form:
           widget: :title
         - name: :spare_room
           widget: :radio
+<<<<<<< HEAD:config/forms/foster_check.yml
           answers:
           - title: 'Yes'
             value: :yes
@@ -135,6 +142,8 @@ form:
               value: :contact_me
             - title: No, I would just like to download an information pack
               value: :info_pack
+=======
+>>>>>>> Rename foster_check form:config/forms/application.yml
     other_ways:
       template: :single_question
       questions:
@@ -148,13 +157,6 @@ form:
           title: Sorry, you are unable to be a foster carer at the moment
           widget: :radio
           next_button_label: Provide contact details
-          answers:
-            - title: Mentoring
-              value: :mentoring
-            - title: Specialist Support Worker
-              value: :specialist_support
-            - title: Other Support
-              value: :other_support
     what_is_your_name:
       template: :questions
       questions:
@@ -164,12 +166,14 @@ form:
         - name: :sub_section
           title: What is your full name?
           widget: :title
-        - name: :name
+        - name: :first_name
           title: First name(s)
           widget: :input
+          model: :applicant
         - name: :last_name
           title: Last name
           widget: :input
+          model: :applicant
     address:
       template: :questions
       questions:
@@ -179,8 +183,14 @@ form:
         - name: :sub_section
           title: What is your postcode?
           widget: :title
+<<<<<<< HEAD:config/forms/foster_check.yml
         - name: :name
           title: Enter your postcode
+=======
+        - name: :postcode
+          model: :address
+          title: Find your address
+>>>>>>> Rename foster_check form:config/forms/application.yml
           widget: :find_input
     contacting_you:
       template: single_question
@@ -194,6 +204,7 @@ form:
         - name: :section
           heading: Check if you can be a foster carer
           widget: :title
+<<<<<<< HEAD:config/forms/foster_check.yml
         - name: :section
           title: What is the best way for us to contact you?
           widget: :title
@@ -295,6 +306,16 @@ form:
           widget: :month
     gender:
       template: :single_question
+=======
+        - name: :best_way_to_contact
+          title: Other
+          widget: :radio
+    gender:
+      template: :questions
+      title: Gender
+      help: help
+      next_question: :dob
+>>>>>>> Rename foster_check form:config/forms/application.yml
       questions:
         - name: :section
           heading: Tell us about yourself
@@ -304,6 +325,7 @@ form:
           widget: :title
         - name: :gender
           widget: :radio
+<<<<<<< HEAD:config/forms/foster_check.yml
           answers:
             - title: Female
               value: :female
@@ -314,12 +336,16 @@ form:
             - title: Other
               value: :other
               help: help
+=======
+          model: :applicant
+>>>>>>> Rename foster_check form:config/forms/application.yml
     dob:
       template: :questions
       questions:
         - name: :section
           heading: Tell us about yourself
           widget: :title
+<<<<<<< HEAD:config/forms/foster_check.yml
         - name: :sub_section
           title: What is your date of birth?
           widget: :title
@@ -437,6 +463,16 @@ form:
           widget: :input
     are_you_practicing:
       template: :questions
+=======
+        - name: :date_of_birth
+          model: :applicant
+          widget: :date
+    are_you_practicing:
+      template: :questions
+      title: Are you practicing?
+      help: help
+      next_question: :what_do_you_practice
+>>>>>>> Rename foster_check form:config/forms/application.yml
       questions:
         - name: :section
           heading: Tell us about your religious beliefs
@@ -444,7 +480,11 @@ form:
         - name: :sub_section
           title: Are you practicing?
           widget: :title
+<<<<<<< HEAD:config/forms/foster_check.yml
         - name: :name
+=======
+        - name: :practicing
+>>>>>>> Rename foster_check form:config/forms/application.yml
           title: Other
           widget: :radio
           answers:
@@ -461,6 +501,7 @@ form:
         - name: :sub_section
           title: Are you employed?
           widget: :title
+<<<<<<< HEAD:config/forms/foster_check.yml
         - name: :name
           widget: :radio
           answers:
@@ -492,6 +533,16 @@ form:
           widget: :title
         - name: :sub_section
           title: Enter your current occupation
+=======
+        - name: :religion
+          title: What religion do you practice?
+          widget: :checkbox
+        - name: :other_religion
+          title: Other
+          widget: :input
+        - name: :beliefs
+          title: What are your religious beliefs?
+>>>>>>> Rename foster_check form:config/forms/application.yml
           widget: :input
     name_of_employer:
       template: questions
@@ -514,11 +565,25 @@ form:
         - name: :sub_section
           title: Who is the contact at your employer or organisation?
           widget: :title
+<<<<<<< HEAD:config/forms/foster_check.yml
         - name: :sub_section
           title: Enter your employer or organisation contact
+=======
+        - name: :primary_language
+          title: What is your primary language?
+          widget: :radio
+        - name: :secondary_languages
+          title: What other languages are spoken at home?
+>>>>>>> Rename foster_check form:config/forms/application.yml
           widget: :input
     number_for_employer_contact:
       template: questions
+<<<<<<< HEAD:config/forms/foster_check.yml
+=======
+      title: What is your nationality?
+      help: help
+      next_question: :previous_address
+>>>>>>> Rename foster_check form:config/forms/application.yml
       questions:
         - name: :section
           heading: Tell us about your employment history
@@ -526,6 +591,7 @@ form:
         - name: :sub_section
           title: What is the contact number for your employer or organisation?
           widget: :title
+<<<<<<< HEAD:config/forms/foster_check.yml
         - name: :sub_section
           title: Enter your employer or organisation contact number
           widget: :input
@@ -540,15 +606,32 @@ form:
           widget: :title
         - name: :sub_section
           title: Enter your postcode
+=======
+        - name: :nationality
+          title: What is your nationality?
+          widget: :radio
+        - name: :other_nationality
+          title: Other
+>>>>>>> Rename foster_check form:config/forms/application.yml
           widget: :input
-    address_period:
+    previous_address:
       template: :questions
       questions:
         - name: :section
+<<<<<<< HEAD:config/forms/foster_check.yml
           heading: Tell us about your home
+=======
+          heading: Tell us about your previous addresses
+          intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..
+>>>>>>> Rename foster_check form:config/forms/application.yml
           widget: :title
-        - name: :sub_section
+        - name: :postcode
+          model: :addresses
+          title: Find your address
+          widget: :find_input
+        - name: :date_from
           title: When did you move into this property?
+<<<<<<< HEAD:config/forms/foster_check.yml
           widget: :title
         - name: :day
           title: Day
@@ -597,6 +680,15 @@ form:
           help: help
     previous_address_to:
       template: :questions
+=======
+          widget: :date
+          model: :addresses
+    children_living_at_home:
+      template: questions
+      title: Living at home
+      help: help
+      next_question: :other_children_living_at_home
+>>>>>>> Rename foster_check form:config/forms/application.yml
       questions:
         - name: :section
           heading: Tell us about your previous address
