@@ -50,7 +50,7 @@ module ApplicationSteps
   
   step 'I have started a form' do
     @form = Fabricate(:application)
-    visit application_form_index_path(@form)
+    visit application_eligibility_index_path(@form)
   end
 
   step 'my response should be stored' do
@@ -59,11 +59,11 @@ module ApplicationSteps
   end
 
   step 'I am answering the :step step' do |step|
-    visit application_form_path(@form, step)
+    visit application_eligibility_path(@form, step)
   end
 
   step 'I should be on the :text step' do |step|
-    expect(current_path).to eq application_form_path(@form, step)
+    expect(current_path).to eq application_eligibility_path(@form, step)
   end
 end
 

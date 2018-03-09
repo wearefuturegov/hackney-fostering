@@ -1,9 +1,9 @@
 module Applications
-  class FormController < MainController
+  class EligibilityController < MainController
     include Incredible::Wizard
     expose :application
 
-    form 'application'
+    form 'eligibility'
 
     def show
       render_wizard nil, template: "shared/#{template}"
