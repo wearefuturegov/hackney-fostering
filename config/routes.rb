@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get '/', to: 'main#index'
   
   resources :applications do
-    resources :form, controller: 'applications/form'
+    resources :eligibility, controller: 'applications/eligibility'
   end
 end
