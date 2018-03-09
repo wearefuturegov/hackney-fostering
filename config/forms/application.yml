@@ -27,6 +27,7 @@ form:
           widget: :radio
     over_21:
       template: :single_question
+      next_question: :experience
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -38,6 +39,7 @@ form:
           widget: :boolean
     experience:
       template: :single_question
+      next_question: :age_experience
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -45,8 +47,8 @@ form:
         - name: :section
           title: How experienced are you working with children or young people?
           widget: :title
-        - name: section
-          widget: radio
+        - name: :experience
+          widget: :radio
     age_experience:
       template: :single_question
       next_question: :spare_room
@@ -57,8 +59,15 @@ form:
         - name: :section
           title: What age of children have you had the most experience with?
           widget: :title
-        - name: section
-          widget: checkbox
+        - name: :age_experience
+          widget: :checkbox
+          answers:
+            - title: 0-2 years old
+              value: :0_2
+            - title: 2-10 years old
+              value: :2_10
+            - title: 11-18 years old
+              value: :11_18
     housing_type:
       template: :questions
       help: help
@@ -69,7 +78,7 @@ form:
         - name: :section
           title: What type of housing do you live in?
           widget: :title
-        - name: :section
+        - name: :housing_type
           widget: :radio
     be_in_touch:
       template: :questions
