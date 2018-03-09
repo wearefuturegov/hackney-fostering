@@ -1,4 +1,4 @@
-@javascript
+@javascript @pending
 Feature: Previous addresses
 
   Background:

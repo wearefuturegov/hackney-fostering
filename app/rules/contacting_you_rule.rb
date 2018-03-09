@@ -2,11 +2,11 @@ class ContactingYouRule
   
   def self.process(params)
     case params[:application][:contacting_you]
-    when 'phone'
+    when 'contact_phone'
       :contact_phone
-    when 'email'
+    when 'contact_email'
       :contact_email
-    when 'either'
+    when 'contact_either'
       :contact_either
     end
   end
