@@ -1,20 +1,15 @@
 Fabricator(:application) do
   type_of_fostering   1
-  spare_room          false
-  applicant_id        1
-  address_id          1
-  best_way_to_contact 1
-  practicing          false
-  religion            1
-  other_religion      'MyString'
-  beliefs             'MyString'
-  primary_language    1
-  other_language      'MyString'
-  secondary_languages 'MyString'
-  nationality         1
-  other_nationality   'MyString'
-  children_at_home    false
-  number_of_children  1
-  number_of_adults    1
-  have_pets           false
+  spare_room          0
+  over_21             true
+  experience          1
+  age_experience      %w[0_2 2_10]
+  housing_type        1
+  be_in_touch         0
+  contacting_you      1
+  phone_number        1232323
+  contact_phone_time  1
+  applicant           { Fabricate(:person) }
+  address             { Fabricate(:address) }
+  email               { FFaker::Internet.email }
 end

@@ -11,9 +11,7 @@ class Application < ApplicationRecord
        religion: %i[christian muslim hindu sikh jewish buddhist],
        primary_language: %i[english polish urdu bengali gujarati arabic french mandarin cantonese tamil turkish],
        nationality: %i[british british_english british_scottish british_welsh]
-  
-  enum age_experience: %i[0_2_years 2_10_years 11_18_years]
-  
+    
   has_many :people
   has_many :addresses
   has_many :pets
