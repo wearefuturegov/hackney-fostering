@@ -39,14 +39,12 @@ form:
           heading: Tell us about yourself
           widget: :title
         - name: :section
-          title: What period was this previous name?
+          title: When did you change your name?
           widget: :title
-        - name: :day
-          title: From
-          widget: :day
-        - name: :month
-          title: To
-          widget: :month
+        - name: :date_changed
+          title: Date Change
+          widget: :date
+          model: :applicant
     gender:
       template: :questions
       questions:
