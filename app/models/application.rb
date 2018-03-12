@@ -9,8 +9,7 @@ class Application < ApplicationRecord
        contact_phone_time: %i[morning afternoon evening],
        best_way_to_contact: %i[phone email],
        religion: %i[christian muslim hindu sikh jewish buddhist],
-       primary_language: %i[english polish urdu bengali gujarati arabic french mandarin cantonese tamil turkish],
-       nationality: %i[british british_english british_scottish british_welsh]
+       primary_language: %i[english polish urdu bengali gujarati arabic french mandarin cantonese tamil turkish]
     
   has_many :people
   has_many :addresses

@@ -79,9 +79,10 @@ form:
         - name: :sub_section
           title: What is your country of birth?
           widget: :title
-        - name: :language
+        - name: :country_of_birth
           title: Enter your country of birth
           widget: :input
+          model: :applicant
     town_of_birth:
       template: questions
       questions:
@@ -91,9 +92,10 @@ form:
         - name: :sub_section
           title: What is your town of birth?
           widget: :title
-        - name: :language
+        - name: :town_of_birth
           title: Enter your town of birth
           widget: :input
+          model: :applicant
     nationality:
       template: questions
       title: What is your nationality?
@@ -104,9 +106,10 @@ form:
         - name: :section
           title: What is your nationality?
           widget: :title
-        - name: :sub_section
+        - name: :nationality
           title: Enter your nationality
-          widget: :input
+          widget: :radio
+          model: :applicant
     language:
       template: questions
       questions:
