@@ -66,18 +66,10 @@ form:
         - name: :sub_section
           title: What is your date of birth?
           widget: :title
-        - name: :day
-          title: Day
-          widget: :day
-          help: help
-        - name: :month
-          title: Month
-          widget: :month
-          help: help
-        - name: :year
-          title: Year
-          widget: :year
-          help: help
+        - name: :date_of_birth
+          title: Date of Birth
+          widget: :dob
+          model: :applicant
     country_of_birth:
       template: questions
       questions:
