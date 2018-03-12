@@ -15,7 +15,7 @@ form:
           widget: :radio
     spare_room:
       template: single_question
-      next_question: :next_step
+      next_step: :next_step
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -27,7 +27,7 @@ form:
           widget: :radio
     over_21:
       template: :single_question
-      next_question: :experience
+      next_step: :experience
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -39,7 +39,7 @@ form:
           widget: :boolean
     experience:
       template: :single_question
-      next_question: :age_experience
+      next_step: :age_experience
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -51,7 +51,7 @@ form:
           widget: :radio
     age_experience:
       template: :single_question
-      next_question: :spare_room
+      next_step: :housing_type
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -136,7 +136,7 @@ form:
           widget: :find_input
     contacting_you:
       template: single_question
-      next_question: :next_step
+      next_step: :next_step
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -148,7 +148,7 @@ form:
           widget: :radio
     contact_phone:
       template: :questions
-      next_question: :contact_phone_time
+      next_step: :contact_phone_time
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -161,7 +161,7 @@ form:
           widget: :tel
     contact_phone_time:
       template: :questions
-      next_question: :thank_you
+      next_step: :thank_you
       questions:
         - name: :section
           heading: Check if you can be a foster carer
@@ -173,7 +173,7 @@ form:
           widget: :radio
     contact_email:
       template: :questions
-      next_question: :thank_you
+      next_step: :thank_you
       questions:
         - name: :section
           heading: Check if you can be a foster carer
