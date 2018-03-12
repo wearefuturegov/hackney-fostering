@@ -20,10 +20,17 @@ module Applications
     
     private
     
-    def permitted_params
+    def permitted_params # rubocop:disable Metrics/MethodLength
       params.require(:application).permit(
         :type_of_fostering,
         :spare_room,
+        :over_21,
+        :experience,
+        :age_experience,
+        :housing_type,
+        :be_in_touch,
+        :contacting_you,
+        :email,
         :other_ways,
         :postcode,
         :practicing,

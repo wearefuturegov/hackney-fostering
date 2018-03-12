@@ -45,11 +45,23 @@ module ApplicationSteps
   end
   
   step 'my application should be stored' do
-    expect(Application.count).to eq(1)
+    application = Application.first
+    expect(application.type_of_fostering).to eq(@form.type_of_fostering)
+    expect(application.spare_room).to eq(@form.spare_room)
+    expect(application.over_21).to eq(@form.over_21)
+    expect(application.experience).to eq(@form.experience)
+    expect(application.age_experience).to eq(@form.age_experience)
+    expect(application.housing_type).to eq(@form.housing_type)
+    expect(application.be_in_touch).to eq(@form.be_in_touch)
+    expect(application.applicant.first_name).to eq(@form.applicant.first_name)
+    expect(application.applicant.last_name).to eq(@form.applicant.last_name)
+    expect(application.address.postcode).to eq(@form.address.postcode)
+    expect(application.contacting_you).to eq(@form.contacting_you)
+    expect(application.email).to eq(@form.email)
   end
   
   step 'I have started a form' do
-    @form = Fabricate(:application)
+    @form = Fabricate(:blank_application)
     visit application_eligibility_index_path(@form)
   end
 

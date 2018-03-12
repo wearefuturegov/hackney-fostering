@@ -1,3 +1,6 @@
+Fabricator(:blank_application, from: :application) do
+end
+
 Fabricator(:application) do
   type_of_fostering   1
   spare_room          0
