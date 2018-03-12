@@ -2,10 +2,8 @@ form:
   name: 'Continue'
   template: :check_if_you_can_foster
   steps:
-    contents:
-      template: :contents
     name_change:
-      template: :single_question
+      template: :questions
       questions:
         - name: :section
           heading: Tell us about yourself
@@ -13,7 +11,7 @@ form:
         - name: :section
           title: Have you ever had a name change?
           widget: :title
-        - name: name
+        - name: :name_change
           widget: :boolean
           yes_value: Yes
           no_value: Yes
@@ -26,12 +24,14 @@ form:
         - name: :sub_section
           title: What is your previous full name?
           widget: :title
-        - name: :name
+        - name: :previous_first_name
           title: First name(s)
           widget: :input
-        - name: :last_name
+          model: :applicant
+        - name: :previous_last_name
           title: Last name
           widget: :input
+          model: :applicant
     previous_name_period:
       template: :questions
       questions:
@@ -48,7 +48,7 @@ form:
           title: To
           widget: :month
     gender:
-      template: :single_question
+      template: :questions
       questions:
         - name: :section
           heading: Tell us about yourself
@@ -58,16 +58,7 @@ form:
           widget: :title
         - name: :gender
           widget: :radio
-          answers:
-            - title: Female
-              value: :female
-              help: help
-            - title: Male
-              value: :male
-              help: help
-            - title: Other
-              value: :other
-              help: help
+          model: :applicant
     dob:
       template: :questions
       questions:
