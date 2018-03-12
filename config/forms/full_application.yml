@@ -270,9 +270,10 @@ form:
         - name: :sub_section
           title: What is your current address?
           widget: :title
-        - name: :sub_section
+        - name: :postcode
           title: Enter your postcode
           widget: :input
+          model: :address
     address_period:
       template: :questions
       questions:
@@ -282,18 +283,10 @@ form:
         - name: :sub_section
           title: When did you move into this property?
           widget: :title
-        - name: :day
-          title: Day
-          widget: :day
+        - name: :date_from
+          widget: :date
           help: help
-        - name: :month
-          title: Month
-          widget: :month
-          help: help
-        - name: :year
-          title: Year
-          widget: :year
-          help: help
+          model: :address
     previous_address:
       template: :questions
       questions:
