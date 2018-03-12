@@ -1,22 +1,8 @@
 module Applications
-  class EligibilityController < MainController
+  class EligibilityController < ApplicationsController
     include Incredible::Wizard
-    expose :application
 
     form 'eligibility'
-
-    def show
-      render_wizard nil, template: "shared/#{template}"
-    end
-    
-    def update
-      application.update_attributes(permitted_params)
-      render_wizard application
-    end
-    
-    def new
-      redirect_to wizard_path(steps.first, application_id: application.id)
-    end
     
     private
     
