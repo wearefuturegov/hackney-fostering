@@ -2,7 +2,7 @@
 Feature: Are you practicing
 
   Background:
-    Given I have started a form
+    Given I have started an application
     And I am answering the are you practicing step
     
   Scenario: Practicing redirects correctly

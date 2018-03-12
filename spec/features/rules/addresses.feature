@@ -2,7 +2,7 @@
 Feature: Previous addresses
 
   Background:
-    Given I have started a form
+    Given I have started an application
     And I am answering the previous addresses step
     
   Scenario: One previous address
