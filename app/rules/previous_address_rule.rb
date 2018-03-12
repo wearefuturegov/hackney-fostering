@@ -1,9 +1,9 @@
-class PreviousAddressRule
+class PreviousAddressRule < Incredible::Rule
   
-  def self.process(params)
+  def process
     address_params = params[:application][:addresses_attributes].values.first
     date = build_date(address_params)
-    years_ago(date) >= 5 ? :children_living_at_home : :previous_addresses
+    @next_step = years_ago(date) >= 5 ? :children_living_at_home : :previous_addresses
   end
   
   def self.build_date(address_params)

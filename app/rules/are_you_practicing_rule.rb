@@ -1,7 +1,7 @@
-class AreYouPracticingRule
+class AreYouPracticingRule < Incredible::Rule
   
-  def self.process(params)
-    params[:application][:practicing] == 'practicing' ? :what_do_you_practice : :language
+  def process
+    @next_step = params[:application][:practicing] == 'practicing' ? :what_do_you_practice : :language
   end
   
 end
