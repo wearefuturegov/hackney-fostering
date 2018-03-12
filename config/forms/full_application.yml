@@ -156,10 +156,10 @@ form:
         - name: :sub_section
           title: Are you religious?
           widget: :title
-        - name: name
+        - name: :religious
           widget: :boolean
           yes_value: Yes
-          no_value: Yes
+          no_value: No
     what_is_your_religion:
       template: :questions
       next_question: :language
@@ -170,7 +170,7 @@ form:
         - name: :sub_section
           title: What is your religion?
           widget: :title
-        - name: :what_is_your_religion
+        - name: :religion
           title: Enter your religion
           widget: :input
     are_you_practicing:
