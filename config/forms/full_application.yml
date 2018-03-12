@@ -199,14 +199,8 @@ form:
         - name: :sub_section
           title: Are you employed?
           widget: :title
-        - name: :name
+        - name: :employment_type
           widget: :radio
-          answers:
-            - title: Full time
-            - title: Part time
-            - title: Self employed
-            - title: Director
-            - title: Unemployed
     national_insurance:
       template: questions
       questions:
@@ -216,7 +210,7 @@ form:
         - name: :sub_section
           title: What is your national insurance number?
           widget: :title
-        - name: :sub_section
+        - name: :ni_number
           title: Enter your national insurance number
           widget: :input
     occupation:
@@ -228,7 +222,7 @@ form:
         - name: :sub_section
           title: What is current occupation?
           widget: :title
-        - name: :sub_section
+        - name: :occupation
           title: Enter your current occupation
           widget: :input
     name_of_employer:
@@ -240,7 +234,7 @@ form:
         - name: :sub_section
           title: What is the name of your employer or organisation?
           widget: :title
-        - name: :sub_section
+        - name: :employer
           title: Enter your employer or organisation
           widget: :input
     name_of_employer_contact:
@@ -252,7 +246,7 @@ form:
         - name: :sub_section
           title: Who is the contact at your employer or organisation?
           widget: :title
-        - name: :sub_section
+        - name: :employer_contact_name
           title: Enter your employer or organisation contact
           widget: :input
     number_for_employer_contact:
@@ -264,10 +258,10 @@ form:
         - name: :sub_section
           title: What is the contact number for your employer or organisation?
           widget: :title
-        - name: :sub_section
+        - name: :employer_phone_number
           title: Enter your employer or organisation contact number
           widget: :input
-    postcode:
+    address:
       template: :questions
       questions:
         - name: :section
