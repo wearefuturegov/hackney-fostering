@@ -119,7 +119,7 @@ form:
         - name: :sub_section
           title: What is the primary language you speak at home?
           widget: :title
-        - name: :section
+        - name: :primary_language
           title: Enter the primary languages you speak at home
           widget: :input
     other_language:
@@ -131,7 +131,7 @@ form:
         - name: :sub_section
           title: Are there other languages you speak at home?
           widget: :title
-        - name: name
+        - name: :other_language
           widget: :boolean
           yes_value: Yes
           no_value: Yes
@@ -144,7 +144,7 @@ form:
         - name: :sub_section
           title: What other languages do you speak at home?
           widget: :title
-        - name: :language
+        - name: :secondary_languages
           title: Enter the other languages you speak at home
           widget: :input
     are_you_religious:
