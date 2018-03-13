@@ -261,7 +261,7 @@ form:
         - name: :employer_phone_number
           title: Enter your employer or organisation contact number
           widget: :input
-    address:
+    full_address:
       template: :address
       model: :address
       questions:
@@ -285,19 +285,6 @@ form:
           title: When did you move into this property?
           widget: :date
           model: :address
-    address_period:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about your home
-          widget: :title
-        - name: :sub_section
-          title: When did you move into this property?
-          widget: :title
-        - name: :date_from
-          widget: :date
-          help: help
-          model: :address
     previous_address:
       template: :questions
       questions:
@@ -310,48 +297,6 @@ form:
         - name: :name
           title: Enter your previous postcode
           widget: :input
-    previous_address_from:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about your previous address
-          widget: :title
-        - name: :sub_section
-          title: When did you move into this previous property?
-          widget: :title
-        - name: :day
-          title: Day
-          widget: :day
-          help: help
-        - name: :month
-          title: Month
-          widget: :month
-          help: help
-        - name: :year
-          title: Year
-          widget: :year
-          help: help
-    previous_address_to:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about your previous address
-          widget: :title
-        - name: :sub_section
-          title: When did you move out of this previous property?
-          widget: :title
-        - name: :day
-          title: Day
-          widget: :day
-          help: help
-        - name: :month
-          title: Month
-          widget: :month
-          help: help
-        - name: :year
-          title: Year
-          widget: :year
-          help: help
     adults_living_at_home:
       template: questions
       questions:

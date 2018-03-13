@@ -2,6 +2,7 @@ module AddressSteps
   
   step :fill_in_address, 'I fill in my address'
   step :fill_in_address_and_date, 'I fill in my address and a moved in date'
+  step :fill_in_address_and_date, 'I fill in my address and a moved in date of :number year(s) ago'
   step :fill_in_date, 'I enter a moved in date of :number year(s) ago'
   step :fill_in_address_and_date_manually, 'I fill in my address and a moved in date manually'
   
@@ -48,9 +49,9 @@ module AddressSteps
     click_on 'Continue'
   end
   
-  def fill_in_address_and_date
+  def fill_in_address_and_date(years = 6)
     fill_in_address(false)
-    fill_in_date(6)
+    fill_in_date(years)
     click_on 'Continue'
   end
   

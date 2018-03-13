@@ -3,7 +3,7 @@ Feature: Entering an address
 
   Background:
     Given I have started an application
-    And I am answering the address step of the full application form
+    And I am answering the full address step of the full application form
   
   Scenario: Entering an address
     And I fill in my address and a moved in date

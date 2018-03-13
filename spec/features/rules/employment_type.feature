@@ -10,5 +10,5 @@ Feature: Employment Type
 
   Scenario: Unemployed redirects correctly
     And I check the 'unemployed' option
-    Then I should be on the 'address' step
+    Then I should be on the 'full_address' step
     
