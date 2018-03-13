@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :applications do
     resources :eligibility, controller: 'applications/eligibility'
     resources :full_application, controller: 'applications/full_application'
+    resources :addresses, controller: 'applications/addresses'
   end
 end
