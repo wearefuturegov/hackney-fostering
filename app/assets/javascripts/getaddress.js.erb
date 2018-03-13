@@ -1,11 +1,11 @@
 $.fn.getAddress = function() {
 
   if (this.length === 0) { return false; }
-  
+    
   var apiKey = '<%= ENV['IDEAL_POSTCODES_API_KEY'] %>'
   var baseUrl = 'https://api.ideal-postcodes.co.uk/v1/postcodes/'
-  var $addressSelect = $(this).find('#addresses');
-  var $postcodeInput = $(this).find('#application_address_attributes_postcode')
+  var $addressSelect = $(this).find('select.addresses');
+  var $postcodeInput = $(this).find('.postcode')
   var $yourPostcode = $(this).find('#your_postcode');
   var $findAddress = $(this).find('#find_address');
   var $addressElements = $(this).find('#address_elements');
@@ -18,6 +18,7 @@ $.fn.getAddress = function() {
     $yourPostcode.toggleClass('hidden');
     $findAddress.toggleClass('hidden');
     $errorMessage.toggleClass('hidden');
+    $manualEntry.toggleClass('hidden');
     
     $addressElements.addClass('hidden');
   }
@@ -59,11 +60,12 @@ $.fn.getAddress = function() {
   
   $addressSelect.on('change', function() {
     var data = $(this).find(':selected').data();
-    $('#application_address_attributes_line_1').val(data.line_1)
-    $('#application_address_attributes_line_2').val(data.line_2)
-    $('#application_address_attributes_line_3').val(data.line_3)
-    $('#application_address_attributes_post_town').val(data.post_town)
+    $('.line_1').val(data.line_1)
+    $('.line_2').val(data.line_2)
+    $('.line_3').val(data.line_3)
+    $('.post_town').val(data.post_town)
     $addressElements.removeClass('hidden');
+    $('.confirm').removeClass('hidden');
   });
   
   $manualEntry.on('click', function(e) {
@@ -73,6 +75,7 @@ $.fn.getAddress = function() {
     $postcode.insertAfter('.application_address_post_town');
     $postcode.find('label').text('Postcode');
     $(this).addClass('hidden');
+    $('.confirm').removeClass('hidden');
     e.preventDefault();
   })
   

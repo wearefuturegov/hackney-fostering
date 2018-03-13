@@ -1,0 +1,23 @@
+= form.input :postcode, as: :string, label: 'What is your postcode?', input_html: { class: 'postcode' }
+%p.error.hidden
+
+%p
+  %a#manual_entry{ href: '#' }
+    Enter your address manually
+
+%h3#your_postcode.hidden
+  Your postcode
+  %p.postcode
+    %span
+    %a#change_postcode{ href: '#'}
+      Change
+
+= form.input :addresses, as: :fake_select, collection: [], class: 'hidden', label: 'Select an address', input_html: { class: 'addresses' }, wrapper_html: { class: 'hidden'}
+
+.input
+  %a.button#find_address
+    Find Address
+    
+#address_elements.hidden
+  - @questions.each do |q|
+    = render partial: "shared/#{q['widget']}", locals: { form: form, question: q }

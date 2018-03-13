@@ -15,36 +15,43 @@ module AddressSteps
     enter_postcode('ID1 KFA')
   end
   
-  step 'I should have :number previous address' do |number|
-    @form.reload
-    expect(@form.addresses.count).to eq(number.to_i)
-    @postcodes.each do |p|
-      expect(@form.addresses.find_by(postcode: p)).to_not be_nil
+  step 'I should have :number previous address(es)' do |number|
+    @application.reload
+    expect(@application.addresses.count).to eq(number.to_i)
+    @application.addresses.each_with_index do |address, i|
+      address_should_be_saved address, i
     end
   end
   
   step 'my address should be saved in the database' do
     @application.reload
-    expect(@application.address.line_1).to eq(@line1)
-    expect(@application.address.line_2).to eq(@line2)
-    expect(@application.address.line_3).to eq(@line3)
-    expect(@application.address.post_town).to eq(@post_town)
-    expect(@application.address.postcode).to eq(@postcode)
-    expect(@application.address.date_from).to eq(@date)
+    address_should_be_saved @application.address, 0
   end
   
-  def fill_in_address_and_date_manually
+  def address_should_be_saved(address, index) # rubocop:disable Metrics/AbcSize
+    expect(address.line_1).to eq(@addresses[index][:line1])
+    expect(address.line_2).to eq(@addresses[index][:line2])
+    expect(address.line_3).to eq(@addresses[index][:line3])
+    expect(address.post_town).to eq(@addresses[index][:post_town])
+    expect(address.postcode).to eq(@addresses[index][:postcode])
+    expect(address.date_from).to eq(@addresses[index][:date])
+  end
+  
+  def fill_in_address_and_date_manually # rubocop:disable Metrics/AbcSize
     find('#manual_entry').click
-    @line1 = 'Flat 1'
-    @line2 = '123 Test Street'
-    @line3 = 'Testington'
-    @post_town = 'Test Town'
-    @postcode = 'TEST 123'
-    fill_in 'Address Line 1', with: @line1
-    fill_in 'Address Line 2', with: @line2
-    fill_in 'Address Line 3', with: @line3
-    fill_in 'Address Town', with: @post_town
-    fill_in 'Postcode', with: @postcode
+    address = {}
+    address[:line1] = 'Flat 1'
+    address[:line2] = '123 Test Street'
+    address[:line3] = 'Testington'
+    address[:post_town] = 'Test Town'
+    address[:postcode] = 'TEST 123'
+    fill_in 'Address Line 1', with: address[:line1]
+    fill_in 'Address Line 2', with: address[:line2]
+    fill_in 'Address Line 3', with: address[:line3]
+    fill_in 'Address Town', with: address[:post_town]
+    fill_in 'Postcode', with: address[:postcode]
+    @addresses ||= []
+    @addresses << address
     fill_in_date(6)
     click_on 'Continue'
   end
@@ -61,23 +68,28 @@ module AddressSteps
     wait_for_ajax
   end
   
-  def fill_in_address(click_continue = true)
-    @postcode = 'ID1 1QD'
-    enter_postcode(@postcode)
+  def fill_in_address(click_continue = true) # rubocop:disable Metrics/AbcSize
+    postcode = 'ID1 1QD'
+    enter_postcode(postcode)
     find('#addresses > option:nth-child(2)').click
-    @line1 = find_field('Address Line 1').value
-    @line2 = find_field('Address Line 2').value
-    @line3 = find_field('Address Line 3').value
-    @post_town = find_field('Address Town').value
+    address = {}
+    address[:line1] = find_field('Address Line 1').value
+    address[:line2] = find_field('Address Line 2').value
+    address[:line3] = find_field('Address Line 3').value
+    address[:post_town] = find_field('Address Town').value
+    address[:postcode] = postcode
+    @addresses ||= []
+    @addresses << address
     page.execute_script '$(".confirm")[0].scrollIntoView(true)'
     click_on('Continue') if click_continue
   end
   
   def fill_in_date(years) # rubocop:disable Metrics/AbcSize
-    @date = Date.today - years.to_i.years
-    first("select[name*='date_from(1i)']").find(:option, @date.year).click
-    first("select[name*='date_from(2i)']").find(:option, @date.strftime('%B')).click
-    first("select[name*='date_from(3i)']").find(:option, @date.day).click
+    date = Date.today - years.to_i.years
+    first("select[name*='date_from(1i)']").find(:option, date.year).click
+    first("select[name*='date_from(2i)']").find(:option, date.strftime('%B')).click
+    first("select[name*='date_from(3i)']").find(:option, date.day).click
+    @addresses.last[:date] = date
   end
   
 end

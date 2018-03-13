@@ -285,18 +285,33 @@ form:
           title: When did you move into this property?
           widget: :date
           model: :address
-    previous_address:
-      template: :questions
+    previous_addresses:
+      template: :previous_addresses
       questions:
-        - name: :section
-          heading: Tell us about any previous addresses
-          widget: :title
-        - name: :sub_section
-          title: What is your previous address?
-          widget: :title
-        - name: :name
-          title: Enter your previous postcode
+        - name: :line_1
+          title: Address Line 1
           widget: :input
+          model: :address
+        - name: :line_2
+          title: Address Line 2
+          widget: :input
+          model: :address
+        - name: :line_3
+          title: Address Line 3
+          widget: :input
+          model: :address
+        - name: :post_town
+          title: Address Town
+          widget: :input
+          model: :address
+        - name: :date_from
+          title: When did you move into this property?
+          widget: :date
+          model: :address
+        - name: :date_to
+          title: When did you move out of this property?
+          widget: :date
+          model: :address
     adults_living_at_home:
       template: questions
       questions:

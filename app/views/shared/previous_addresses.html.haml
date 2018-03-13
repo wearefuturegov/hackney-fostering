@@ -1,0 +1,34 @@
+%section.section
+  %h1 Tell us about your previous addresses
+  
+  %p Your previous addresses are essential for successful background checks
+  
+  %table.table#previous_addresses
+    %thead
+      %tr
+        %th
+          Address
+        %th
+          From
+        %th
+          To
+    %tbody
+      - application.addresses.each do |address|
+        %tr
+          %td.address
+            = address.full_address
+          %td.from
+            = address.date_from.to_date(&:short)
+          %td.to
+            = address.date_to.to_date(&:short)
+  
+  %h2 Add an address
+  
+= simple_form_for setup_application(application), url: wizard_path, html: { class: 'previous_addresses' }, method: :put do |f|
+  
+  = f.simple_fields_for :addresses, application.addresses.new do |ff|
+    = render partial: "shared/address_fields", locals: { form: ff }
+    
+  %section.actions
+    = f.submit 'Continue', class: "confirm hidden"
+      
