@@ -262,17 +262,28 @@ form:
           title: Enter your employer or organisation contact number
           widget: :input
     address:
-      template: :questions
+      template: :address
+      model: :address
       questions:
-        - name: :section
-          heading: Tell us about your home
-          widget: :title
-        - name: :sub_section
-          title: What is your current address?
-          widget: :title
-        - name: :postcode
-          title: Enter your postcode
+        - name: :line_1
+          title: Address Line 1
           widget: :input
+          model: :address
+        - name: :line_2
+          title: Address Line 2
+          widget: :input
+          model: :address
+        - name: :line_3
+          title: Address Line 3
+          widget: :input
+          model: :address
+        - name: :post_town
+          title: Address Town
+          widget: :input
+          model: :address
+        - name: :date_from
+          title: When did you move into this property?
+          widget: :date
           model: :address
     address_period:
       template: :questions

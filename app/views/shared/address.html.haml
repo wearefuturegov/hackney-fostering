@@ -1,0 +1,34 @@
+%section.section
+  %h1 Tell us about your home
+  
+  %h2 What is your current address?
+
+= simple_form_for setup_application(application), url: wizard_path, html: { class: 'address_form' }, method: :put do |f|
+
+  = f.fields_for @model, f.object.send(@model).try(:last), child_index: f.object.send(@model).try(:length) do |ff|
+    = ff.input :postcode, as: :string, label: 'What is your postcode?'
+    %p.error.hidden
+    
+    %p
+      %a#manual_entry{ href: '#' }
+        Enter your address manually
+    
+    %h3#your_postcode.hidden
+      Your postcode
+      %p.postcode
+        %span
+        %a#change_postcode{ href: '#'}
+          Change
+    
+    = ff.input :addresses, as: :fake_select, collection: [], class: 'hidden', label: 'Select an address', wrapper_html: { class: 'hidden'}
+    
+    .input
+      %a.button#find_address
+        Find Address
+        
+    #address_elements.hidden
+      - @questions.each do |q|
+        = render partial: "shared/#{q['widget']}", locals: { form: ff, question: q }
+    
+      %section.actions
+        = f.submit 'Continue', class: "confirm"

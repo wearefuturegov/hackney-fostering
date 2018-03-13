@@ -36,6 +36,7 @@ gem 'haml'
 gem 'incredible'
 gem 'decent_exposure', '3.0.0'
 gem 'simple_form'
+gem 'dotenv-rails'
 
 if ENV['USE_LOCAL_GEFF']
   gem 'geff', path: '~/futuregov/geff'
