@@ -20,9 +20,9 @@
           %td.address
             = address.full_address
           %td.from
-            = address.date_from.to_date(&:short)
+            = address.date_from.strftime('%d/%m/%y')
           %td.to
-            = address.date_to.to_date(&:short)
+            = address.date_to.strftime('%d/%m/%y')
           %td
             = link_to 'Edit', edit_application_address_path(application, address)
           %td
