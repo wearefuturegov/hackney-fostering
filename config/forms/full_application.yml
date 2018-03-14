@@ -312,6 +312,14 @@ form:
           title: When did you move out of this property?
           widget: :date
           model: :address
+    your_family:
+      template: questions
+      questions:
+        - name: :section
+          heading: Your family
+          widget: :title
+          intro: It is important that other children and adults in your family and household consent to a foster child joining the family.
+          extra: If there are adults (over the age of 18), they will need to have a DBS background check.
     children_living_at_home:
       template: questions
       questions:

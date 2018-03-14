@@ -7,7 +7,7 @@ Feature: Previous addresses
     
   Scenario: One previous address
     When I fill in my address and a moved in date of 7 years ago
-    Then I should be on the 'children_living_at_home' step
+    Then I should be on the 'your_family' step
     
   Scenario: More than one previous address
     When I fill in my address and a moved in date of 1 year ago
