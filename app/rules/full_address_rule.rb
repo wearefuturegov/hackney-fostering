@@ -3,7 +3,7 @@ class FullAddressRule < Incredible::Rule
   def process
     address_params = params[:application][:address_attributes]
     date = build_date(address_params)
-    @next_step = years_ago(date) >= 5 ? :adults_living_at_home : :previous_addresses
+    @next_step = years_ago(date) >= 5 ? :children_living_at_home : :previous_addresses
   end
   
   def build_date(address_params)

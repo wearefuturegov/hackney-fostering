@@ -312,113 +312,6 @@ form:
           title: When did you move out of this property?
           widget: :date
           model: :address
-    adults_living_at_home:
-      template: questions
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: Are there any oyther adults living in the household?
-          widget: :title
-        - name: name
-          widget: :boolean
-          yes_value: Yes
-          no_value: Yes
-    how_many_adults_living_at_home:
-      template: questions
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: How many other adults are living in the household?
-          widget: :title
-        - name: name
-          title: Enter how many other adults are living in the household
-          widget: :input
-    what_is_adults_name:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: What is the adults full name?
-          widget: :title
-        - name: :name
-          title: First name(s)
-          widget: :input
-        - name: :last_name
-          title: Last name
-          widget: :input
-    what_is_adults_gender:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: What is the adults gender?
-          widget: :title
-        - name: :gender
-          widget: :radio
-          answers:
-            - title: Female
-              value: :female
-              help: help
-            - title: Male
-              value: :male
-              help: help
-            - title: Other
-              value: :other
-              help: help
-    what_is_adults_dob:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: What is the adults date of birth?
-          widget: :title
-        - name: :day
-          title: Day
-          widget: :day
-          help: help
-        - name: :month
-          title: Month
-          widget: :month
-          help: help
-        - name: :year
-          title: Year
-          widget: :year
-          help: help
-    adults_relationship_to_applicant:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: What is the adults relationship to you?
-          widget: :title
-        - name: :sub_section
-          title: Enter adults relationship to you
-          widget: :input
-    adults_living_elsewhere:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: Are there any adults from a previous relationship living elsewhere?
-          widget: :title
-        - name: :sub_section
-          widget: :boolean
-          yes_value: Yes
-          no_value: Yes
     children_living_at_home:
       template: questions
       questions:
@@ -545,6 +438,113 @@ form:
           widget: :title
         - name: :sub_section
           title: Are there any children under 18 from a previous relationship living elsewhere?
+          widget: :title
+        - name: :sub_section
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    adults_living_at_home:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: Are there any oyther adults living in the household?
+          widget: :title
+        - name: name
+          widget: :boolean
+          yes_value: Yes
+          no_value: Yes
+    how_many_adults_living_at_home:
+      template: questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: How many other adults are living in the household?
+          widget: :title
+        - name: name
+          title: Enter how many other adults are living in the household
+          widget: :input
+    what_is_adults_name:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults full name?
+          widget: :title
+        - name: :name
+          title: First name(s)
+          widget: :input
+        - name: :last_name
+          title: Last name
+          widget: :input
+    what_is_adults_gender:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults gender?
+          widget: :title
+        - name: :gender
+          widget: :radio
+          answers:
+            - title: Female
+              value: :female
+              help: help
+            - title: Male
+              value: :male
+              help: help
+            - title: Other
+              value: :other
+              help: help
+    what_is_adults_dob:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults date of birth?
+          widget: :title
+        - name: :day
+          title: Day
+          widget: :day
+          help: help
+        - name: :month
+          title: Month
+          widget: :month
+          help: help
+        - name: :year
+          title: Year
+          widget: :year
+          help: help
+    adults_relationship_to_applicant:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the adults relationship to you?
+          widget: :title
+        - name: :sub_section
+          title: Enter adults relationship to you
+          widget: :input
+    adults_living_elsewhere:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: Are there any adults from a previous relationship living elsewhere?
           widget: :title
         - name: :sub_section
           widget: :boolean

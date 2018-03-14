@@ -10,7 +10,7 @@ module Applications
     def create
       address = application.addresses.create(address_params)
       if address.years_ago >= 5
-        redirect_to application_full_application_path(application_id: application.id, id: :adults_living_at_home)
+        redirect_to application_full_application_path(application_id: application.id, id: :children_living_at_home)
       else
         redirect_to application_full_application_path(application_id: application.id, id: :previous_addresses)
       end
