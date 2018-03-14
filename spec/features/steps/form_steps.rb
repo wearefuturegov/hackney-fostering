@@ -16,6 +16,5 @@ step 'I am answering the :step step of the :form form' do |step, form|
 end
 
 step 'I should be on the :text step' do |step|
-  expected_path = send(@path, @application, step)
-  expect(current_path).to eq expected_path
+  expect(current_path).to match(%r{^.+\/#{step}$})
 end
