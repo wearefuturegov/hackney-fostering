@@ -11,7 +11,7 @@ form:
         - name: :sub_section
           title: What is the childs full name?
           widget: :title
-        - name: :name
+        - name: :first_name
           title: First name(s)
           widget: :input
         - name: :last_name
