@@ -12,15 +12,16 @@ class Application < ApplicationRecord
        primary_language: %i[english polish urdu bengali gujarati arabic french mandarin cantonese tamil turkish],
        employment_type: %i[full_time part_time self_employed director unemployed]
     
-  has_many :people
+  has_many :applications_children
+  has_many :applications_adults
+         
+  has_many :children, through: :applications_children, source: :person
+  has_many :adults, through: :applications_adults, source: :person
   has_many :addresses
   has_many :pets
   
   belongs_to :applicant, class_name: 'Person', foreign_key: :applicant_id, optional: true
   belongs_to :address, class_name: 'Address', foreign_key: :address_id, optional: true
   
-  accepts_nested_attributes_for :people, :addresses, :pets, :applicant, :address
-  
-  scope :children, -> { people.where(type: :child) }
-  scope :adults, -> { people.where(type: :adult) }
+  accepts_nested_attributes_for :children, :adults, :addresses, :pets, :applicant, :address
 end
