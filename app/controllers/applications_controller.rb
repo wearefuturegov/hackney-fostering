@@ -2,11 +2,11 @@ class ApplicationsController < MainController
   expose :application
   
   def show
-    render_wizard nil, template: "shared/#{template}"
+    render_wizard nil, template: "applications/#{template}"
   end
   
   def update
-    application.update_attributes(permitted_params)
+    application.update_attributes(permitted_params) if params[:application]
     render_wizard application
   end
   

@@ -3,12 +3,12 @@ module Applications
     class InformationController < MainController
       include Incredible::Wizard
       expose :application
-      expose :child
+      expose :child, -> { application.children.find(params[:child_id]) }
 
       form 'children'
       
       def show
-        render_wizard nil, template: "shared/#{template}"
+        render_wizard nil, template: "children/#{template}"
       end
       
       def update
@@ -17,7 +17,7 @@ module Applications
       end
       
       def new
-        redirect_to wizard_path(steps.first, application_id: child.id)
+        redirect_to wizard_path(steps.first, child_id: child.id)
       end
     end
   end
