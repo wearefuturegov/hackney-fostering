@@ -182,7 +182,7 @@ form:
         - name: :sub_section
           title: Are you practicing?
           widget: :title
-        - name: :name
+        - name: :practicing
           title: Other
           widget: :radio
           answers:
