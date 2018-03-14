@@ -3,27 +3,30 @@
   
   %p Your previous addresses are essential for successful background checks
   
-  %table.table#previous_addresses
-    %thead
-      %tr
-        %th
-          Address
-        %th
-          From
-        %th
-          To
-        %th
-        %th
-    %tbody
-      = render partial: 'addresses/address', collection: application.addresses
+  - if application.addresses.count > 0
+    %table.table#previous_addresses
+      %thead
+        %tr
+          %th
+            Address
+          %th
+            From
+          %th
+            To
+          %th
+          %th
+      %tbody
+        = render partial: 'addresses/address', collection: application.addresses
           
   %h2 Add an address
   
-= simple_form_for setup_application(application), url: wizard_path, html: { class: 'previous_addresses' }, method: :put do |f|
+  = simple_form_for [application, application.addresses.new], html: { class: 'address_form' } do |form|
+    = render partial: "shared/address", locals: { form: form, hide_to: false }
+    
+    = form.submit 'Add Address', class: 'add-address hidden'
   
-  = f.simple_fields_for :addresses, application.addresses.new do |ff|
-    = render partial: "shared/address_fields", locals: { form: ff }
+= simple_form_for setup_application(application), url: wizard_path, html: { class: 'previous_addresses' }, method: :put do |f|
     
   %section.actions
-    = f.submit 'Continue', class: "confirm hidden"
+    = f.submit 'Continue', class: "confirm"
       

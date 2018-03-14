@@ -45,21 +45,21 @@ module AddressSteps
     address[:line3] = 'Testington'
     address[:post_town] = 'Test Town'
     address[:postcode] = 'TEST 123'
-    fill_in 'Address Line 1', with: address[:line1]
-    fill_in 'Address Line 2', with: address[:line2]
-    fill_in 'Address Line 3', with: address[:line3]
-    fill_in 'Address Town', with: address[:post_town]
+    fill_in 'Line 1', with: address[:line1]
+    fill_in 'Line 2', with: address[:line2]
+    fill_in 'Line 3', with: address[:line3]
+    fill_in 'Town', with: address[:post_town]
     fill_in 'Postcode', with: address[:postcode]
     @addresses ||= []
     @addresses << address
     fill_in_date(6)
-    click_on 'Continue'
+    first('.add-address').click
   end
   
   def fill_in_address_and_date(years = 6)
     fill_in_address(false)
     fill_in_date(years)
-    click_on 'Continue'
+    first('.add-address').click
   end
   
   def enter_postcode(postcode)
@@ -73,15 +73,15 @@ module AddressSteps
     enter_postcode(postcode)
     find('#addresses > option:nth-child(2)').click
     address = {}
-    address[:line1] = find_field('Address Line 1').value
-    address[:line2] = find_field('Address Line 2').value
-    address[:line3] = find_field('Address Line 3').value
-    address[:post_town] = find_field('Address Town').value
+    address[:line1] = find_field('Line 1').value
+    address[:line2] = find_field('Line 2').value
+    address[:line3] = find_field('Line 3').value
+    address[:post_town] = find_field('Town').value
     address[:postcode] = postcode
     @addresses ||= []
     @addresses << address
     page.execute_script '$(".confirm")[0].scrollIntoView(true)'
-    click_on('Continue') if click_continue
+    first('.add-address').click if click_continue
   end
   
   def fill_in_date(years) # rubocop:disable Metrics/AbcSize

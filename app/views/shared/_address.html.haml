@@ -1,4 +1,4 @@
-= form.input :postcode, as: :string, label: 'What is your postcode?', input_html: { class: 'postcode' }
+= form.input :postcode, as: :string, label: 'What is your postcode?', input_html: { id: 'postcode_search' }
 %p.error.hidden
 
 %p
@@ -19,5 +19,4 @@
     Find Address
     
 #address_elements.hidden
-  - @questions.each do |q|
-    = render partial: "shared/#{q['widget']}", locals: { form: form, question: q }
+  = render partial: 'addresses/fields', locals: { form: form, hide_to: hide_to }

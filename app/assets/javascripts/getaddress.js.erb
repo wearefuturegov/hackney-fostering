@@ -5,7 +5,7 @@ $.fn.getAddress = function() {
   var apiKey = '<%= ENV['IDEAL_POSTCODES_API_KEY'] %>'
   var baseUrl = 'https://api.ideal-postcodes.co.uk/v1/postcodes/'
   var $addressSelect = $(this).find('select.addresses');
-  var $postcodeInput = $(this).find('.postcode')
+  var $postcodeInput = $(this).find('#postcode_search')
   var $yourPostcode = $(this).find('#your_postcode');
   var $findAddress = $(this).find('#find_address');
   var $addressElements = $(this).find('#address_elements');
@@ -42,6 +42,7 @@ $.fn.getAddress = function() {
         $option.data('line_2', address.line_2)
         $option.data('line_3', address.line_3)
         $option.data('post_town', address.post_town)
+        $option.data('postcode', address.postcode)
         $option.text(formatAddress(address))
         $addressSelect.append($option)
       })
@@ -64,16 +65,15 @@ $.fn.getAddress = function() {
     $('.line_2').val(data.line_2)
     $('.line_3').val(data.line_3)
     $('.post_town').val(data.post_town)
+    $('.postcode').val(data.postcode)
     $addressElements.removeClass('hidden');
-    $('.confirm').removeClass('hidden');
+    $('.add-address').removeClass('hidden');
   });
   
   $manualEntry.on('click', function(e) {
     $findAddress.addClass('hidden');
     $addressElements.removeClass('hidden');
-    $postcode = $postcodeInput.parent('div').detach();
-    $postcode.insertAfter('.application_address_post_town');
-    $postcode.find('label').text('Postcode');
+    $postcodeInput.parent('div').addClass('hidden');
     $(this).addClass('hidden');
     $('.confirm').removeClass('hidden');
     e.preventDefault();
