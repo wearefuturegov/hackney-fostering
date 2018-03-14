@@ -11,5 +11,8 @@ Rails.application.routes.draw do
     resources :eligibility, controller: 'applications/eligibility'
     resources :full_application, controller: 'applications/full_application'
     resources :addresses, controller: 'applications/addresses'
+    resources :children, controller: 'applications/children', only: %i[new] do
+      resources :information, controller: 'applications/children/information'
+    end
   end
 end
