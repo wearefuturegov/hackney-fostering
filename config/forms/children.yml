@@ -1,0 +1,97 @@
+form:
+  name: 'Children'
+  template: :check_if_you_can_foster
+  steps:
+    name:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the childs full name?
+          widget: :title
+        - name: :name
+          title: First name(s)
+          widget: :input
+        - name: :last_name
+          title: Last name
+          widget: :input
+    gender:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the childs gender?
+          widget: :title
+        - name: :gender
+          widget: :radio
+          answers:
+            - title: Female
+              value: :female
+              help: help
+            - title: Male
+              value: :male
+              help: help
+            - title: Other
+              value: :other
+              help: help
+    dob:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the childs date of birth?
+          widget: :title
+        - name: :day
+          title: Day
+          widget: :day
+          help: help
+        - name: :month
+          title: Month
+          widget: :month
+          help: help
+        - name: :year
+          title: Year
+          widget: :year
+          help: help
+    relationship:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the childs relationship to you?
+          widget: :title
+        - name: :sub_section
+          title: Enter childs relationship to you
+          widget: :input
+    school:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: Where does the child goto school?
+          widget: :title
+        - name: :sub_section
+          title: Enter childs school postcode
+          widget: :input
+    school_contact:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the childs school phone number?
+          widget: :title
+        - name: :sub_section
+          title: Enter childs school phone numbder
+          widget: :input
