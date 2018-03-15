@@ -14,7 +14,7 @@ class Application < ApplicationRecord
     
   has_many :applications_children
   has_many :applications_adults
-  has_many :applications_children_elsewhere, class_name: ApplicationsChildElsewhere
+  has_many :applications_children_elsewhere, class_name: 'ApplicationsChildElsewhere'
          
   has_many :children, through: :applications_children, source: :person
   has_many :adults, through: :applications_adults, source: :person
