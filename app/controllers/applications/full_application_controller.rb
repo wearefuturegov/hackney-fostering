@@ -5,17 +5,13 @@ module Applications
 
     form 'full_application'
     
-    append_before_action :setup_model, only: [:show]
-    
-    def setup_model
-      @model = step_data.instance_variable_get('@data')[:model]
-    end
-    
     private
     
     def permitted_params
       params.require(:application).permit(
         :name_change,
+        :children_at_home,
+        :number_of_children,
         address_attributes: %i[line_1 line_2 line_3 post_town postcode date_from],
         addresses_attributes: %i[line_1 line_2 line_3 post_town postcode date_from date_to]
       )

@@ -9,8 +9,8 @@ form:
           heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: What is the childs full name?
-          widget: :title
+          title: What is the %{number} child's full name?
+          widget: :title_with_name
         - name: :first_name
           title: First name(s)
           widget: :input
@@ -18,26 +18,16 @@ form:
           title: Last name
           widget: :input
     gender:
-      template: :single_question
+      template: :questions
       questions:
         - name: :section
           heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: What is the childs gender?
-          widget: :title
+          title: What is %{name} gender?
+          widget: :title_with_name
         - name: :gender
           widget: :radio
-          answers:
-            - title: Female
-              value: :female
-              help: help
-            - title: Male
-              value: :male
-              help: help
-            - title: Other
-              value: :other
-              help: help
     dob:
       template: :questions
       questions:
@@ -45,20 +35,10 @@ form:
           heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: What is the childs date of birth?
-          widget: :title
-        - name: :day
-          title: Day
-          widget: :day
-          help: help
-        - name: :month
-          title: Month
-          widget: :month
-          help: help
-        - name: :year
-          title: Year
-          widget: :year
-          help: help
+          title: What is %{name}'s date of birth?
+          widget: :title_with_name
+        - name: :date_of_birth
+          widget: :child_dob
     relationship:
       template: :questions
       questions:
@@ -66,11 +46,11 @@ form:
           heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: What is the childs relationship to you?
-          widget: :title
-        - name: :sub_section
+          title: What is %{name}'s relationship to you?
+          widget: :title_with_name
+        - name: :relationship
           title: Enter childs relationship to you
-          widget: :input
+          widget: :select
     school:
       template: :questions
       questions:
@@ -78,20 +58,11 @@ form:
           heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: Where does the child goto school?
-          widget: :title
-        - name: :sub_section
-          title: Enter childs school postcode
+          title: Where does %{name} go to school?
+          widget: :title_with_name
+        - name: :school
+          title: Name of the school
           widget: :input
-    school_contact:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
-          title: What is the childs school phone number?
-          widget: :title
-        - name: :sub_section
-          title: Enter childs school phone numbder
+        - name: :school_contact
+          title: School phone number
           widget: :input

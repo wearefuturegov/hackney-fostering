@@ -1,1 +1,4 @@
-= form.input question['name'], as: :select, collection: question['answers'].map { |q| [q['title'], q['value']]}, label: question['title']
+- if question['answers']
+  = form.input question['name'], as: :select, collection: question['answers'].map { |q| [q['title'], q['value']]}, label: question['title']
+- else
+  = form.input question['name'], as: :select, collection: get_options(form, question), label: question['title']

@@ -1,3 +1,4 @@
+@javascript
 Feature: Children living at home
 
   Background:
@@ -5,6 +6,7 @@ Feature: Children living at home
     And I am answering the children living at home step of the full application form
     
   Scenario: Yes redirects to add children
+    And I choose 2 children
     And I check the 'Yes' option
     Then I should be on the 'name' step
 

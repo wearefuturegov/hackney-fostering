@@ -15,8 +15,8 @@ module Applications
       
       it 'redirects to the form' do
         subject
-        url = new_application_child_information_url(application_id: application.id, child_id: application.children.first.id)
-        expect(response.location).to eq(url)
+        url = new_application_child_information_path(application_id: application.id, child_id: application.children.first.id)
+        expect(response.location).to match(url)
       end
     end
     

@@ -8,7 +8,7 @@ module AddressSteps
   
   step 'I enter another address with a moved in date of :number year(s) ago' do |years|
     fill_in_address
-    fill_in_date(years)
+    fill_in_date_from(years)
   end
   
   step 'I fill in a postcode that does not exist' do
@@ -52,13 +52,13 @@ module AddressSteps
     fill_in 'Postcode', with: address[:postcode]
     @addresses ||= []
     @addresses << address
-    fill_in_date(6)
+    fill_in_date_from(6)
     first('.add-address').click
   end
   
   def fill_in_address_and_date(years = 6)
     fill_in_address(false)
-    fill_in_date(years)
+    fill_in_date_from(years)
     first('.add-address').click
   end
   
@@ -84,12 +84,17 @@ module AddressSteps
     first('.add-address').click if click_continue
   end
   
-  def fill_in_date(years) # rubocop:disable Metrics/AbcSize
+  def fill_in_date_from(years)
+    field = 'date_from'
     date = Date.today - years.to_i.years
-    first("select[name*='date_from(1i)']").find(:option, date.year).click
-    first("select[name*='date_from(2i)']").find(:option, date.strftime('%B')).click
-    first("select[name*='date_from(3i)']").find(:option, date.day).click
+    fill_in_date(field, date)
     @addresses.last[:date] = date
+  end
+  
+  def fill_in_date(field, date)
+    first("select[name*='#{field}(1i)']").find(:option, date.year).click
+    first("select[name*='#{field}(2i)']").find(:option, date.strftime('%B')).click
+    first("select[name*='#{field}(3i)']").find(:option, date.day).click
   end
   
 end

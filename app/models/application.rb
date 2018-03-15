@@ -24,4 +24,10 @@ class Application < ApplicationRecord
   belongs_to :address, class_name: 'Address', foreign_key: :address_id, optional: true
   
   accepts_nested_attributes_for :children, :adults, :addresses, :pets, :applicant, :address
+  
+  validates :number_of_children, presence: true, if: :children_at_home?
+  
+  def children_count
+    ((number_of_children - (number_of_children - children.count)) + 1).ordinalize
+  end
 end
