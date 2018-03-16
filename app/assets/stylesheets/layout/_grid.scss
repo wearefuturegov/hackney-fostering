@@ -5,6 +5,15 @@ body {
 
 header.header {
   @include grid-container;
+  .logo {
+    @include grid-column(2);
+  }
+  .title {
+    @include grid-column(8);
+  }
+  .admin {
+    @include grid-column(2);
+  }
 }
 
 nav.nav {
