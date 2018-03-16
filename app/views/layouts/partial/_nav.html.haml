@@ -1,9 +1,12 @@
-%nav.nav.side
+%nav.nav.side#menu
   %ul
     %li
-      = link_to 'Check your eligibility', '/eligibility'
+      = link_to 'Check your eligibility', '/', class: 'current'
+      %ul
+        %li
+          = link_to 'Begin', '/eligibility'
     %li
-      = link_to 'Tell us about yourself', 'name_change'
+      = link_to 'Tell us about yourself', '#'
       %ul
         %li
           = link_to 'About you', 'name_change'
@@ -18,7 +21,7 @@
         %li
           = link_to 'Your family & friends', 'adults_living_at_home'
     %li
-      = link_to 'Tell about your pets', 'pets'
+      = link_to 'Tell about your pets', '#'
     %li
       = link_to 'Legal History', '#'
     %li
@@ -27,3 +30,9 @@
       = link_to 'Support Carer', '#'
     %li
       = link_to 'Checks & Consent', '#'
+
+:javascript
+  $('#menu ul li a').on('click', function(){
+      $('#menu ul li a.current').removeClass('current');
+      $(this).addClass('current');
+  });
