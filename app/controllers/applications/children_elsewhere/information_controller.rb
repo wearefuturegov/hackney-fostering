@@ -3,6 +3,8 @@ module Applications
     class InformationController < Applications::People::InformationController
       include Incredible::Wizard
       expose :person, -> { application.children_elsewhere.find(params[:children_elsewhere_id]) }
+      
+      form 'children'
     end
   end
 end
