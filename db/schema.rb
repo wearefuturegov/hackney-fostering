@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319130005) do
+ActiveRecord::Schema.define(version: 20180319143832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,30 +75,31 @@ ActiveRecord::Schema.define(version: 20180319130005) do
     t.boolean "adults_living_at_home"
     t.boolean "adults_living_elsewhere"
     t.integer "number_of_adults_elsewhere"
+    t.integer "number_of_pets"
   end
 
   create_table "applications_adults", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "index_applications_adults_on_application_id_and_person_id"
+    t.index ["application_id", "person_id"], name: "index_applications_adults_on_application_id_and_person_id"
   end
 
   create_table "applications_adults_elsewhere", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "adults_elsewhere_index"
+    t.index ["application_id", "person_id"], name: "adults_elsewhere_index"
   end
 
   create_table "applications_children", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "index_applications_children_on_application_id_and_person_id"
+    t.index ["application_id", "person_id"], name: "index_applications_children_on_application_id_and_person_id"
   end
 
   create_table "applications_children_elsewhere", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "children_elsewhere_index"
+    t.index ["application_id", "person_id"], name: "children_elsewhere_index"
   end
 
   create_table "people", force: :cascade do |t|
@@ -129,6 +130,21 @@ ActiveRecord::Schema.define(version: 20180319130005) do
     t.bigint "application_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "age"
+    t.string "where_allowed"
+    t.string "areas"
+    t.string "sleeping_area"
+    t.string "feeding_area"
+    t.boolean "safe_around_food"
+    t.string "temperament"
+    t.string "toilet"
+    t.boolean "bitten_or_hurt"
+    t.text "bitten_or_hurt_detail"
+    t.string "vet"
+    t.boolean "vaccinations"
+    t.string "children_experience"
+    t.text "conflict"
+    t.text "conflict_resolution"
     t.index ["application_id"], name: "index_pets_on_application_id"
   end
 
