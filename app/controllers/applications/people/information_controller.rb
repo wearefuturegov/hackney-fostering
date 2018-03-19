@@ -6,8 +6,6 @@ module Applications
       expose :person, -> { application.people.find(params[:person_id]) }
       
       prepend_before_action :update_person
-
-      form 'people'
       
       def show
         render_wizard nil, template: "people/#{template}"

@@ -1,0 +1,53 @@
+form:
+  name: 'Adults'
+  template: :check_if_you_can_foster
+  steps:
+    name:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is the %{number} adult's full name?
+          widget: :title_with_name
+        - name: :first_name
+          title: First name(s)
+          widget: :input
+        - name: :last_name
+          title: Last name
+          widget: :input
+    gender:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is %{name} gender?
+          widget: :title_with_name
+        - name: :gender
+          widget: :radio
+    dob:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is %{name}'s date of birth?
+          widget: :title_with_name
+        - name: :date_of_birth
+          widget: :dob
+    relationship:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about who lives in your home
+          widget: :title
+        - name: :sub_section
+          title: What is %{name}'s relationship to you?
+          widget: :title_with_name
+        - name: :relationship
+          title: Enter adult's relationship to you
+          widget: :select
