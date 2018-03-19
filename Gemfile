@@ -66,6 +66,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'launchy'
   gem 'ffaker'
+  gem 'database_cleaner'
 end
 
 group :development do
