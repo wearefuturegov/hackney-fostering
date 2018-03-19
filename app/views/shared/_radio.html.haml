@@ -1,4 +1,0 @@
-- if question['answers']
-  = form.input question['name'], as: :radio_buttons, collection: question['answers'].map { |q| [q['title'], q['value']]}, label: question['title']
-- else
-  = form.input question['name'], as: :radio_buttons, collection: form.object.class.send(question['name'].to_s.pluralize).keys, label: question['title']

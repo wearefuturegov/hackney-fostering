@@ -1,0 +1,11 @@
+%tr
+  %td.address
+    = address.full_address
+  %td.from
+    = address.date_from&.strftime('%d/%m/%y')
+  %td.to
+    = address.date_to&.strftime('%d/%m/%y')
+  %td
+    = link_to 'Edit', edit_application_address_path(application, address)
+  %td
+    = button_to 'Delete', application_address_path(application, address), method: :delete, form_class: 'delete_address' ,data: { confirm: 'Are you sure you want to delete this address?' }

@@ -1,0 +1,44 @@
+require 'rails_helper'
+
+module Applications
+  describe AddressesController, type: :controller do # rubocop:disable Metrics/BlockLength
+    let!(:application) { Fabricate(:application) }
+    let!(:address) { Fabricate(:address, application: application) }
+    
+    describe 'DELETE destroy' do
+      it 'deletes an address' do
+        expect do
+          delete :destroy, params: { application_id: application.id, id: address.id }
+        end.to change { Address.count }.by(-1)
+      end
+    end
+    
+    describe 'PUT update' do
+      it 'updates an address' do
+        put :update, params: {
+          application_id: application.id,
+          id: address.id,
+          address: {
+            line_1: '123 Fake Street'
+          }
+        }
+        
+        address.reload
+        expect(address.line_1).to eq('123 Fake Street')
+      end
+      
+      it 'redirects back to the form' do
+        expect(
+          (put :update, params: {
+            application_id: application.id,
+            id: address.id,
+            address: {
+              line_1: '123 Fake Street'
+            }
+          })
+        ).to redirect_to application_full_application_path(application_id: application.id, id: :previous_addresses)
+      end
+    end
+    
+  end
+end

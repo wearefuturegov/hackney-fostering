@@ -1,0 +1,4 @@
+- if question['answers']
+  = form.input question['name'], as: :radio_buttons, collection: question['answers'].map { |q| [q['title'], q['value']]}, label: question['title']
+- else
+  = form.input question['name'], as: :radio_buttons, collection: get_options(form, question), label: question['title']

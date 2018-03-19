@@ -1,0 +1,9 @@
+= simple_form_for setup_application(application), url: wizard_path, method: :put do |f|
+  - @questions.each do |q|
+    - if q['model']
+      = f.fields_for q['model'], f.object.send(q['model']).try(:last), child_index: f.object.send(q['model']).try(:length) do |ff|
+        = render partial: q['widget'].to_s, locals: { form: ff, question: q }
+    - else
+      = render partial: q['widget'].to_s, locals: { form: f, question: q }
+  %section.actions
+    = f.submit 'Continue', class: "confirm"

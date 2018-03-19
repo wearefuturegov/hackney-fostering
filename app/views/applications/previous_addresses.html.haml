@@ -1,0 +1,32 @@
+%section.section
+  %h1 Tell us about your previous addresses
+  
+  %p Your previous addresses are essential for successful background checks
+  
+  - if application.addresses.count > 0
+    %table.table#previous_addresses
+      %thead
+        %tr
+          %th
+            Address
+          %th
+            From
+          %th
+            To
+          %th
+          %th
+      %tbody
+        = render partial: 'addresses/address', collection: application.addresses
+          
+  %h2 Add an address
+  
+  = simple_form_for [application, application.addresses.new], html: { class: 'address_form' } do |form|
+    = render partial: 'address', locals: { form: form, hide_to: false }
+    
+    = form.submit 'Add Address', class: 'add-address hidden'
+  
+= simple_form_for setup_application(application), url: wizard_path, html: { class: 'previous_addresses' }, method: :put do |f|
+    
+  %section.actions
+    = f.submit 'Continue', class: "confirm"
+      

@@ -1,9 +1,3 @@
-placeholder :step do
-  match(/(.*)/) do |step|
-    step.split(' ').join('_')
-  end
-end
-
 module ApplicationSteps
   step :fill_in_radio_button, 'I check the :answer option'
   step :answer_question, 'I answer :text to the :text question'
@@ -25,7 +19,8 @@ module ApplicationSteps
     click_on 'Continue'
   end
   
-  def complete_form # rubocop:disable Metrics/AbcSize
+  def complete_form # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+    visit application_eligibility_index_path(@application)
     @form = Fabricate.build(:application)
     fill_in_radio_button(@form.type_of_fostering)
     fill_in_radio_button(@form.spare_room)
@@ -60,22 +55,13 @@ module ApplicationSteps
     expect(application.email).to eq(@form.email)
   end
   
-  step 'I have started a form' do
-    @form = Fabricate(:blank_application)
-    visit application_eligibility_index_path(@form)
+  step 'I have started an application' do
+    @application = Fabricate(:blank_application)
   end
 
   step 'my response should be stored' do
-    @form.reload
-    expect(@form.type_of_fostering).to eq('emergency_fostering')
-  end
-
-  step 'I am answering the :step step' do |step|
-    visit application_eligibility_path(@form, step)
-  end
-
-  step 'I should be on the :text step' do |step|
-    expect(current_path).to eq application_eligibility_path(@form, step)
+    @application.reload
+    expect(@application.type_of_fostering).to eq('emergency_fostering')
   end
 end
 
