@@ -5,7 +5,7 @@ module ApplicationSteps
   
   def fill_in_radio_button(answer)
     first('label', text: answer).click
-    click_on 'Continue'
+    click_on I18n.t('continue')
   end
   
   def answer_question(answer, question)
@@ -16,7 +16,7 @@ module ApplicationSteps
     answers.each do |a|
       first("input[value='#{a}']", visible: false).click
     end
-    click_on 'Continue'
+    click_on I18n.t('continue')
   end
   
   def complete_form # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
@@ -31,12 +31,12 @@ module ApplicationSteps
     fill_in_radio_button(@form.be_in_touch)
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
     answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
-    click_on 'Continue'
+    click_on I18n.t('continue')
     answer_question(@form.address.postcode, 'application_address_attributes_postcode')
-    click_on 'Continue'
+    click_on I18n.t('continue')
     fill_in_radio_button(@form.contacting_you)
     answer_question(@form.email, 'application_email')
-    click_on 'Continue'
+    click_on I18n.t('continue')
   end
   
   step 'my application should be stored' do

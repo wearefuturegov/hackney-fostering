@@ -6,4 +6,4 @@
     - else
       = render partial: q['widget'].to_s, locals: { form: f, question: q }
   %section.actions
-    = f.submit 'Save & continue', class: "confirm"
+    = f.submit t('continue'), class: "confirm"
