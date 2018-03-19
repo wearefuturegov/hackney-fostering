@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     resources :children, controller: 'applications/children', only: %i[new] do
       resources :information, controller: 'applications/children/information'
     end
+    resources :children_elsewhere, controller: 'applications/children_elsewhere', only: %i[new] do
+      resources :information, controller: 'applications/children_elsewhere/information'
+    end
   end
 end

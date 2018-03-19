@@ -1,12 +1,24 @@
 module ChildrenSteps
   
   step 'I choose :integer child(ren)' do |num|
-    find("#application_number_of_children > option[value='#{num}']").click
+    choose_select('number_of_children', num)
+  end
+  
+  step 'I choose :integer child(ren) living elsewhere' do |num|
+    choose_select('number_of_children_elsewhere', num)
+  end
+  
+  step 'I fill in the details for :integer child(ren) living elsewhere' do |count|
+    first('label', text: 'Yes').click
+    choose_select('number_of_children_elsewhere', count.to_i)
+    click_on 'Continue'
+    @people = []
+    count.to_i.times { fill_in_child_details }
   end
   
   step 'I fill in the details for :integer child(ren)' do |count|
     first('label', text: 'Yes').click
-    find("#application_number_of_children > option:nth-child(#{count.to_i + 1})").click
+    choose_select('number_of_children', count.to_i)
     click_on 'Continue'
     @people = []
     count.to_i.times { fill_in_child_details }
@@ -17,6 +29,17 @@ module ChildrenSteps
     @application.children.each_with_index do |person, i|
       person_should_be_saved person, i
     end
+  end
+  
+  step 'I should have :integer child(ren) living elsewhere recorded' do |count|
+    expect(@application.children_elsewhere.count).to eq(count.to_i)
+    @application.children_elsewhere.each_with_index do |person, i|
+      person_should_be_saved person, i
+    end
+  end
+  
+  def choose_select(field, option)
+    find("#application_#{field} > option[value='#{option}']").click
   end
   
   def person_should_be_saved(person, index) # rubocop:disable Metrics/AbcSize

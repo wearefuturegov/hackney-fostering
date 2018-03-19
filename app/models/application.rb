@@ -33,4 +33,8 @@ class Application < ApplicationRecord
   def children_count
     ((number_of_children - (number_of_children - children.count)) + 1).ordinalize
   end
+  
+  def children_elsewhere_count
+    ((number_of_children_elsewhere - (number_of_children_elsewhere - children_elsewhere.count)) + 1).ordinalize
+  end
 end

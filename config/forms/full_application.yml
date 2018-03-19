@@ -337,7 +337,7 @@ form:
           title: How many?
           widget: :number_select
           min_value: 1
-          max_value: 10  
+          max_value: 10
     children_living_elsewhere:
       template: :questions
       questions:
@@ -347,10 +347,15 @@ form:
         - name: :sub_section
           title: Are there any children under 18 from a previous relationship living elsewhere?
           widget: :title
-        - name: :sub_section
+        - name: :children_living_elsewhere
           widget: :boolean
           yes_value: Yes
-          no_value: Yes
+          no_value: No
+        - name: :number_of_children_elsewhere
+          title: How many?
+          widget: :number_select
+          min_value: 1
+          max_value: 10
     adults_living_at_home:
       template: questions
       questions:
