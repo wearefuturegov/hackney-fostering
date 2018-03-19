@@ -1,0 +1,198 @@
+form:
+  name: 'Pets'
+  template: :check_if_you_can_foster
+  steps:
+    type:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What types of pets do you have?
+          widget: :title
+        - name: :pet_type
+          title: Enter the type of pet you have
+          widget: :input
+    size:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What is the size of your pet?
+          widget: :title
+        - name: :size
+          widget: :radio
+    neutered:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Has your pet been neutered?
+          widget: :title
+        - name: :neutered
+          widget: :boolean
+    age:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What are the age of your pets?
+          widget: :title
+        - name: :age
+          title: Enter your pets age
+          widget: :input
+    where_allowed:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where in your house do you allow your pets?
+          widget: :title
+        - name: :where_allowed
+          title: Enter where in your house you allow your pets
+          widget: :input
+    areas:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Do you have any areas in the house only for your pets?
+          widget: :title
+        - name: :areas
+          title: ''
+          widget: :input
+    sleeping_area:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where does your pet sleep?
+          widget: :title
+        - name: :sleeping_area
+          title: Enter where you pet sleeps
+          widget: :input
+    feeding_area:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where is your pet fed?
+          widget: :title
+        - name: :feeding_area
+          title: Enter where your pet feeds
+          widget: :input
+    safe_around_food:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Can food be removed from your pet safely?
+          widget: :title
+        - name: :safe_around_food
+          widget: :boolean
+          yes_value: Yes
+          no_value: No
+    temperament:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What is the temperament of your pet?
+          widget: :title
+        - name: :temperament
+          title: e.g. Boisterous / Playful / Disobedient/ Placid etc
+          widget: :input
+    toilet:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where does the pet go to the toilet?
+          widget: :title
+        - name: :toilet
+          title: ''
+          widget: :input
+    bitten_or_hurt:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Has the pet ever bitten or hurt anyone?
+          widget: :title
+        - name: :bitten_or_hurt
+          widget: :boolean
+        - name: :sub_section
+          title: If so, please give details and outline what treatment was needed.
+          widget: :title
+        - name: :bitten_or_hurt_detail
+          title: ''
+          widget: :textarea
+    vet:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Is the pet registered with a vet?
+          widget: :title
+        - name: :vet
+          widget: :boolean
+        - name: :sub_section
+          title: Does it have vaccinations, worming/flea treatment at required intervals?
+          widget: :title
+        - name: :vaccinations
+          widget: :boolean
+    contact_with_children:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title:  What contact/experience has the pet had with children? (including those staying overnight in the house)
+          widget: :title
+        - name: :children_experience
+          title: ''
+          widget: :textarea
+    conflict:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: How would you recognise conflict between the pet and child/infant?
+          widget: :title
+        - name: :conflict
+          title: ''
+          widget: :textarea
+        - name: :sub_section
+          title: If there was a conflict, what would you do?
+          widget: :title
+        - name: :conflict_resolution
+          title: ''
+          widget: :textarea

@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   resources :what, only: [:index]
   resources :why, only: [:index]
   resources :who, only: [:index]
@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     end
     resources :adults_elsewhere, controller: 'applications/adults_elsewhere', only: %i[new] do
       resources :information, controller: 'applications/adults_elsewhere/information'
+    end
+    resources :pets, controller: 'applications/pets', only: %i[new] do
+      resources :information, controller: 'applications/pets/information'
     end
   end
 end
