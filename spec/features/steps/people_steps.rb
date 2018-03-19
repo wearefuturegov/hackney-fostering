@@ -1,4 +1,4 @@
-module ChildrenSteps
+module PeopleSteps
   
   step 'I choose :integer child(ren)' do |num|
     choose_select('number_of_children', num)
@@ -6,6 +6,10 @@ module ChildrenSteps
   
   step 'I choose :integer child(ren) living elsewhere' do |num|
     choose_select('number_of_children_elsewhere', num)
+  end
+  
+  step 'I choose :integer adult(s)' do |num|
+    choose_select('number_of_adults', num)
   end
   
   step 'I fill in the details for :integer child(ren) living elsewhere' do |count|
@@ -72,5 +76,5 @@ module ChildrenSteps
 end
 
 RSpec.configure do |config|
-  config.include ChildrenSteps, type: :feature
+  config.include PeopleSteps, type: :feature
 end
