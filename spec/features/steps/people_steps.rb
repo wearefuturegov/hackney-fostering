@@ -12,6 +12,10 @@ module PeopleSteps
     choose_select('number_of_adults', num)
   end
   
+  step 'I choose :integer adult(s) living elsewhere' do |num|
+    choose_select('number_of_adults_elsewhere', num)
+  end
+  
   step 'I fill in the details for :integer child(ren) living elsewhere' do |count|
     first('label', text: 'Yes').click
     choose_select('number_of_children_elsewhere', count.to_i)

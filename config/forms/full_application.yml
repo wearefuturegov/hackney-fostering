@@ -363,7 +363,7 @@ form:
           heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: Are there any oyther adults living in the household?
+          title: Are there any other adults living in the household?
           widget: :title
         - name: :adults_living_at_home
           widget: :boolean
@@ -383,10 +383,15 @@ form:
         - name: :sub_section
           title: Are there any adults from a previous relationship living elsewhere?
           widget: :title
-        - name: :sub_section
+        - name: :adults_living_elsewhere
           widget: :boolean
           yes_value: Yes
           no_value: Yes
+        - name: :number_of_adults_elsewhere
+          title: How many?
+          widget: :number_select
+          min_value: 1
+          max_value: 10
     pets:
       template: :single_question
       questions:
