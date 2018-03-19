@@ -28,5 +28,5 @@
 = simple_form_for setup_application(application), url: wizard_path, html: { class: 'previous_addresses' }, method: :put do |f|
     
   %section.actions
-    = f.submit 'Continue', class: "confirm"
+    = f.submit t('continue'), class: "confirm"
       

@@ -11,7 +11,7 @@ module ChildrenSteps
   step 'I fill in the details for :integer child(ren) living elsewhere' do |count|
     first('label', text: 'Yes').click
     choose_select('number_of_children_elsewhere', count.to_i)
-    click_on 'Continue'
+    click_on I18n.t('continue')
     @people = []
     count.to_i.times { fill_in_child_details }
   end
@@ -19,7 +19,7 @@ module ChildrenSteps
   step 'I fill in the details for :integer child(ren)' do |count|
     first('label', text: 'Yes').click
     choose_select('number_of_children', count.to_i)
-    click_on 'Continue'
+    click_on I18n.t('continue')
     @people = []
     count.to_i.times { fill_in_child_details }
   end
@@ -57,16 +57,16 @@ module ChildrenSteps
     @people << @person
     fill_in 'First name(s)', with: @person.first_name
     fill_in 'Last name', with: @person.last_name
-    click_on 'Continue'
+    click_on I18n.t('continue')
     first('label', text: @person.gender).click
-    click_on 'Continue'
+    click_on I18n.t('continue')
     fill_in_date('date_of_birth', @person.date_of_birth)
-    click_on 'Continue'
+    click_on I18n.t('continue')
     find("#person_relationship > option[value=#{@person.relationship}]").click
-    click_on 'Continue'
+    click_on I18n.t('continue')
     fill_in 'person_school', with: @person.school
     fill_in 'person_school_contact', with: @person.school_contact
-    click_on 'Continue'
+    click_on I18n.t('continue')
   end
   
 end
