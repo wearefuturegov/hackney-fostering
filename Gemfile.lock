@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/wearefuturegov/geff
-  revision: 58317f0f0203e80d36a458a4dcfa2fccbb3b797f
+  revision: 30fda0cbb7598483e69e98c6aa6cdabf542f4935
   branch: basic
   specs:
     geff (0.1.0)
