@@ -1,12 +1,10 @@
 module Applications
-  class ChildrenElsewhereController < MainController
+  class ChildrenElsewhereController < PeopleController
     expose :application
-    
-    def new
-      child = application.children_elsewhere.create
-      path = new_application_children_elsewhere_information_path(application_id: application.id, children_elsewhere_id: child.id)
-      redirect_to path
+    expose :child, -> { application.children_elsewhere.create }
+
+    def path
+      new_application_children_elsewhere_information_path(application_id: application.id, children_elsewhere_id: child.id)
     end
-    
   end
 end
