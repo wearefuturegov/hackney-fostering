@@ -43,4 +43,8 @@ class Application < ApplicationRecord
   def adults_count
     ((number_of_adults - (number_of_adults - adults.count)) + 1).ordinalize
   end
+  
+  def adults_elsewhere_count
+    ((number_of_adults_elsewhere - (number_of_adults_elsewhere - adults_elsewhere.count)) + 1).ordinalize
+  end
 end

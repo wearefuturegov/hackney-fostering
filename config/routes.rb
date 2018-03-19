@@ -20,5 +20,8 @@ Rails.application.routes.draw do
     resources :adults, controller: 'applications/adults', only: %i[new] do
       resources :information, controller: 'applications/adults/information'
     end
+    resources :adults_elsewhere, controller: 'applications/adults_elsewhere', only: %i[new] do
+      resources :information, controller: 'applications/adults_elsewhere/information'
+    end
   end
 end
