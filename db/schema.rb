@@ -81,25 +81,25 @@ ActiveRecord::Schema.define(version: 20180319143832) do
   create_table "applications_adults", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index ["application_id", "person_id"], name: "index_applications_adults_on_application_id_and_person_id"
+    t.index %w[application_id person_id], name: "index_applications_adults_on_application_id_and_person_id"
   end
 
   create_table "applications_adults_elsewhere", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index ["application_id", "person_id"], name: "adults_elsewhere_index"
+    t.index %w[application_id person_id], name: "adults_elsewhere_index"
   end
 
   create_table "applications_children", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index ["application_id", "person_id"], name: "index_applications_children_on_application_id_and_person_id"
+    t.index %w[application_id person_id], name: "index_applications_children_on_application_id_and_person_id"
   end
 
   create_table "applications_children_elsewhere", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index ["application_id", "person_id"], name: "children_elsewhere_index"
+    t.index %w[application_id person_id], name: "children_elsewhere_index"
   end
 
   create_table "people", force: :cascade do |t|
