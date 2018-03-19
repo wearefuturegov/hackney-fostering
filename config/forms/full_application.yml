@@ -421,5 +421,47 @@ form:
           widget: :title
         - name: :breed_pets
           widget: :boolean
-          yes_value: Yes
-          no_value: Yes
+    where_breed_pets:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Where does the breeding take place?
+          widget: :title
+        - name: :where_breed_pets
+          widget: :input
+    offspring:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What happens to any offspring? Where are they kept?
+          widget: :title
+        - name: :offspring_kept
+          widget: :textarea
+    breeding_risks:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What actions will you take to reduce any risks before a child is placed?
+          widget: :title
+        - name: :breeding_risks
+          widget: :textarea
+    breeding_other:
+      template: :single_question
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: Any other information you consider to be relevant?
+          widget: :title
+        - name: :breeding_other
+          widget: :textarea
