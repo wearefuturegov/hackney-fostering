@@ -6,7 +6,7 @@
 = simple_form_for setup_application(application), url: wizard_path, html: { class: 'address_form' }, method: :put do |f|
 
   = f.fields_for :address, application.address do |ff|
-    = render partial: "shared/address", locals: { form: ff, hide_to: true }
+    = render partial: 'address', locals: { form: ff, hide_to: true }
     
   %section.actions
     = f.submit 'Continue', class: "confirm add-address hidden"

@@ -11,4 +11,4 @@
   /   = question['notice']
 
 %h2
-  = question['title'] % { name: child.first_name, number: application.children_count }
+  = question['title'] % { name: child.first_name, number: application.send(:count_method) }
