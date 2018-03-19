@@ -17,7 +17,7 @@ module Applications
         :adults_living_at_home,
         :number_of_adults,
         :adults_living_elsewhere,
-        :number_of_adults,
+        :number_of_adults_elsewhere,
         address_attributes: %i[line_1 line_2 line_3 post_town postcode date_from],
         addresses_attributes: %i[line_1 line_2 line_3 post_town postcode date_from date_to]
       )

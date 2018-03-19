@@ -40,6 +40,14 @@ module PeopleSteps
     count.to_i.times { fill_in_adult_details }
   end
   
+  step 'I fill in the details for :integer adult(s) living elsewhere' do |count|
+    first('label', text: 'Yes').click
+    choose_select('number_of_adults_elsewhere', count.to_i)
+    click_on I18n.t('continue')
+    @people = []
+    count.to_i.times { fill_in_adult_details }
+  end
+  
   step 'I should have :integer child(ren) recorded' do |count|
     expect(@application.children.count).to eq(count.to_i)
     @application.children.each_with_index do |person, i|
@@ -57,6 +65,13 @@ module PeopleSteps
   step 'I should have :integer adult(s) recorded' do |count|
     expect(@application.adults.count).to eq(count.to_i)
     @application.adults.each_with_index do |person, i|
+      person_should_be_saved person, i
+    end
+  end
+  
+  step 'I should have :integer adult(s) living elsewhere recorded' do |count|
+    expect(@application.adults_elsewhere.count).to eq(count.to_i)
+    @application.adults_elsewhere.each_with_index do |person, i|
       person_should_be_saved person, i
     end
   end
