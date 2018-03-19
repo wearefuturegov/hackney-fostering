@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319112335) do
+ActiveRecord::Schema.define(version: 20180319130005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,12 +73,20 @@ ActiveRecord::Schema.define(version: 20180319112335) do
     t.boolean "children_living_elsewhere"
     t.integer "number_of_children_elsewhere"
     t.boolean "adults_living_at_home"
+    t.boolean "adults_living_elsewhere"
+    t.integer "number_of_adults_elsewhere"
   end
 
   create_table "applications_adults", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
     t.index ["application_id", "person_id"], name: "index_applications_adults_on_application_id_and_person_id"
+  end
+
+  create_table "applications_adults_elsewhere", id: false, force: :cascade do |t|
+    t.bigint "application_id", null: false
+    t.bigint "person_id", null: false
+    t.index ["application_id", "person_id"], name: "adults_elsewhere_index"
   end
 
   create_table "applications_children", id: false, force: :cascade do |t|
