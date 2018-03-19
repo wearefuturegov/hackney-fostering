@@ -1,15 +1,15 @@
 placeholder :person_type do
-  match(/(.*)/) do |type|
-    case type
-    when /child(ren)?$/
-      'children'
-    when /child(ren)? living elsewhere$/
-      'children_elsewhere'
-    when /adults?$/
-      'adults'
-    when /adults? living elsewhere$/
-      'adults_elsewhere'
-    end
+  match(/child(ren)?$/) do
+    'children'
+  end
+  match(/child(ren)? living elsewhere$/) do
+    'children_elsewhere'
+  end
+  match(/adults?$/) do
+    'adults'
+  end
+  match(/adults? living elsewhere$/) do
+    'adults_elsewhere'
   end
 end
 

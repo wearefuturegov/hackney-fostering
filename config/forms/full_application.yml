@@ -401,172 +401,25 @@ form:
         - name: :sub_section
           title: Do you have any pets?
           widget: :title
-        - name: name
+        - name: :have_pets
           widget: :boolean
           yes_value: Yes
           no_value: Yes
-    how_many_pets:
+        - name: :number_of_pets
+          title: How many?
+          widget: :number_select
+          min_value: 1
+          max_value: 10
+    breed_pets:
       template: :single_question
       questions:
         - name: :section
           heading: Tell us about your pets
           widget: :title
         - name: :sub_section
-          title: How many pets do you have?
+          title: Do you breed pets?
           widget: :title
-        - name: :sub_section
-          title: Enter how many pets you have
-          widget: :input
-    pet_types:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: What types of pets do you have?
-          widget: :title
-        - name: :sub_section
-          title: Enter the type of pet you have
-          widget: :input
-    pet_size:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: What are the size of your pets?
-          widget: :title
-        - name: :size
-          widget: :checkbox
-          answers:
-            - title: Small
-              value: :small
-              help: help
-            - title: Medium
-              value: :medium
-              help: help
-            - title: Large
-              value: :large
-              help: help
-    pet_neutered:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: Have your pets been neutered?
-          widget: :title
-        - name: :size
-          widget: :radio
-          answers:
-            - title: All of them
-            - title: Some of them
-            - title: None of them
-    pet_age:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: What are the age of your pets?
-          widget: :title
-        - name: :sub_section
-          title: Enter your pets age
-          widget: :input
-    pet_roam:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: Where in your house do you allow your pets?
-          widget: :title
-        - name: :sub_section
-          title: Enter where in your house you allow your pets
-          widget: :input
-    pet_exclusive:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: Do you have any areas in the house only for your pets?
-          widget: :title
-        - name: name
+        - name: :breed_pets
           widget: :boolean
           yes_value: Yes
           no_value: Yes
-    pet_location:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: Where in your house is exclusive for your pet?
-          widget: :title
-        - name: :sub_section
-          title: Enter where in your house is exclusive for your pets
-          widget: :input
-    pet_sleep:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: Where does your pet sleep?
-          widget: :title
-        - name: :sub_section
-          title: Enter where you pet sleeps
-          widget: :input
-    pet_feeding:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: Where is your pet fed?
-          widget: :title
-        - name: :sub_section
-          title: Enter where your pet feeds
-          widget: :input
-    pet_feeding_safe:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: Can food be removed from your pet safely?
-          widget: :title
-        - name: name
-          widget: :boolean
-          yes_value: Yes
-          no_value: Yes
-    pet_temperament:
-      template: :single_question
-      questions:
-        - name: :section
-          heading: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: What is the temperament of your pet?
-          widget: :title
-        - name: :size
-          widget: :radio
-          answers:
-            - title: Disobedient
-            - title: Protective
-            - title: Possessive
-            - title: Boisterous
-            - title: Playful
-            - title: Placid
-            - title: Docile
