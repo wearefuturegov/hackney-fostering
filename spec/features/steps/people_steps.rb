@@ -1,77 +1,44 @@
+placeholder :person_type do
+  match(/(.*)/) do |type|
+    case type
+    when /child(ren)?$/
+      'children'
+    when /child(ren)? living elsewhere$/
+      'children_elsewhere'
+    when /adults?$/
+      'adults'
+    when /adults? living elsewhere$/
+      'adults_elsewhere'
+    end
+  end
+end
+
 module PeopleSteps
   
-  step 'I choose :integer child(ren)' do |num|
-    choose_select('number_of_children', num)
+  step :choose_number_of_people, 'I choose :integer :person_type'
+  step :fill_in_people, 'I fill in the details for :integer :person_type'
+  step :should_have_people, 'I should have :integer :person_type recorded'
+
+  def choose_number_of_people(num, type)
+    choose_select("number_of_#{type}", num)
   end
   
-  step 'I choose :integer child(ren) living elsewhere' do |num|
-    choose_select('number_of_children_elsewhere', num)
-  end
-  
-  step 'I choose :integer adult(s)' do |num|
-    choose_select('number_of_adults', num)
-  end
-  
-  step 'I choose :integer adult(s) living elsewhere' do |num|
-    choose_select('number_of_adults_elsewhere', num)
-  end
-  
-  step 'I fill in the details for :integer child(ren) living elsewhere' do |count|
+  def fill_in_people(count, type)
     first('label', text: 'Yes').click
-    choose_select('number_of_children_elsewhere', count.to_i)
+    choose_number_of_people(count.to_i, type)
     click_on I18n.t('continue')
     @people = []
-    count.to_i.times { fill_in_child_details }
-  end
-  
-  step 'I fill in the details for :integer child(ren)' do |count|
-    first('label', text: 'Yes').click
-    choose_select('number_of_children', count.to_i)
-    click_on I18n.t('continue')
-    @people = []
-    count.to_i.times { fill_in_child_details }
-  end
-  
-  step 'I fill in the details for :integer adult(s)' do |count|
-    first('label', text: 'Yes').click
-    choose_select('number_of_adults', count.to_i)
-    click_on I18n.t('continue')
-    @people = []
-    count.to_i.times { fill_in_adult_details }
-  end
-  
-  step 'I fill in the details for :integer adult(s) living elsewhere' do |count|
-    first('label', text: 'Yes').click
-    choose_select('number_of_adults_elsewhere', count.to_i)
-    click_on I18n.t('continue')
-    @people = []
-    count.to_i.times { fill_in_adult_details }
-  end
-  
-  step 'I should have :integer child(ren) recorded' do |count|
-    expect(@application.children.count).to eq(count.to_i)
-    @application.children.each_with_index do |person, i|
-      person_should_be_saved person, i
+    if type.match?(/child/)
+      count.to_i.times { fill_in_child_details }
+    else
+      count.to_i.times { fill_in_adult_details }
     end
   end
   
-  step 'I should have :integer child(ren) living elsewhere recorded' do |count|
-    expect(@application.children_elsewhere.count).to eq(count.to_i)
-    @application.children_elsewhere.each_with_index do |person, i|
-      person_should_be_saved person, i
-    end
-  end
-  
-  step 'I should have :integer adult(s) recorded' do |count|
-    expect(@application.adults.count).to eq(count.to_i)
-    @application.adults.each_with_index do |person, i|
-      person_should_be_saved person, i
-    end
-  end
-  
-  step 'I should have :integer adult(s) living elsewhere recorded' do |count|
-    expect(@application.adults_elsewhere.count).to eq(count.to_i)
-    @application.adults_elsewhere.each_with_index do |person, i|
+  def should_have_people(count, type)
+    people = @application.send(type.to_sym)
+    expect(people.count).to eq(count.to_i)
+    people.each_with_index do |person, i|
       person_should_be_saved person, i
     end
   end
@@ -90,7 +57,7 @@ module PeopleSteps
     expect(person.school_contact).to eq(@people[index].school_contact) if @people[index].school
   end
   
-  def fill_in_person_details # rubocop:disable Metrics/AbcSize
+  def fill_in_person # rubocop:disable Metrics/AbcSize
     @people << @person
     fill_in 'First name(s)', with: @person.first_name
     fill_in 'Last name', with: @person.last_name
@@ -105,12 +72,12 @@ module PeopleSteps
   
   def fill_in_adult_details
     @person = Fabricate(:person)
-    fill_in_person_details
+    fill_in_person
   end
   
   def fill_in_child_details
     @person = Fabricate(:child)
-    fill_in_person_details
+    fill_in_person
     fill_in 'person_school', with: @person.school
     fill_in 'person_school_contact', with: @person.school_contact
     click_on I18n.t('continue')
