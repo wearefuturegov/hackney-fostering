@@ -1,15 +1,15 @@
 placeholder :person_type do
-  match(/child(ren)?$/) do
-    'children'
-  end
-  match(/child(ren)? living elsewhere$/) do
+  match(/child(ren)? living elsewhere/) do
     'children_elsewhere'
   end
-  match(/adults?$/) do
-    'adults'
+  match(/child(ren)?/) do
+    'children'
   end
-  match(/adults? living elsewhere$/) do
+  match(/adults? living elsewhere/) do
     'adults_elsewhere'
+  end
+  match(/adults?/) do
+    'adults'
   end
 end
 
