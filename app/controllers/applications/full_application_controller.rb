@@ -1,7 +1,6 @@
 module Applications
   class FullApplicationController < ApplicationsController
     include Incredible::Wizard
-    expose :application
 
     form 'full_application'
     

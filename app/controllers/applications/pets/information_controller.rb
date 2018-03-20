@@ -2,7 +2,7 @@ module Applications
   module Pets
     class InformationController < MainController
       include Incredible::Wizard
-      expose :application
+      expose :application, -> { Application.friendly.find(params[:application_id]) }
       expose :pet, -> { application.pets.find(params[:pet_id]) }
       
       form 'pets'

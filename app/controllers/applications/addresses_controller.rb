@@ -1,6 +1,6 @@
 module Applications
   class AddressesController < MainController
-    expose :application
+    expose :application, -> { Application.friendly.find(params[:application_id]) }
     expose :address
         
     def edit

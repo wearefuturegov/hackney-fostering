@@ -1,5 +1,5 @@
 class ApplicationsController < MainController
-  expose :application
+  expose :application, :get_application
   
   prepend_before_action :update_application
   
@@ -12,17 +12,25 @@ class ApplicationsController < MainController
   end
   
   def new
-    redirect_to wizard_path(steps.first, application_id: application.id)
+    redirect_to wizard_path(steps.first, application_id: application.code)
   end
   
   def create
-    redirect_to new_application_eligibility_path(application_id: application.id) if application.save
+    redirect_to new_application_eligibility_path(application_id: application.code) if application.save
   end
   
   private
   
   def update_application
     application.update_attributes(permitted_params) if params[:application]
+  end
+  
+  def get_application # rubocop:disable Naming/AccessorMethodName
+    if params[:application_id]
+      Application.friendly.find(params[:application_id])
+    else
+      Application.create
+    end
   end
   
 end

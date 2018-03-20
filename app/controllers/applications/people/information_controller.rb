@@ -2,7 +2,7 @@ module Applications
   module People
     class InformationController < MainController
       include Incredible::Wizard
-      expose :application
+      expose :application, -> { Application.friendly.find(params[:application_id]) }
       expose :person, -> { application.people.find(params[:person_id]) }
       
       prepend_before_action :update_person

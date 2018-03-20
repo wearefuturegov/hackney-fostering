@@ -108,6 +108,8 @@ GEM
     ffi (1.9.23)
     font-awesome-rails (4.7.0.3)
       railties (>= 3.2, < 5.2)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     gherkin (5.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -303,6 +305,7 @@ DEPENDENCIES
   dotenv-rails
   fabrication
   ffaker
+  friendly_id (~> 5.1.0)
   geff!
   haml
   hashids

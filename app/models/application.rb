@@ -1,4 +1,7 @@
 class Application < ApplicationRecord
+  extend ::FriendlyId
+  friendly_id :code
+
   enum type_of_fostering: %i[emergency_fostering short_term_fostering long_term_fostering dont_know],
        spare_room: %i[yes no not_yet],
        experience: %i[very_experienced somewhat_experienced little_experience no_experience],
