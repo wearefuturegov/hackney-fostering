@@ -2,7 +2,7 @@ Feature: Employment Type
 
   Background:
     Given I have started an application
-    And I am answering the employment history step of the full application form
+    And I am answering the employment history step of the you and your family form
     
   Scenario: Full Time redirects correctly
     And I check the 'full_time' option

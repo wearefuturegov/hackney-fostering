@@ -1,8 +1,8 @@
 module Applications
-  class FullApplicationController < ApplicationsController
+  class YouAndYourFamilyController < ApplicationsController
     include Incredible::Wizard
 
-    form 'full_application'
+    form 'you_and_your_family'
     
     private
     

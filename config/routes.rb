@@ -10,7 +10,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   resources :applications do
     collection { get :find }
     resources :eligibility, controller: 'applications/eligibility'
-    resources :full_application, controller: 'applications/full_application'
+    resources :you_and_your_family, controller: 'applications/you_and_your_family'
     resources :addresses, controller: 'applications/addresses'
     resources :children, controller: 'applications/children', only: %i[new] do
       resources :information, controller: 'applications/children/information'

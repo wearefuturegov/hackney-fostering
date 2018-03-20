@@ -10,15 +10,15 @@ module Applications
     def create
       address = application.addresses.create(address_params)
       if address.years_ago >= 5
-        redirect_to application_full_application_path(application_id: application.id, id: :your_family)
+        redirect_to application_you_and_your_family_path(application_id: application.id, id: :your_family)
       else
-        redirect_to application_full_application_path(application_id: application.id, id: :previous_addresses)
+        redirect_to application_you_and_your_family_path(application_id: application.id, id: :previous_addresses)
       end
     end
     
     def update
       address.update_attributes(address_params)
-      redirect_to application_full_application_path(application_id: application.id, id: :previous_addresses)
+      redirect_to application_you_and_your_family_path(application_id: application.id, id: :previous_addresses)
     end
 
     def destroy

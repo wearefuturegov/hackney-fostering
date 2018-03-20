@@ -11,7 +11,7 @@ class RelationshipRule < Incredible::Rule
   
   def adults_redirect
     if application.adults.count == application.number_of_adults
-      application_full_application_path(application_id: application.id, id: :adults_living_elsewhere)
+      application_you_and_your_family_path(application_id: application.id, id: :adults_living_elsewhere)
     else
       new_application_adult_path(application_id: application.id)
     end
@@ -19,7 +19,7 @@ class RelationshipRule < Incredible::Rule
   
   def adults_elsewhere_redirect
     if application.adults_elsewhere.count == application.number_of_adults_elsewhere
-      application_full_application_path(application_id: application.id, id: :pets)
+      application_you_and_your_family_path(application_id: application.id, id: :pets)
     else
       new_application_adults_elsewhere_path(application_id: application.id)
     end

@@ -3,7 +3,7 @@ Feature: Pets
 
   Background:
     Given I have started an application
-    And I am answering the pets step of the full application form
+    And I am answering the pets step of the you and your family form
     
   Scenario: Yes redirects to add a new pet
     And I choose 2 pets
