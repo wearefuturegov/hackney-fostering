@@ -1,6 +1,13 @@
+placeholder :address_type do
+  match(/(.*)/) do |address_type|
+    address_type.split(/\s+/).join('_')
+  end
+end
+
 module AddressSteps
   
   step :fill_in_address, 'I fill in my address'
+  step :fill_in_address, 'I fill in an address'
   step :fill_in_address_and_date, 'I fill in my address and a moved in date'
   step :fill_in_address_and_date, 'I fill in my address and a moved in date of :number year(s) ago'
   step :fill_in_date, 'I enter a moved in date of :number year(s) ago'
@@ -23,9 +30,9 @@ module AddressSteps
     end
   end
   
-  step 'my address should be saved in the database' do
+  step 'my :address_type should be saved in the database' do |address_type|
     @application.reload
-    address_should_be_saved @application.address, 0
+    address_should_be_saved @application.send(address_type), 0
   end
   
   def address_should_be_saved(address, index) # rubocop:disable Metrics/AbcSize
@@ -63,7 +70,7 @@ module AddressSteps
   end
   
   def enter_postcode(postcode)
-    fill_in 'What is your postcode?', with: postcode
+    fill_in 'Enter postcode', with: postcode
     first('#find_address').click
     wait_for_ajax
   end

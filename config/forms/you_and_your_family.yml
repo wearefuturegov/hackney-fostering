@@ -263,55 +263,49 @@ form:
           widget: :input
     full_address:
       template: :address
-      model: :address
+      reference: :address
+      title: Tell us about your home
+      sub_title: What is your current address
       questions:
         - name: :line_1
           title: Address Line 1
           widget: :input
-          model: :address
         - name: :line_2
           title: Address Line 2
           widget: :input
-          model: :address
         - name: :line_3
           title: Address Line 3
           widget: :input
-          model: :address
         - name: :post_town
           title: Address Town
           widget: :input
-          model: :address
+        - name: :postcode
+          title: Postcode
+          widget: :input
         - name: :date_from
           title: When did you move into this property?
           widget: :date
-          model: :address
     previous_addresses:
       template: :previous_addresses
       questions:
         - name: :line_1
           title: Address Line 1
           widget: :input
-          model: :address
         - name: :line_2
           title: Address Line 2
           widget: :input
-          model: :address
         - name: :line_3
           title: Address Line 3
           widget: :input
-          model: :address
         - name: :post_town
           title: Address Town
           widget: :input
-          model: :address
         - name: :date_from
           title: When did you move into this property?
           widget: :date
-          model: :address
         - name: :date_to
           title: When did you move out of this property?
           widget: :date
-          model: :address
     your_family:
       template: questions
       questions:

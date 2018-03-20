@@ -123,13 +123,10 @@ form:
     agency_address:
       template: :single_question
       template: :address
-      model: :agency_address
+      reference: :agency_address
+      title: Tell us your legal history
+      sub_title: Address of agency/service
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Address of agency/service
         - name: :line_1
           title: Address Line 1
           widget: :input
@@ -146,6 +143,9 @@ form:
           title: Address Town
           widget: :input
           model: :address
+        - name: :postcode
+          title: Postcode
+          widget: :input
     type_of_application:
       template: :single_question
       questions:
@@ -206,13 +206,10 @@ form:
     other_agency_address:
       template: :single_question
       template: :address
-      model: :other_agency_address
+      reference: :other_agency_address
+      title: Tell us your legal history
+      sub_title: Address of agency/service
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Address of agency/service
         - name: :line_1
           title: Address Line 1
           widget: :input
@@ -229,6 +226,9 @@ form:
           title: Address Town
           widget: :input
           model: :address
+        - name: :postcode
+          title: Postcode
+          widget: :input
     other_type_of_application:
       template: :single_question
       questions:
@@ -273,31 +273,27 @@ form:
         - name: :sub_section
           title: Name of agency/service
           widget: :title
-        - name: :other_agency_name
+        - name: :previous_agency_name
           widget: :input
     previous_agency_address:
       template: :single_question
       template: :address
-      model: :previous_agency_address
+      reference: :previous_agency_address
+      title: Tell us your legal history
+      sub_title: Address of agency/service
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Address of agency/service
         - name: :line_1
           title: Address Line 1
           widget: :input
-          model: :address
         - name: :line_2
           title: Address Line 2
           widget: :input
-          model: :address
         - name: :line_3
           title: Address Line 3
           widget: :input
-          model: :address
         - name: :post_town
           title: Address Town
           widget: :input
-          model: :address
+        - name: :postcode
+          title: Postcode
+          widget: :input
