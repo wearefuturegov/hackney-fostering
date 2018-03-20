@@ -1,0 +1,34 @@
+%section.section
+  %h1
+    Apply to be a fostercarer
+  %p
+    Welcome to the first stage of becoming a foster carer. This application form is designed to allow completion over multiple vists. That means if you feel like you need to come back to something later, you can.
+
+  %h3
+    You will need the following:
+
+  %ul
+    %li
+      Your address history for the past 7 years
+    %li
+      Your passport and ID if you have one
+    %li
+      National Insurance Number
+
+  = button_to 'Begin your application', begin_welcome_path, class: 'confirm'
+
+%section.section
+  %h2
+    Background checks
+  %p
+    We conduct background checks to ensure the safety of the foster child.
+    = link_to 'Learn more', 'Learn more'
+
+  %p
+    = link_to 'You can also register by post', 'You can also register by post'
+
+  %p
+    = link_to 'Continue to questions', :applications, class: 'confirm'
+
+  %p
+    full_application/name_change

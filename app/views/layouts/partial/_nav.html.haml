@@ -1,38 +1,12 @@
 %nav.nav.side#menu
   %ul
     %li
-      = link_to 'Check your eligibility', '/', class: 'current'
-      %ul
-        %li
-          = link_to 'Begin', '/eligibility'
+      = link_to 'Fostering in Hackney', ''
     %li
-      = link_to 'Tell us about yourself', '#'
-      %ul
-        %li
-          = link_to 'About you', 'name_change'
-        %li
-          = link_to 'Language', 'language'
-        %li
-          = link_to 'Religion', 'are_you_religious'
-        %li
-          = link_to 'Employment history', 'employment_history'
-        %li
-          = link_to 'Address history', 'postcode'
-        %li
-          = link_to 'Your family & friends', 'adults_living_at_home'
+      = link_to 'What is fostering?', what_index_path
     %li
-      = link_to 'Tell about your pets', '#'
+      = link_to 'Who can foster?', who_index_path
     %li
-      = link_to 'Legal History', '#'
+      = link_to 'Why foster with Hackney?', why_index_path
     %li
-      = link_to 'References', '#'
-    %li
-      = link_to 'Support Carer', '#'
-    %li
-      = link_to 'Checks & Consent', '#'
-
-:javascript
-  $('#menu ul li a').on('click', function(){
-      $('#menu ul li a.current').removeClass('current');
-      $(this).addClass('current');
-  });
+      = link_to 'Check if you can foster', eligibility_index_path
