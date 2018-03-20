@@ -238,7 +238,7 @@ form:
         - name: :sub_section
           title: Type of application
           widget: :title
-        - name: :tother_ype_of_application
+        - name: :other_type_of_application
           widget: :input
     other_application_outcome:
       template: :single_question

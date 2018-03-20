@@ -35,7 +35,17 @@ class Application < ApplicationRecord
   belongs_to :other_agency_address, class_name: 'Address', foreign_key: :other_agency_address_id, optional: true
   belongs_to :previous_agency_address, class_name: 'Address', foreign_key: :previous_agency_address_id, optional: true
 
-  accepts_nested_attributes_for :children, :adults, :addresses, :pets, :applicant, :address
+  accepts_nested_attributes_for(
+    :children,
+    :adults,
+    :addresses,
+    :pets,
+    :applicant,
+    :address,
+    :agency_address,
+    :other_agency_address,
+    :previous_agency_address
+  )
   
   validates :number_of_children, presence: true, if: :children_at_home?
   
