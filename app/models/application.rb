@@ -53,6 +53,11 @@ class Application < ApplicationRecord
   private
   
   def generate_code
-    update_attribute(:code, Hashids.new(ENV['HASHID_SALT'], 6, 'ABCDEFG123456789').encode(id))
+    code = nil
+    loop do
+      code = Hashids.new(ENV['HASHID_SALT'], 6, 'ABCDEFG123456789').encode(id)
+      break unless Application.where(code: code).exists?
+    end
+    update_attribute(:code, code)
   end
 end
