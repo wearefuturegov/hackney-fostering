@@ -8,6 +8,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   get '/', to: 'main#index'
   
   resources :applications do
+    collection { get :find }
     resources :eligibility, controller: 'applications/eligibility'
     resources :full_application, controller: 'applications/full_application'
     resources :addresses, controller: 'applications/addresses'

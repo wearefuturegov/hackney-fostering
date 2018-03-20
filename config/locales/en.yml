@@ -31,3 +31,6 @@
 
 en:
   continue: Save & continue
+  submit: Submit
+  application:
+    invalid_code: The code you have entered is invalid. Please try again.
