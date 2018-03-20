@@ -6,7 +6,7 @@ Feature: Start with code
     
   Scenario: Starting an application with the correct code
     And I enter the correct code
-    Then I should be on the 'name_change' step
+    Then I should be on the 'welcome' step
   
   Scenario: Incorrect code
     And I enter an incorrect code
