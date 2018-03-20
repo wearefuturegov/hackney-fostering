@@ -2,11 +2,12 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   resources :what, only: [:index]
   resources :why, only: [:index]
   resources :who, only: [:index]
+  resources :begin, only: [:index]
   resources :eligibility, only: [:index]
   resources :contact, only: [:index]
 
-  get '/', to: 'main#index'
-  
+  root to: 'main#index'
+
   resources :applications do
     collection { get :find }
     resources :eligibility, controller: 'applications/eligibility'
