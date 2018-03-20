@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLength
   
   let(:application) { Fabricate(:application) }
-  
+  let(:address) { Fabricate(:address) }
+
   describe 'people relationships' do # rubocop:disable Metrics/BlockLength
     
     let(:children) { Fabricate.times(3, :child) }
@@ -47,7 +48,6 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
   end
   
   it 'has an agency address' do
-    address = Fabricate(:address)
     application.agency_address = address
     application.save
     application.reload
@@ -55,11 +55,17 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
   end
   
   it 'has an other agency address' do
-    address = Fabricate(:address)
     application.other_agency_address = address
     application.save
     application.reload
     expect(application.other_agency_address).to eq(address)
+  end
+  
+  it 'has a previous agency address' do
+    application.previous_agency_address = address
+    application.save
+    application.reload
+    expect(application.previous_agency_address).to eq(address)
   end
     
 end
