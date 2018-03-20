@@ -77,6 +77,11 @@ module ApplicationSteps
   step 'I should see an invalid code error' do
     expect(page.body).to match(I18n.t('application.invalid_code'))
   end
+  
+  step 'I fill in the :text field' do |field|
+    fill_in field, with: 'Some Text'
+    click_on I18n.t('continue')
+  end
 end
 
 RSpec.configure do |config|
