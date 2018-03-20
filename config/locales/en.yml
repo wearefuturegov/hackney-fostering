@@ -31,6 +31,7 @@
 
 en:
   continue: Save & continue
+  continue_b: Continue to questions
   submit: Submit
   application:
     invalid_code: The code you have entered is invalid. Please try again.

@@ -66,12 +66,12 @@ module ApplicationSteps
   
   step 'I enter the correct code' do
     fill_in 'application_application_id', with: @application.code
-    click_on I18n.t('submit')
+    click_on I18n.t('continue_b')
   end
   
   step 'I enter an incorrect code' do
     fill_in 'application_application_id', with: 'sdsdfdfsdf'
-    click_on I18n.t('submit')
+    click_on I18n.t('continue_b')
   end
   
   step 'I should see an invalid code error' do

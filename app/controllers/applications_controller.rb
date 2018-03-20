@@ -1,4 +1,5 @@
-class ApplicationsController < MainController
+class ApplicationsController < ActionController::Base
+  layout 'mainb'
   expose :application, :get_application
   
   prepend_before_action :update_application
