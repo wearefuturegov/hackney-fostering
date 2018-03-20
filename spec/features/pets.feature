@@ -3,7 +3,7 @@ Feature: Adding pets
 
   Background:
     Given I have started an application
-    And I am answering the pets step of the full application form
+    And I am answering the pets step of the you and your family form
     
   Scenario: One pet
     And I fill in the details for 1 pet

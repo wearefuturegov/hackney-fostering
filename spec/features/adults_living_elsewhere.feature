@@ -3,7 +3,7 @@ Feature: Adding adults living elsewhere
 
   Background:
     Given I have started an application
-    And I am answering the adults living elsewhere step of the full application form
+    And I am answering the adults living elsewhere step of the you and your family form
     
   Scenario: One adult living elsewhere
     And I fill in the details for 1 adult living elsewhere

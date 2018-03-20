@@ -3,7 +3,7 @@ Feature: Adding children
 
   Background:
     Given I have started an application
-    And I am answering the children living at home step of the full application form
+    And I am answering the children living at home step of the you and your family form
     
   Scenario: One child
     And I fill in the details for 1 child

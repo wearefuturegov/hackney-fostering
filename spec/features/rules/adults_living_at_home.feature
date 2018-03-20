@@ -3,7 +3,7 @@ Feature: Adults living at home
 
   Background:
     Given I have started an application
-    And I am answering the adults living at home step of the full application form
+    And I am answering the adults living at home step of the you and your family form
     
   Scenario: Yes redirects to add adults
     And I choose 2 adults
