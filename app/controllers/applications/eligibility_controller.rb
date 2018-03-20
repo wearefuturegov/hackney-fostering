@@ -1,5 +1,6 @@
 module Applications
   class EligibilityController < ApplicationsController
+  layout 'main'
     include Incredible::Wizard
 
     form 'eligibility'
