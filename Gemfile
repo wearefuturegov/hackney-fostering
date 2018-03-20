@@ -37,6 +37,7 @@ gem 'decent_exposure', '3.0.0'
 gem 'simple_form'
 gem 'dotenv-rails'
 gem 'hashids'
+gem 'friendly_id', '~> 5.1.0'
 
 if ENV['USE_LOCAL_INCREDIBLE']
   gem 'incredible', path: '../incredible'

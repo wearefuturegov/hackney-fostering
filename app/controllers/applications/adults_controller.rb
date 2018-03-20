@@ -1,6 +1,5 @@
 module Applications
   class AdultsController < PeopleController
-    expose :application
     expose :adult, -> { application.adults.create }
     
     def path

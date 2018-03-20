@@ -1,6 +1,5 @@
 module Applications
   class ChildrenElsewhereController < PeopleController
-    expose :application
     expose :child, -> { application.children_elsewhere.create }
 
     def path

@@ -1,6 +1,6 @@
 module Applications
   class PetsController < MainController
-    expose :application
+    expose :application, -> { Application.friendly.find(params[:application_id]) }
     expose :pet, -> { application.pets.create }
     
     def new

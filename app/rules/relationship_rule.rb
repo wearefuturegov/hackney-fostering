@@ -26,7 +26,7 @@ class RelationshipRule < Incredible::Rule
   end
   
   def application
-    @application ||= Application.find(params[:application_id])
+    @application ||= Application.friendly.find(params[:application_id])
   end
   
 end

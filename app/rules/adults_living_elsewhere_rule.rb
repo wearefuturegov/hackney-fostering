@@ -11,6 +11,6 @@ class AdultsLivingElsewhereRule < Incredible::Rule
   end
   
   def application
-    Application.find(params[:application_id])
+    Application.friendly.find(params[:application_id])
   end
 end
