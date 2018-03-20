@@ -2,6 +2,8 @@ form:
   name: 'Continue'
   template: :check_if_you_can_foster
   steps:
+    welcome:
+      template: :welcome
     name_change:
       template: :questions
       questions:
