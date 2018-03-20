@@ -5,5 +5,4 @@
 = form.input :postcode, as: :string, label: 'Postcode', input_html: { class: 'postcode' }
 
 = form.input :date_from, as: :date, label: 'Date moved in', start_year: Date.today.year - 20
-- if hide_to != true
-  = form.input :date_to, as: :date, label: 'Date moved out', start_year: Date.today.year - 20
+= form.input :date_to, as: :date, label: 'Date moved out', start_year: Date.today.year - 20

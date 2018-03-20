@@ -1,12 +1,12 @@
-= form.input :postcode, as: :string, label: 'What is your postcode?', input_html: { id: 'postcode_search' }
+= form.input :postcode, as: :string, label: 'Enter postcode', input_html: { id: 'postcode_search' }
 %p.error.hidden
 
 %p
   %a#manual_entry{ href: '#' }
-    Enter your address manually
+    Enter address manually
 
 %h3#your_postcode.hidden
-  Your postcode
+  Postcode
   %p.postcode
     %span
     %a#change_postcode{ href: '#'}
@@ -19,4 +19,5 @@
     Find Address
     
 #address_elements.hidden
-  = render partial: 'addresses/fields', locals: { form: form, hide_to: hide_to }
+  - @questions.each do |q|
+    = render partial: q['widget'].to_s, locals: { form: form, question: q }

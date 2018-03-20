@@ -1,11 +1,12 @@
 %section.section
-  %h1 Tell us about your home
-  
-  %h2 What is your current address?
+
+  %h1= @incredible_step.data[:title]
+    
+  %h2= @incredible_step.data[:sub_title]
 
 = simple_form_for setup_application(application), url: wizard_path, html: { class: 'address_form' }, method: :put do |f|
-
-  = f.fields_for :address, application.address do |ff|
+  
+  = f.fields_for @incredible_step.data[:reference], application.send(@incredible_step.data[:reference]) do |ff|
     = render partial: 'address', locals: { form: ff, hide_to: true }
     
   %section.actions
