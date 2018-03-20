@@ -1,4 +1,4 @@
-class ApplicationsController < ActionController::Base
+class ApplicationsController < MainController
   layout 'mainb'
   expose :application, :get_application
   
