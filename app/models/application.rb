@@ -33,6 +33,7 @@ class Application < ApplicationRecord
   
   belongs_to :agency_address, class_name: 'Address', foreign_key: :agency_address_id, optional: true
   belongs_to :other_agency_address, class_name: 'Address', foreign_key: :other_agency_address_id, optional: true
+  belongs_to :previous_agency_address, class_name: 'Address', foreign_key: :previous_agency_address_id, optional: true
 
   accepts_nested_attributes_for :children, :adults, :addresses, :pets, :applicant, :address
   
