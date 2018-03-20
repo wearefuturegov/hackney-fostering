@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLength
   
+  let(:application) { Fabricate(:application) }
+  
   describe 'people relationships' do # rubocop:disable Metrics/BlockLength
     
     let(:children) { Fabricate.times(3, :child) }
@@ -37,6 +39,11 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
       expect(application.adults_elsewhere).to eq(adults_elsewhere)
     end
     
+  end
+  
+  it 'generates a code' do
+    application.reload
+    expect(application.code.length).to eq(6)
   end
     
 end

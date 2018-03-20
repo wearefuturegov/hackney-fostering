@@ -32,6 +32,8 @@ class Application < ApplicationRecord
   
   validates :number_of_children, presence: true, if: :children_at_home?
   
+  after_create :generate_code
+  
   def children_count
     ((number_of_children - (number_of_children - children.count)) + 1).ordinalize
   end
@@ -46,5 +48,11 @@ class Application < ApplicationRecord
   
   def adults_elsewhere_count
     ((number_of_adults_elsewhere - (number_of_adults_elsewhere - adults_elsewhere.count)) + 1).ordinalize
+  end
+  
+  private
+  
+  def generate_code
+    update_attribute(:code, Hashids.new(ENV['HASHID_SALT'], 6, 'ABCDEFG123456789').encode(id))
   end
 end
