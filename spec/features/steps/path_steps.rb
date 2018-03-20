@@ -4,7 +4,7 @@ placeholder :path do
       route = path.split(/\s+/).join('_')
       Rails.application.routes.url_helpers.send("#{route}_path".to_sym)
     rescue Object
-      raise "Can't find mapping from \"#{page_name}\" to a path."
+      raise "Can't find mapping from \"#{path}\" to a path."
     end
   end
 end

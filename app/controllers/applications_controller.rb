@@ -3,6 +3,8 @@ class ApplicationsController < MainController
   
   prepend_before_action :update_application
   
+  def index; end
+  
   def show
     render_wizard nil, template: "applications/#{template}"
   end
@@ -19,6 +21,13 @@ class ApplicationsController < MainController
     redirect_to new_application_eligibility_path(application_id: application.code) if application.save
   end
   
+  def find
+    redirect_to new_application_full_application_path(application)
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = I18n.t('application.invalid_code')
+    render :index
+  end
+    
   private
   
   def update_application
