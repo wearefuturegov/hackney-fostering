@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320084811) do
+ActiveRecord::Schema.define(version: 20180320151428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,27 @@ ActiveRecord::Schema.define(version: 20180320084811) do
     t.text "breeding_risks"
     t.text "breeding_other"
     t.string "code"
+    t.boolean "family_court"
+    t.date "court_date"
+    t.string "court_name"
+    t.string "type_of_order"
+    t.text "parties_involved"
+    t.text "court_details"
+    t.boolean "previous_applications"
+    t.date "application_date"
+    t.string "agency_name"
+    t.integer "agency_address_id"
+    t.string "type_of_application"
+    t.text "application_outcome"
+    t.boolean "other_previous_applications"
+    t.date "other_application_date"
+    t.string "other_agency_name"
+    t.integer "other_agency_address_id"
+    t.string "other_type_of_application"
+    t.text "other_application_outcome"
+    t.boolean "previous_fostering"
+    t.string "previous_agency_name"
+    t.integer "previous_agency_address_id"
   end
 
   create_table "applications_adults", id: false, force: :cascade do |t|

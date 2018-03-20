@@ -45,5 +45,21 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
     application.reload
     expect(application.code.length).to eq(6)
   end
+  
+  it 'has an agency address' do
+    address = Fabricate(:address)
+    application.agency_address = address
+    application.save
+    application.reload
+    expect(application.agency_address).to eq(address)
+  end
+  
+  it 'has an other agency address' do
+    address = Fabricate(:address)
+    application.other_agency_address = address
+    application.save
+    application.reload
+    expect(application.other_agency_address).to eq(address)
+  end
     
 end
