@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321130235) do
+ActiveRecord::Schema.define(version: 20180321144535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,9 @@ ActiveRecord::Schema.define(version: 20180321130235) do
     t.string "previous_agency_name"
     t.integer "previous_agency_address_id"
     t.bigint "support_carer_id"
+    t.boolean "agree_to_checks"
+    t.boolean "agree_to_la_contact"
+    t.string "signature"
     t.index ["support_carer_id"], name: "index_applications_on_support_carer_id"
   end
 
