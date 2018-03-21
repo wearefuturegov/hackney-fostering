@@ -147,7 +147,7 @@ form:
         - name: :other_language
           widget: :boolean
           yes_value: Yes
-          no_value: Yes
+          no_value: No
     other_language_select:
       template: questions
       questions:
