@@ -11,13 +11,15 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
     let(:adults) { Fabricate.times(2, :person) }
     let(:children_elsewhere) { Fabricate.times(1, :child) }
     let(:adults_elsewhere) { Fabricate.times(6, :child) }
+    let(:referees) { Fabricate.times(6, :person) }
 
     let(:application) do
       Fabricate(:application,
                 children: children,
                 adults: adults,
                 children_elsewhere: children_elsewhere,
-                adults_elsewhere: adults_elsewhere)
+                adults_elsewhere: adults_elsewhere,
+                referees: referees)
     end
     
     it 'has children' do
@@ -38,6 +40,11 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
     it 'has adults elewhere' do
       expect(application.adults_elsewhere.count).to eq(6)
       expect(application.adults_elsewhere).to eq(adults_elsewhere)
+    end
+    
+    it 'has referees' do
+      expect(application.referees.count).to eq(6)
+      expect(application.referees).to eq(referees)
     end
     
   end
