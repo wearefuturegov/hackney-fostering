@@ -69,6 +69,10 @@ class Application < ApplicationRecord
     ((number_of_adults_elsewhere - (number_of_adults_elsewhere - adults_elsewhere.count)) + 1).ordinalize
   end
   
+  def referees_count
+    referees.count.ordinalize
+  end
+  
   private
   
   def generate_code

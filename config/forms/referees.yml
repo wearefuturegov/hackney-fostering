@@ -1,0 +1,66 @@
+form:
+  name: 'Referees'
+  template: :check_if_you_can_foster
+  steps:
+    intro:
+      template: :referee_intro
+    name:
+      template: :questions
+      questions:
+        - name: :section
+          title: Your %{number} reference
+          widget: :title_with_name
+        - name: :first_name
+          title: First name(s)
+          widget: :input
+        - name: :last_name
+          title: Last name
+          widget: :input
+    reference_address:
+      template: :address
+      reference: :address
+      title: What is %{name}'s address?
+      questions:
+        - name: :line_1
+          title: Address Line 1
+          widget: :input
+          model: :address
+        - name: :line_2
+          title: Address Line 2
+          widget: :input
+          model: :address
+        - name: :line_3
+          title: Address Line 3
+          widget: :input
+          model: :address
+        - name: :post_town
+          title: Address Town
+          widget: :input
+          model: :address
+        - name: :postcode
+          title: Postcode
+          widget: :input
+    contact:
+      template: :questions
+      questions:
+        - name: :section
+          title: Please provide a way to contact %{name}
+          widget: :title_with_name
+        - name: :email
+          title: Email
+          widget: :input
+        - name: :phone_number
+          title: Phone Number
+          widget: :input
+    reference_relationship:
+      template: :questions
+      questions:
+        - name: :section
+          title: What is your relationship to %{name}
+          widget: :title_with_name
+        - name: :relationship
+          widget: :select
+        - name: :years_known
+          title: How many years have you known each other?
+          widget: :number_select
+          widget: :input
