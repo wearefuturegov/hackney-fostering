@@ -2,7 +2,11 @@ class ReferenceRelationshipRule < Incredible::Rule
   include Rails.application.routes.url_helpers
 
   def process
-    @redirect = new_application_referee_path(application_id: application.id, step: :name) if application.referees.count < 6
+    @redirect = if application.referees.count < 6
+                  new_application_referee_path(application_id: application.code, step: :name)
+                else
+                  new_application_support_carer_path(application_id: application.code)
+                end
   end
   
   def application

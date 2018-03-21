@@ -13,4 +13,4 @@ Feature: Referees
   Scenario: Adding all referees
     When I add 6 referees
     Then my referees should be saved
-  
+    And I should be on the 'intro' step
