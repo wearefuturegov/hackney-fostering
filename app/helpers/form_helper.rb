@@ -1,10 +1,11 @@
 module FormHelper
-  def setup_application(application)
+  def setup_application(application) # rubocop:disable Metrics/AbcSize
     application.applicant ||= Person.new
     application.address ||= Address.new
     application.agency_address ||= Address.new
     application.other_agency_address ||= Address.new
     application.previous_agency_address ||= Address.new
+    application.support_carer ||= Person.new
 
     application.addresses.build if application.addresses.blank?
     application

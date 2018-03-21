@@ -50,6 +50,8 @@ class Application < ApplicationRecord
     :previous_agency_address
   )
   
+  accepts_nested_attributes_for :support_carer, update_only: true
+  
   validates :number_of_children, presence: true, if: :children_at_home?
   
   after_create :generate_code

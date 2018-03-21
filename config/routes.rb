@@ -14,6 +14,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :you_and_your_family, controller: 'applications/you_and_your_family'
     resources :legal_history, controller: 'applications/legal_history'
     resources :addresses, controller: 'applications/addresses'
+    resources :support_carer, controller: 'applications/support_carer'
     resources :children, controller: 'applications/children', only: %i[new] do
       resources :information, controller: 'applications/children/information'
     end

@@ -1,5 +1,5 @@
 @javascript
-Feature: Previous Addresses
+Feature: Referees
   
   Background:
     Given I have started an application

@@ -1,0 +1,30 @@
+form:
+  name: 'Support Carer'
+  template: :check_if_you_can_foster
+  steps:
+    intro:
+      template: :support_carer_intro
+    name:
+      template: :questions
+      questions:
+        - name: :section
+          title: Your support carer's name
+          widget: :title
+        - name: :first_name
+          title: First name(s)
+          model: :support_carer
+          widget: :input
+        - name: :last_name
+          model: :support_carer
+          title: Last name
+          widget: :input
+    email:
+      template: :questions
+      questions:
+        - name: :section
+          title: Your support carer's email address
+          widget: :title
+        - name: :email
+          model: :support_carer
+          title: Email
+          widget: :input
