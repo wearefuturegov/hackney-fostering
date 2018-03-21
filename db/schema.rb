@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321101531) do
+ActiveRecord::Schema.define(version: 20180321130235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 20180321101531) do
     t.boolean "previous_fostering"
     t.string "previous_agency_name"
     t.integer "previous_agency_address_id"
+    t.bigint "support_carer_id"
+    t.index ["support_carer_id"], name: "index_applications_on_support_carer_id"
   end
 
   create_table "applications_adults", id: false, force: :cascade do |t|

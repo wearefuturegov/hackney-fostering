@@ -32,6 +32,7 @@ class Application < ApplicationRecord
   
   belongs_to :applicant, class_name: 'Person', foreign_key: :applicant_id, optional: true
   belongs_to :address, class_name: 'Address', foreign_key: :address_id, optional: true
+  belongs_to :support_carer, class_name: 'Person', foreign_key: :support_carer_id, optional: true
   
   belongs_to :agency_address, class_name: 'Address', foreign_key: :agency_address_id, optional: true
   belongs_to :other_agency_address, class_name: 'Address', foreign_key: :other_agency_address_id, optional: true
