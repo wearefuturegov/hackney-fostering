@@ -10,9 +10,8 @@
     = render '/layouts/layouts/header'
     - if controller_name == "full_application"
       = render '/layouts/partial/nav_application'
-    - elsif ["eligibility", "who", "what", "why", "fostering"].include? controller_name
+    - elsif ["eligibility", "pages"].include? controller_name
       = render '/layouts/partial/nav_eligibility'
     %main.main
       = yield
     / = render '/layouts/layouts/footer'
-

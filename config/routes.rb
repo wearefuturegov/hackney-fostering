@@ -1,13 +1,4 @@
 Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
-  resources :fostering, only: [:index]
-  resources :what, only: [:index]
-  resources :why, only: [:index]
-  resources :who, only: [:index]
-  resources :eligibility, only: [:index]
-  resources :contact, only: [:index]
-
-  get '/', to: 'fostering#index'
-  
   resources :applications do # rubocop:disable Metrics/BlockLength
     collection { get :find }
     member do
@@ -38,4 +29,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
       resources :information, controller: 'applications/referees/information'
     end
   end
+  
+  resources :pages, only: [:show], path: '/'
+  get '/', to: 'pages#show', id: 'fostering'
 end

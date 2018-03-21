@@ -23,3 +23,5 @@
 .byebug_history
 /coverage
 /.env
+/app/.DS_Store
+/.DS_Store
