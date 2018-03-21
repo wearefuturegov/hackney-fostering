@@ -1,5 +1,8 @@
 class Person < ApplicationRecord
   belongs_to :application, optional: true
+  belongs_to :address, optional: true
+  
+  accepts_nested_attributes_for :address
   
   has_many :applications_children
   has_many :applications_adults

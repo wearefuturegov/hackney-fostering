@@ -29,5 +29,8 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :pets, controller: 'applications/pets', only: %i[new] do
       resources :information, controller: 'applications/pets/information'
     end
+    resources :referees, controller: 'applications/referees', only: %i[new] do
+      resources :information, controller: 'applications/referees/information'
+    end
   end
 end

@@ -11,3 +11,9 @@ Fabricator(:child, from: :person) do
   school          'Some School'
   school_contact  FFaker::PhoneNumber.phone_number
 end
+
+Fabricator(:referee, from: :person) do
+  years_known  '17 years'
+  email        { FFaker::Internet.email }
+  phone_number { FFaker::PhoneNumber.phone_number }
+end

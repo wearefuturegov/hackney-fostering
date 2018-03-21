@@ -32,8 +32,12 @@ module Applications
           :gender,
           :date_of_birth,
           :relationship,
+          :years_known,
           :school,
-          :school_contact
+          :school_contact,
+          :email,
+          :phone_number,
+          address_attributes: %i[line_1 line_2 line_3 post_town postcode]
         )
       end
     end
