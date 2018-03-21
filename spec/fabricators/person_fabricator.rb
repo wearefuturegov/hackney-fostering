@@ -17,3 +17,7 @@ Fabricator(:referee, from: :person) do
   email        { FFaker::Internet.email }
   phone_number { FFaker::PhoneNumber.phone_number }
 end
+
+Fabricator(:support_carer, from: :person) do
+  email        { FFaker::Internet.email }
+end
