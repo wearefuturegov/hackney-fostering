@@ -12,6 +12,5 @@ module Applications
         support_carer_attributes: %i[first_name last_name email]
       )
     end
-
   end
 end

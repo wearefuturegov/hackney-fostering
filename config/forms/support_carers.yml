@@ -18,7 +18,7 @@ form:
           model: :support_carer
           title: Last name
           widget: :input
-    email:
+    support_carer_email:
       template: :questions
       questions:
         - name: :section
