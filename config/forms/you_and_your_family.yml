@@ -2,11 +2,24 @@ form:
   name: 'Continue'
   template: :check_if_you_can_foster
   steps:
+    welcome:
+      template: :welcome
+    name_change_info:
+      template: :questions
+      questions:
+        - name: :section
+          heading: You & your family
+          intro: Information will be requested about yourself, any partners, family or children.
+          extra: "For this section we ask you please have the following items prepared:"
+          list_1: Your address history for the past 7 years
+          list_2: National Insurance Number
+          list_3: Contact details for 6 personal references
+          widget: :title
     name_change:
       template: :questions
       questions:
         - name: :section
-          heading: Tell us about yourself
+          heading: You & your family
           widget: :title
         - name: :section
           title: Have you ever had a name change?
