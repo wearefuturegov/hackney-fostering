@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320151428) do
+ActiveRecord::Schema.define(version: 20180321101531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,12 @@ ActiveRecord::Schema.define(version: 20180320151428) do
     t.index %w[application_id person_id], name: "children_elsewhere_index"
   end
 
+  create_table "applications_referees", id: false, force: :cascade do |t|
+    t.bigint "application_id", null: false
+    t.bigint "person_id", null: false
+    t.index %w[application_id person_id], name: "index_applications_referees_on_application_id_and_person_id"
+  end
+
   create_table "people", force: :cascade do |t|
     t.integer "person_type"
     t.string "first_name"
@@ -147,6 +153,11 @@ ActiveRecord::Schema.define(version: 20180320151428) do
     t.string "country_of_birth"
     t.string "town_of_birth"
     t.string "nationality"
+    t.string "email"
+    t.string "phone_number"
+    t.string "years_known"
+    t.bigint "address_id"
+    t.index ["address_id"], name: "index_people_on_address_id"
     t.index ["application_id"], name: "index_people_on_application_id"
   end
 
