@@ -53,24 +53,28 @@ class Application < ApplicationRecord
   
   after_create :generate_code
   
+  def reference_count(total, current)
+    (total - (total - current) + 1).en.numwords.en.ordinal
+  end
+  
   def children_count
-    ((number_of_children - (number_of_children - children.count)) + 1).ordinalize
+    reference_count number_of_children, children.count
   end
   
   def children_elsewhere_count
-    ((number_of_children_elsewhere - (number_of_children_elsewhere - children_elsewhere.count)) + 1).ordinalize
+    reference_count number_of_children_elsewhere, children_elsewhere.count
   end
   
   def adults_count
-    ((number_of_adults - (number_of_adults - adults.count)) + 1).ordinalize
+    reference_count number_of_adults, adults.count
   end
   
   def adults_elsewhere_count
-    ((number_of_adults_elsewhere - (number_of_adults_elsewhere - adults_elsewhere.count)) + 1).ordinalize
+    reference_count number_of_adults_elsewhere, adults_elsewhere.count
   end
   
   def referees_count
-    referees.count.ordinalize
+    referees.count.en.numwords.en.ordinal
   end
   
   private
