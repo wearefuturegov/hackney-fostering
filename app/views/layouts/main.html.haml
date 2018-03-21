@@ -8,10 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render '/layouts/layouts/header'
-    - if controller_name == "full_application"
-      = render '/layouts/partial/nav_application'
-    - elsif ["eligibility", "pages"].include? controller_name
-      = render '/layouts/partial/nav_eligibility'
+    = render 'nav'
     %main.main
       = yield
     / = render '/layouts/layouts/footer'
