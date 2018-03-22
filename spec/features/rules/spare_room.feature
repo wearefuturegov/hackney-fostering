@@ -7,11 +7,14 @@ Feature: Spare Room
   Scenario: I have a spare room
     And I check the 'yes' option
     Then I should be on the 'over_21' step
+    And my application should be marked as eligible
 
   Scenario: No redirects correctly
     And I check the 'no' option
     Then I should be on the 'other_ways' step
+    And my application should be marked as ineligible
     
   Scenario: Not yet redirects correctly
     And I check the 'not_yet' option
     Then I should be on the 'other_ways' step
+    And my application should be marked as ineligible
