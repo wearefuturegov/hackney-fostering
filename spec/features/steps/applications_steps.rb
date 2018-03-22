@@ -82,6 +82,16 @@ module ApplicationSteps
     fill_in field, with: 'Some Text'
     click_on I18n.t('continue')
   end
+  
+  step 'my application should be marked as eligible' do
+    @application.reload
+    expect(@application.eligible).to eq(true)
+  end
+  
+  step 'my application should be marked as ineligible' do
+    @application.reload
+    expect(@application.eligible).to eq(false)
+  end
 end
 
 RSpec.configure do |config|
