@@ -1,0 +1,18 @@
+%p
+  Someone has filled in an eligibility checker on the Hackney Fostering website.
+  They were not eligible to foster, but would like to be contacted.
+    
+%hr/
+
+%h2 Contact Details
+
+= @application.first_name
+= @application.last_name
+
+= @application.phone_number
+= @application.email
+
+= @application.best_way_to_contact
+= @application.contact_phone_time
+
+= @application.other_ways

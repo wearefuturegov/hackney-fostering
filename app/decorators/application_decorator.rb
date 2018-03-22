@@ -1,5 +1,5 @@
 class ApplicationDecorator < MainDecorator
-  delegate :code
+  delegate :code, :eligible
   
   def type_of_fostering
     standard_wrapper('Type of Fostering:', application.type_of_fostering)
@@ -51,6 +51,10 @@ class ApplicationDecorator < MainDecorator
   
   def email
     standard_wrapper('Email:', application.email)
+  end
+  
+  def other_ways
+    standard_wrapper('Interested in:', application.other_ways)
   end
   
 end
