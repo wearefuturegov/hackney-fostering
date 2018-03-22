@@ -15,4 +15,6 @@ Fabricator(:application) do
   applicant           { Fabricate(:person) }
   address             { Fabricate(:address) }
   email               { FFaker::Internet.email }
+  best_way_to_contact 1
+  over_21             true
 end
