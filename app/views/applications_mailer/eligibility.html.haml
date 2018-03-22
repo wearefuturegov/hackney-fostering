@@ -1,0 +1,32 @@
+%p
+  Someone has filled in an eligibility checker on the Hackney Fostering website. Their details are as follows:
+    
+%hr/
+
+%h2 Contact Details
+
+= @application.first_name
+= @application.last_name
+
+= @application.phone_number
+= @application.email
+
+= @application.best_way_to_contact
+= @application.contact_phone_time
+
+%hr/
+
+%h2 Details
+
+= @application.type_of_fostering
+= @application.spare_room
+= @application.housing_type
+= @application.over_21
+= @application.experience
+= @application.age_experience
+
+%p
+  The code for the resident's application is
+  %strong
+    = @application.code
+  \. Please send this to them with the link to start their application: #{applications_url}
