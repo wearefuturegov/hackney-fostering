@@ -6,9 +6,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
+          heading: Your family
           title: What is the %{number} child's full name?
           widget: :title_with_name
         - name: :first_name
@@ -33,8 +31,6 @@ form:
       questions:
         - name: :section
           heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
           title: What is %{name}'s date of birth?
           widget: :title_with_name
         - name: :date_of_birth
@@ -43,9 +39,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
+          heading: Your family
           title: What is %{name}'s relationship to you?
           widget: :title_with_name
         - name: :relationship
@@ -55,9 +49,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Tell us about who lives in your home
-          widget: :title
-        - name: :sub_section
+          heading: Your family
           title: Where does %{name} go to school?
           widget: :title_with_name
         - name: :school

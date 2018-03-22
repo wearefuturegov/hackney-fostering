@@ -34,7 +34,7 @@ form:
           widget: :input
           model: :address
         - name: :post_town
-          title: Address Town
+          title: Address Line 4
           widget: :input
           model: :address
         - name: :postcode

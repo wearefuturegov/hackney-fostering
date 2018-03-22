@@ -45,6 +45,13 @@ nav.nav + main.main {
   }
 }
 
+select {
+  @include grid-column(3);
+  width: calc(50% - #{$gutter*0.5});
+  margin-left: 0;
+  float: none;
+}
+
 footer.footer {
   @include grid-column(12);
 }

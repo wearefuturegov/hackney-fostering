@@ -1,8 +1,6 @@
 %section.section
-  %h1 Tell us about your previous addresses
-  
-  %p Your previous addresses are essential for successful background checks
-  
+  %h1 Your address history
+    
   - if application.addresses.count > 0
     %table.table#previous_addresses
       %thead
@@ -18,7 +16,7 @@
       %tbody
         = render partial: 'addresses/address', collection: application.addresses
           
-  %h2 Add an address
+  %h2 What is your previous address?
   
   = simple_form_for [application, application.addresses.new], html: { class: 'address_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |form|
     = render partial: 'address', locals: { form: form, hide_to: false }
