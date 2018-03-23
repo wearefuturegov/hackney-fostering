@@ -38,7 +38,7 @@ form:
           title: What is %{name}'s date of birth?
           widget: :title_with_name
         - name: :date_of_birth
-          widget: :dob
+          widget: :date
     relationship:
       template: :questions
       questions:

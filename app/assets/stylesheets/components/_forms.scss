@@ -1,3 +1,16 @@
 form {
-  
+  .grouped-date {
+    display: inline-block;
+    margin:  0 7px;
+    &.date {
+      margin-left: 0;
+      width: 60px;
+    }
+    &.month {
+      width: 60px;
+    }
+    &.year {
+      width: 100px;
+    }
+  }
 }

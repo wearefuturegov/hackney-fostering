@@ -81,7 +81,7 @@ form:
           widget: :title
         - name: :date_of_birth
           title: Date of Birth
-          widget: :dob
+          widget: :date
           model: :applicant
     country_of_birth:
       template: questions

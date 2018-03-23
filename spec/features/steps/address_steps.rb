@@ -99,9 +99,9 @@ module AddressSteps
   end
   
   def fill_in_date(field, date)
-    first("select[name*='#{field}(1i)']").find(:option, date.year).click
-    first("select[name*='#{field}(2i)']").find(:option, date.strftime('%B')).click
-    first("select[name*='#{field}(3i)']").find(:option, date.day).click
+    first("input[name*='#{field}(1i)']").set(date.year)
+    first("input[name*='#{field}(2i)']").set(date.month)
+    first("input[name*='#{field}(3i)']").set(date.day)
   end
   
 end
