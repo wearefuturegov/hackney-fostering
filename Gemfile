@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'haml'
-gem 'decent_exposure', '3.0.0'
+gem 'decent_exposure', '3.0.2'
 gem 'simple_form'
 gem 'dotenv-rails'
 gem 'hashids'
