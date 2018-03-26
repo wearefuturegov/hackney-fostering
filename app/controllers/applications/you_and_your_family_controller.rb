@@ -46,7 +46,8 @@ module Applications
       %i[
         previous_first_name
         previous_last_name
-        date_changed gender
+        date_changed
+        gender
         date_of_birth
         country_of_birth
         town_of_birth
