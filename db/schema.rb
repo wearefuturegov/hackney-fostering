@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321144535) do
+ActiveRecord::Schema.define(version: 20180326115552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,14 +48,12 @@ ActiveRecord::Schema.define(version: 20180321144535) do
     t.integer "address_id"
     t.integer "best_way_to_contact"
     t.boolean "practicing"
-    t.integer "religion"
+    t.string "religion"
     t.string "other_religion"
     t.string "beliefs"
-    t.integer "primary_language"
+    t.string "primary_language"
     t.string "other_language"
     t.string "secondary_languages"
-    t.integer "nationality"
-    t.string "other_nationality"
     t.boolean "children_at_home"
     t.integer "number_of_children"
     t.integer "number_of_adults"
@@ -157,11 +155,11 @@ ActiveRecord::Schema.define(version: 20180321144535) do
     t.datetime "updated_at", null: false
     t.string "country_of_birth"
     t.string "town_of_birth"
-    t.string "nationality"
     t.string "email"
     t.string "phone_number"
     t.string "years_known"
     t.bigint "address_id"
+    t.integer "nationality"
     t.index ["address_id"], name: "index_people_on_address_id"
     t.index ["application_id"], name: "index_people_on_application_id"
   end
