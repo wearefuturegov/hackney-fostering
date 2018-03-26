@@ -47,7 +47,9 @@ class Application < ApplicationRecord
     :address,
     :agency_address,
     :other_agency_address,
-    :previous_agency_address
+    :previous_agency_address,
+    :support_carer,
+    update_only: true
   )
   
   accepts_nested_attributes_for :support_carer, update_only: true
