@@ -71,6 +71,7 @@ group :development, :test do
   gem 'launchy'
   gem 'ffaker'
   gem 'database_cleaner'
+  gem 'email_spec'
 end
 
 group :development do

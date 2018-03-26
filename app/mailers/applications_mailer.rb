@@ -3,7 +3,7 @@ class ApplicationsMailer < ApplicationMailer
   layout 'mailer'
     
   def eligibility(application_id)
-    @application = Application.find(application_id).decorate
+    @application = Application.friendly.find(application_id).decorate
     mail(
       to: 'fostering@hackney.gov.uk',
       from: 'fostering@hackney.gov.uk',

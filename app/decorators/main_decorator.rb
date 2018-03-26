@@ -1,5 +1,4 @@
 class MainDecorator < Draper::Decorator
-
   def standard_wrapper(label, value)
     return nil if value.blank?
     h.content_tag(:p, '') do

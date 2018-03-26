@@ -2,6 +2,7 @@ module ApplicationSteps
   step :fill_in_radio_button, 'I check the :answer option'
   step :answer_question, 'I answer :text to the :text question'
   step :complete_form, 'I complete the form'
+  step :complete_form_ineligible, 'I complete the form and am ineligible'
   
   def fill_in_radio_button(answer)
     first('label', text: answer).click
@@ -29,6 +30,22 @@ module ApplicationSteps
     check_boxes(@form.age_experience)
     fill_in_radio_button(@form.housing_type)
     fill_in_radio_button(@form.be_in_touch)
+    answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
+    answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
+    click_on I18n.t('continue')
+    answer_question(@form.address.postcode, 'application_address_attributes_postcode')
+    click_on I18n.t('continue')
+    fill_in_radio_button(@form.contacting_you)
+    answer_question(@form.email, 'application_email')
+    click_on I18n.t('continue')
+  end
+  
+  def complete_form_ineligible # rubocop:disable Metrics/AbcSize
+    visit application_eligibility_index_path(@application)
+    @form = Fabricate.build(:application, spare_room: 1)
+    fill_in_radio_button(@form.type_of_fostering)
+    fill_in_radio_button(@form.spare_room)
+    fill_in_radio_button(@form.other_ways)
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
     answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
     click_on I18n.t('continue')
