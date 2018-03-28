@@ -11,8 +11,6 @@ class Application < ApplicationRecord
        contacting_you: %i[contact_phone contact_email contact_either],
        contact_phone_time: %i[morning afternoon evening],
        best_way_to_contact: %i[phone email],
-       religion: %i[christian muslim hindu sikh jewish buddhist],
-       primary_language: %i[english polish urdu bengali gujarati arabic french mandarin cantonese tamil turkish],
        employment_type: %i[full_time part_time self_employed director unemployed]
     
   has_many :applications_children
