@@ -2,7 +2,7 @@ class BreedingOtherRule < Incredible::Rule
   include Rails.application.routes.url_helpers
 
   def process
-    @redirect = new_application_legal_history_path(application_id: application.id)
+    @redirect = new_application_referee_path(application_id: application.code)
   end
   
   def application
