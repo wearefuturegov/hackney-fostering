@@ -17,8 +17,9 @@ Fabricator(:application) do
   email               { FFaker::Internet.email }
   best_way_to_contact 1
   over_21             true
+  other_ways          1
 end
 
 Fabricator(:complete_application, from: :application) do
-  phone_number { FFaker::PhoneNumber.phone_number }  
+  phone_number { FFaker::PhoneNumber.phone_number }
 end
