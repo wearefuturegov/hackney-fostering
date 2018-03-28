@@ -20,3 +20,6 @@ Metrics/AbcSize:
 Style/MixinUsage:
   Exclude:
     - 'bin/*'
+Style/WordArray:
+  Exclude:
+    - 'db/schema.rb'
