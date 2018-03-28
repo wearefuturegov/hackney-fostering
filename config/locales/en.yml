@@ -36,3 +36,67 @@ en:
   consent_and_submit: Consent and Submit
   application:
     invalid_code: The code you have entered is invalid. Please try again.
+  activerecord:
+    attributes:
+      application:
+        type_of_fosterings:
+          emergency_fostering: Emergency fostering
+          short_term_fostering: Short term fostering
+          long_term_fostering: Long term fostering
+          dont_know: Don't know
+        spare_rooms:
+          'yes': 'Yes'
+          'no': 'No'
+          not_yet: Not yet
+        experiences:
+          very_experienced: Very experienced
+          somewhat_experienced: Somewhat experienced
+          little_experience: Little experience
+          no_experience: No experience
+        housing_types:
+          own_property: Own property
+          renting_council: Renting (council)
+          renting_private: Renting (private landlord)
+        be_in_touches:
+          contact_me: 'Yes'
+          info_pack: 'No, just let me download an information pack'
+        contacting_yous:
+          contact_phone: 'Telephone'
+          contact_email: 'Email'
+          contact_either: 'Either'
+        contact_phone_times:
+          morning: Morning
+          afternoon: Afternoon
+          evening: Evening
+        employment_types:
+          full_time: Full time
+          part_time: Part time
+          self_employed: Self employed
+          director: Company director
+          unemployed: Unemployed
+        other_ways:
+          mentoring: Mentoring
+          specialist_support: Specialist support
+          other_support: Other support
+      person:
+        genders:
+          male: Male
+          female: Female
+          other: Other
+        nationalities:
+          british: British
+          british_english: British English
+          british_scottish: British Scottish
+          british_welsh: British Welsh
+        relationships:
+          child: Child
+          sibling: Sibling
+          foster_child: Foster child
+          stepchild: Stepchild
+          other_relationship: Child from another relationship
+      pet:
+        sizes:
+          small: Small
+          medium: Medium
+          large: Large
+      

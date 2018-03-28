@@ -21,8 +21,7 @@ module PetsSteps
     @pets << @pet
     fill_in 'pet_pet_type', with: @pet.pet_type
     click_on I18n.t('continue')
-    first('label', text: @pet.size).click
-    click_on I18n.t('continue')
+    fill_in_radio_button(I18n.t("activerecord.attributes.pet.sizes.#{@pet.size}"))
     first('label', text: (@pet.neutered? ? 'Yes' : 'No')).click
     click_on I18n.t('continue')
     fill_in 'pet_age', with: @pet.age

@@ -50,7 +50,7 @@ module RefereeSteps
     fill_in 'Email', with: @person.email
     fill_in 'Phone Number', with: @person.phone_number
     click_on I18n.t('continue')
-    select @person.relationship, from: 'Relationship'
+    select I18n.t("activerecord.attributes.person.relationships.#{@person.relationship}"), from: 'Relationship'
     fill_in 'How many years have you known each other?', with: @person.years_known
     click_on I18n.t('continue')
     @people << @person

@@ -62,7 +62,7 @@ module PeopleSteps
     fill_in 'First name(s)', with: @person.first_name
     fill_in 'Last name', with: @person.last_name
     click_on I18n.t('continue')
-    first('label', text: @person.gender).click
+    first('label', text: I18n.t("activerecord.attributes.person.genders.#{@person.gender}")).click
     click_on I18n.t('continue')
     fill_in_date('date_of_birth', @person.date_of_birth)
     click_on I18n.t('continue')

@@ -17,6 +17,8 @@ module FormHelper
   end
   
   def get_options(form, question)
-    form.object.class.send(question['name'].to_s.pluralize).keys
+    form.object.class.send(question['name'].to_s.pluralize).keys.map do |k|
+      [form.object.class.human_enum_name(question['name'].to_s, k), k]
+    end
   end
 end
