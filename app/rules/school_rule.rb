@@ -1,6 +1,4 @@
-class SchoolRule < Incredible::Rule
-  include Rails.application.routes.url_helpers
-
+class SchoolRule < ApplicationRule
   def process
     @redirect = if params['controller'] == 'applications/children_elsewhere/information'
                   children_elsewhere_redirect
@@ -23,9 +21,5 @@ class SchoolRule < Incredible::Rule
     else
       new_application_children_elsewhere_path(application_id: application.id)
     end
-  end
-  
-  def application
-    @application ||= Application.friendly.find(params[:application_id])
   end
 end

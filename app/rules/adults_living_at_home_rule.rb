@@ -1,6 +1,4 @@
-class AdultsLivingAtHomeRule < Incredible::Rule
-  include Rails.application.routes.url_helpers
-
+class AdultsLivingAtHomeRule < ApplicationRule
   def process
     @next_step = :adults_living_elsewhere if adults_living_at_home == '0'
     @redirect = new_application_adult_path(application_id: application.id) if adults_living_at_home == '1'
@@ -8,9 +6,5 @@ class AdultsLivingAtHomeRule < Incredible::Rule
   
   def adults_living_at_home
     params['application']['adults_living_at_home']
-  end
-  
-  def application
-    Application.friendly.find(params[:application_id])
   end
 end

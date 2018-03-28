@@ -1,6 +1,4 @@
-class RelationshipRule < Incredible::Rule
-  include Rails.application.routes.url_helpers
-
+class RelationshipRule < ApplicationRule
   def process
     @redirect = if params['controller'] == 'applications/adults/information'
                   adults_redirect
@@ -24,9 +22,4 @@ class RelationshipRule < Incredible::Rule
       new_application_adults_elsewhere_path(application_id: application.id)
     end
   end
-  
-  def application
-    @application ||= Application.friendly.find(params[:application_id])
-  end
-  
 end

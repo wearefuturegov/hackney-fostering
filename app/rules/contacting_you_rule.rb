@@ -1,4 +1,4 @@
-class ContactingYouRule < Incredible::Rule
+class ContactingYouRule < ApplicationRule
   
   def process
     @next_step = case params[:application][:contacting_you]

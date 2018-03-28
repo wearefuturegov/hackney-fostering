@@ -1,4 +1,4 @@
-class OtherPreviousApplicationsRule < Incredible::Rule
+class OtherPreviousApplicationsRule < ApplicationRule
   def process
     @next_step = params[:application][:other_previous_applications] == '1' ? :other_application_date : :previous_fostering
   end

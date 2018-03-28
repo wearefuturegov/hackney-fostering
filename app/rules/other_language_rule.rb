@@ -1,4 +1,4 @@
-class OtherLanguageRule < Incredible::Rule
+class OtherLanguageRule < ApplicationRule
   
   def process
     @next_step = params[:application][:other_language] == '1' ? :other_language_select : :are_you_religious

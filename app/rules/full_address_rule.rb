@@ -1,4 +1,4 @@
-class FullAddressRule < Incredible::Rule
+class FullAddressRule < ApplicationRule
   
   def process
     address_params = params[:application][:address_attributes]

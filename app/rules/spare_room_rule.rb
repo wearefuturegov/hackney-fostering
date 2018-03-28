@@ -1,5 +1,4 @@
-class SpareRoomRule < Incredible::Rule
-  
+class SpareRoomRule < ApplicationRule
   def process
     @next_step = if params[:application][:spare_room] == 'yes'
                    application.update_attribute(:eligible, true)
@@ -9,9 +8,4 @@ class SpareRoomRule < Incredible::Rule
                    :other_ways
                  end
   end
-  
-  def application
-    @application ||= Application.friendly.find(params[:application_id])
-  end
-  
 end
