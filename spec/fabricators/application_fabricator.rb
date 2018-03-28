@@ -21,5 +21,6 @@ Fabricator(:application) do
 end
 
 Fabricator(:complete_application, from: :application) do
-  phone_number { FFaker::PhoneNumber.phone_number }
+  phone_number  { FFaker::PhoneNumber.phone_number }
+  support_carer { Fabricate(:support_carer) }
 end

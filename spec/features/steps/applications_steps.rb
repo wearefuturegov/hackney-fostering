@@ -75,6 +75,10 @@ module ApplicationSteps
   step 'I have started an application' do
     @application = Fabricate(:blank_application)
   end
+  
+  step 'I have completed an application' do
+    @application = Fabricate(:complete_application)
+  end
 
   step 'my response should be stored' do
     @application.reload
