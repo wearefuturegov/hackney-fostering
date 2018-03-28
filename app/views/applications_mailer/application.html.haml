@@ -1,0 +1,181 @@
+%h2 Contact Details
+
+= @application.applicant.first_name
+= @application.applicant.last_name
+
+= @application.phone_number
+= @application.email
+
+%hr
+
+- if @application.name_change
+
+  %h2 Name change
+  
+  = @application.previous_first_name
+  = @application.previous_last_name
+  = @application.date_of_name_change
+  
+  %hr
+
+%h2 Personal Details
+
+= @application.applicant.gender
+= @application.applicant.date_of_birth
+= @application.applicant.country_of_birth
+= @application.applicant.town_of_birth
+
+%hr
+
+%h2 Nationality and religion
+
+= @application.applicant.nationality
+= @application.primary_language
+= @application.secondary_languages
+= @application.religion
+= @application.practicing
+
+%hr
+
+%h2 Employment Details
+
+= @application.employment_type
+= @application.ni_number
+= @application.occupation
+= @application.employer
+= @application.employer_contact_name
+= @application.employer_phone_number
+
+%hr
+
+%h2 Current Address
+
+= @application.address.full_address
+= @application.address.date_from
+
+- if @application.addresses.length > 0
+  %h2 Previous addresses
+  
+  %table
+    %tr
+      %th
+        Address
+      %th
+        Date From
+      %th
+        Date To
+    - @application.addresses.each do |a|
+      %tr
+        %td= a.full_address
+        %td= a.object.date_from&.to_s(:long)
+        %td= a.object.date_to&.to_s(:long)
+
+%hr
+
+- if @application.children_at_home
+  
+  %h2 Children living at home
+  
+  = render 'children', children: @application.children
+
+  %hr
+  
+- if @application.children_living_elsewhere
+  
+  %h2 Children living elsewhere
+  
+  = render 'children', children: @application.children_elsewhere
+  
+  %hr
+
+- if @application.adults_living_at_home
+
+  %h2 Adults living at home
+  
+  = render 'adults', adults: @application.adults
+
+  %hr
+
+- if @application.adults_living_elsewhere
+
+  %h2 Adults living elsewhere
+  
+  = render 'adults', adults: @application.adults_elsewhere
+
+  %hr
+    
+- if @application.have_pets
+
+  %h2 Pets
+
+  = render 'pets', pets: @application.pets
+
+  %hr
+- if @application.breed_pets
+  
+  %h2 Pet Breeding
+  
+  = @application.where_breed_pets
+  = @application.offspring_kept
+  = @application.breeding_risks
+  = @application.breeding_other
+
+  %hr
+  
+%h2 References
+
+= render 'referees', referees: @application.referees
+
+%hr
+
+%h2 Support carer
+
+= @application.support_carer.first_name
+= @application.support_carer.last_name
+= @application.support_carer.email
+
+%hr
+
+- if @application.family_court
+
+  %h2 Family court history
+  
+  = @application.court_date
+  = @application.court_name
+  = @application.type_of_order
+  = @application.parties_involved
+  = @application.court_details
+  
+  %hr
+  
+- if @application.previous_applications
+
+  %h2 Previous fostering applications
+  
+  = @application.application_date
+  = @application.agency_name
+  = @application.agency_address
+  = @application.type_of_application
+  = @application.application_outcome
+  
+  %hr
+  
+- if @application.other_previous_applications
+
+  %h2 Previous fostering applications from other household members
+  
+  = @application.other_application_date
+  = @application.other_agency_name
+  = @application.other_agency_address
+  = @application.other_type_of_application
+  = @application.other_application_outcome
+  
+  %hr
+
+- if @application.previous_fostering
+
+  %h2 Previous fostering experience
+  
+  = @application.previous_agency_name
+  = @application.previous_agency_address
+  

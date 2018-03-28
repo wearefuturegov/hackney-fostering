@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th
+      First Name
+    %th
+      Last Name
+    %th
+      Gender
+    %th
+      Date of Birth
+    %th
+      Relationship
+  = render partial: 'adult', collection: adults.map(&:object), as: :adult
