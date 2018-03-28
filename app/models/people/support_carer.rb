@@ -1,0 +1,2 @@
+class SupportCarer < Person
+end

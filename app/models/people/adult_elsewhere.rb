@@ -1,0 +1,2 @@
+class AdultElsewhere < Person
+end
