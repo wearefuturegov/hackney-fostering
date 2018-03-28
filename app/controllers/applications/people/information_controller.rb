@@ -5,7 +5,7 @@ module Applications
       expose :application, -> { Application.friendly.find(params[:application_id]) }
       expose :person, -> { application.people.find(params[:person_id]) }
       
-      prepend_before_action :update_person
+      prepend_before_action :update_person, only: :update
       
       def show
         render_wizard nil, template: "people/#{template}"
@@ -22,7 +22,7 @@ module Applications
       private
       
       def update_person
-        person.update_attributes(permitted_params) if params[:person]
+        person.update_attributes(permitted_params)
       end
       
       def permitted_params

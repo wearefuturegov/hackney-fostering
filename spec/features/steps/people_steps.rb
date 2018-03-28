@@ -38,6 +38,7 @@ module PeopleSteps
   def should_have_people(count, type)
     people = @application.send(type.to_sym)
     expect(people.count).to eq(count.to_i)
+    @people.reverse!
     people.each_with_index do |person, i|
       person_should_be_saved person, i
     end
@@ -66,7 +67,7 @@ module PeopleSteps
     click_on I18n.t('continue')
     fill_in_date('date_of_birth', @person.date_of_birth)
     click_on I18n.t('continue')
-    find("#person_relationship > option[value=#{@person.relationship}]").click
+    find("select > option[value=#{@person.relationship}]").click
     click_on I18n.t('continue')
   end
   
@@ -78,8 +79,8 @@ module PeopleSteps
   def fill_in_child_details
     @person = Fabricate(:child)
     fill_in_person
-    fill_in 'person_school', with: @person.school
-    fill_in 'person_school_contact', with: @person.school_contact
+    fill_in 'Name of the school', with: @person.school
+    fill_in 'School phone number', with: @person.school_contact
     click_on I18n.t('continue')
   end
   
