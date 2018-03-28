@@ -190,7 +190,7 @@ form:
         - name: :sub_section
           title: Date you applied
           widget: :title
-        - name: :application_date
+        - name: :other_application_date
           widget: :date
     other_agency_name:
       template: :single_question
