@@ -1,12 +1,11 @@
-class SupportCarerEmailRule < Incredible::Rule
+class PreviousAgencyAddressRule < Incredible::Rule
   include Rails.application.routes.url_helpers
 
   def process
-    @redirect = new_application_legal_history_path(application_id: application.code)
+    @redirect = consent_application_path(application)
   end
   
   def application
     Application.friendly.find(params[:application_id])
   end
-  
 end

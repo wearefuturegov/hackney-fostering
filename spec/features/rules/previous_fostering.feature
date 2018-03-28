@@ -8,3 +8,6 @@ Feature: Previous Applications
     And I check the 'Yes' option
     Then I should be on the 'previous_agency_name' step
     
+  Scenario: No redirects to the consent step
+    And I check the 'No' option
+    Then I should be on the 'consent' step
