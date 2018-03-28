@@ -1,0 +1,2 @@
+class Referee < Person
+end

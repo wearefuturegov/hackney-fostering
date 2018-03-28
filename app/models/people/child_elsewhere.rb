@@ -1,0 +1,2 @@
+class ChildElsewhere < Person
+end

@@ -8,10 +8,10 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
   describe 'people relationships' do # rubocop:disable Metrics/BlockLength
     
     let(:children) { Fabricate.times(3, :child) }
-    let(:adults) { Fabricate.times(2, :person) }
-    let(:children_elsewhere) { Fabricate.times(1, :child) }
-    let(:adults_elsewhere) { Fabricate.times(6, :child) }
-    let(:referees) { Fabricate.times(6, :person) }
+    let(:adults) { Fabricate.times(2, :adult) }
+    let(:children_elsewhere) { Fabricate.times(1, :child_elsewhere) }
+    let(:adults_elsewhere) { Fabricate.times(6, :adult_elsewhere) }
+    let(:referees) { Fabricate.times(6, :referee) }
 
     let(:application) do
       Fabricate(:application,

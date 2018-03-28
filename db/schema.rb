@@ -141,7 +141,6 @@ ActiveRecord::Schema.define(version: 20180328140159) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.integer "person_type"
     t.string "first_name"
     t.string "last_name"
     t.integer "gender"
@@ -162,6 +161,7 @@ ActiveRecord::Schema.define(version: 20180328140159) do
     t.string "years_known"
     t.bigint "address_id"
     t.integer "nationality"
+    t.string "type"
     t.index ["address_id"], name: "index_people_on_address_id"
     t.index ["application_id"], name: "index_people_on_application_id"
   end

@@ -12,25 +12,19 @@ class Application < ApplicationRecord
        contact_phone_time: %i[morning afternoon evening],
        best_way_to_contact: %i[phone email],
        employment_type: %i[full_time part_time self_employed director unemployed]
-    
-  has_many :applications_children
-  has_many :applications_adults
-  has_many :applications_children_elsewhere, class_name: 'ApplicationsChildElsewhere'
-  has_many :applications_adults_elsewhere, class_name: 'ApplicationsAdultElsewhere'
-  has_many :applications_referees, class_name: 'ApplicationsReferee'
          
-  has_many :children, through: :applications_children, source: :person
-  has_many :adults, through: :applications_adults, source: :person
-  has_many :children_elsewhere, through: :applications_children_elsewhere, source: :person
-  has_many :adults_elsewhere, through: :applications_adults_elsewhere, source: :person
-  has_many :referees, through: :applications_referees, source: :person
+  has_many :children
+  has_many :adults
+  has_many :children_elsewhere, class_name: 'ChildElsewhere'
+  has_many :adults_elsewhere, class_name: 'AdultElsewhere'
+  has_many :referees
 
   has_many :addresses
   has_many :pets
   
-  belongs_to :applicant, class_name: 'Person', foreign_key: :applicant_id, optional: true
+  belongs_to :applicant, optional: true
   belongs_to :address, class_name: 'Address', foreign_key: :address_id, optional: true
-  belongs_to :support_carer, class_name: 'Person', foreign_key: :support_carer_id, optional: true
+  belongs_to :support_carer, foreign_key: :support_carer_id, optional: true
   
   belongs_to :agency_address, class_name: 'Address', foreign_key: :agency_address_id, optional: true
   belongs_to :other_agency_address, class_name: 'Address', foreign_key: :other_agency_address_id, optional: true

@@ -12,7 +12,7 @@ Fabricator(:application) do
   contacting_you      1
   phone_number        1232323
   contact_phone_time  1
-  applicant           { Fabricate(:person) }
+  applicant           { Fabricate(:applicant) }
   address             { Fabricate(:address) }
   email               { FFaker::Internet.email }
   best_way_to_contact 1
