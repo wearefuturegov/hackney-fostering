@@ -2,6 +2,7 @@ class ApplicationsController < MainController
   expose :application, :get_application
   
   prepend_before_action :update_application
+  before_action :set_current_path, only: [:show]
   
   def index; end
   
