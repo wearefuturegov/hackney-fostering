@@ -23,7 +23,11 @@ class ApplicationsController < MainController
   end
   
   def find
-    redirect_to new_application_you_and_your_family_path(application)
+    if application.current_path
+      redirect_to application.current_path
+    else
+      redirect_to new_application_you_and_your_family_path(application)
+    end
   rescue ActiveRecord::RecordNotFound
     flash[:error] = I18n.t('application.invalid_code')
     render :index
