@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328103230) do
+ActiveRecord::Schema.define(version: 20180328140159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,37 +106,38 @@ ActiveRecord::Schema.define(version: 20180328103230) do
     t.boolean "agree_to_la_contact"
     t.string "signature"
     t.boolean "eligible"
+    t.string "current_path"
     t.index ["support_carer_id"], name: "index_applications_on_support_carer_id"
   end
 
   create_table "applications_adults", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "index_applications_adults_on_application_id_and_person_id"
+    t.index ["application_id", "person_id"], name: "index_applications_adults_on_application_id_and_person_id"
   end
 
   create_table "applications_adults_elsewhere", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "adults_elsewhere_index"
+    t.index ["application_id", "person_id"], name: "adults_elsewhere_index"
   end
 
   create_table "applications_children", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "index_applications_children_on_application_id_and_person_id"
+    t.index ["application_id", "person_id"], name: "index_applications_children_on_application_id_and_person_id"
   end
 
   create_table "applications_children_elsewhere", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "children_elsewhere_index"
+    t.index ["application_id", "person_id"], name: "children_elsewhere_index"
   end
 
   create_table "applications_referees", id: false, force: :cascade do |t|
     t.bigint "application_id", null: false
     t.bigint "person_id", null: false
-    t.index %w[application_id person_id], name: "index_applications_referees_on_application_id_and_person_id"
+    t.index ["application_id", "person_id"], name: "index_applications_referees_on_application_id_and_person_id"
   end
 
   create_table "people", force: :cascade do |t|
