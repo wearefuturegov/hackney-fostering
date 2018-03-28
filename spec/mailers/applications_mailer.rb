@@ -10,8 +10,8 @@ RSpec.describe ApplicationsMailer, type: :mailer do # rubocop:disable Metrics/Bl
 
       it 'renders the headers' do
         expect(mail.subject).to eq('New eligibility enquiry')
-        expect(mail.to).to eq(['fostering@hackney.gov.uk'])
-        expect(mail.from).to eq(['fostering@hackney.gov.uk'])
+        expect(mail.to).to eq([ENV['FOSTERING_EMAIL_ADDRESS']])
+        expect(mail.from).to eq([ENV['FOSTERING_EMAIL_ADDRESS']])
       end
 
       it 'renders the body' do
@@ -48,8 +48,8 @@ RSpec.describe ApplicationsMailer, type: :mailer do # rubocop:disable Metrics/Bl
     
     it 'renders the headers' do
       expect(mail.subject).to eq('New fostering application')
-      expect(mail.to).to eq(['fostering@hackney.gov.uk'])
-      expect(mail.from).to eq(['fostering@hackney.gov.uk'])
+      expect(mail.to).to eq([ENV['FOSTERING_EMAIL_ADDRESS']])
+      expect(mail.from).to eq([ENV['FOSTERING_EMAIL_ADDRESS']])
     end
     
     it 'renders the body' do

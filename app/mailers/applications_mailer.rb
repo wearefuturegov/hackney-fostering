@@ -5,8 +5,8 @@ class ApplicationsMailer < ApplicationMailer
   def eligibility(application_id)
     @application = Application.friendly.find(application_id).decorate
     mail(
-      to: 'fostering@hackney.gov.uk',
-      from: 'fostering@hackney.gov.uk',
+      to: ENV['FOSTERING_EMAIL_ADDRESS'],
+      from: ENV['FOSTERING_EMAIL_ADDRESS'],
       subject: 'New eligibility enquiry',
       template_name: template_name
     )
@@ -15,8 +15,8 @@ class ApplicationsMailer < ApplicationMailer
   def application(application_id)
     @application = Application.friendly.find(application_id).decorate
     mail(
-      to: 'fostering@hackney.gov.uk',
-      from: 'fostering@hackney.gov.uk',
+      to: ENV['FOSTERING_EMAIL_ADDRESS'],
+      from: ENV['FOSTERING_EMAIL_ADDRESS'],
       subject: 'New fostering application',
       template_name: 'application'
     )
