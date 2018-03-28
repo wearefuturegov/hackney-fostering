@@ -15,6 +15,7 @@ module RefereeSteps
   
   step 'my referees should be saved' do
     expect(@people.count).to eq(@application.referees.count)
+    @people.reverse!
     @application.referees.each_with_index do |person, i|
       referee_should_be_saved(person, i)
     end
