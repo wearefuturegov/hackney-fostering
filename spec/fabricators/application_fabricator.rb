@@ -18,3 +18,7 @@ Fabricator(:application) do
   best_way_to_contact 1
   over_21             true
 end
+
+Fabricator(:complete_application, from: :application) do
+  phone_number { FFaker::PhoneNumber.phone_number }  
+end

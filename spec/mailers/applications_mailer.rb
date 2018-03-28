@@ -40,4 +40,21 @@ RSpec.describe ApplicationsMailer, type: :mailer do # rubocop:disable Metrics/Bl
     end
   
   end
+  
+  describe 'application' do
+    
+    let(:application) { Fabricate(:complete_application) }
+    let(:mail) { ApplicationsMailer.application(application.id) }
+    
+    it 'renders the headers' do
+      expect(mail.subject).to eq('New fostering application')
+      expect(mail.to).to eq(['fostering@hackney.gov.uk'])
+      expect(mail.from).to eq(['fostering@hackney.gov.uk'])
+    end
+    
+    it 'renders the body' do
+      expect(mail.body.encoded).to match(application.applicant.first_name)
+    end
+    
+  end
 end

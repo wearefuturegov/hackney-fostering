@@ -2,12 +2,13 @@ class MainDecorator < Draper::Decorator
   def standard_wrapper(label, value)
     return nil if value.blank?
     h.content_tag(:p, '') do
-      h.content_tag(:label, label, class: 'label') <<
+      h.content_tag(:label, "#{label}: ", class: 'label') <<
         value
     end
   end
   
   def value_from(boolean)
+    return if boolean.blank?
     case boolean
     when true
       'Yes'
