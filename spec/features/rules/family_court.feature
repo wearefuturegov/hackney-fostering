@@ -6,7 +6,7 @@ Feature: Family Court
     
   Scenario: Yes redirects to give more information
     And I check the 'Yes' option
-    Then I should be on the 'application_date' step
+    Then I should be on the 'court_date' step
 
   Scenario: No redirects to the next section
     And I check the 'No' option
