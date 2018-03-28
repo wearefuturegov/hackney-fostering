@@ -1,4 +1,6 @@
 if ENV['ERRBIT_API_KEY']
+  require 'airbrake'
+
   Airbrake.configure do |config|
     config.project_id  = 1
     config.project_key = ENV['ERRBIT_API_KEY']
