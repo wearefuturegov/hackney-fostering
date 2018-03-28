@@ -30,7 +30,9 @@ class ApplicationsController < MainController
   
   def consent; end
   
-  def complete; end
+  def complete
+    ApplicationsMailer.application(params[:id]).deliver
+  end
     
   private
   

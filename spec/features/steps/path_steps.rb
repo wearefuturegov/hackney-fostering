@@ -12,3 +12,7 @@ end
 step 'I am on the :path' do |path|
   visit path
 end
+
+step 'I go to the application consent page' do
+  visit consent_application_path(@application)
+end
