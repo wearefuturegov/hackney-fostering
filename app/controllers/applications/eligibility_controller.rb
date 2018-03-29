@@ -16,10 +16,13 @@ module Applications
         :housing_type,
         :be_in_touch,
         :contacting_you,
+        :phone_number,
+        :contact_phone_time,
         :email,
         :other_ways,
         :postcode,
         :practicing,
+        age_experience: [],
         applicant_attributes: %i[first_name last_name],
         address_attributes: %i[postcode],
         addresses_attributes: %i[postcode date_from]

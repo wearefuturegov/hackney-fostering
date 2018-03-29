@@ -62,7 +62,7 @@ module ApplicationSteps
     expect(application.spare_room).to eq(@form.spare_room)
     expect(application.over_21).to eq(@form.over_21)
     expect(application.experience).to eq(@form.experience)
-    expect(application.age_experience).to eq(@form.age_experience)
+    expect(application.age_experience.reject(&:blank?)).to eq(@form.age_experience)
     expect(application.housing_type).to eq(@form.housing_type)
     expect(application.be_in_touch).to eq(@form.be_in_touch)
     expect(application.applicant.first_name).to eq(@form.applicant.first_name)
