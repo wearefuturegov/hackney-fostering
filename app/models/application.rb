@@ -29,6 +29,19 @@ class Application < ApplicationRecord
   belongs_to :agency_address, class_name: 'Address', foreign_key: :agency_address_id, optional: true
   belongs_to :other_agency_address, class_name: 'Address', foreign_key: :other_agency_address_id, optional: true
   belongs_to :previous_agency_address, class_name: 'Address', foreign_key: :previous_agency_address_id, optional: true
+  
+  # Validations for eligibility form
+  validates :type_of_fostering, presence: true, if: -> { on_step?(%w[fostering_type]) }
+  validates :spare_room, presence: true, if: -> { on_step?(%w[spare_room]) }
+  validates :over_21, presence: true, if: -> { on_step?(%w[over_21]) }
+  validates :experience, presence: true, if: -> { on_step?(%w[experience]) }
+  validates :age_experience, presence: true, if: -> { on_step?(%w[age_experience]) }
+  validates :housing_type, presence: true, if: -> { on_step?(%w[housing_type]) }
+  validates :be_in_touch, presence: true, if: -> { on_step?(%w[be_in_touch]) }
+  validates :contacting_you, presence: true, if: -> { on_step?(%w[contacting_you]) }
+  validates :phone_number, presence: true, if: -> { on_step?(%w[contact_phone]) }
+  validates :contact_phone_time, presence: true, if: -> { on_step?(%w[contact_phone_time]) }
+  validates :email, presence: true, if: -> { on_step?(%w[contact_email]) }
 
   accepts_nested_attributes_for(
     :children,
