@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328191637) do
+ActiveRecord::Schema.define(version: 20180329093215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20180328191637) do
     t.string "signature"
     t.boolean "eligible"
     t.string "current_path"
+    t.string "current_step"
     t.index ["support_carer_id"], name: "index_applications_on_support_carer_id"
   end
 
