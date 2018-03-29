@@ -11,7 +11,11 @@ class ApplicationsController < MainController
   end
   
   def update
-    render_wizard application
+    if application.valid?
+      render_wizard application
+    else
+      render "applications/#{template}"
+    end
   end
   
   def new
