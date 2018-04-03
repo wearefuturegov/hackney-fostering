@@ -10,4 +10,4 @@
     = render partial: 'address', locals: { form: ff, hide_to: true }
     
   %section.actions
-    = f.submit t('continue'), class: "confirm add-address hidden"
+    = f.submit t('continue'), class: "confirm add-address #{f.object.errors.any? ? '' : 'hidden'}"

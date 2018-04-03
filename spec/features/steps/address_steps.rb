@@ -87,7 +87,6 @@ module AddressSteps
     address[:postcode] = postcode
     @addresses ||= []
     @addresses << address
-    page.execute_script '$(".confirm")[0].scrollIntoView(true)'
     first('.add-address').click if click_continue
   end
   
