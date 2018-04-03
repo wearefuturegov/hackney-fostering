@@ -1,16 +1,21 @@
 %section.section
-  %img
-    = image_tag('/img_01.png')
-  
-%section.section
   %h1
     What is fostering?
   %p
     Fostering involves different types of care. From emergency care over night or just for a few days or over a weekend to give the main foster carer some time off. It could also be for longer periods, sometimes months or years. It all depends on the needs of the child and their family situation. 
+
+  = link_to 'Check if you can foster', 'eligibility', class: 'button confirm'
+
+%section.section
+  = link_to 'Who can foster?', 'who', class: 'button secondary'
+
+%section.section
+  = image_tag('/img_01.png')
   %p
     In many cases, it is also important to maintain links with the child's birth family. This can be through regular 'contact' meetings, which you will help facilitate. 
   %p
     There are many reasons why a child's birth family is unable to care for them. In some cases parents request that their children are looked after by us or agree when social care considers it necessary. In other cases, social workers may need to apply to the court for an order to safeguard children.
+  
   %p
     Wherever we can, we try to keep families together, but where this is not possible we need you. As a foster carer, you help us to ensure that children live in safe, happy and supportive family settings, so these children can grow up enjoying a stable and secure life. 
 
@@ -34,6 +39,3 @@
       Parent and child fostering (parent and child fostering [pdf,  421.23Kb])
     %li
       Specialist teenage fostering (teenage fostering [pdf,  476.69Kb]) 
-
-%section.actions
-  = link_to 'I want to know more', 'who', class: 'button secondary'

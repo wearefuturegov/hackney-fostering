@@ -9,6 +9,7 @@
   %body
     = render '/layouts/layouts/header'
     = render 'nav'
-    %main.main
-      = yield
-    / = render '/layouts/layouts/footer'
+    %main
+      .main
+        = yield
+    = render '/layouts/layouts/footer'

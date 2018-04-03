@@ -10,7 +10,7 @@ form:
           title: What type of fostering are you interested in?
           widget: :title
         - name: :type_of_fostering
-          widget: :radio
+          widget: :checkbox
     spare_room:
       template: single_question
       next_step: :next_step
@@ -91,11 +91,15 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Sorry, you are unable to be a foster carer at the moment
-          title: Other ways you can help children and young people in Hackney
+          heading: Check if you can be a foster carer
+          widget: :title
+        - name: :section
+          intro: Sorry, you are unable to be a foster carer at the moment.
+          widget: :info
+        - name: :section
+          title: Other ways you can help children and young people in Hackney.
           widget: :title
         - name: :other_ways
-          title: Sorry, you are unable to be a foster carer at the moment
           widget: :radio
           next_button_label: Provide contact details
     what_is_your_name:

@@ -28,5 +28,5 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   end
   
   resources :pages, only: [:show], path: '/'
-  get '/', to: 'pages#show', id: 'fostering'
+  get '/', to: 'pages#show', id: 'eligibility'
 end

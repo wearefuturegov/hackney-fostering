@@ -1,16 +1,18 @@
 %section.section
-  %img
-    = image_tag('/img_02.png')
-
-%section.section
   %h1
     Who can foster?
   %p
     Hackney recruits a diverse range of foster carers to reflect our community.
-  %p
-    There's no such thing as a 'typical' foster carer; but as part of the approvals process you will need to meet the following criteria:
 
-  %ul
+  = link_to 'Check if you can foster', 'eligibility', class: 'button confirm'
+
+%section.section
+  = link_to 'Why foster wth Hackney?', 'why', class: 'button secondary'
+  
+%section.section
+  %ul.box.info
+    %p
+      There's no such thing as a 'typical' foster carer; but as part of the approvals process you will need to meet the following criteria:
     %li
       Be over 21 and capable to meet the demands of parenthood.
     %li
@@ -21,6 +23,3 @@
       Have the time and ability to foster. You don't need to give up work to foster, as long as your work is flexible enough to cope with the demands and you have a support network in place.
     %li
       We do not discriminate on the grounds of class, race, culture, sexual orientation or disability. We also welcome enquiries from single people wanting to foster.
-
-%section.actions
-  = link_to 'Check if you can foster', 'eligibility', class: 'button confirm'
