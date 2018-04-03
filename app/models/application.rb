@@ -1,4 +1,4 @@
-class Application < ApplicationRecord
+class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   extend ::FriendlyId
   friendly_id :code
 
@@ -60,11 +60,15 @@ class Application < ApplicationRecord
   validates :children_at_home, inclusion: [true, false], if: -> { on_step?(%w[children_living_at_home]) }
   validates :number_of_children, presence: true, if: -> { on_step?(%w[children_living_at_home]) && children_at_home == true }
   validates :children_living_elsewhere, inclusion: [true, false], if: -> { on_step?(%w[children_living_elsewhere]) }
-  validates :number_of_children_elsewhere, presence: true, if: -> { on_step?(%w[children_living_elsewhere]) && children_living_elsewhere == true }
+  validates :number_of_children_elsewhere, presence: true, if: lambda {
+    on_step?(%w[children_living_elsewhere]) && children_living_elsewhere == true
+  }
   validates :adults_living_at_home, inclusion: [true, false], if: -> { on_step?(%w[adults_living_at_home]) }
   validates :number_of_adults, presence: true, if: -> { on_step?(%w[adults_living_at_home]) && adults_living_at_home == true }
   validates :adults_living_elsewhere, inclusion: [true, false], if: -> { on_step?(%w[adults_living_elsewhere]) }
-  validates :number_of_adults_elsewhere, presence: true, if: -> { on_step?(%w[adults_living_elsewhere]) && adults_living_elsewhere == true }
+  validates :number_of_adults_elsewhere, presence: true, if: lambda {
+    on_step?(%w[adults_living_elsewhere]) && adults_living_elsewhere == true
+  }
   validates :have_pets, inclusion: [true, false], if: -> { on_step?(%w[pets]) }
   validates :number_of_pets, presence: true, if: -> { on_step?(%w[pets]) && have_pets == true }
   validates :breed_pets, inclusion: [true, false], if: -> { on_step?(%w[breed_pets]) }
@@ -144,7 +148,6 @@ class Application < ApplicationRecord
   def send_full_application_email!
     ApplicationsMailer.application(id).deliver
   end
-
   
   private
   
