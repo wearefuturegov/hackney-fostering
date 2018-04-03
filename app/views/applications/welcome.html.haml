@@ -4,18 +4,20 @@
   %p
     Welcome to the first stage of becoming a foster carer. This application form is designed to allow completion over multiple vists. That means if you feel like you need to come back to something later, you can.
 
-  %h3
-    You will need the following:
+  .box.info
+    %h3
+      You will need the following:
 
-  %ul
-    %li
-      Your address history for the past 7 years
-    %li
-      Your passport and ID if you have one
-    %li
-      National Insurance Number
-
-  = link_to 'Begin your application', 'name_change_info', class: 'button confirm'
+    %ul
+      %li
+        Your address history for the past 7 years
+      %li
+        Your passport and ID if you have one
+      %li
+        National Insurance Number
+  
+  %section.actions
+    = link_to 'Begin your application', 'name_change_info', class: 'button confirm'
 
 %section.section
   %h2
@@ -25,7 +27,4 @@
     = link_to 'Learn more', 'Learn more'
 
   %p
-    = link_to 'You can also register by post', 'You can also register by post'
-
-  %p
-    = link_to 'Continue to questions', :applications, class: 'confirm'
+    = link_to 'You can also register by post', 'https://www.hackney.gov.uk/fostering'

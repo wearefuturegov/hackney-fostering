@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20180329093215) do
     t.string "phone_number"
     t.string "years_known"
     t.bigint "address_id"
-    t.integer "nationality"
+    t.string "nationality"
     t.string "type"
     t.index ["address_id"], name: "index_people_on_address_id"
     t.index ["application_id"], name: "index_people_on_application_id"

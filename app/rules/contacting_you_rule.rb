@@ -6,8 +6,6 @@ class ContactingYouRule < ApplicationRule
                    :contact_phone
                  when 'contact_email'
                    :contact_email
-                 when 'contact_either'
-                   :contact_either
                  end
   end
   

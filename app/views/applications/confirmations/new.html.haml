@@ -1,16 +1,23 @@
-%h1 Consent
+%section.section
+  %h1 Consent
 
-%p
-  %strong
-    The information I've provided is accurate and honest
-    
-%p
-  I/we undertake to be truthful and honest in providing full and accurate
-  information for this assessment, both verbally and in writing.
-  
-= simple_form_for application, url: application_confirmations_path(application_id: application.code), method: :post do |form|
-  = form.input :agree_to_checks, as: :boolean, label: 'I agree to what checks I will be undertaking'
-  = form.input :agree_to_la_contact, as: :boolean, label: 'I consent to Hackney Council contacting my previous local authority'
-  = form.input :signature, as: :text, label: 'Please enter your full name'
-  %section.actions
-    = form.submit t('consent_and_submit'), class: "confirm"
+  %p
+    The information i've provided is accurate and correct.
+  %p
+    I undertake to be truthful and honest in providing full and accurate information for this assessment, both verbally and in writing.
+
+  %section.section
+    %div.input.check_boxes
+      %span.checkbox
+        %input{ type: 'checkbox', class: 'check_boxes' }
+        %label
+          I agree to what checks I will be undertaking
+
+      %span.checkbox
+        %input{ type: 'checkbox', class: 'check_boxes' }
+        %label
+          I consent to Hackney Council contacting my previous local authority
+
+  = simple_form_for application, url: application_confirmations_path(application_id: application.code), method: :post do |form|
+    %section.actions
+      = f.submit t('continue'), class: "confirm"

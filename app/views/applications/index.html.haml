@@ -11,4 +11,5 @@
 
   = simple_form_for :application, url: find_applications_path, method: :get do |f|
     = f.input :application_id, as: :string, label: 'Please enter the code below to continue.', input_html: { name: 'application_id' }
-    = f.submit t('continue_b'), class: "confirm"
+    %section.actions
+      = f.submit t('continue_b'), class: "confirm"

@@ -1,1 +1,5 @@
-= form.input question['name'], as: :select, collection: question['min_value']..question['max_value'], label: question['title']
+%div.extra
+  %h2
+    = question['heading']
+
+  = form.input question['name'], as: :select, collection: question['min_value']..question['max_value'], label: question['title']

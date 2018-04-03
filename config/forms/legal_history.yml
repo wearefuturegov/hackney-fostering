@@ -9,7 +9,7 @@ form:
           heading: Tell us your legal history
           widget: :title
         - name: :sub_section
-          title: |
+          intro: |
             Safety is important for the future child, knowing if you have been
             in a family court proceeding is essential. Please provide as much
             detail as possible.

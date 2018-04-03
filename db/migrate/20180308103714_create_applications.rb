@@ -23,7 +23,7 @@ class CreateApplications < ActiveRecord::Migration[5.1]
       t.integer :primary_language
       t.string :other_language
       t.string :secondary_languages
-      t.integer :nationality
+      t.string :nationality
       t.string :other_nationality
       t.boolean :children_at_home
       t.integer :number_of_children

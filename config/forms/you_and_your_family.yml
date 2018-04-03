@@ -12,7 +12,7 @@ form:
           intro: Information will be requested about yourself, any partners, family or children.
           widget: :title
         - name: section
-          intro: "For this section we ask you please have the following items prepared:"
+          intro: "For this section please have the following items prepared:"
           list_1: Your address history for the past 7 years
           list_2: National Insurance Number
           list_3: Contact details for 6 personal references
@@ -107,7 +107,7 @@ form:
           widget: :title
         - name: :nationality
           title: Enter your nationality
-          widget: :radio
+          widget: :input
           model: :applicant
     language:
       template: :questions
@@ -166,14 +166,14 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your working experience
+          heading: Your employment history
           intro: Your lifestyle changes when you foster a child. In order to know how this will impact your working life, we would like to know about your current employment.
           widget: :title
     employment_history:
       template: :questions
       questions:
         - name: :section
-          heading: Your working experience
+          heading: Your employment history
           title: Are you employed?
           widget: :title
         - name: :employment_type
@@ -182,7 +182,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your working experience
+          heading: Your employment history
           title: What is your national insurance number?
           info: Your National Insurance (NI) number s required for the DBS background check.
           widget: :title
@@ -194,7 +194,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your working experience
+          heading: Your employment history
           title: What is current occupation?
           widget: :title
         - name: :occupation
@@ -204,7 +204,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your working experience
+          heading: Your employment history
           title: What is the name of your employer or organisation?
           widget: :title
         - name: :employer
@@ -214,9 +214,9 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your working experience
+          heading: Your employment history
           title: Name someone who works with you.
-          info: You will need one professional reference.
+          info: You will need one professional reference from HR or a line manager.
           widget: :title
         - name: :employer_contact_name
           title: Please provide the full name of the person you have chosen
@@ -225,12 +225,21 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your working experience
-          title: What is the phone number or e-mail address of the person you have chosen?
-          info: You will need one professional reference.
+          heading: Your employment history
+          title: What is the phone number of the person you have chosen?
           widget: :title
         - name: :employer_phone_number
-          title: Please provide details to directly contact the person you have chosen
+          title: Phone number of person you have chosen
+          widget: :input
+    email_for_employer_contact:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Your employment history
+          title: What is the email address of the person you have chosen?
+          widget: :title
+        - name: :employer_phone_number
+          title: Email address of person you have chosen
           widget: :input
     address_welcome:
       template: :questions
@@ -260,6 +269,9 @@ form:
         - name: :postcode
           title: Postcode
           widget: :input
+        - name: :section
+          title: When did you move into this property?
+          widget: :title
         - name: :date_from
           title: When did you move into this property?
           widget: :date
@@ -304,7 +316,8 @@ form:
           yes_value: Yes
           no_value: Yes
         - name: :number_of_children
-          title: How many?
+          heading: How many?
+          title: Select how many children
           widget: :number_select
           min_value: 1
           max_value: 10
@@ -369,7 +382,7 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Pets
+          heading: Tell us about your pets
           widget: :title
         - name: :sub_section
           title: Do you have any pets?

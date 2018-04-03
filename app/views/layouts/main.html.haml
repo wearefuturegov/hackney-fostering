@@ -13,3 +13,6 @@
       .main
         = yield
     = render '/layouts/layouts/footer'
+
+:javascript
+  $("select.answer").find("option").eq(0).remove();
