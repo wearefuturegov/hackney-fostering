@@ -6,13 +6,18 @@ module Applications
       expose :person, -> { application.people.find(params[:person_id]) }
       
       prepend_before_action :update_person, only: :update
+      skip_before_action :load_next_step, unless: :valid?
       
       def show
         render_wizard nil, template: "people/#{template}"
       end
       
       def update
-        render_wizard person
+        if person.valid?
+          render_wizard person
+        else
+          render "people/#{template}"
+        end
       end
       
       def new
@@ -22,7 +27,7 @@ module Applications
       private
       
       def update_person
-        person.update_attributes(permitted_params)
+        @valid = person.update_attributes(permitted_params)
       end
       
       def permitted_params
