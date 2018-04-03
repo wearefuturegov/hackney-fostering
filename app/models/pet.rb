@@ -5,7 +5,7 @@ class Pet < ApplicationRecord
   
   validates :pet_type, presence: true, if: -> { application.on_step?(%w[type]) }
   validates :size, presence: true, if: -> { application.on_step?(%w[size]) }
-  validates :neutered, inclusion: [true, false] , if: -> { application.on_step?(%w[neutered]) }
+  validates :neutered, inclusion: [true, false], if: -> { application.on_step?(%w[neutered]) }
   validates :age, presence: true, if: -> { application.on_step?(%w[age]) }
   validates :where_allowed, presence: true, if: -> { application.on_step?(%w[where_allowed]) }
   validates :areas, presence: true, if: -> { application.on_step?(%w[areas]) }
