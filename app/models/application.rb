@@ -94,10 +94,6 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   validates :other_application_outcome, presence: true, if: -> { on_step?(%w[other_application_outcome]) }
   validates :previous_fostering, inclusion: [true, false], if: -> { on_step?(%w[previous_fostering]) }
   validates :previous_agency_name, presence: true, if: -> { on_step?(%w[previous_agency_name]) }
-  
-  validates :agree_to_checks, presence: true, if: -> { on_step?(%w[consent]) }
-  validates :agree_to_la_contact, presence: true, if: -> { on_step?(%w[consent]) }
-  validates :signature, presence: true, if: -> { on_step?(%w[consent]) }
 
   accepts_nested_attributes_for(
     :children,
