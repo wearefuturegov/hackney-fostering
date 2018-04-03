@@ -3,7 +3,7 @@ module Applications
     expose :child, -> { application.children_elsewhere.create }
 
     def path
-      new_application_children_elsewhere_information_path(application_id: application.id, children_elsewhere_id: child.id)
+      new_application_children_elsewhere_information_path(application_id: application.code, children_elsewhere_id: child.id)
     end
   end
 end

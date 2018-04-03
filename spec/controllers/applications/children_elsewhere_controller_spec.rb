@@ -16,7 +16,7 @@ module Applications
       it 'redirects to the form' do
         subject
         url = new_application_children_elsewhere_information_path(
-          application_id: application.id,
+          application_id: application.code,
           children_elsewhere_id: application.children_elsewhere.first.id
         )
         expect(response.location).to match(url)
