@@ -25,7 +25,7 @@ module Applications
         :employer_phone_number,
         :children_at_home,
         :number_of_children,
-        :children_elsewhere,
+        :children_living_elsewhere,
         :number_of_children_elsewhere,
         :adults_living_at_home,
         :number_of_adults,
