@@ -7,7 +7,7 @@ module Applications
       form 'referees'
       
       def update_person
-        person.update_attributes(permitted_params) if params[:referee]
+        @valid = person.update_attributes(permitted_params) if params[:referee]
       end
       
       private
