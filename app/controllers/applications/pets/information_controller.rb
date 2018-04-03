@@ -4,7 +4,8 @@ module Applications
       include Incredible::Wizard
       expose :application, -> { Application.friendly.find(params[:application_id]) }
       expose :pet, -> { application.pets.find(params[:pet_id]) }
-      
+      skip_before_action :load_next_step, unless: :valid?
+
       form 'pets'
       
       prepend_before_action :update_pet
@@ -14,7 +15,11 @@ module Applications
       end
       
       def update
-        render_wizard pet
+        if pet.valid?
+          render_wizard pet
+        else
+          render "pets/#{template}"
+        end
       end
       
       def new
@@ -24,7 +29,7 @@ module Applications
       private
       
       def update_pet
-        pet.update_attributes(permitted_params) if params[:pet]
+        @valid = pet.update_attributes(permitted_params) if params[:pet]
       end
       
       def permitted_params # rubocop:disable Metrics/MethodLength
