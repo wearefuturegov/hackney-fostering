@@ -24,7 +24,7 @@ form:
           heading: Tell us about who lives in your home
           widget: :title
         - name: :sub_section
-          title: What is %{name} gender?
+          title: What is %{name}'s gender?
           widget: :title_with_name
         - name: :gender
           widget: :radio
