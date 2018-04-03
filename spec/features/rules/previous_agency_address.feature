@@ -7,4 +7,4 @@ Feature: Previous Applications
     
   Scenario: Redirects to the consent step
     And I fill in an address
-    Then I should be on the 'consent' step
+    Then I should be on the confirmation page

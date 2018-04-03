@@ -10,4 +10,4 @@ Feature: Previous Applications
     
   Scenario: No redirects to the consent step
     And I check the 'No' option
-    Then I should be on the 'consent' step
+    Then I should be on the confirmation page

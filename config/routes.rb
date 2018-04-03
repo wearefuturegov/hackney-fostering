@@ -1,10 +1,6 @@
 Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
-  resources :applications do # rubocop:disable Metrics/BlockLength
+  resources :applications do
     collection { get :find }
-    member do
-      get :consent
-      put :complete
-    end
     resources :eligibility, controller: 'applications/eligibility'
     resources :you_and_your_family, controller: 'applications/you_and_your_family'
     resources :legal_history, controller: 'applications/legal_history'
@@ -28,6 +24,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :referees, controller: 'applications/referees', only: %i[new] do
       resources :information, controller: 'applications/referees/information'
     end
+    resources :confirmations, controller: 'applications/confirmations'
   end
   
   resources :pages, only: [:show], path: '/'
