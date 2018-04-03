@@ -36,12 +36,6 @@ class ApplicationsController < MainController
     flash[:error] = I18n.t('application.invalid_code')
     render :index
   end
-  
-  def consent; end
-  
-  def complete
-    ApplicationsMailer.application(params[:id]).deliver
-  end
     
   private
   
@@ -56,12 +50,6 @@ class ApplicationsController < MainController
     else
       Application.create
     end
-  end
-  
-  def permitted_params
-    params.require(:application).permit(
-      :agree_to_checks, :agree_to_la_contact, :signature
-    )
   end
   
 end

@@ -1,4 +1,4 @@
-module ApplicationSteps
+module ApplicationSteps # rubocop:disable Metrics/ModuleLength
   step :fill_in_radio_button, 'I check the :answer option'
   step :answer_question, 'I answer :text to the :text question'
   step :complete_form, 'I complete the form'
@@ -112,6 +112,10 @@ module ApplicationSteps
   step 'my application should be marked as ineligible' do
     @application.reload
     expect(@application.eligible).to eq(false)
+  end
+  
+  step 'I should be on the confirmation page' do
+    expect(current_path).to eq(new_application_confirmation_path(application_id: @application.code))
   end
 end
 
