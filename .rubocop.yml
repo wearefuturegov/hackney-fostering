@@ -11,6 +11,7 @@ Layout/IndentArray:
 Metrics/BlockLength:
   Exclude:
     - 'db/**/*.rb'
+    - 'config/environments/*.rb'
 Metrics/MethodLength:
   Exclude:
     - 'db/**/*.rb'
