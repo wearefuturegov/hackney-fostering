@@ -1,6 +1,8 @@
 module Applications
   class YouAndYourFamilyController < ApplicationsController
     include Incredible::Wizard
+    
+    skip_before_action :load_next_step, unless: :valid?
 
     form 'you_and_your_family'
     

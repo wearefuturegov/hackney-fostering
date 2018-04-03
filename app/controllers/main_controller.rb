@@ -14,4 +14,8 @@ class MainController < ActionController::Base
     application.update_attribute(:current_step, params[:id])
   end
   
+  def valid?
+    @valid
+  end
+  
 end

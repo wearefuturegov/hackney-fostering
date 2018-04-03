@@ -46,7 +46,8 @@ class ApplicationsController < MainController
   private
   
   def update_application
-    application.update_attributes(permitted_params) if params[:application]
+    return unless params[:application]
+    @valid = application.update_attributes(permitted_params)
   end
   
   def get_application # rubocop:disable Naming/AccessorMethodName
