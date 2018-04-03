@@ -6,7 +6,8 @@ header.header {
   .admin {
     line-height: 40px
   }
-  .logo img {
+  .logo a, .logo a img {
     width: 186px;
+    float: left;
   }
 }
