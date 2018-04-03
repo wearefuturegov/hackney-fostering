@@ -70,7 +70,7 @@ module AddressSteps
   end
   
   def enter_postcode(postcode)
-    fill_in 'Enter postcode', with: postcode
+    fill_in 'Enter your postcode', with: postcode
     first('#find_address').click
     wait_for_ajax
   end
