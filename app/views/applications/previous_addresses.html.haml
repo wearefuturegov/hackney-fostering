@@ -20,7 +20,7 @@
           
   %h2 Add an address
   
-  = simple_form_for [application, application.addresses.new], html: { class: 'address_form' } do |form|
+  = simple_form_for [application, application.addresses.new], html: { class: 'address_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |form|
     = render partial: 'address', locals: { form: form, hide_to: false }
     
     = form.submit 'Add Address', class: 'add-address hidden'

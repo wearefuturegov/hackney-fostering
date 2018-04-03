@@ -4,7 +4,7 @@
     
   %h2= @incredible_step.data[:sub_title]
 
-= simple_form_for setup_person(person), url: wizard_path, html: { class: 'address_form' }, method: :put do |f|
+= simple_form_for setup_person(person), url: wizard_path, html: { class: 'address_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } }, method: :put do |f|
   
   = f.fields_for @incredible_step.data[:reference], application.send(@incredible_step.data[:reference]) do |ff|
     = render partial: 'address', locals: { form: ff, hide_to: true }

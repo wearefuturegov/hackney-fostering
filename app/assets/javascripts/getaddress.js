@@ -2,7 +2,7 @@ $.fn.getAddress = function() {
 
   if (this.length === 0) { return false; }
     
-  var apiKey = '<%= ENV['IDEAL_POSTCODES_API_KEY'] %>'
+  var apiKey = $(this).data('api-key');
   var baseUrl = 'https://api.ideal-postcodes.co.uk/v1/postcodes/'
   var $addressSelect = $(this).find('select.addresses');
   var $postcodeInput = $(this).find('#postcode_search')
