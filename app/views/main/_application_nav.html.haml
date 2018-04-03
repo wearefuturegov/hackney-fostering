@@ -1,35 +1,35 @@
-/ :javascript
-/   $('#menu ul li a').on('click', function(){
-/       $('#menu ul li a.current').removeClass('current');
-/       $(this).addClass('current');
-/   });
+:javascript
+  $('#menu ul li a').on('click', function(){
+      $('#menu ul li a.current').removeClass('current');
+      $(this).addClass('current');
+  });
 
-/ %nav.nav.side#menu
-/   %ul
-/     %li
-/       = link_to 'Welcome', 'welcome'
-/     %li
-/       = link_to 'You & your family', '', class: 'current'
-/       %ul
-/         %li
-/           = link_to 'About you', 'name_change_info'
-/         %li
-/           = link_to 'Working experience', ''
-/         %li
-/           = link_to 'Your home', ''
-/         %li
-/           = link_to 'Address history', ''
-/         %li
-/           = link_to 'Your family', ''
-/         %li
-/           = link_to 'Your pets', ''
-/     %li
-/       = link_to 'Your support carer', ''
-/     %li
-/       = link_to 'Health', ''
-/     %li
-/       = link_to 'Your references', ''
-/     %li
-/       = link_to 'Legal history', ''
-/     %li
-/       = link_to 'Consent', ''
+%nav.nav.side#menu
+  %ul
+    %li
+      = link_to 'Welcome', 'welcome'
+    %li
+      = link_to 'You & your family', '', class: 'current'
+      %ul
+        %li
+          = link_to 'About you', 'name_change_info'
+        %li
+          = link_to 'Working experience', ''
+        %li
+          = link_to 'Your home', ''
+        %li
+          = link_to 'Address history', ''
+        %li
+          = link_to 'Your family', ''
+        %li
+          = link_to 'Your pets', ''
+    %li
+      = link_to 'Your support carer', ''
+    %li
+      = link_to 'Health', ''
+    %li
+      = link_to 'Your references', ''
+    %li
+      = link_to 'Legal history', ''
+    %li
+      = link_to 'Consent', ''
