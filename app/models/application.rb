@@ -72,6 +72,24 @@ class Application < ApplicationRecord
   validates :offspring_kept, presence: true, if: -> { on_step?(%w[offspring]) }
   validates :breeding_risks, presence: true, if: -> { on_step?(%w[breeding_risks]) }
   validates :breeding_other, presence: true, if: -> { on_step?(%w[breeding_other]) }
+  validates :family_court, inclusion: [true, false], if: -> { on_step?(%w[family_court]) }
+  validates :court_date, presence: true, if: -> { on_step?(%w[court_date]) }
+  validates :court_name, presence: true, if: -> { on_step?(%w[court_name]) }
+  validates :type_of_order, presence: true, if: -> { on_step?(%w[type_of_order]) }
+  validates :parties_involved, presence: true, if: -> { on_step?(%w[parties_involved]) }
+  validates :court_details, presence: true, if: -> { on_step?(%w[court_details]) }
+  validates :previous_applications, inclusion: [true, false], if: -> { on_step?(%w[previous_applications]) }
+  validates :application_date, presence: true, if: -> { on_step?(%w[application_date]) }
+  validates :agency_name, presence: true, if: -> { on_step?(%w[agency_name]) }
+  validates :type_of_application, presence: true, if: -> { on_step?(%w[type_of_application]) }
+  validates :application_outcome, presence: true, if: -> { on_step?(%w[application_outcome]) }
+  validates :other_previous_applications, inclusion: [true, false], if: -> { on_step?(%w[other_previous_applications]) }
+  validates :other_application_date, presence: true, if: -> { on_step?(%w[other_application_date]) }
+  validates :other_agency_name, presence: true, if: -> { on_step?(%w[other_agency_name]) }
+  validates :other_type_of_application, presence: true, if: -> { on_step?(%w[other_type_of_application]) }
+  validates :other_application_outcome, presence: true, if: -> { on_step?(%w[other_application_outcome]) }
+  validates :previous_fostering, inclusion: [true, false], if: -> { on_step?(%w[previous_fostering]) }
+  validates :previous_agency_name, presence: true, if: -> { on_step?(%w[previous_agency_name]) }
 
   accepts_nested_attributes_for(
     :children,
