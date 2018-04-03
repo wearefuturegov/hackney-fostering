@@ -36,7 +36,7 @@ module Applications
               line_1: '123 Fake Street'
             }
           })
-        ).to redirect_to application_you_and_your_family_path(application_id: application.id, id: :previous_addresses)
+        ).to redirect_to application_you_and_your_family_path(application_id: application.code, id: :previous_addresses)
       end
     end
     
