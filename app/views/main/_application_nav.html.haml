@@ -5,31 +5,30 @@
   });
 
 %nav.nav.side#menu
-  %ul
-    %li
-      = link_to 'Welcome', 'welcome'
-    %li
-      = link_to 'You & your family', '', class: 'current'
-      %ul
-        %li
-          = link_to 'About you', 'name_change_info'
-        %li
-          = link_to 'Working experience', ''
-        %li
-          = link_to 'Your home', ''
-        %li
-          = link_to 'Address history', ''
-        %li
-          = link_to 'Your family', ''
-        %li
-          = link_to 'Your pets', ''
-    %li
-      = link_to 'Your support carer', ''
-    %li
-      = link_to 'Health', ''
-    %li
-      = link_to 'Your references', ''
-    %li
-      = link_to 'Legal history', ''
-    %li
-      = link_to 'Consent', ''
+  - unless current_page?(applications_path) || current_page?(find_applications_path)
+    %ul
+      %li
+        = link_to 'Welcome', application_you_and_your_family_path(application_id: application.code, id: 'welcome')
+      %li
+        = link_to 'You & your family', application_you_and_your_family_path(application_id: application.code, id: 'name_change_info'), class: 'current'
+        %ul
+          %li
+            = link_to 'About you', application_you_and_your_family_path(application_id: application.code, id: 'name_change')
+          %li
+            = link_to 'Working experience', application_you_and_your_family_path(application_id: application.code, id: 'welcome_working')
+          %li
+            = link_to 'Your home', application_you_and_your_family_path(application_id: application.code, id: 'address_welcome')
+          %li
+            = link_to 'Address history', application_you_and_your_family_path(application_id: application.code, id: 'previous_addresses')
+          %li
+            = link_to 'Your family', application_you_and_your_family_path(application_id: application.code, id: 'your_family')
+          %li
+            = link_to 'Your pets', application_you_and_your_family_path(application_id: application.code, id: 'pets_welcome')
+      %li
+        = link_to 'Your support carer', application_support_carer_path(application_id: application.code, id: 'intro')
+      %li
+        = link_to 'Your references', application_referees_path(application_id: application.code)
+      %li
+        = link_to 'Legal history', application_legal_history_path(application_id: application.code, id: 'intro')
+      %li
+        = link_to 'Consent', '#'

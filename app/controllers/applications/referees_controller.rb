@@ -1,6 +1,8 @@
 module Applications
   class RefereesController < PeopleController
     expose :referee, -> { application.referees.create }
+    
+    def index; end
 
     def path
       if params[:step]

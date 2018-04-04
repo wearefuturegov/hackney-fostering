@@ -1,0 +1,14 @@
+%section.section
+  %h1 Your References
+
+  %p Talking to people who have known you over a period of time helps us get a more complete understanding of you as a future foster carer.
+
+  %div.box.info
+    %h2 Your references should be a mixture of:
+    %p 1-2 family members
+    %p Ex-colleagues
+    %p Neighbours
+    %p Friends
+
+  %section.actions
+    = link_to t('continue'), new_application_referee_path(application_id: application.code, step: :name), class: "button confirm"
