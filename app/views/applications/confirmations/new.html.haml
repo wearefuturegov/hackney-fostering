@@ -20,4 +20,4 @@
 
   = simple_form_for application, url: application_confirmations_path(application_id: application.code), method: :post do |form|
     %section.actions
-      = form.submit t('continue'), class: "confirm"
+      = render partial: 'actions', locals: { form: form }

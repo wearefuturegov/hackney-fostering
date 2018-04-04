@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  back: Back
   continue: Save & continue
   continue_b: Continue to questions
   submit: Submit
