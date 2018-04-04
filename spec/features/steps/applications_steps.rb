@@ -1,12 +1,17 @@
 module ApplicationSteps # rubocop:disable Metrics/ModuleLength
   step :fill_in_radio_button, 'I check the :answer option'
+  step :fill_in_radio_button_no_submit, 'I check the :answer option without submitting'
   step :answer_question, 'I answer :text to the :text question'
   step :complete_form, 'I complete the form'
   step :complete_form_ineligible, 'I complete the form and am ineligible'
   
-  def fill_in_radio_button(answer)
+  def fill_in_radio_button_no_submit(answer)
+    fill_in_radio_button(answer, false)
+  end
+  
+  def fill_in_radio_button(answer, submit = true)
     first('label', text: answer).click
-    click_on I18n.t('continue')
+    click_on I18n.t('continue') if submit
   end
   
   def answer_question(answer, question)

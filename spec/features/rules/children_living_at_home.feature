@@ -6,8 +6,8 @@ Feature: Children living at home
     And I am answering the children living at home step of the you and your family form
     
   Scenario: Yes redirects to add children
+    And I check the 'Yes' option without submitting
     And I choose 2 children
-    And I check the 'Yes' option
     Then I should be on the 'name' step
 
   Scenario: No redirects correctly

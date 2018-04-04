@@ -6,8 +6,8 @@ Feature: Adults living at home
     And I am answering the adults living at home step of the you and your family form
     
   Scenario: Yes redirects to add adults
+    And I check the 'Yes' option without submitting
     And I choose 2 adults
-    And I check the 'Yes' option
     Then I should be on the 'name' step
 
   Scenario: No redirects correctly

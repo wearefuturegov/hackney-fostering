@@ -21,12 +21,12 @@ module PeopleSteps
 
   def choose_number_of_people(num, type)
     choose_select("number_of_#{type}", num)
+    click_on I18n.t('continue')
   end
   
   def fill_in_people(count, type)
     first('label', text: 'Yes').click
     choose_number_of_people(count.to_i, type)
-    click_on I18n.t('continue')
     @people = []
     if type.match?(/child/)
       count.to_i.times { fill_in_child_details }

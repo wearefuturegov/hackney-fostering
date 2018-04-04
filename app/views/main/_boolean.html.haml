@@ -1,11 +1,1 @@
 = form.input question['name'], as: :radio_buttons, collection: [['Yes', 1], ['No', 0]], label: question['title']
-
-:javascript
-  $(document).ready(function(){
-      $("#application_children_at_home_0").click(function(){
-          $(".extra").hide();
-      });
-      $("#application_children_at_home_1").click(function(){
-          $(".extra").show();
-      });
-  });

@@ -319,6 +319,7 @@ form:
           heading: How many?
           title: Select how many children
           widget: :number_select
+          classes: 'extra hidden'
           min_value: 1
           max_value: 10
     children_living_elsewhere:
@@ -334,6 +335,7 @@ form:
           no_value: No
         - name: :number_of_children_elsewhere
           title: How many?
+          classes: 'extra hidden'
           widget: :number_select
           min_value: 1
           max_value: 10
@@ -352,6 +354,7 @@ form:
         - name: :number_of_adults
           title: How many?
           widget: :number_select
+          classes: 'extra hidden'
           min_value: 1
           max_value: 10
     adults_living_elsewhere:
@@ -369,6 +372,7 @@ form:
         - name: :number_of_adults_elsewhere
           title: How many?
           widget: :number_select
+          classes: 'extra hidden'
           min_value: 1
           max_value: 10
     pets_welcome:
