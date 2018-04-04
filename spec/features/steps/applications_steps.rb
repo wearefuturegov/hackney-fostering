@@ -63,7 +63,7 @@ module ApplicationSteps # rubocop:disable Metrics/ModuleLength
   
   step 'my application should be stored' do
     application = Application.first
-    expect(application.type_of_fostering).to eq(@form.type_of_fostering)
+    expect(application.type_of_fostering.reject(&:blank?)).to eq(@form.type_of_fostering)
     expect(application.spare_room).to eq(@form.spare_room)
     expect(application.over_21).to eq(@form.over_21)
     expect(application.experience).to eq(@form.experience)
