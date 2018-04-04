@@ -18,5 +18,4 @@
   %p When you click the button below, you will be prompted to provide the support form to your support carer. Upon completion, their responses will be sent directly to the fostering team
 
   = simple_form_for application, url: wizard_path, method: :put do |f|
-    %section.actions
-      = f.submit t('continue'), class: "confirm"
+    = render partial: 'actions', locals: { form: f }

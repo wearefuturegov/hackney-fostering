@@ -9,7 +9,6 @@
     %p Ex-colleagues
     %p Neighbours
     %p Friends
-
-  %section.actions
-    = simple_form_for person, url: wizard_path, method: :put do |f|
-      = f.submit t('continue'), class: "confirm"
+    
+  = simple_form_for person, url: wizard_path, method: :put do |f|
+    = render partial: 'actions', locals: { form: f }

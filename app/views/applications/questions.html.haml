@@ -5,5 +5,4 @@
         = render partial: q['widget'].to_s, locals: { form: ff, question: q }
     - else
       = render partial: q['widget'].to_s, locals: { form: f, question: q }
-  %section.actions
-    = f.submit t('continue'), class: "confirm"
+  = render partial: 'actions', locals: { form: f }

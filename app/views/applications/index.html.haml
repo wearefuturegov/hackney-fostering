@@ -1,12 +1,12 @@
 %section.section
-  %h1 
+  %h1
     Welcome to the start of your foster carer application
 
   - if flash[:error]
     %ul.box
       %li= flash[:error]
   - else
-    %p 
+    %p
       During your initial visit, you were given a unique code by your social worker.
 
   = simple_form_for :application, url: find_applications_path, method: :get do |f|
