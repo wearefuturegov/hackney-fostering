@@ -11,6 +11,15 @@ form:
           widget: :title
         - name: :type_of_fostering
           widget: :checkbox
+          answers:
+            - title: Emergency Fostering
+              value: :emergency_fostering
+            - title: Short Term Fostering
+              value: :short_term_fostering
+            - title: Long Term Fostering
+              value: :long_term_fostering
+            - title: Don't Know
+              value: :dont_know
     spare_room:
       template: single_question
       next_step: :next_step

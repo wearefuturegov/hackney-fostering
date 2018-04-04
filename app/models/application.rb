@@ -2,8 +2,7 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   extend ::FriendlyId
   friendly_id :code
 
-  enum type_of_fostering: %i[emergency_fostering short_term_fostering long_term_fostering dont_know],
-       spare_room: %i[yes no not_yet],
+  enum spare_room: %i[yes no not_yet],
        experience: %i[very_experienced somewhat_experienced little_experience no_experience],
        housing_type: %i[own_property renting_council renting_private],
        other_ways: %i[mentoring specialist_support other_support],
@@ -12,7 +11,7 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
        contact_phone_time: %i[morning afternoon evening],
        best_way_to_contact: %i[phone email],
        employment_type: %i[full_time part_time self_employed director unemployed]
-         
+           
   has_many :children
   has_many :adults
   has_many :children_elsewhere, class_name: 'ChildElsewhere'
