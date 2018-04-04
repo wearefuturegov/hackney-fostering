@@ -50,7 +50,7 @@ $.fn.getAddress = function() {
       toggleElements();
     })
     .fail(function() {
-      $('p.error').removeClass('hidden').text('Postcode is not recognised, please try again');
+      $('p.error').removeClass('hidden').text('Postcode is not recognised, please try again.');
     })
   });
   

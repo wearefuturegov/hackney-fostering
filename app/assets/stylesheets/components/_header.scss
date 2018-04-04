@@ -1,8 +1,13 @@
 header.header {
   .title {
     line-height: 40px;
+    text-align: center;
   }
   .admin {
     line-height: 40px
+  }
+  .logo a, .logo a img {
+    width: 186px;
+    float: left;
   }
 }

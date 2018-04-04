@@ -11,7 +11,7 @@ Feature: Entering an address
   
   Scenario: Postcode does not exist
     And I fill in a postcode that does not exist
-    Then I should see 'Postcode is not recognised, please try again'
+    Then I should see 'Postcode is not recognised, please try again.'
   
   Scenario: Enter address manually
     And I fill in my address and a moved in date manually

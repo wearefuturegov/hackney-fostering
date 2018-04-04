@@ -2,7 +2,7 @@ Fabricator(:blank_application, from: :application) do
 end
 
 Fabricator(:application) do
-  type_of_fostering   1
+  type_of_fostering   %w[short_term_fostering long_term_fostering]
   spare_room          0
   over_21             true
   experience          1

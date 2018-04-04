@@ -8,6 +8,9 @@ form:
       template: :questions
       questions:
         - name: :section
+          heading: Your References
+          widget: :title
+        - name: :section
           title: Your %{number} reference
           widget: :title_with_name
         - name: :first_name
@@ -19,8 +22,11 @@ form:
     reference_address:
       template: :address
       reference: :address
-      title: What is %{name}'s address?
+      title: Your References
       questions:
+        - name: :section
+          title: What is %{name}'s address?
+          widget: :title_with_name
         - name: :line_1
           title: Address Line 1
           widget: :input
@@ -34,7 +40,7 @@ form:
           widget: :input
           model: :address
         - name: :post_town
-          title: Address Town
+          title: Address Line 4
           widget: :input
           model: :address
         - name: :postcode
@@ -43,6 +49,9 @@ form:
     contact:
       template: :questions
       questions:
+        - name: :section
+          heading: Your References
+          widget: :title
         - name: :section
           title: Please provide a way to contact %{name}
           widget: :title_with_name
@@ -55,6 +64,9 @@ form:
     reference_relationship:
       template: :questions
       questions:
+        - name: :section
+          heading: Your References
+          widget: :title
         - name: :section
           title: What is your relationship to %{name}
           widget: :title_with_name

@@ -2,17 +2,16 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   extend ::FriendlyId
   friendly_id :code
 
-  enum type_of_fostering: %i[emergency_fostering short_term_fostering long_term_fostering dont_know],
-       spare_room: %i[yes no not_yet],
+  enum spare_room: %i[yes no not_yet],
        experience: %i[very_experienced somewhat_experienced little_experience no_experience],
        housing_type: %i[own_property renting_council renting_private],
        other_ways: %i[mentoring specialist_support other_support],
        be_in_touch: %i[contact_me info_pack],
-       contacting_you: %i[contact_phone contact_email contact_either],
+       contacting_you: %i[contact_phone contact_email],
        contact_phone_time: %i[morning afternoon evening],
        best_way_to_contact: %i[phone email],
        employment_type: %i[full_time part_time self_employed director unemployed]
-         
+           
   has_many :children
   has_many :adults
   has_many :children_elsewhere, class_name: 'ChildElsewhere'
@@ -94,10 +93,6 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   validates :other_application_outcome, presence: true, if: -> { on_step?(%w[other_application_outcome]) }
   validates :previous_fostering, inclusion: [true, false], if: -> { on_step?(%w[previous_fostering]) }
   validates :previous_agency_name, presence: true, if: -> { on_step?(%w[previous_agency_name]) }
-  
-  validates :agree_to_checks, presence: true, if: -> { on_step?(%w[consent]) }
-  validates :agree_to_la_contact, presence: true, if: -> { on_step?(%w[consent]) }
-  validates :signature, presence: true, if: -> { on_step?(%w[consent]) }
 
   accepts_nested_attributes_for(
     :children,

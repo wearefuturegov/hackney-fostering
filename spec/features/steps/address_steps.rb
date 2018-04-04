@@ -55,7 +55,7 @@ module AddressSteps
     fill_in 'Line 1', with: address[:line1]
     fill_in 'Line 2', with: address[:line2]
     fill_in 'Line 3', with: address[:line3]
-    fill_in 'Town', with: address[:post_town]
+    fill_in 'Line 4', with: address[:post_town]
     fill_in 'Postcode', with: address[:postcode]
     @addresses ||= []
     @addresses << address
@@ -70,7 +70,7 @@ module AddressSteps
   end
   
   def enter_postcode(postcode)
-    fill_in 'Enter postcode', with: postcode
+    fill_in 'Enter your postcode', with: postcode
     first('#find_address').click
     wait_for_ajax
   end
@@ -83,7 +83,7 @@ module AddressSteps
     address[:line1] = find_field('Line 1').value
     address[:line2] = find_field('Line 2').value
     address[:line3] = find_field('Line 3').value
-    address[:post_town] = find_field('Town').value
+    address[:post_town] = find_field('Line 4').value
     address[:postcode] = postcode
     @addresses ||= []
     @addresses << address

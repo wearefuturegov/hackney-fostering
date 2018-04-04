@@ -1,21 +1,22 @@
-%h1 Your support carer
+%section.section
+  %h1 Your support carer
 
-%p When becoming a foster parent, having a support network is very important.
+  %p When becoming a foster parent, having a support network is very important.
 
-%h2 Why do i need a support carer?
+  %h2 Why do i need a support carer?
 
-%p Your support carer will be able to be a legal delegate in an emergency instance. For example: If you are unable to pick child up from school or unexpectedly taken into hospital, your support carer will be able to take care of your child - overnight if needed. The support carer has the same legal responsibility (known as delegated authority).
+  %p Your support carer will be able to be a legal delegate in an emergency instance. For example: If you are unable to pick child up from school or unexpectedly taken into hospital, your support carer will be able to take care of your child - overnight if needed. The support carer has the same legal responsibility (known as delegated authority).
 
-%h2 What should my potential support carer know?
+  %h2 What should my potential support carer know?
 
-%p They will be required to undergo background checks as well as getting references. We will be visiting your support carers home during their checks.
+  %p They will be required to undergo background checks as well as getting references. We will be visiting your support carers home during their checks.
 
-%p The support carer would be going through a similar process as you are now, please do inform them so they will know what to expect
+  %p The support carer would be going through a similar process as you are now, please do inform them so they will know what to expect
 
-%h2 What do you do next?
+  %h2 What do you do next?
 
-%p When you click the button below, you will be prompted to provide a support and form to your support carer. Upon completion, their responses will be sent directly to the fostering team
+  %p When you click the button below, you will be prompted to provide the support form to your support carer. Upon completion, their responses will be sent directly to the fostering team
 
-= simple_form_for application, url: wizard_path, method: :put do |f|
-  %section.actions
-    = f.submit t('continue'), class: "confirm"
+  = simple_form_for application, url: wizard_path, method: :put do |f|
+    %section.actions
+      = f.submit t('continue'), class: "confirm"

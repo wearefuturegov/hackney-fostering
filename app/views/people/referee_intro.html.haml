@@ -1,15 +1,15 @@
-%h1 Your References
+%section.section
+  %h1 Your References
 
-%p Talking to people who have known you over a period of time helps us get a more complete understanding of you as a future foster carer.
+  %p Talking to people who have known you over a period of time helps us get a more complete understanding of you as a future foster carer.
 
-%p Your references should be a mixture of:
+  %div.box.info
+    %h2 Your references should be a mixture of:
+    %p 1-2 family members
+    %p Ex-colleagues
+    %p Neighbours
+    %p Friends
 
-%ul
-  %li 1-2 family members
-  %li Ex-colleagues
-  %li Neighbours
-  %li Friends
-
-%section.actions
-  = simple_form_for person, url: wizard_path, method: :put do |f|
-    = f.submit t('continue'), class: "confirm"
+  %section.actions
+    = simple_form_for person, url: wizard_path, method: :put do |f|
+      = f.submit t('continue'), class: "confirm"

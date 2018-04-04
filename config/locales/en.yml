@@ -63,7 +63,6 @@ en:
         contacting_yous:
           contact_phone: 'Telephone'
           contact_email: 'Email'
-          contact_either: 'Either'
         contact_phone_times:
           morning: Morning
           afternoon: Afternoon

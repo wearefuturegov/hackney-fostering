@@ -9,7 +9,7 @@ form:
           heading: Tell us your legal history
           widget: :title
         - name: :sub_section
-          title: |
+          intro: |
             Safety is important for the future child, knowing if you have been
             in a family court proceeding is essential. Please provide as much
             detail as possible.
@@ -140,7 +140,7 @@ form:
           widget: :input
           model: :address
         - name: :post_town
-          title: Address Town
+          title: Address Line 4
           widget: :input
           model: :address
         - name: :postcode
@@ -223,7 +223,7 @@ form:
           widget: :input
           model: :address
         - name: :post_town
-          title: Address Town
+          title: Address Line 4
           widget: :input
           model: :address
         - name: :postcode
@@ -292,7 +292,7 @@ form:
           title: Address Line 3
           widget: :input
         - name: :post_town
-          title: Address Town
+          title: Address Line 4
           widget: :input
         - name: :postcode
           title: Postcode

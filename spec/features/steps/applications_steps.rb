@@ -1,12 +1,17 @@
 module ApplicationSteps # rubocop:disable Metrics/ModuleLength
   step :fill_in_radio_button, 'I check the :answer option'
+  step :fill_in_radio_button_no_submit, 'I check the :answer option without submitting'
   step :answer_question, 'I answer :text to the :text question'
   step :complete_form, 'I complete the form'
   step :complete_form_ineligible, 'I complete the form and am ineligible'
   
-  def fill_in_radio_button(answer)
+  def fill_in_radio_button_no_submit(answer)
+    fill_in_radio_button(answer, false)
+  end
+  
+  def fill_in_radio_button(answer, submit = true)
     first('label', text: answer).click
-    click_on I18n.t('continue')
+    click_on I18n.t('continue') if submit
   end
   
   def answer_question(answer, question)
@@ -23,7 +28,7 @@ module ApplicationSteps # rubocop:disable Metrics/ModuleLength
   def complete_form # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     visit application_eligibility_index_path(@application)
     @form = Fabricate.build(:application)
-    fill_in_radio_button(I18n.t("activerecord.attributes.application.type_of_fosterings.#{@form.type_of_fostering}"))
+    check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     fill_in_radio_button(@form.over_21 ? 'Yes' : 'No')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.experiences.#{@form.experience}"))
@@ -43,7 +48,7 @@ module ApplicationSteps # rubocop:disable Metrics/ModuleLength
   def complete_form_ineligible # rubocop:disable Metrics/AbcSize
     visit application_eligibility_index_path(@application)
     @form = Fabricate.build(:application, spare_room: 1)
-    fill_in_radio_button(I18n.t("activerecord.attributes.application.type_of_fosterings.#{@form.type_of_fostering}"))
+    check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     fill_in_radio_button(I18n.t("activerecord.attributes.application.other_ways.#{@form.other_ways}"))
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
