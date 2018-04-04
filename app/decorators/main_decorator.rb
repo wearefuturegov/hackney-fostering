@@ -19,4 +19,8 @@ class MainDecorator < Draper::Decorator
     end
   end
   
+  def array_to_list(column)
+    column.reject(&:blank?).join(', ')
+  end
+  
 end

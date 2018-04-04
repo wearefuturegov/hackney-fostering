@@ -26,7 +26,7 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   decorates_association :support_carer
   
   def type_of_fostering
-    standard_wrapper('Type of Fostering', application.type_of_fostering)
+    standard_wrapper('Type of Fostering', array_to_list(application.type_of_fostering))
   end
   
   def spare_room
@@ -42,7 +42,7 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   end
 
   def age_experience
-    standard_wrapper('Ages of children', application.age_experience.join(' ,'))
+    standard_wrapper('Ages of children', array_to_list(application.age_experience))
   end
   
   def housing_type
