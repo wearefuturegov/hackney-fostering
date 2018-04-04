@@ -24,3 +24,6 @@ Style/MixinUsage:
 Style/WordArray:
   Exclude:
     - 'db/schema.rb'
+Metrics/LineLength:
+  Exclude:
+    - 'db/**/*.rb'
