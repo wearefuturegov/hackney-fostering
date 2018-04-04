@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403202746) do
+ActiveRecord::Schema.define(version: 20180404102931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20180403202746) do
   end
 
   create_table "applications", force: :cascade do |t|
+    t.text "type_of_fostering", default: [], null: false, array: true
     t.integer "spare_room"
     t.boolean "over_21"
     t.integer "experience"
@@ -107,7 +108,6 @@ ActiveRecord::Schema.define(version: 20180403202746) do
     t.boolean "eligible"
     t.string "current_path"
     t.string "current_step"
-    t.text "type_of_fostering", default: [], null: false, array: true
     t.index ["support_carer_id"], name: "index_applications_on_support_carer_id"
   end
 
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20180403202746) do
     t.string "phone_number"
     t.string "years_known"
     t.bigint "address_id"
-    t.integer "nationality"
+    t.string "nationality"
     t.string "type"
     t.index ["address_id"], name: "index_people_on_address_id"
     t.index ["application_id"], name: "index_people_on_application_id"
