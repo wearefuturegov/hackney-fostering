@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404102931) do
+ActiveRecord::Schema.define(version: 20180405110243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20180404102931) do
     t.boolean "eligible"
     t.string "current_path"
     t.string "current_step"
+    t.string "pet_type"
     t.index ["support_carer_id"], name: "index_applications_on_support_carer_id"
   end
 
@@ -135,31 +136,6 @@ ActiveRecord::Schema.define(version: 20180404102931) do
     t.string "type"
     t.index ["address_id"], name: "index_people_on_address_id"
     t.index ["application_id"], name: "index_people_on_application_id"
-  end
-
-  create_table "pets", force: :cascade do |t|
-    t.string "pet_type"
-    t.integer "size"
-    t.boolean "neutered"
-    t.bigint "application_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "age"
-    t.string "where_allowed"
-    t.string "areas"
-    t.string "sleeping_area"
-    t.string "feeding_area"
-    t.boolean "safe_around_food"
-    t.string "temperament"
-    t.string "toilet"
-    t.boolean "bitten_or_hurt"
-    t.text "bitten_or_hurt_detail"
-    t.boolean "vaccinations"
-    t.string "children_experience"
-    t.text "conflict"
-    t.text "conflict_resolution"
-    t.boolean "vet"
-    t.index ["application_id"], name: "index_pets_on_application_id"
   end
 
 end
