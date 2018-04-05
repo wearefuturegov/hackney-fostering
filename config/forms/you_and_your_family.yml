@@ -394,12 +394,33 @@ form:
         - name: :have_pets
           widget: :boolean
           yes_value: Yes
-          no_value: Yes
+          no_value: No
+    number_of_pets:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: How many pets do you have?
+          widget: :title
         - name: :number_of_pets
           title: How many?
           widget: :number_select
           min_value: 1
           max_value: 10
+    pet_type:
+      template: :questions
+      questions:
+        - name: :section
+          heading: Tell us about your pets
+          widget: :title
+        - name: :sub_section
+          title: What types of pets do you have?
+          widget: :title
+        - name: :pet_type
+          title: Enter the type of pet you have
+          widget: :input
     breed_pets:
       template: :single_question
       questions:
