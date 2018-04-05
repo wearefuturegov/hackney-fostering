@@ -19,7 +19,6 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   has_many :referees
 
   has_many :addresses
-  has_many :pets
   
   belongs_to :applicant, optional: true
   belongs_to :address, optional: true
@@ -98,7 +97,6 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
     :children,
     :adults,
     :addresses,
-    :pets,
     :applicant,
     :address,
     :agency_address,
