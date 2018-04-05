@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe ApplicationsMailer, type: :mailer do # rubocop:disable Metrics/BlockLength
-  describe 'eligibility' do # rubocop:disable Metrics/BlockLength
+RSpec.describe ApplicationsMailer, type: :mailer do
+  describe 'eligibility' do
     
     let(:mail) { ApplicationsMailer.eligibility(application.id) }
 

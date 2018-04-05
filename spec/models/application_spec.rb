@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLength
+RSpec.describe Application, type: :model do
   
   let(:application) { Fabricate(:application) }
   let(:address) { Fabricate(:address) }
 
-  describe 'people relationships' do # rubocop:disable Metrics/BlockLength
+  describe 'people relationships' do
     
     let(:children) { Fabricate.times(3, :child) }
     let(:adults) { Fabricate.times(2, :adult) }
@@ -73,6 +73,52 @@ RSpec.describe Application, type: :model do # rubocop:disable Metrics/BlockLengt
     application.save
     application.reload
     expect(application.previous_agency_address).to eq(address)
+  end
+  
+  describe 'parsing dates' do
+    
+    let(:application) { Fabricate(:application) }
+    
+    it 'returns invalid error if date is invalid' do
+      valid = application.update_attributes('current_step' => 'court_date',
+                                            'court_date(1i)' => '9999',
+                                            'court_date(2i)' => '99',
+                                            'court_date(3i)' => '99')
+      expect(valid).to eq(false)
+    end
+    
+    it 'returns valid if date is valid' do
+      valid = application.update_attributes('current_step' => 'court_date',
+                                            'court_date(1i)' => '2012',
+                                            'court_date(2i)' => '12',
+                                            'court_date(3i)' => '12')
+      expect(valid).to eq(true)
+    end
+    
+    context 'with nested attribute' do
+      
+      it 'returns invalid error if date is invalid' do
+        valid = application.update_attributes('current_step' => 'dob',
+                                              'applicant_attributes' => {
+                                                'date_of_birth(1i)' => '9999',
+                                                'date_of_birth(2i)' => '99',
+                                                'date_of_birth(3i)' => '99'
+                                              })
+        expect(valid).to eq(false)
+      end
+      
+      it 'returns valid if date is valid' do
+        valid = application.update_attributes('current_step' => 'dob',
+                                              'applicant_attributes' => {
+                                                'date_of_birth(1i)' => '2012',
+                                                'date_of_birth(2i)' => '12',
+                                                'date_of_birth(3i)' => '12'
+                                              })
+        expect(valid).to eq(true)
+      end
+      
+    end
+    
   end
     
 end

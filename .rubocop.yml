@@ -12,6 +12,7 @@ Metrics/BlockLength:
   Exclude:
     - 'db/**/*.rb'
     - 'config/environments/*.rb'
+    - 'spec/**/*.rb'
 Metrics/MethodLength:
   Exclude:
     - 'db/**/*.rb'
