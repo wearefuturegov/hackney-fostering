@@ -107,8 +107,9 @@
 - if @application.have_pets
 
   %h2 Pets
-
-  = render 'pets', pets: @application.pets
+  
+  = @application.number_of_pets
+  = @application.pet_type
 
   %hr
 - if @application.breed_pets
