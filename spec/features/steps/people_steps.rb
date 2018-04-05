@@ -72,7 +72,7 @@ module PeopleSteps
   end
   
   def fill_in_adult_details
-    @person = Fabricate(:person)
+    @person = Fabricate(:adult)
     fill_in_person
   end
   

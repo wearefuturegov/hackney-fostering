@@ -94,6 +94,15 @@ en:
           foster_child: Foster child
           stepchild: Stepchild
           other_relationship: Child from another relationship
+          spouse: Spouse
+          partner: Partner
+          ex_partner: Ex-Partner
+          lodger: Lodger / Tenant
+          other: Other
+          friend: Friend
+          neighbour: Neighbour
+          co_worker: Co-worker
+          other: Other
       pet:
         sizes:
           small: Small

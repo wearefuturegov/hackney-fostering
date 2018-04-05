@@ -4,6 +4,8 @@ class Referee < Person
   
   accepts_nested_attributes_for :address
   
+  enum relationship: %i[friend neighbour partner co_worker other]
+  
   validates :first_name, presence: true, if: -> { application&.on_step?(%w[name]) }
   validates :last_name, presence: true, if: -> { application&.on_step?(%w[name]) }
   validates :email, presence: true, if: -> { application&.on_step?(%w[contact]) }
