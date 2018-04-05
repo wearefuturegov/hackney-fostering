@@ -21,7 +21,7 @@ RSpec.describe ApplicationsMailer, type: :mailer do
         expect(mail.body.encoded).to match(application.email)
         expect(mail.body.encoded).to match(application.best_way_to_contact)
         expect(mail.body.encoded).to match(application.contact_phone_time)
-        expect(mail.body.encoded).to match(application.type_of_fostering)
+        expect(mail.body.encoded).to match(application.type_of_fostering.reject(&:blank?).join(', '))
         expect(mail.body.encoded).to match(application.spare_room)
         expect(mail.body.encoded).to match('Yes')
         expect(mail.body.encoded).to match(application.experience)
@@ -54,6 +54,17 @@ RSpec.describe ApplicationsMailer, type: :mailer do
     
     it 'renders the body' do
       expect(mail.body.encoded).to match(application.applicant.first_name)
+    end
+    
+    context 'with pets' do
+      
+      let(:application) { Fabricate(:complete_application, have_pets: true, number_of_pets: 1, pet_type: 'Dog') }
+      
+      it 'renders the body' do
+        expect(mail.body.encoded).to match(%r{Number of pets: </label>1})
+        expect(mail.body.encoded).to match(%r{Pet type\(s\): </label>Dog})
+      end
+      
     end
     
   end

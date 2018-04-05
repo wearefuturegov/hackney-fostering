@@ -20,7 +20,6 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   decorates_association :children_elsewhere
   decorates_association :adults
   decorates_association :adults_elsewhere
-  decorates_association :pets
   decorates_association :agency_address
   decorates_association :referees
   decorates_association :support_carer
@@ -129,6 +128,14 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   
   def employer_phone_number
     standard_wrapper('Employer phone number', application.employer_phone_number)
+  end
+  
+  def number_of_pets
+    standard_wrapper('Number of pets', application.number_of_pets.to_s)
+  end
+  
+  def pet_type
+    standard_wrapper('Pet type(s)', application.pet_type)
   end
   
   def where_breed_pets
