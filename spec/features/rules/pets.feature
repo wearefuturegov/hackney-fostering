@@ -5,10 +5,9 @@ Feature: Pets
     Given I have started an application
     And I am answering the pets step of the you and your family form
     
-  Scenario: Yes redirects to add a new pet
-    And I choose 2 pets
+  Scenario: Yes redirects to number of pets
     And I check the 'Yes' option
-    Then I should be on the 'type' step
+    Then I should be on the 'number_of_pets' step
 
   Scenario: No redirects correctly
     And I check the 'No' option
