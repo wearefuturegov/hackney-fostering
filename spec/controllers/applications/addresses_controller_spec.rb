@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 module Applications
-  describe AddressesController, type: :controller do # rubocop:disable Metrics/BlockLength
+  describe AddressesController, type: :controller do
     let!(:application) { Fabricate(:application) }
     let!(:address) { Fabricate(:address, application: application) }
     
