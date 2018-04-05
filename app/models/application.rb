@@ -68,7 +68,8 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
     on_step?(%w[adults_living_elsewhere]) && adults_living_elsewhere == true
   }
   validates :have_pets, inclusion: [true, false], if: -> { on_step?(%w[pets]) }
-  validates :number_of_pets, presence: true, if: -> { on_step?(%w[pets]) && have_pets == true }
+  validates :number_of_pets, presence: true, if: -> { on_step?(%w[number_of_pets]) }
+  validates :pet_type, presence: true, if: -> { on_step?(%w[pet_type]) }
   validates :breed_pets, inclusion: [true, false], if: -> { on_step?(%w[breed_pets]) }
   validates :where_breed_pets, presence: true, if: -> { on_step?(%w[where_breed_pets]) }
   validates :offspring_kept, presence: true, if: -> { on_step?(%w[offspring]) }
