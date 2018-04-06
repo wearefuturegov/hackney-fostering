@@ -3,6 +3,6 @@ class Child < Person
   
   enum relationship: %i[child sibling foster_child stepchild other_relationship]
   
-  validates :school, presence: true, if: -> { application&.on_step?(%w[school]) }
-  validates :school_contact, presence: true, if: -> { application&.on_step?(%w[school]) }
+  validates :school, presence: true, if: -> { on_edit_step? }
+  validates :school_contact, presence: true, if: -> { on_edit_step? }
 end
