@@ -55,17 +55,9 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   validates :employer_phone_number, presence: true, if: -> { on_step?(%w[number_for_employer_contact]) }
   validates :address, presence: true, if: -> { on_step?(%w[full_address]) }
   validates :children_at_home, inclusion: [true, false], if: -> { on_step?(%w[children_living_at_home]) }
-  validates :number_of_children, presence: true, if: -> { on_step?(%w[children_living_at_home]) && children_at_home == true }
   validates :children_living_elsewhere, inclusion: [true, false], if: -> { on_step?(%w[children_living_elsewhere]) }
-  validates :number_of_children_elsewhere, presence: true, if: lambda {
-    on_step?(%w[children_living_elsewhere]) && children_living_elsewhere == true
-  }
   validates :adults_living_at_home, inclusion: [true, false], if: -> { on_step?(%w[adults_living_at_home]) }
-  validates :number_of_adults, presence: true, if: -> { on_step?(%w[adults_living_at_home]) && adults_living_at_home == true }
   validates :adults_living_elsewhere, inclusion: [true, false], if: -> { on_step?(%w[adults_living_elsewhere]) }
-  validates :number_of_adults_elsewhere, presence: true, if: lambda {
-    on_step?(%w[adults_living_elsewhere]) && adults_living_elsewhere == true
-  }
   validates :have_pets, inclusion: [true, false], if: -> { on_step?(%w[pets]) }
   validates :number_of_pets, presence: true, if: -> { on_step?(%w[number_of_pets]) }
   validates :pet_type, presence: true, if: -> { on_step?(%w[pet_type]) }
@@ -106,8 +98,6 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
     update_only: true
   )
     
-  validates :number_of_children, presence: true, if: :children_at_home?
-  
   after_create :generate_code
   
   def reference_count(total, current)
