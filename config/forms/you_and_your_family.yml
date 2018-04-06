@@ -387,7 +387,7 @@ form:
           yes_value: Yes
           no_value: No
     adults_living_at_home:
-      template: :adults_at_home
+      template: :adults
       questions:
         - name: :first_name
           title: First name(s)

@@ -18,21 +18,17 @@ module PeopleSteps
   step :choose_number_of_people, 'I choose :integer :person_type'
   step :fill_in_people, 'I fill in the details for :integer :person_type'
   step :should_have_people, 'I should have :integer :person_type recorded'
-
-  def choose_number_of_people(num, type)
-    choose_select("number_of_#{type}", num)
-    click_on I18n.t('continue')
-  end
   
   def fill_in_people(count, type)
     first('label', text: 'Yes').click
-    choose_number_of_people(count.to_i, type)
+    click_on I18n.t('continue')
     @people = []
     if type.match?(/child/)
       count.to_i.times { fill_in_child_details }
     else
       count.to_i.times { fill_in_adult_details }
     end
+    click_on I18n.t('continue')
   end
   
   def should_have_people(count, type)
@@ -58,30 +54,27 @@ module PeopleSteps
     expect(person.school_contact).to eq(@people[index].school_contact) if @people[index].school
   end
   
-  def fill_in_person # rubocop:disable Metrics/AbcSize
+  def fill_in_person
     @people << @person
     fill_in 'First name(s)', with: @person.first_name
     fill_in 'Last name', with: @person.last_name
-    click_on I18n.t('continue')
     first('label', text: I18n.t("activerecord.attributes.person.genders.#{@person.gender}")).click
-    click_on I18n.t('continue')
     fill_in_date('date_of_birth', @person.date_of_birth)
-    click_on I18n.t('continue')
     find("select > option[value=#{@person.relationship}]").click
-    click_on I18n.t('continue')
   end
   
   def fill_in_adult_details
     @person = Fabricate(:adult)
     fill_in_person
+    click_on I18n.t('add')
   end
   
   def fill_in_child_details
     @person = Fabricate(:child)
     fill_in_person
-    fill_in 'Name of the school', with: @person.school
+    fill_in 'Child\'s School', with: @person.school
     fill_in 'School phone number', with: @person.school_contact
-    click_on I18n.t('continue')
+    click_on I18n.t('add')
   end
   
 end

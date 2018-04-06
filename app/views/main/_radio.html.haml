@@ -1,3 +1,4 @@
+%p= question['title'] if question['title']
 - if question['answers']
   = form.input question['name'], as: :radio_buttons, collection: question['answers'].map { |q| [q['title'], q['value']]}, label: question['title']
 - else

@@ -1,0 +1,9 @@
+%tr
+  %td
+    = person.first_name
+  %td
+    = person.last_name
+  %td
+    = link_to 'Edit', edit_application_child_path(application, person)
+  %td
+    = button_to 'Delete', application_child_path(application, person), method: :delete, form_class: 'delete_child' ,data: { confirm: 'Are you sure you want to delete this child?' }
