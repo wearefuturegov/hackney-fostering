@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'child_elsewhere', 'children_elsewhere'
+  inflect.irregular 'adult_elsewhere', 'adults_elsewhere'
+end

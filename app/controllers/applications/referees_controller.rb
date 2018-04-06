@@ -1,15 +1,32 @@
 module Applications
   class RefereesController < PeopleController
-    expose :referee, -> { application.referees.create }
+    expose :referee, model: 'Referee', build: -> { application.referees.new(person_params) }
     
-    def index; end
-
-    def path
-      if params[:step]
-        application_referee_information_path(application_id: application.code, referee_id: referee.id, id: params[:step])
-      else
-        new_application_referee_information_path(application_id: application.code, referee_id: referee.id)
-      end
+    def form_id
+      :children_living_at_home
     end
+    
+    def template
+      'applications/children'
+    end
+    
+    private
+    
+    def person_params
+      params.require(:child).permit(
+        :first_name,
+        :last_name,
+        :gender,
+        :date_of_birth,
+        :relationship,
+        :school,
+        :school_contact
+      )
+    end
+    
+    def step
+      'children_living_at_home'
+    end
+    
   end
 end

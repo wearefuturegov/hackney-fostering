@@ -1,9 +1,32 @@
 module Applications
   class ChildrenController < PeopleController
-    expose :child, -> { application.children.create }
-
-    def path
-      new_application_child_information_path(application_id: application.code, child_id: child.id)
+    expose :person, model: 'Child', build: -> { application.children.new(person_params) }
+    
+    def form_id
+      :children_living_at_home
     end
+    
+    def template
+      'applications/children'
+    end
+    
+    private
+    
+    def person_params
+      params.require(:child).permit(
+        :first_name,
+        :last_name,
+        :gender,
+        :date_of_birth,
+        :relationship,
+        :school,
+        :school_contact
+      )
+    end
+    
+    def step
+      'children_living_at_home'
+    end
+    
   end
 end
