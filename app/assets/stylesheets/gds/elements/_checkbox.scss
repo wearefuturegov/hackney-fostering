@@ -1,3 +1,9 @@
+.check_boxes {
+  > label {
+    display: none;
+  }
+}
+
 .checkbox {
   $checkbox: 40px; // Set the size and tune in.
   position: relative;
