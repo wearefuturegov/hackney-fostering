@@ -1,7 +1,7 @@
 body {
-  font-family: $stack;
-  font-size: $body;
-  line-height: $baseline;
+  // font-family: $stack;
+  // // font-size: $body;
+  // line-height: $baseline;
 }
 
 h1 {
@@ -12,10 +12,6 @@ h1 {
 h2 {
   font-size: 22px;
   line-height: 32px;
-}
-
-p {
-  font-size: $body;
 }
 
 a {

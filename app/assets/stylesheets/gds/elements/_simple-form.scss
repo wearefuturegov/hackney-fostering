@@ -1,0 +1,28 @@
+.simple_form {
+  span.error, span.hint {
+    font-size: 75%;
+    margin-top: ($baseline*-1);
+    display: block;
+    margin-bottom: $baseline;
+    color: $negative;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+  span.hint {
+    font-style: italic;
+    color: $black;
+  }
+  .error_notification {
+    font-weight: bold;
+    color: $negative;
+    margin-bottom: $baseline;
+  }
+  .field_with_errors {
+    #{$all-text-inputs} {
+      border-color: rgba($negative, 0.4);
+    }
+  }
+}
+

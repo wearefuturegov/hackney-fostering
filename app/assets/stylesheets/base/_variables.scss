@@ -1,3 +1,55 @@
+// This file needs including in your project before any other includes, this allows you to override any variables unique to your project
+
+// Media Queries
+$tablet-width: 640px;
+$desktop-width: 960px;
+$hd-desktop-width: 1440px;
+
+// Typography
+$stack: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+
+$body: 18px;
+$baseline: 26px;
+
+// Grid
+$main_grid: (
+  columns: 12,
+  gutter: 20px,
+);
+
+$mobile_grid: (
+  columns: 12,
+  gutter: 10px,
+);
+
+$gutter: 20px;
+
+$border-style: solid;
+$border-width: 2px;
+
+// Identity
+$brand: #555555;
+
+// Grayscales
+$black: #000;
+$gray: #555555;
+$gray-light: #bdbdbd;
+$gray-lighter: #eeeeee;
+$white: #fff;
+
+// Functional
+$background: $white;
+$negative: #EB0004; // red contrast ratio 4.63:1
+$positive: #008906; // green contrast ratio 4.58:1
+$focus: #FF9300;
+$hover: $brand;
+$active: $brand;
+
+$primary: $brand; // The main colour used for all buttons and links
+
+
+
+
 
 $stack: "Arial";
 

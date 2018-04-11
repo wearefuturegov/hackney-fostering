@@ -1,0 +1,35 @@
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+ol.default {
+    list-style-type: decimal;
+    padding-left: 1em;
+}
+ul.default {
+    list-style-type: disc;
+    padding-left: 1em;
+}
+
+ul {
+  margin-bottom: $baseline;
+  li {
+    margin-bottom: $baseline*0.5;
+  }
+}
