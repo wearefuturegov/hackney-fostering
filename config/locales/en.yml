@@ -30,7 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  back: Back
+  back: Back to previous question
   start: Start now
   continue: Save
   continue_b: Continue to questions
