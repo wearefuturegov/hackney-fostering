@@ -111,3 +111,12 @@ form {
     border-left: $border-width*2 $border-style $brand;
   }
 }
+
+span.error, span.hint {
+  font-weight: bold;
+}
+
+.field_with_errors {
+  border-left: 5px solid $negative;
+  padding-left: 15px;
+}
