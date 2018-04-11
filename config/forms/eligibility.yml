@@ -2,30 +2,30 @@ form:
   name: 'Continue'
   template: :check_if_you_can_foster
   steps:
-    fostering_type:
-      template: :questions
-      questions:
-        - name: :section
-          heading: Check if you can be a foster carer
-          title: What type of fostering are you interested in?
-          widget: :title
-        - name: :type_of_fostering
-          widget: :checkbox
-          answers:
-            - title: Emergency Fostering
-              value: :emergency_fostering
-            - title: Short Term Fostering
-              value: :short_term_fostering
-            - title: Long Term Fostering
-              value: :long_term_fostering
-            - title: Don't Know
-              value: :dont_know
+    # fostering_type:
+    #   template: :questions
+    #   questions:
+    #     - name: :section
+    #       heading: Check if you can be a foster carer
+    #       title: What type of fostering are you interested in?
+    #       widget: :title
+    #     - name: :type_of_fostering
+    #       widget: :checkbox
+    #       answers:
+    #         - title: Emergency Fostering
+    #           value: :emergency_fostering
+    #         - title: Short Term Fostering
+    #           value: :short_term_fostering
+    #         - title: Long Term Fostering
+    #           value: :long_term_fostering
+    #         - title: Don't Know
+    #           value: :dont_know
     spare_room:
       template: single_question
       next_step: :next_step
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           title: Do you have a spare room?
           widget: :title
         - name: :spare_room
@@ -35,7 +35,7 @@ form:
       next_step: :experience
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           widget: :title
         - name: :section
           title: Are you over 21 years of age?
@@ -47,7 +47,7 @@ form:
       next_step: :age_experience
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           widget: :title
         - name: :section
           title: How experienced are you working with children or young people?
@@ -59,7 +59,7 @@ form:
       next_step: :housing_type
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           widget: :title
         - name: :section
           title: What age of children have you had the most experience with?
@@ -78,7 +78,7 @@ form:
       help: help
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           widget: :title
         - name: :section
           title: What type of housing do you live in?
@@ -100,7 +100,7 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           notice: Sorry, you are unable to be a foster carer at the moment.
           title: Other ways you can help children and young people in Hackney
           widget: :notice
@@ -112,7 +112,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           title: What is your full name?
           widget: :title
         - name: :first_name
@@ -127,7 +127,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           title: What is your postcode?
           widget: :title
         - name: :postcode
@@ -139,7 +139,7 @@ form:
       next_step: :next_step
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           title: What is the best way for us to contact you?
           widget: :title
         - name: :contacting_you
@@ -149,7 +149,7 @@ form:
       next_step: :contact_phone_time
       questions:
         - name: :contact_phone
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           title: What is your phone number?
           widget: :title
         - name: :phone_number
@@ -160,7 +160,7 @@ form:
       next_step: :thank_you
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           title: When is a good time to contact you?
           widget: :title
         - name: :contact_phone_time
@@ -170,7 +170,7 @@ form:
       next_step: :thank_you
       questions:
         - name: :section
-          heading: Check if you can be a foster carer
+          # heading: Check if you can be a foster carer
           widget: :title
         - name: :contact_email
           title: What is your email address?
