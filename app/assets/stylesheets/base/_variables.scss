@@ -39,7 +39,7 @@ $white: #fff;
 
 // Functional
 $background: $white;
-$negative: #EB0004; // red contrast ratio 4.63:1
+
 $positive: #008906; // green contrast ratio 4.58:1
 $hover: $brand;
 $active: $brand;
@@ -62,4 +62,7 @@ $positive: #00664f; //PMS 336
 $positive: #00B140; //PMS 354
 $hover: $brand;
 $active: $brand;
-$negative: #e03c31; // PMS 179
+
+
+// GDS STUFF
+$negative: #c12f3e;
