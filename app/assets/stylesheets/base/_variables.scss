@@ -31,7 +31,7 @@ $border-width: 2px;
 $brand: #555555;
 
 // Grayscales
-$black: #000;
+$black: #111;
 $gray: #555555;
 $gray-light: #bdbdbd;
 $gray-lighter: #eeeeee;
@@ -41,7 +41,6 @@ $white: #fff;
 $background: $white;
 $negative: #EB0004; // red contrast ratio 4.63:1
 $positive: #008906; // green contrast ratio 4.58:1
-$focus: #FF9300;
 $hover: $brand;
 $active: $brand;
 
@@ -53,8 +52,9 @@ $primary: $brand; // The main colour used for all buttons and links
 
 $stack: "Arial";
 
-$brand: #ffa300; //PMS 137
-$brand-b: #005f61; //PMS 323
+$brand: #00694F; //PMS 137
+$brand-light: #17b15b; //PMS 323
+$focus: $brand-light;
 $brand-b: #0023ff;
 $brand-b2: #009Ca6; // PMS 320
 $brand-b2: #0023ff;
