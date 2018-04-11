@@ -12,4 +12,6 @@
   %section.actions
     = f.submit t('continue'), class: "confirm add-address #{f.object.errors.any? ? '' : 'hidden'}"
     .other_actions
-      = link_to t('back'), :back, class: "back"
+      = link_to :back, class: "back" do
+        =fa_icon "caret-left"
+        =t('back')
