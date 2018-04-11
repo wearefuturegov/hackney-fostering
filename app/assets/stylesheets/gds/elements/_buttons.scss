@@ -1,0 +1,57 @@
+#{$all-buttons}, .button {
+  @include button-shadow;
+  position: relative;
+  appearance: none;
+  background-color: $black;
+  border: $border-style $border-width $black;
+  border-radius: 0;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $stack;
+  font-size: $body;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $baseline*0.5 $gutter;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+  &:active {
+    background-color: $white;
+    color: $black;
+  }
+  &:focus {
+    outline: none;
+    outline-offset: none;
+  }
+  &.confirm {
+    background-color: $brand;
+    border-color: $brand;
+    color: $black;
+    &:active {
+      @include button-active-shadow;
+    }
+    &:hover {
+      background-color: $brand;
+      color: $black;
+    }
+  }
+  &.secondary {
+    @include shadow-none;
+    background: none;
+    border: none;
+    color: $brand-b;
+    padding: 0;
+    text-decoration: underline;
+    &:hover {
+      color: $brand-b2;
+    }
+  }
+}

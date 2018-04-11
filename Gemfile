@@ -48,11 +48,13 @@ else
   gem 'incredible' # rubocop:disable Bundler/DuplicatedGem
 end
 
-if ENV['USE_LOCAL_GEFF']
-  gem 'geff', path: '~/futuregov/geff'
-else
-  gem 'geff', git: 'https://github.com/wearefuturegov/geff', branch: 'basic' # rubocop:disable Bundler/DuplicatedGem
-end
+
+gem 'geff', git: 'https://github.com/wearefuturegov/geff.git'
+# if ENV['USE_LOCAL_GEFF']
+#   gem 'geff', path: '~/futuregov/geff'
+# else
+#   gem 'geff', git: 'https://github.com/wearefuturegov/geff', branch: 'basic' # rubocop:disable Bundler/DuplicatedGem
+# end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
