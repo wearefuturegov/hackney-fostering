@@ -31,7 +31,8 @@
 
 en:
   back: Back
-  continue: Save & continue
+  start: Start now
+  continue: Save
   continue_b: Continue to questions
   submit: Submit
   consent_and_submit: Consent and Submit
@@ -108,4 +109,4 @@ en:
           small: Small
           medium: Medium
           large: Large
-      
+
