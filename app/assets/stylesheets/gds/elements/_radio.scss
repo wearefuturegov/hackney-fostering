@@ -2,6 +2,9 @@
   > label {
     display: none;
   }
+  span.error, span.hint {
+    margin-top: -5px;
+  }
 }
 
 .radio {
