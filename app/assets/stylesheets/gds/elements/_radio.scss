@@ -1,0 +1,53 @@
+.radio_buttons {
+  > label {
+    display: none;
+  }
+}
+
+.radio {
+  $radio: 40px; // Set the size and tune in.
+  position: relative;
+  display: block;
+  margin-bottom: $baseline*0.75;
+  label {
+    padding-left: $gutter*3;
+    font-weight: 400;
+    line-height: $radio;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  input[type=radio]{
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 100%;
+    height: $radio;
+    width: $radio;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      display: block;
+      width: $radio;
+      height: $radio;
+      top: $radio*0.25;
+      left: $radio*0.25;
+    }
+    &:before {
+      background: none;
+      width: $radio*0.5;
+      height: $radio*0.5;
+      margin: 0;
+    }
+    &:after {
+      border: $black $border-width $border-style;
+      margin: -$radio*0.25;
+      cursor: pointer;
+    }
+  }
+}
+
+input[type=radio]:checked:before {
+  background: $black;
+}

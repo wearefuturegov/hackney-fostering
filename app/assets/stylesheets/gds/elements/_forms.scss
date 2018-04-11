@@ -1,0 +1,113 @@
+$_form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$_form-box-shadow-focus: $_form-box-shadow, 0 0 5px rgba($primary, 0.7);
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: $baseline / 2;
+  padding: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: $baseline / 2;
+}
+
+input,
+select,
+textarea {
+  display: block;
+}
+
+#{$all-text-inputs} {
+  appearance: none;
+  background-color: $white;
+  border: $border-width $border-style $black;
+  border-radius: 0;
+  box-shadow: $_form-box-shadow;
+  box-sizing: border-box;
+  padding: $baseline*0.25;
+  width: 100%;
+
+  &:focus {
+    @include focus;
+  }
+
+  &:disabled {
+    background-color: shade($background, 5%);
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    color: tint($black, 40%);
+  }
+}
+
+textarea {
+  max-width: 100%;
+  // resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+}
+
+[type="file"] {
+  margin-bottom: $baseline;
+  width: 100%;
+}
+
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+select {
+  &:focus {
+    @include focus;
+  }
+}
+
+abbr[title="required"] {
+  display: none;
+}
+
+label.required:after {
+  content: " *"
+}
+
+[type="file"], label.file {
+  width: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+form {
+  label.question {
+    font-size: $body;
+    line-height: $baseline;
+    margin-top: 0;
+    margin-bottom: $baseline*0.25;
+  }
+  input.answer {
+    font-size: $body;
+    line-height: $baseline*1.5;
+    margin-bottom: $baseline;
+  }
+  label.text_date {
+    display: none;
+  }
+  .extra {
+    display: none;
+    margin-top: $baseline;
+    padding-left: $gutter;
+    border-left: $border-width*2 $border-style $brand;
+  }
+}
