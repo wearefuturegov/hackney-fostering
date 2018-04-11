@@ -25,7 +25,6 @@
   }
   &:active {
     background-color: $white;
-    color: $black;
   }
   &:focus {
     outline: none;
@@ -34,13 +33,11 @@
   &.confirm {
     background-color: $brand;
     border-color: $brand;
-    color: $black;
     &:active {
       @include button-active-shadow;
     }
     &:hover {
-      background-color: $brand;
-      color: $black;
+      background-color: rgba($brand, 0.9);
     }
   }
   &.secondary {
