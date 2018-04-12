@@ -95,26 +95,20 @@ form:
     what_is_your_name:
       template: :questions
       questions:
-        - name: :section
-          title: What is your full name?
-          widget: :title
         - name: :first_name
-          title: First name(s)
+          title: What is your full name?
           widget: :input
           model: :applicant
         - name: :last_name
-          title: Last name
+          title: Need to remove this
           widget: :input
           model: :applicant
     address:
       template: :questions
       questions:
-        - name: :section
-          title: What is your postcode?
-          widget: :title
         - name: :postcode
           model: :address
-          title: Enter your postcode
+          title: What is your postcode?
           widget: :find_input
     contacting_you:
       template: single_question
@@ -129,11 +123,8 @@ form:
       template: :questions
       next_step: :contact_phone_time
       questions:
-        - name: :contact_phone
-          title: What is your phone number?
-          widget: :title
         - name: :phone_number
-          title: Enter your phone number
+          title: What is your phone number?
           widget: :tel
     contact_phone_time:
       template: :questions
