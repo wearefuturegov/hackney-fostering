@@ -25,7 +25,6 @@ form:
       next_step: :next_step
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
           title: Do you have a spare room?
           widget: :title
         - name: :spare_room
@@ -34,9 +33,6 @@ form:
       template: :single_question
       next_step: :experience
       questions:
-        - name: :section
-          # heading: Check if you can be a foster carer
-          widget: :title
         - name: :section
           title: Are you over 21 years of age?
           widget: :title
@@ -47,9 +43,6 @@ form:
       next_step: :age_experience
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
-          widget: :title
-        - name: :section
           title: How experienced are you working with children or young people?
           widget: :title
         - name: :experience
@@ -58,9 +51,6 @@ form:
       template: :single_question
       next_step: :housing_type
       questions:
-        - name: :section
-          # heading: Check if you can be a foster carer
-          widget: :title
         - name: :section
           title: What age of children have you had the most experience with?
           widget: :title
@@ -78,9 +68,6 @@ form:
       help: help
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
-          widget: :title
-        - name: :section
           title: What type of housing do you live in?
           widget: :title
         - name: :housing_type
@@ -90,8 +77,6 @@ form:
       questions:
         - name: :section
           heading: You have the potential to be a foster carer
-          widget: :title
-        - name: :section
           title: Would you be interested in speaking to someone from the fostering team?
           widget: :title
         - name: :be_in_touch
@@ -100,7 +85,6 @@ form:
       template: :single_question
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
           notice: Sorry, you are unable to be a foster carer at the moment.
           title: Other ways you can help children and young people in Hackney
           widget: :notice
@@ -112,7 +96,6 @@ form:
       template: :questions
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
           title: What is your full name?
           widget: :title
         - name: :first_name
@@ -127,7 +110,6 @@ form:
       template: :questions
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
           title: What is your postcode?
           widget: :title
         - name: :postcode
@@ -139,7 +121,6 @@ form:
       next_step: :next_step
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
           title: What is the best way for us to contact you?
           widget: :title
         - name: :contacting_you
@@ -149,7 +130,6 @@ form:
       next_step: :contact_phone_time
       questions:
         - name: :contact_phone
-          # heading: Check if you can be a foster carer
           title: What is your phone number?
           widget: :title
         - name: :phone_number
@@ -160,7 +140,6 @@ form:
       next_step: :thank_you
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
           title: When is a good time to contact you?
           widget: :title
         - name: :contact_phone_time
@@ -170,7 +149,6 @@ form:
       next_step: :thank_you
       questions:
         - name: :section
-          # heading: Check if you can be a foster carer
           widget: :title
         - name: :contact_email
           title: What is your email address?
