@@ -77,10 +77,6 @@ abbr[title="required"] {
   display: none;
 }
 
-label.required:after {
-  content: " *"
-}
-
 [type="file"], label.file {
   width: auto;
 
@@ -127,3 +123,6 @@ span.error, span.hint {
   margin-bottom: 27px;
 }
 
+label.required:after {
+  content: ""
+}
