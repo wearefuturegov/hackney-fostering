@@ -141,11 +141,8 @@ form:
       questions:
         - name: :section
           widget: :title
-        - name: :contact_email
-          title: What is your email address?
-          widget: :title
         - name: :email
-          title: Enter your email address
+          title: What is your email address?
           widget: :email
     thank_you:
       template: :thank_you
