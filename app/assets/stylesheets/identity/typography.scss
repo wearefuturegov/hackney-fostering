@@ -2,17 +2,12 @@ body {
   color: $black;
 }
 
-h1 {
-  font-size: 30px;
-  line-height: 38px;
-}
-
-h2 {
-  font-size: 22px;
-  line-height: 32px;
-}
-
 a {
   color: $black;
 }
 
+ul.default {
+  li {
+    margin-bottom: 5px;
+  }
+}
