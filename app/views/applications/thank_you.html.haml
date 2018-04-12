@@ -1,17 +1,15 @@
 %section.section
   %h1 Thank you for providing your details
 
-  %p
-    A member from our team will be in touch within 1-2 days.
-  %p
-    You will receive a confirmation e-mail, in the meantime please download the information brochure to learn more about Hackney Fostering.
+  -if application.be_in_touch == "contact_me"
+    %p A member from our team will be in touch within 1-2 days.
+  %p You will receive a confirmation e-mail, in the meantime please download the information brochure to learn more about Hackney Fostering.
 
   = link_to 'Download information brochure', 'name_change', class: 'button confirm'
 
   %br
   %br
-  %p
-    If you would like to talk to someone about how to be a foster carer in the future, please contact us:
+  %p If you would like to talk to someone about how to be a foster carer in the future, please contact us:
 
   %ul
     %li
