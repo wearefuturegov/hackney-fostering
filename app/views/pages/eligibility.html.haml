@@ -1,10 +1,14 @@
-%section.section
-  %h1
-    Check if you can be a foster carer
+%section
+  %h1 Check if you can be a foster carer
+  %p To help you understand if you can be a foster carer, you will be asked between 4-6 questions.
   %p
-    To help you understand if you can be a foster carer, you will be asked between 4-6 questions.
-  %p
-    The information will be different depending on your answers.
+    %span.bold Before you start -
+    There's no such thing as a 'typical' foster carer; but as part of the approvals process you will need to:
+  %ul.default
+    %li be over 21,
+    %li be in reasonably good health, fit and well enough to care for children into adulthood,
+    %li be able to offer a secure home with a spare bedroom,
+    %li have the time to foster. You don't need to give up work to foster, as long as your work is flexible enough to cope with the demands of foster caring.
 
-%section.actions
+.actions
   = button_to t('start'), :applications, class: 'confirm button_start'
