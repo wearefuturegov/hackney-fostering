@@ -10,6 +10,7 @@
       During your initial visit, you were given a unique code by your social worker.
 
   = simple_form_for :application, url: find_applications_path, method: :get do |f|
-    = f.input :application_id, as: :string, label: 'Please enter the code below to continue.', input_html: { name: 'application_id' }
+    .with_title
+      = f.input :application_id, as: :string, label: 'Please enter the code below to continue.', input_html: { name: 'application_id' }
     %section.actions
       = f.submit t('continue_b'), class: "confirm"

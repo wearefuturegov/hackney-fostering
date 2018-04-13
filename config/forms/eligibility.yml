@@ -100,13 +100,18 @@ form:
     what_is_your_name:
       template: :questions
       questions:
+        - name: :section
+          widget: :title
+          title: What is your name?
         - name: :first_name
-          title: What is your full name?
+          title: First name
           widget: :input
+          with_title: true
           model: :applicant
         - name: :last_name
-          title: Need to remove this
+          title: Last name
           widget: :input
+          with_title: true
           model: :applicant
     address:
       template: :questions

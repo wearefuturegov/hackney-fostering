@@ -8,8 +8,8 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: You & your family
-          intro: Information will be requested about yourself, any partners, family or children.
+          title: You & your family
+          info: Information will be requested about yourself, any partners, family or children.
           widget: :title
         - name: section
           intro: "For this section please have the following items prepared:"

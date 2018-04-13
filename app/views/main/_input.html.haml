@@ -1,2 +1,3 @@
-= form.input question['name'], as: :string, label: question['title'], input_html: { class: question['name'] }
- 
+.input_container{ class: (question['with_title'] ? 'with_title' : '') }
+  = form.input question['name'], as: :string, label: question['title'], input_html: { class: question['name'] }
+
