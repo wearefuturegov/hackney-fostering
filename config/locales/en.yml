@@ -51,9 +51,9 @@ en:
           'no': 'No'
           not_yet: Not yet
         experiences:
-          very_experienced: Very experienced
-          somewhat_experienced: Somewhat experienced
-          little_experience: Little experience
+          very_experienced: Very experienced (I work with children as part of my job / I'm a parent or guardian)
+          somewhat_experienced: Somewhat experienced (I volunteer with young people / I often have parental responsibility)
+          little_experience: Little experience (I babysit occasionally / infrequently help with family)
           no_experience: No experience
         housing_types:
           own_property: Own property
