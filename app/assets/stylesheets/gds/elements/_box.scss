@@ -1,6 +1,8 @@
 .box {
   border: $border-style $border-width*2 $negative;
   padding: $baseline;
+  margin-bottom: 15px;
+  margin-top: 15px;
   li {
     &:last-child {
       margin-bottom: 0;
@@ -12,6 +14,9 @@
   }
   p {
     font-weight: 600;
+  }
+  ul {
+    margin-bottom: 0;
   }
 }
 
