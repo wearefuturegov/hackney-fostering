@@ -85,13 +85,18 @@ form:
       template: :single_question
       questions:
         - name: :section
-          notice: Sorry, you are unable to be a foster carer at the moment.
-          title: Other ways you can help children and young people in Hackney
+          notice: |
+              Sorry, due to your answer, currently you are unable to be a foster carer.
+              Being over 21 and having a spare bedroom is a policy requirement to being a foster carer.
           widget: :notice
-        - name: :other_ways
-          title: Sorry, you are unable to be a foster carer at the moment
-          widget: :radio
-          next_button_label: Provide contact details
+        - name: :section
+          widget: text
+          content: If you are interested in finding out about other ways of supporting children and young people in Hackney then please continue below, enter your contact details and someone from our tema will be in contact with you in a couple of days.
+
+        # - name: :other_ways
+        #   title: Sorry, you are unable to be a foster carer at the moment
+        #   widget: :radio
+        #   next_button_label: Provide contact details
     what_is_your_name:
       template: :questions
       questions:
