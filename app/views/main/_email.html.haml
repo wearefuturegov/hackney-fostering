@@ -1,1 +1,2 @@
-= form.input question['name'], as: :email, label: question['title']
+.date_container{ class: (question['with_title'] ? 'with_title' : '') }
+  = form.input question['name'], as: :email, label: question['title']

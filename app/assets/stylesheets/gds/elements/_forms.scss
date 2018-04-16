@@ -97,11 +97,7 @@ form {
     line-height: $baseline*1.5;
     margin-bottom: $baseline;
   }
-  label.text_date {
-    display: none;
-  }
   .extra {
-    display: none;
     margin-top: $baseline;
     padding-left: $gutter;
     border-left: $border-width*2 $border-style $brand;
@@ -117,20 +113,39 @@ span.error, span.hint {
   padding-left: 15px;
 }
 
-.string.question, .tel.question, .email.question {
+.string.question, .tel.question, .email.question, .text.question {
   font-size: 36px;
   line-height: 1.11111;
   margin-bottom: 27px;
 }
 
 .with_title {
-  .string.question, .tel.question, .email.question {
+  .text.question, .string.question, .tel.question, .email.question {
     font-size: 18px;
     line-height: 26px;
     margin-bottom: 6.5px;
+  }
+  .text_date.question {
+    display: none;
   }
 }
 
 label.required:after {
   content: ""
+}
+
+.postcode_search {
+
+  #find_address {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  .answer {
+    margin-bottom: 0;
+  }
+  input {
+    display: inline-block;
+    width: 150px;
+  }
 }
