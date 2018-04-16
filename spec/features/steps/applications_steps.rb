@@ -25,10 +25,10 @@ module ApplicationSteps # rubocop:disable Metrics/ModuleLength
     click_on I18n.t('continue')
   end
   
-  def complete_form # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+  def complete_form # rubocop:disable Metrics/AbcSize
     visit application_eligibility_index_path(@application)
     @form = Fabricate.build(:application)
-    check_boxes(@form.type_of_fostering)
+    # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     fill_in_radio_button(@form.over_21 ? 'Yes' : 'No')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.experiences.#{@form.experience}"))
@@ -48,9 +48,9 @@ module ApplicationSteps # rubocop:disable Metrics/ModuleLength
   def complete_form_ineligible # rubocop:disable Metrics/AbcSize
     visit application_eligibility_index_path(@application)
     @form = Fabricate.build(:application, spare_room: 1)
-    check_boxes(@form.type_of_fostering)
+    # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
-    fill_in_radio_button(I18n.t("activerecord.attributes.application.other_ways.#{@form.other_ways}"))
+    click_on I18n.t('continue')
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
     answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
     click_on I18n.t('continue')
