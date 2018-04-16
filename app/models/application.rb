@@ -31,7 +31,7 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   # Validations for eligibility form
   validates :type_of_fostering, presence: true, if: -> { on_step?(%w[fostering_type]) }
   validates :spare_room, presence: true, if: -> { on_step?(%w[spare_room]) }
-  validates :over_21, presence: true, if: -> { on_step?(%w[over_21]) }
+  validates :over_21, inclusion: [true, false], if: -> { on_step?(%w[over_21]) }
   validates :experience, presence: true, if: -> { on_step?(%w[experience]) }
   validates :age_experience, presence: true, if: -> { on_step?(%w[age_experience]) }
   validates :housing_type, presence: true, if: -> { on_step?(%w[housing_type]) }
