@@ -10,5 +10,5 @@ Feature: Are you practicing
 
   Scenario: Non-Practicing redirects correctly
     And I check the 'No' option
-    Then I should be on the 'employment_history' step
+    Then I should be on the 'welcome_working' step
     
