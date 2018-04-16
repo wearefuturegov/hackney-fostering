@@ -1,6 +1,3 @@
 %section.actions
   = form.submit t('continue'), class: "confirm"
-  .other_actions
-    = link_to :back, class: "back" do
-      =fa_icon "caret-left"
-      =t('back')
+  = back_link
