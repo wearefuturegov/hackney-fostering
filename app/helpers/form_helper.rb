@@ -11,11 +11,6 @@ module FormHelper
     application
   end
   
-  def setup_person(person)
-    person.address ||= Address.new
-    person
-  end
-  
   def get_options(form, question)
     form.object.class.send(question['name'].to_s.pluralize).keys.map do |k|
       [form.object.class.human_enum_name(question['name'].to_s, k), k]

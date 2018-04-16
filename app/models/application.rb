@@ -100,30 +100,6 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
     
   after_create :generate_code
   
-  def reference_count(total, current)
-    (total - current + 1).en.numwords.en.ordinal
-  end
-  
-  def children_count
-    reference_count number_of_children, children.count
-  end
-  
-  def children_elsewhere_count
-    reference_count number_of_children_elsewhere, children_elsewhere.count
-  end
-  
-  def adults_count
-    reference_count number_of_adults, adults.count
-  end
-  
-  def adults_elsewhere_count
-    reference_count number_of_adults_elsewhere, adults_elsewhere.count
-  end
-  
-  def referees_count
-    referees.count.en.numwords.en.ordinal
-  end
-  
   def on_step?(steps)
     steps.include?(current_step)
   end
