@@ -1,34 +1,34 @@
 :javascript
-  $('#menu ul li a').on('click', function(){
-      $('#menu ul li a.current').removeClass('current');
-      $(this).addClass('current');
+  $(document).ready(function() {
+    localStorage.setItem('visited-'+window.location.pathname,true);
+    var links = document.getElementsByTagName('a');
+    for (i=0;i<links.length;i++) {
+      var link = links[i];
+
+      if (link.pathname == window.location.pathname) {
+        link.classList.add('currentPage');
+      }
+      if (link.host == window.location.host
+      && localStorage.getItem('visited-' + link.pathname)) {
+        link.dataset.visited = true;
+      }
+    }
   });
 
 %nav.side_nav
   - unless current_page?(applications_path) || current_page?(find_applications_path)
     %ul
-      %li
-        = link_to 'Welcome', application_you_and_your_family_path(application_id: application.code, id: 'welcome')
-      %li
-        = link_to 'You & your family', application_you_and_your_family_path(application_id: application.code, id: 'name_change_info'), class: 'current'
+      %li#welcome_link= link_to 'Welcome', application_you_and_your_family_path(application_id: application.code, id: 'welcome'), :data => {:visited => true}
+      %li#family_link
+        = link_to 'You & your family', application_you_and_your_family_path(application_id: application.code, id: 'name_change_info')
         %ul.sub_nav
-          %li
-            = link_to 'About you', application_you_and_your_family_path(application_id: application.code, id: 'name_change')
-          %li
-            = link_to 'Working experience', application_you_and_your_family_path(application_id: application.code, id: 'welcome_working')
-          %li
-            = link_to 'Your home', application_you_and_your_family_path(application_id: application.code, id: 'address_welcome')
-          %li
-            = link_to 'Address history', application_you_and_your_family_path(application_id: application.code, id: 'previous_addresses')
-          %li
-            = link_to 'Your family', application_you_and_your_family_path(application_id: application.code, id: 'your_family')
-          %li
-            = link_to 'Your pets', application_you_and_your_family_path(application_id: application.code, id: 'pets')
-      %li
-        = link_to 'Your support carer', application_support_carer_path(application_id: application.code, id: 'intro')
-      %li
-        = link_to 'Your references', application_referees_path(application_id: application.code)
-      %li
-        = link_to 'Legal history', application_legal_history_path(application_id: application.code, id: 'intro')
-      %li
-        = link_to 'Consent', '#'
+          %li#about_link= link_to 'About you', application_you_and_your_family_path(application_id: application.code, id: 'name_change')
+          %li#work_link= link_to 'Working experience', application_you_and_your_family_path(application_id: application.code, id: 'welcome_working')
+          %li#home_link= link_to 'Your address history', application_you_and_your_family_path(application_id: application.code, id: 'address_welcome')
+          %li#address_link= link_to 'remove this link once address sorted', application_you_and_your_family_path(application_id: application.code, id: 'previous_addresses')
+          %li#family_link= link_to 'Your family', application_you_and_your_family_path(application_id: application.code, id: 'your_family')
+          %li#pets_link= link_to 'Your pets', application_you_and_your_family_path(application_id: application.code, id: 'pets')
+      %li#carer_link= link_to 'Your support carer', application_support_carer_path(application_id: application.code, id: 'intro')
+      %li#reference_link= link_to 'Your references', application_referees_path(application_id: application.code)
+      %li#legal_link= link_to 'Legal history', application_legal_history_path(application_id: application.code, id: 'intro')
+      %li#consent_link= link_to 'Consent', '#'
