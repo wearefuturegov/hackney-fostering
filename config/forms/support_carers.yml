@@ -13,10 +13,12 @@ form:
         - name: :first_name
           title: First name(s)
           model: :support_carer
+          with_title: true
           widget: :input
         - name: :last_name
           model: :support_carer
           title: Last name
+          with_title: true
           widget: :input
     support_carer_email:
       template: :questions
@@ -27,4 +29,5 @@ form:
         - name: :email
           model: :support_carer
           title: Email
-          widget: :input
+          with_title: true
+          widget: :email

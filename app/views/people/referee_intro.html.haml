@@ -5,10 +5,11 @@
 
   %div.box.info
     %h2 Your references should be a mixture of:
-    %p 1-2 family members
-    %p Ex-colleagues
-    %p Neighbours
-    %p Friends
-    
+    %ul.default
+      %li 1-2 family members
+      %li Ex-colleagues
+      %li Neighbours
+      %li Friends
+
   = simple_form_for person, url: wizard_path, method: :put do |f|
     = render partial: 'actions', locals: { form: f }

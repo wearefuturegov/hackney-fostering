@@ -1,1 +1,2 @@
-= form.input question['name'], as: :tel, label: question['title']
+.input_container{ class: (question['with_title'] ? 'with_title' : '') }
+  = form.input question['name'], as: :tel, label: question['title']

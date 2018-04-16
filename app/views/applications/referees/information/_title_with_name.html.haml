@@ -1,14 +1,3 @@
-%section.section
+%section
   %h1
-    = question['heading']
-  %p
-    = question['intro']
-
-  %p
-    = question['extra']
-
-  / %p.box
-  /   = question['notice']
-
-%h2
-  = question['title'] % { name: person.first_name, number: application.referees_count }
+    = question['title'] % { name: person.first_name, number: application.referees_count }

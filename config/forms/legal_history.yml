@@ -6,23 +6,19 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Tell us your legal history
+          title: Tell us your legal history
           widget: :title
         - name: :sub_section
-          intro: |
+          info: |
             Safety is important for the future child, knowing if you have been
             in a family court proceeding is essential. Please provide as much
             detail as possible.
-            
-             We may contact the councils to get further information (with your
-             consent).
+
+            We may contact the councils to get further information (with your consent).
           widget: :title
     family_court:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
         - name: :sub_section
           title: Have you ever been in any family court proceeding or in any proceedings about children and/or family?
           widget: :title
@@ -33,64 +29,39 @@ form:
     court_date:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
         - name: :sub_section
           title: Date of court proceeding
           widget: :title
         - name: :court_date
+          with_title: true
           widget: :date
     court_name:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Name of court
-          widget: :title
         - name: :court_name
+          title: Name of court
           widget: :input
     type_of_order:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Type of order made
-          widget: :title
         - name: :type_of_order
           widget: :input
+          title: Type of order made
     parties_involved:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Names of children or adults involved
-          widget: :title
         - name: :parties_involved
+          title: Names of children or adults involved
           widget: :textarea
     court_details:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Details of the case
-          widget: :title
         - name: :court_details
+          title: Details of the case
           widget: :textarea
     previous_applications:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
         - name: :sub_section
           title: Have you previously applied to become a foster carer, adopter or child-minder?
           widget: :title
@@ -101,31 +72,23 @@ form:
     application_date:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
         - name: :sub_section
           title: Date you applied
           widget: :title
         - name: :application_date
+          with_title: true
           widget: :date
     agency_name:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Name of agency/service
-          widget: :title
         - name: :agency_name
+          title: Name of agency/service
           widget: :input
     agency_address:
       template: :single_question
       template: :address
       reference: :agency_address
-      title: Tell us your legal history
-      sub_title: Address of agency/service
+      title: Address of agency/service
       questions:
         - name: :line_1
           title: Address Line 1
@@ -149,31 +112,18 @@ form:
     type_of_application:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Type of application
-          widget: :title
         - name: :type_of_application
+          title: Type of application
           widget: :input
     application_outcome:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: What was the outcome of the application?
-          widget: :title
         - name: :application_outcome
+          title: What was the outcome of the application?
           widget: :textarea
     other_previous_applications:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
         - name: :sub_section
           title: Has any member of your household previously applied to become a foster carer, adopter or child-minder?
           widget: :title
@@ -184,31 +134,23 @@ form:
     other_application_date:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
         - name: :sub_section
-          title: Date you applied
+          title: Date they applied
           widget: :title
         - name: :other_application_date
+          with_title: true
           widget: :date
     other_agency_name:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Name of agency/service
-          widget: :title
         - name: :other_agency_name
+          title: Name of agency/service
           widget: :input
     other_agency_address:
       template: :single_question
       template: :address
       reference: :other_agency_address
-      title: Tell us your legal history
-      sub_title: Address of agency/service
+      title: Address of agency/service
       questions:
         - name: :line_1
           title: Address Line 1
@@ -232,31 +174,18 @@ form:
     other_type_of_application:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Type of application
-          widget: :title
         - name: :other_type_of_application
+          title: Type of application
           widget: :input
     other_application_outcome:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: What was the outcome of the application?
-          widget: :title
         - name: :other_application_outcome
+          title: What was the outcome of the application?
           widget: :input
     previous_fostering:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
         - name: :sub_section
           title: Have you been an approved foster carer in the preceding 12 months?
           widget: :title
@@ -267,13 +196,8 @@ form:
     previous_agency_name:
       template: :single_question
       questions:
-        - name: :section
-          heading: Tell us your legal history
-          widget: :title
-        - name: :sub_section
-          title: Name of agency/service
-          widget: :title
         - name: :previous_agency_name
+          title: Name of agency/service
           widget: :input
     previous_agency_address:
       template: :single_question

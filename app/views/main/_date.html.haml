@@ -1,1 +1,2 @@
-= form.input question['name'], label: question['title'], as: :text_date, start_year: local_assigns.fetch(:start_year, Date.today.year - 20), end_year: local_assigns.fetch(:end_year, Date.today.year)
+.date_container{ class: (question['with_title'] ? 'with_title' : '') }
+  = form.input question['name'], label: question['title'], as: :text_date, start_year: local_assigns.fetch(:start_year, Date.today.year - 20), end_year: local_assigns.fetch(:end_year, Date.today.year)

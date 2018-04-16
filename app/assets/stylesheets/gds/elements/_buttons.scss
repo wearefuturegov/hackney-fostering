@@ -41,14 +41,13 @@
     }
   }
   &.secondary {
-    @include shadow-none;
-    background: none;
-    border: none;
-    color: $brand-b;
-    padding: 0;
-    text-decoration: underline;
+    background: #fff;
+    color: $black;
     &:hover {
-      color: $brand-b2;
+      background: #eaeaea;
+    }
+    &:active {
+      @include button-active-shadow;
     }
   }
 }
