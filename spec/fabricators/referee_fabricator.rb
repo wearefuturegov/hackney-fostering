@@ -6,5 +6,7 @@ Fabricator(:referee) do
   date_of_birth Date.today - 30.years
   years_known  '17 years'
   email        { FFaker::Internet.email }
+  address      { Fabricate(:address) }
   phone_number { FFaker::PhoneNumber.phone_number }
+  application  { Fabricate(:application) }
 end

@@ -1,0 +1,4 @@
+= simple_form_for [application, referee], html: { class: 'referee_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |f|
+  - @questions.each do |q|
+    = render partial: q['widget'].to_s, locals: { form: f, question: q, questions: q['questions'] }
+  = f.submit t('referee.update'), class: "confirm"

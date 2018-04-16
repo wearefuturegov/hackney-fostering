@@ -6,4 +6,4 @@ Feature: Breeding Pets
     
   Scenario: Yes redirects correctly
     And I fill in the 'application_breeding_other' field
-    Then I should be on the 'intro' step
+    Then I should be on the 'referees' step

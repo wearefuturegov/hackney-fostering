@@ -1,4 +1,4 @@
-module ApplicationSteps # rubocop:disable Metrics/ModuleLength
+module ApplicationSteps
   step :fill_in_radio_button, 'I check the :answer option'
   step :fill_in_radio_button_no_submit, 'I check the :answer option without submitting'
   step :answer_question, 'I answer :text to the :text question'

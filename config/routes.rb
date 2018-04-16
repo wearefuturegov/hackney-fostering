@@ -1,4 +1,4 @@
-Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
+Rails.application.routes.draw do
   resources :applications do
     collection { get :find }
     resources :eligibility, controller: 'applications/eligibility'
@@ -10,9 +10,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :children_elsewhere, controller: 'applications/children_elsewhere'
     resources :adults, controller: 'applications/adults'
     resources :adults_elsewhere, controller: 'applications/adults_elsewhere'
-    resources :referees, controller: 'applications/referees', only: %i[index new] do
-      resources :information, controller: 'applications/referees/information'
-    end
+    resources :referees, controller: 'applications/referees'
     resources :confirmations, controller: 'applications/confirmations'
   end
   
