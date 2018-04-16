@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/wearefuturegov/geff.git
-  revision: 9a23c6466a20bd51fbfdd1f72745e6bdf4693706
+  revision: dbf2863e54833560751e788f90d7f5b5b7b3c143
   specs:
     geff (0.1.0)
       bourbon

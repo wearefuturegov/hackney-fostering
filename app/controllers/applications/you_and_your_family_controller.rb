@@ -1,13 +1,18 @@
 module Applications
   class YouAndYourFamilyController < ApplicationsController
     include Incredible::Wizard
-    
+
+    # layout "main_application"
+
+    layout(proc { params[:id] == 'welcome' ? 'main' : 'main_application' })
+
+
     skip_before_action :load_next_step, unless: :valid?
 
     form 'you_and_your_family'
-    
+
     private
-    
+
     def permitted_params # rubocop:disable Metrics/MethodLength
       params.require(:application).permit(
         :name_change,
@@ -43,7 +48,7 @@ module Applications
         addresses_attributes: address_attributes + %i[date_to]
       )
     end
-    
+
     def applicant_attributes
       %i[
         previous_first_name
@@ -56,10 +61,10 @@ module Applications
         nationality
       ]
     end
-    
+
     def address_attributes
       %i[line_1 line_2 line_3 post_town postcode date_from]
     end
-    
+
   end
 end

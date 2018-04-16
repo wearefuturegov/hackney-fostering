@@ -4,14 +4,14 @@
       $(this).addClass('current');
   });
 
-%nav.nav.side#menu
+%nav.side_nav
   - unless current_page?(applications_path) || current_page?(find_applications_path)
     %ul
       %li
         = link_to 'Welcome', application_you_and_your_family_path(application_id: application.code, id: 'welcome')
       %li
         = link_to 'You & your family', application_you_and_your_family_path(application_id: application.code, id: 'name_change_info'), class: 'current'
-        %ul
+        %ul.sub_nav
           %li
             = link_to 'About you', application_you_and_your_family_path(application_id: application.code, id: 'name_change')
           %li
@@ -23,7 +23,7 @@
           %li
             = link_to 'Your family', application_you_and_your_family_path(application_id: application.code, id: 'your_family')
           %li
-            = link_to 'Your pets', application_you_and_your_family_path(application_id: application.code, id: 'pets_welcome')
+            = link_to 'Your pets', application_you_and_your_family_path(application_id: application.code, id: 'pets')
       %li
         = link_to 'Your support carer', application_support_carer_path(application_id: application.code, id: 'intro')
       %li
