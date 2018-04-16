@@ -10,10 +10,12 @@ form:
           title: What is the %{number} adult's full name?
           widget: :title_with_name
         - name: :first_name
-          title: First name(s)
+          title: First name
+          with_title: true
           widget: :input
         - name: :last_name
           title: Last name
+          with_title: true
           widget: :input
     gender:
       template: :questions

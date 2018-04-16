@@ -6,14 +6,15 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your family
           title: What is the %{number} child's full name?
           widget: :title_with_name
         - name: :first_name
-          title: First name(s)
+          title: First name
+          with_title: true
           widget: :input
         - name: :last_name
           title: Last name
+          with_title: true
           widget: :input
     gender:
       template: :questions
@@ -52,7 +53,9 @@ form:
           widget: :title_with_name
         - name: :school
           title: Name of the school
+          with_title: true
           widget: :input
         - name: :school_contact
           title: School phone number
-          widget: :input
+          with_title: true
+          widget: :tel

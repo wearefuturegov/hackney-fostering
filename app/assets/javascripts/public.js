@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   $('.address_form').getAddress();
   $('.previous_addresses').getAddress();
   $('.referee_form').getAddress();
@@ -8,5 +8,6 @@ $(document).ready(function() {
   $('.application_children_living_elsewhere').showHideExtra();
   $('.application_adults_living_at_home').showHideExtra();
   $('.application_adults_living_elsewhere').showHideExtra();
+  $('.application_have_pets').showHideExtra();
 
 });
