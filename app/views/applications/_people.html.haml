@@ -20,9 +20,9 @@
     - @questions.each do |q|
       = render partial: q['widget'].to_s, locals: { form: f, question: q }
     - if defined?(person)
-      = f.submit t('update'), class: "confirm"
+      = f.submit t('person.update'), class: "confirm"
     - else
-      = f.submit t('add'), class: "button"
+      = f.submit t('person.add'), class: "button"
   
   - if defined?(wizard_path)
   

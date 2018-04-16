@@ -41,6 +41,9 @@ en:
   referee:
     add: Add Referee
     update: Update
+  person:
+    add: Add
+    update: Update
   activerecord:
     attributes:
       application:
