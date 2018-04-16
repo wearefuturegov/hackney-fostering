@@ -3,9 +3,9 @@ module Applications
     include Incredible::Wizard
 
     form 'eligibility'
-    
+
     private
-    
+
     def permitted_params # rubocop:disable Metrics/MethodLength
       params.require(:application).permit(
         :spare_room,
@@ -28,9 +28,9 @@ module Applications
         addresses_attributes: %i[postcode date_from]
       )
     end
-    
+
     # Don't set the current path in the eligibility questionnaire
     def set_current_path; end
-  
+
   end
 end

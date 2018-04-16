@@ -10,7 +10,10 @@
   %body{ class: "#{page_class}" }
     = render '/layouts/layouts/header'
     .container
-      = yield
+      .third
+        = render 'application_nav'
+      .two_thirds
+        = yield
     = render '/layouts/layouts/footer'
 
   :javascript
