@@ -66,7 +66,7 @@ module PeopleSteps
   def fill_in_adult_details
     @person = Fabricate(:adult)
     fill_in_person
-    click_on I18n.t('add')
+    click_on I18n.t('person.add')
   end
   
   def fill_in_child_details
@@ -74,7 +74,7 @@ module PeopleSteps
     fill_in_person
     fill_in 'Child\'s School', with: @person.school
     fill_in 'School phone number', with: @person.school_contact
-    click_on I18n.t('add')
+    click_on I18n.t('person.add')
   end
   
 end
