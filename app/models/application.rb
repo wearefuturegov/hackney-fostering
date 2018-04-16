@@ -8,7 +8,6 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
        other_ways: %i[mentoring specialist_support other_support],
        be_in_touch: %i[contact_me info_pack],
        contacting_you: %i[contact_phone contact_email],
-       contact_phone_time: %i[morning afternoon evening],
        best_way_to_contact: %i[phone email],
        employment_type: %i[full_time part_time self_employed director unemployed]
            

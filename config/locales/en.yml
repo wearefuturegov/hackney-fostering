@@ -65,10 +65,6 @@ en:
         contacting_yous:
           contact_phone: 'Telephone'
           contact_email: 'Email'
-        contact_phone_times:
-          morning: Morning
-          afternoon: Afternoon
-          evening: Evening
         employment_types:
           full_time: Full time
           part_time: Part time
@@ -109,4 +105,3 @@ en:
           small: Small
           medium: Medium
           large: Large
-

@@ -141,10 +141,17 @@ form:
       next_step: :thank_you
       questions:
         - name: :section
-          title: When is a good time to contact you?
+          title: When are good times to contact you?
           widget: :title
         - name: :contact_phone_time
-          widget: :radio
+          widget: :checkbox
+          answers:
+            - title: Morning
+              value: :morning
+            - title: Afternoon
+              value: :afternoon
+            - title: Evening
+              value: :evening
     contact_email:
       template: :questions
       next_step: :thank_you
