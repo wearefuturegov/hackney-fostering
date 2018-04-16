@@ -38,6 +38,9 @@ en:
   consent_and_submit: Consent and Submit
   application:
     invalid_code: The code you have entered is invalid. Please try again.
+  referee:
+    add: Add Referee
+    update: Update
   activerecord:
     attributes:
       application:

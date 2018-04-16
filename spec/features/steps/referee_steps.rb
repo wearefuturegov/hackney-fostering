@@ -3,14 +3,14 @@ module RefereeSteps
   step :add_a_referee, 'I add a referee'
 
   step 'I am adding a referee' do
-    visit new_application_referee_path(@application)
-    click_on I18n.t('continue')
+    visit application_referees_path(@application)
   end
   
   step 'I add :integer referees' do |num|
     num.to_i.times do
       add_a_referee
     end
+    click_on I18n.t('continue')
   end
   
   step 'my referees should be saved' do
@@ -46,14 +46,12 @@ module RefereeSteps
     @person = Fabricate(:referee)
     fill_in 'First name(s)', with: @person.first_name
     fill_in 'Last name', with: @person.last_name
-    click_on I18n.t('continue')
-    fill_in_address
+    fill_in_address(false)
     fill_in 'Email', with: @person.email
     fill_in 'Phone Number', with: @person.phone_number
-    click_on I18n.t('continue')
     select I18n.t("activerecord.attributes.person.relationships.#{@person.relationship}"), from: 'Relationship'
     fill_in 'How many years have you known each other?', with: @person.years_known
-    click_on I18n.t('continue')
+    click_on I18n.t('referee.add')
     @people << @person
   end
   

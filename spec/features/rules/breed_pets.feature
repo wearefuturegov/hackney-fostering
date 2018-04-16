@@ -10,4 +10,4 @@ Feature: Breeding Pets
     
   Scenario: No redirects correctly
     And I check the 'No' option
-    Then I should be on the 'intro' step
+    Then I should be on the 'referees' step

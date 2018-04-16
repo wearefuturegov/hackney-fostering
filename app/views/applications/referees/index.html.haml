@@ -1,15 +1,43 @@
 %section.section
   %h1 Your References
+  
+  - if referees.count > 0
+    %table.table
+      %thead
+        %tr
+          %th
+            First Name
+          %th
+            Surname
+          %th
+          %th
+      %tbody
+        = render partial: 'people/person', collection: referees
+  - else
 
-  %p Talking to people who have known you over a period of time helps us get a more complete understanding of you as a future foster carer.
+    %p Talking to people who have known you over a period of time helps us get a more complete understanding of you as a future foster carer.
 
-  %div.box.info
-    %h2 Your references should be a mixture of:
-    %p 1-2 family members
-    %p Ex-colleagues
-    %p Neighbours
-    %p Friends
+    %div.box.info
+      %h2 Your references should be a mixture of:
+      %p 1-2 family members
+      %p Ex-colleagues
+      %p Neighbours
+      %p Friends
+  
+  %hr/
+  
+  - if referees.count == 6
 
-  %section.actions
-    = link_to t('continue'), new_application_referee_path(application_id: application.code, step: :name), class: "button confirm"
-    = back_link
+    = link_to t('continue'), new_application_support_carer_path(application_id: application.code), class: 'button confirm'
+    
+  - else
+
+    %h2
+      Add a referee
+    
+    = simple_form_for [application, (defined?(referee) ? referee : referees.new)], html: { class: 'referee_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |f|
+      - @questions.each do |q|
+        = render partial: q['widget'].to_s, locals: { form: f, question: q, questions: q['questions'] }
+      = f.submit t('referee.add'), class: "button"
+  
+  = back_link
