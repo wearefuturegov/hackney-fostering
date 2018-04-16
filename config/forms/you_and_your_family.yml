@@ -54,6 +54,7 @@ form:
           widget: :title
         - name: :date_changed
           title: Day, Month & Year
+          with_title: true
           widget: :date
           model: :applicant
     gender:
@@ -75,6 +76,7 @@ form:
           widget: :title
         - name: :date_of_birth
           title: Date of Birth
+          with_title: true
           widget: :date
           model: :applicant
     country_of_birth:
@@ -339,13 +341,6 @@ form:
           classes: 'extra hidden'
           min_value: 1
           max_value: 10
-    pets_welcome:
-      template: :questions
-      questions:
-        - name: :section
-          current_section: Pets
-          intro: Owning pets and fostering should not be taken lightly. Please provide up-to-date details about your pet(s).
-          widget: :title
     pets:
       template: :single_question
       questions:

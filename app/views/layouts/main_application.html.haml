@@ -7,7 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = render '/layouts/layouts/favicon'
-  %body{ class: "#{page_class}" }
+  %body{ class: "#{page_class} #{request.path_parameters[:id]}" }
     = render '/layouts/layouts/header'
     .container
       .third
