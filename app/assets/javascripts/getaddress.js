@@ -20,7 +20,7 @@ $.fn.getAddress = function() {
     $errorMessage.toggleClass('hidden');
     $manualEntry.toggleClass('hidden');
     
-    $addressElements.addClass('hidden');
+    $addressElements.hide();
   }
   
   var formatAddress = function(address) {
@@ -66,16 +66,16 @@ $.fn.getAddress = function() {
     $('.line_3').val(data.line_3)
     $('.post_town').val(data.post_town)
     $('.postcode').val(data.postcode)
-    $addressElements.removeClass('hidden');
-    $('.add-address').removeClass('hidden');
+    $addressElements.show();
+    $('.add-address').show();
   });
   
   $manualEntry.on('click', function(e) {
-    $findAddress.addClass('hidden');
-    $addressElements.removeClass('hidden');
-    $postcodeInput.parent('div').addClass('hidden');
-    $(this).addClass('hidden');
-    $('.confirm').removeClass('hidden');
+    $findAddress.hide();
+    $addressElements.show();
+    $postcodeInput.parent('div').hide();
+    $(this).hide();
+    $('.confirm').show();
     e.preventDefault();
   })
   
