@@ -11,7 +11,7 @@ Fabricator(:application) do
   be_in_touch         0
   contacting_you      1
   phone_number        1232323
-  contact_phone_time  1
+  contact_phone_time  %w[morning evening]
   applicant           { Fabricate(:applicant) }
   address             { Fabricate(:address) }
   email               { FFaker::Internet.email }

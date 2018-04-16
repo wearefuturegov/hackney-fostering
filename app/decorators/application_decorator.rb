@@ -61,7 +61,11 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   end
   
   def contact_phone_time
-    standard_wrapper('Best time to contact', application.contact_phone_time)
+    standard_wrapper('Type of Fostering', array_to_list(application.contact_phone_time))
+  end
+  
+  def contact_phone_time_list
+    application.contact_phone_time.to_sentence(last_word_connector: ' or ')
   end
   
   def email

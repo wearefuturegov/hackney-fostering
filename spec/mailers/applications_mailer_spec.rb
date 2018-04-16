@@ -20,7 +20,7 @@ RSpec.describe ApplicationsMailer, type: :mailer do
         expect(mail.body.encoded).to match(application.phone_number)
         expect(mail.body.encoded).to match(application.email)
         expect(mail.body.encoded).to match(application.best_way_to_contact)
-        expect(mail.body.encoded).to match(application.contact_phone_time)
+        expect(mail.body.encoded).to match(application.contact_phone_time.join(', '))
         expect(mail.body.encoded).to match(application.type_of_fostering.reject(&:blank?).join(', '))
         expect(mail.body.encoded).to match(application.spare_room)
         expect(mail.body.encoded).to match('Yes')
