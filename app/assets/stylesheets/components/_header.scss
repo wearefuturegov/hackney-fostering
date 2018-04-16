@@ -16,18 +16,30 @@ nav {
   a {
     color: $black;
     text-decoration: none;
-    &.current {
-      font-weight: 800;
-      color: $brand;
+    opacity: 0.9;
+    &:hover, &.current {
+      opacity: 1 !important;
+    }
+    &[data-visited] {
+      font-style: italic;
+      opacity: 0.7;
+    }
+    &.currentPage {
+      font-weight: 700;
+      opacity: 1 !important;
+      font-style: normal;
     }
   }
-  li {
-    font-weight: 600;
+  ul {
+    li {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
   }
   .sub_nav {
     margin-bottom: 0;
     li {
-      font-weight: 400;
+      font-weight: 300;
       margin-bottom: 0;
       &:before {
         content: '–';
@@ -35,3 +47,42 @@ nav {
     }
   }
 }
+.gender, .dob, .country_of_birth, .town_of_birth, .nationality, .language, .other_language, .are_you_religious, .what_is_your_name_change, .previous_name_period, .other_language_select, .what_is_your_religion {
+  #about_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+  }
+}
+
+.employment_history, .national_insurance, .occupation, .name_of_employer, .name_of_employer_contact, .number_for_employer_contact, .email_for_employer_contact {
+  #work_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+  }
+}
+
+.full_address, .previous_addresses {
+  #home_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+  }
+}
+
+// .children_living_at_home, ., ., ., ., ., ., ., . {
+//   #family_link a {
+//     font-weight: 700;
+//     opacity: 1 !important;
+//     font-style: normal;
+//   }
+// }
+
+// ., ., ., ., ., ., ., ., . {
+//   #pets_link a {
+//     font-weight: 700;
+//     opacity: 1 !important;
+//     font-style: normal;
+//   }
+// }
