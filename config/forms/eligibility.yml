@@ -89,9 +89,12 @@ form:
       questions:
         - name: :section
           notice: |
-              Sorry, due to your answer, currently you are unable to be a foster carer.
-              Being over 21 and having a spare bedroom is a policy requirement to being a foster carer.
+              Unfortunately you are not eligible to be a foster carer at the moment.
+              Having a spare bedroom and being over the age of 21 is a policy requirement to becoming a foster carer.
           widget: :notice
+        - name: :section
+          widget: :title
+          title: Would you like to find out other ways of helping young people in Hackney?
         - name: :section
           widget: text
           content: If you are interested in finding out about other ways of supporting children and young people in Hackney then please continue below, enter your contact details and someone from our team will be in contact with you in a couple of days.
