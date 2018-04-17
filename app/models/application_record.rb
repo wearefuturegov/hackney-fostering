@@ -35,7 +35,7 @@ class ApplicationRecord < ActiveRecord::Base
   
   def parse_date(attrs, property)
     # Gather up all the date parts
-    keys = attrs.keys.select { |k| k =~ /#{property}/ }.sort
+    keys = attrs.keys.select { |k| k =~ /\A#{property}\([1-3]i\)/ }.sort
     return attrs if keys.empty?
     values = []
     keys.each do |k|
