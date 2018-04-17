@@ -44,7 +44,7 @@ module RefereeSteps
   def add_a_referee # rubocop:disable Metrics/AbcSize
     @people ||= []
     @person = Fabricate(:referee)
-    fill_in 'First name(s)', with: @person.first_name
+    fill_in 'First name', with: @person.first_name
     fill_in 'Last name', with: @person.last_name
     fill_in_address(false)
     fill_in 'Email', with: @person.email
