@@ -1,6 +1,9 @@
-.with_title
+.with_title.postcode_search
   = form.input :postcode, as: :string, label: 'Enter postcode', input_html: { id: 'postcode_search' }, wrapper_html: { class: form.object.errors.any? ? 'hidden' : '' }, required: false
-  %p.error.hidden
+  .input
+    %a.button.secondary#find_address{ class: form.object.errors.any? ? 'hidden' : '' }
+      Find Address
+%p.error.hidden
 
 %p
   %a#manual_entry{ href: '#', class: form.object.errors.any? ? 'hidden' : '' }
@@ -15,9 +18,6 @@
 
 = form.input :addresses, as: :fake_select, collection: [], class: 'hidden', label: 'Select an address', input_html: { class: 'addresses' }, wrapper_html: { class: 'hidden'}
 
-.input
-  %a.button#find_address{ class: form.object.errors.any? ? 'hidden' : '' }
-    Find Address
 
 #address_elements{ class: form.object.errors.any? ? '' : 'hidden' }
   - questions.each do |q|

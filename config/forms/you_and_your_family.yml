@@ -220,41 +220,48 @@ form:
       questions:
         - name: :line_1
           title: Address Line 1
+          with_title: true
           widget: :input
         - name: :line_2
           title: Address Line 2
+          with_title: true
           widget: :input
         - name: :line_3
           title: Address Line 3
+          with_title: true
           widget: :input
         - name: :post_town
           title: Address Line 4
+          with_title: true
           widget: :input
         - name: :postcode
           title: Postcode
+          with_title: true
           widget: :input
         - name: :date_from
           title: When did you move into this property?
-          with_title: true
           widget: :date
     previous_addresses:
       template: :previous_addresses
       questions:
         - name: :line_1
           title: Address Line 1
+          with_title: true
           widget: :input
         - name: :line_2
           title: Address Line 2
+          with_title: true
           widget: :input
         - name: :line_3
           title: Address Line 3
+          with_title: true
           widget: :input
         - name: :post_town
           title: Address Line 4
+          with_title: true
           widget: :input
         - name: :date_from
           title: When did you move into this property?
-          with_title: true
           widget: :date
         - name: :date_to
           title: When did you move out of this property?
