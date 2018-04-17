@@ -1,11 +1,12 @@
 module Applications
   class LegalHistoryController < ApplicationsController
     include Incredible::Wizard
+    layout "main_application"
 
     form 'legal_history'
-    
+
     private
-    
+
     def permitted_params # rubocop:disable Metrics/MethodLength
       params.require(:application).permit(
         :family_court,
@@ -31,6 +32,6 @@ module Applications
         previous_agency_address_attributes: %i[line_1 line_2 line_3 post_town postcode]
       )
     end
-    
+
   end
 end
