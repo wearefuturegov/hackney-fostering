@@ -21,7 +21,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: You & your family
+          current_section: You & your family
           title: Have you ever had any other names?
           widget: :title
         - name: :name_change
@@ -32,33 +32,36 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: You & your family
+          current_section: You & your family
           title: What is your previous full name?
           widget: :title
         - name: :previous_first_name
-          title: First name(s)
+          title: First name
           widget: :input
+          with_title: true
           model: :applicant
         - name: :previous_last_name
           title: Last name
           widget: :input
+          with_title: true
           model: :applicant
     previous_name_period:
       template: :questions
       questions:
         - name: :section
-          heading: You & your family
+          current_section: You & your family
           title: When did you change your name?
           widget: :title
         - name: :date_changed
           title: Day, Month & Year
+          with_title: true
           widget: :date
           model: :applicant
     gender:
       template: :questions
       questions:
         - name: :section
-          heading: You & your family
+          current_section: You & your family
           title: What is your gender?
           widget: :title
         - name: :gender
@@ -68,62 +71,47 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: You & your family
+          current_section: You & your family
           title: What is your date of birth?
           widget: :title
         - name: :date_of_birth
           title: Date of Birth
+          with_title: true
           widget: :date
           model: :applicant
     country_of_birth:
       template: :questions
       questions:
-        - name: :section
-          heading: You & your family
-          title: What is your country of birth?
-          widget: :title
         - name: :country_of_birth
-          title: Enter your country of birth
+          title: What is your country of birth?
           widget: :input
           model: :applicant
     town_of_birth:
       template: :questions
       questions:
-        - name: :section
-          heading: You & your family
-          title: What is your town of birth?
-          widget: :title
         - name: :town_of_birth
-          title: Enter your town of birth
+          title: What is your town of birth?
           widget: :input
           model: :applicant
     nationality:
       template: :questions
       title: What is your nationality?
       questions:
-        - name: :section
-          heading: You & your family
-          title: What is your nationality?
-          widget: :title
         - name: :nationality
-          title: Enter your nationality
+          title: What is your nationality?
           widget: :input
           model: :applicant
     language:
       template: :questions
       questions:
-        - name: :section
-          heading: You & your family
-          title: What is the main language spoken at home?
-          widget: :title
         - name: :primary_language
-          title: Enter the main language spoken at home
+          title: What is the main language spoken at home?
           widget: :input
     other_language:
       template: :questions
       questions:
         - name: :section
-          heading: You & your family
+          current_section: You & your family
           title: Are there other languages spoken at home?
           widget: :title
         - name: :other_language
@@ -133,18 +121,14 @@ form:
     other_language_select:
       template: :questions
       questions:
-        - name: :section
-          heading: You & your family
-          title: What other languages are spoken at home?
-          widget: :title
         - name: :secondary_languages
-          title: Enter the other languages spoken at home
+          title: What other languages are spoken at home?
           widget: :input
     are_you_religious:
       template: :single_question
       questions:
         - name: :section
-          heading: You & your family
+          current_section: You & your family
           title: Are you religious?
           info: It is helpful for us to know your religious and cultural background. This will be useful when finding the right foster child for you.
           widget: :title
@@ -155,25 +139,21 @@ form:
     what_is_your_religion:
       template: :questions
       questions:
-        - name: :section
-          heading: You & your family
-          title: What is your religion?
-          widget: :title
         - name: :religion
-          title: Enter your religion
+          title: What is your religion?
           widget: :input
     welcome_working:
       template: :questions
       questions:
         - name: :section
-          heading: Your employment history
-          intro: Your lifestyle changes when you foster a child. In order to know how this will impact your working life, we would like to know about your current employment.
+          title: Your employment history
+          info: Your lifestyle changes when you foster a child. In order to know how this will impact your working life, we would like to know about your current employment.
           widget: :title
     employment_history:
       template: :questions
       questions:
         - name: :section
-          heading: Your employment history
+          current_section: Your employment history
           title: Are you employed?
           widget: :title
         - name: :employment_type
@@ -182,77 +162,61 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your employment history
+          current_section: Your employment history
           title: What is your national insurance number?
           info: Your National Insurance (NI) number s required for the DBS background check.
           widget: :title
         - name: :ni_number
           title: Enter your national insurance number
-          link: I don't have a National Insurance number
+          with_title: true
           widget: input
     occupation:
       template: :questions
       questions:
-        - name: :section
-          heading: Your employment history
-          title: What is current occupation?
-          widget: :title
         - name: :occupation
-          title: Enter your current occupation
+          title: What is current occupation?
           widget: :input
     name_of_employer:
       template: :questions
       questions:
-        - name: :section
-          heading: Your employment history
-          title: What is the name of your employer or organisation?
-          widget: :title
         - name: :employer
-          title: Enter your employer or organisation
+          title: What is the name of your employer or organisation?
           widget: :input
     name_of_employer_contact:
       template: :questions
       questions:
         - name: :section
-          heading: Your employment history
+          current_section: Your employment history
           title: Name someone who works with you.
           info: You will need one professional reference from HR or a line manager.
           widget: :title
         - name: :employer_contact_name
-          title: Please provide the full name of the person you have chosen
+          title: Please provide the full name of your reference
+          with_title: true
           widget: :input
     number_for_employer_contact:
       template: :questions
       questions:
-        - name: :section
-          heading: Your employment history
-          title: What is the phone number of the person you have chosen?
-          widget: :title
         - name: :employer_phone_number
-          title: Phone number of person you have chosen
-          widget: :input
+          title: What is the phone number of your reference?
+          widget: :tel
     email_for_employer_contact:
       template: :questions
       questions:
-        - name: :section
-          heading: Your employment history
-          title: What is the email address of the person you have chosen?
-          widget: :title
         - name: :employer_phone_number
-          title: Email address of person you have chosen
-          widget: :input
+          title: What is the email address of your reference?
+          widget: :email
     address_welcome:
       template: :questions
       questions:
         - name: :section
-          heading: Your address history
-          intro: For your background checks and our records, we ask that you provide us with your address history for the last 7 years.
+          title: Your address history
+          info: For your background checks and our records, we ask that you provide us with your address history for the last 7 years.
           widget: :title
     full_address:
       template: :address
       reference: :address
-      title: Your address history
-      sub_title: What is your current address?
+      title: What is your current address?
       questions:
         - name: :line_1
           title: Address Line 1
@@ -269,11 +233,9 @@ form:
         - name: :postcode
           title: Postcode
           widget: :input
-        - name: :section
-          title: When did you move into this property?
-          widget: :title
         - name: :date_from
           title: When did you move into this property?
+          with_title: true
           widget: :date
     previous_addresses:
       template: :previous_addresses
@@ -292,6 +254,7 @@ form:
           widget: :input
         - name: :date_from
           title: When did you move into this property?
+          with_title: true
           widget: :date
         - name: :date_to
           title: When did you move out of this property?
@@ -300,9 +263,9 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your family
+          title: Your family
           widget: :title
-          intro: It is important that other children and adults in your family and household consent to a foster child joining the family.
+          info: It is important that other children and adults in your family and household consent to a foster child joining the family.
           extra: If there are adults (over the age of 18), they will need to have a DBS background check.
     children_at_home:
       template: :questions
