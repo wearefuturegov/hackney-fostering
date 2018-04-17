@@ -40,6 +40,16 @@
       background-color: rgba($brand, 0.9);
     }
   }
+  &.negative {
+    background-color: $negative;
+    border-color: $negative;
+    &:hover {
+      background-color: rgba($negative, 0.9);
+    }
+    &:active {
+      @include button-active-shadow;
+    }
+  }
   &.secondary {
     background: #fff;
     color: $black;

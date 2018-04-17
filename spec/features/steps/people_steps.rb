@@ -56,7 +56,7 @@ module PeopleSteps
   
   def fill_in_person
     @people << @person
-    fill_in 'First name(s)', with: @person.first_name
+    fill_in 'First name', with: @person.first_name
     fill_in 'Last name', with: @person.last_name
     first('label', text: I18n.t("activerecord.attributes.person.genders.#{@person.gender}")).click
     fill_in_date('date_of_birth', @person.date_of_birth)

@@ -272,13 +272,15 @@ form:
         - name: :section
           title: Your family
           widget: :title
-          info: It is important that other children and adults in your family and household consent to a foster child joining the family.
-          extra: If there are adults (over the age of 18), they will need to have a DBS background check.
+          info: |
+            It is important that other children and adults in your family and household consent to a foster child joining the family.
+
+            If there are adults (over the age of 18), they will need to have a DBS background check.
     children_at_home:
       template: :questions
       questions:
         - name: :section
-          heading: Your family
+          current_section: Your family
           title: Are there any children under 18 living in the household?
           widget: :title
         - name: :children_at_home
@@ -289,10 +291,12 @@ form:
       template: :children
       questions:
         - name: :first_name
-          title: First name(s)
+          title: First name
+          with_title: true
           widget: :input
         - name: :last_name
           title: Last name
+          with_title: true
           widget: :input
         - name: :gender
           title: Gender
@@ -305,15 +309,17 @@ form:
           widget: :select
         - name: :school
           title: Child's School
+          with_title: true
           widget: :input
         - name: :school_contact
           title: School phone number
-          widget: :input
+          with_title: true
+          widget: :tel
     children_elsewhere:
       template: :questions
       questions:
         - name: :section
-          heading: Your family
+          current_section: Your family
           title: Are there any children under 18 from a previous relationship living elsewhere?
           widget: :title
         - name: :children_living_elsewhere
@@ -324,10 +330,12 @@ form:
       template: :children_elsewhere
       questions:
         - name: :first_name
-          title: First name(s)
+          title: First name
+          with_title: true
           widget: :input
         - name: :last_name
           title: Last name
+          with_title: true
           widget: :input
         - name: :gender
           title: Gender
@@ -340,15 +348,17 @@ form:
           widget: :select
         - name: :school
           title: Child's School
+          with_title: true
           widget: :input
         - name: :school_contact
           title: School phone number
-          widget: :input
+          with_title: true
+          widget: :tel
     adults_at_home:
       template: :questions
       questions:
         - name: :section
-          heading: Your family
+          current_section: Your family
           title: Are there any other adults living in the household?
           info: Any adults living in the same household need to undergo a DBS background check.
           widget: :title
@@ -360,9 +370,11 @@ form:
       template: :adults
       questions:
         - name: :first_name
-          title: First name(s)
+          title: First name
+          with_title: true
           widget: :input
         - name: :last_name
+          with_title: true
           title: Last name
           widget: :input
         - name: :gender
@@ -378,7 +390,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Your family
+          current_section: Your family
           title: Are there any adults (over 18) from a previous relationship living elsewhere?
           info: Any adults living elsewhere who visit on a very frequent basis will be asked to undergo a DBS background check.
           widget: :title
@@ -390,10 +402,12 @@ form:
       template: :adults_elsewhere
       questions:
         - name: :first_name
-          title: First name(s)
+          title: First name
+          with_title: true
           widget: :input
         - name: :last_name
           title: Last name
+          with_title: true
           widget: :input
         - name: :gender
           title: Gender
@@ -408,14 +422,14 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Pets
+          current_section: Pets
           intro: Owning pets and fostering should not be taken lightly. Please provide up-to-date details about your pet(s).
           widget: :title
     pets:
       template: :single_question
       questions:
         - name: :section
-          heading: Tell us about your pets
+          current_section: Tell us about your pets
           widget: :title
         - name: :sub_section
           title: Do you have any pets?
@@ -428,7 +442,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Tell us about your pets
+          current_section: Tell us about your pets
           widget: :title
         - name: :sub_section
           title: How many pets do you have?
@@ -442,7 +456,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: Tell us about your pets
+          current_section: Tell us about your pets
           widget: :title
         - name: :sub_section
           title: What types of pets do you have?
@@ -454,7 +468,7 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Pets
+          current_section: Pets
           widget: :title
         - name: :sub_section
           title: Do you breed pets?
@@ -465,7 +479,7 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Pets
+          current_section: Pets
           widget: :title
         - name: :sub_section
           title: Where does the breeding take place?
@@ -476,7 +490,7 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Pets
+          current_section: Pets
           widget: :title
         - name: :sub_section
           title: What happens to any offspring? Where are they kept?
@@ -487,7 +501,7 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Pets
+          current_section: Pets
           widget: :title
         - name: :sub_section
           title: What actions will you take to reduce any risks before a child is placed?
@@ -498,7 +512,7 @@ form:
       template: :single_question
       questions:
         - name: :section
-          heading: Pets
+          current_section: Pets
           widget: :title
         - name: :sub_section
           title: Any other information you consider to be relevant?
