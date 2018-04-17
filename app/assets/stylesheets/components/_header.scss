@@ -75,6 +75,15 @@ nav {
   }
 }
 
+.children_at_home, .children_living_at_home, .children_elsewhere, .children_living_elsewhere, .adults_at_home, .adults_living_at_home, .adults_elsewhere, .adults_living_elsewhere {
+  #family_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+    color: $brand;
+  }
+}
+
 .support_carer {
   #carer_link a {
     font-weight: 700;
