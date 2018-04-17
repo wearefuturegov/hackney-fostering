@@ -1,3 +1,4 @@
+@javascript
 Feature: Previous Applications
 
   Background:

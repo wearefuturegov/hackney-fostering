@@ -1,3 +1,4 @@
+@javascript
 Feature: Family Court
 
   Background:

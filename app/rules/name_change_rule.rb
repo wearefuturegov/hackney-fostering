@@ -1,7 +1,7 @@
 class NameChangeRule < ApplicationRule
   
   def process
-    @next_step = params[:application][:name_change] == '1' ? :what_is_your_name_change : :gender
+    @next_step = params[:application][:name_change] == 'true' ? :what_is_your_name_change : :gender
   end
   
 end
