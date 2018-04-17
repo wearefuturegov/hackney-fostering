@@ -138,11 +138,23 @@ label.required:after {
 
   #find_address {
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 11px;
     margin-bottom: 15px;
+  }
+  .question {
+    margin-bottom: 0 !important;
+  }
+  .error {
+    color: $negative;
+    border-left: 5px solid $negative;
+    padding-left: 10px;
   }
   .answer {
     margin-bottom: 0;
+    line-height: 33px;
+  }
+  .input {
+    display: inline;
   }
   input {
     display: inline-block;
