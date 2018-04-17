@@ -76,10 +76,13 @@ form:
       template: :questions
       questions:
         - name: :section
-          heading: You have the potential to be a foster carer
-          title: Would you be interested in speaking to someone from the fostering team?
+          title: You're eligible to be a foster carer
           widget: :title
+        - name: :section
+          content: Based on your answers, you are eligible to be a foster carer. Continue to download an information pack. If you would like one of our fostering team to call or email you then feel free to enter your details below.
+          widget: :text
         - name: :be_in_touch
+          title: Would you be interested in speaking to someone from our fostering team?
           widget: :radio
     other_ways:
       template: :single_question
