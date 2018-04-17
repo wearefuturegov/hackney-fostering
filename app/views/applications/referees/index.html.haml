@@ -28,7 +28,7 @@
 
   - if referees.count == 6
 
-    = link_to t('continue'), new_application_support_carer_path(application_id: application.code), class: 'button confirm'
+    = link_to t('continue'), application_legal_history_path(application_id: application.code, id: :intro), class: 'button confirm'
 
   - else
 
