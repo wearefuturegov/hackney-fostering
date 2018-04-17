@@ -6,18 +6,6 @@
   %p
     I undertake to be truthful and honest in providing full and accurate information for this assessment, both verbally and in writing.
 
-  %section.section
-    %div.input.check_boxes
-      %span.checkbox
-        %input{ type: 'checkbox', class: 'check_boxes' }
-        %label
-          I agree to what checks I will be undertaking
-
-      %span.checkbox
-        %input{ type: 'checkbox', class: 'check_boxes' }
-        %label
-          I consent to Hackney Council contacting my previous local authority
-
   = simple_form_for application, url: application_confirmations_path(application_id: application.code), method: :post do |form|
     %section.actions
       = render partial: 'actions', locals: { form: form }
