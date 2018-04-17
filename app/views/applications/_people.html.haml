@@ -27,6 +27,9 @@
   - if defined?(wizard_path)
   
     %hr/
-
-    = simple_form_for setup_application(application), url: wizard_path, method: :put do |f|
-      = render partial: 'actions', locals: { form: f }
+    
+    - if people.count > 0
+      = simple_form_for setup_application(application), url: wizard_path, method: :put do |f|
+        = render partial: 'actions', locals: { form: f }
+    - else
+      = back_link
