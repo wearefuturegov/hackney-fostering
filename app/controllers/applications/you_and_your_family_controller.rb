@@ -6,7 +6,6 @@ module Applications
 
     layout(proc { params[:id] == 'welcome' ? 'main' : 'main_application' })
 
-
     skip_before_action :load_next_step, unless: :valid?
 
     form 'you_and_your_family'
@@ -38,11 +37,7 @@ module Applications
         :number_of_adults_elsewhere,
         :have_pets,
         :number_of_pets,
-        :breed_pets,
-        :where_breed_pets,
-        :offspring_kept,
-        :breeding_risks,
-        :breeding_other,
+        :pet_type,
         applicant_attributes: applicant_attributes,
         address_attributes: address_attributes,
         addresses_attributes: address_attributes + %i[date_to]
@@ -65,6 +60,5 @@ module Applications
     def address_attributes
       %i[line_1 line_2 line_3 post_town postcode date_from]
     end
-
   end
 end

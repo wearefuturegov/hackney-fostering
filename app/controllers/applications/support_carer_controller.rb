@@ -2,7 +2,7 @@ module Applications
   class SupportCarerController < ApplicationsController
     include Incredible::Wizard
 
-    layout "main_application"
+    layout 'main_application'
 
     expose :support_carer, -> { application.support_carer }
 

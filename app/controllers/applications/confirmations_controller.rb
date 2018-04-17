@@ -1,6 +1,6 @@
 module Applications
   class ConfirmationsController < ApplicationsController
-    layout "main_application"
+    layout 'main_application'
 
     def new
       application.update_attribute(:current_step, 'consent')
@@ -11,6 +11,5 @@ module Applications
       flash[:notice] = 'Your application has been sent. You will hear from us in the next 5 - 10 working days'
       redirect_to page_path(id: 'fostering')
     end
-
   end
 end

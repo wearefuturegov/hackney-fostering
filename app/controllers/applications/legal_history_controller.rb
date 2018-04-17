@@ -1,7 +1,7 @@
 module Applications
   class LegalHistoryController < ApplicationsController
     include Incredible::Wizard
-    layout "main_application"
+    layout 'main_application'
 
     form 'legal_history'
 
@@ -32,6 +32,5 @@ module Applications
         previous_agency_address_attributes: %i[line_1 line_2 line_3 post_town postcode]
       )
     end
-
   end
 end
