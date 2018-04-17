@@ -37,6 +37,12 @@ header {
   }
 }
 
+.welcome.you_and_your_family {
+  .menu_btn {
+    display: none;
+  }
+}
+
 .back_links {
   margin-bottom: 25px;
   @include mob_tab {
