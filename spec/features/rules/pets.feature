@@ -1,3 +1,4 @@
+@javascript
 Feature: Pets
 
   Background:
