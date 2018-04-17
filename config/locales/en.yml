@@ -33,6 +33,7 @@ en:
   back: Back to previous question
   start: Start now
   continue: Continue
+  continue_ineligible: Enter your details
   continue_b: Continue to questions
   submit: Submit
   consent_and_submit: Consent and Submit
