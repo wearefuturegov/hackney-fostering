@@ -1,4 +1,5 @@
 %section.section
+  %h1 What are your previous addresses?
 
   - if application.addresses.count > 0
     %table.table#previous_addresses
@@ -14,12 +15,11 @@
           %th
       %tbody
         = render partial: 'addresses/address', collection: application.addresses
-
-  %h1 What is your previous address?
+    %h2 Add another address
 
   = simple_form_for [application, application.addresses.new], html: { class: 'address_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |form|
     = render partial: 'address', locals: { form: form, hide_to: false, questions: @questions }
-    
+
     = form.submit 'Add Address', class: 'add-address hidden'
 
 -# = simple_form_for setup_application(application), url: wizard_path, html: { class: 'previous_addresses' }, method: :put do |f|
