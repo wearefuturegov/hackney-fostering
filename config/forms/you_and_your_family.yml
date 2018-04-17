@@ -260,6 +260,10 @@ form:
           title: Address Line 4
           with_title: true
           widget: :input
+        - name: :postcode
+          title: Postcode
+          with_title: true
+          widget: :input
         - name: :date_from
           title: When did you move into this property?
           widget: :date
