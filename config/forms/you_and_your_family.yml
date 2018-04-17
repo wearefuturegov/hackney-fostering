@@ -422,15 +422,12 @@ form:
       template: :questions
       questions:
         - name: :section
-          current_section: Pets
-          intro: Owning pets and fostering should not be taken lightly. Please provide up-to-date details about your pet(s).
+          title: Pets
+          info: Owning pets and fostering should not be taken lightly. Please provide up-to-date details about your pet(s).
           widget: :title
     pets:
       template: :single_question
       questions:
-        - name: :section
-          current_section: Tell us about your pets
-          widget: :title
         - name: :sub_section
           title: Do you have any pets?
           widget: :title
@@ -438,84 +435,14 @@ form:
           widget: :boolean
           yes_value: Yes
           no_value: No
-    number_of_pets:
-      template: :questions
-      questions:
-        - name: :section
-          current_section: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: How many pets do you have?
-          widget: :title
         - name: :number_of_pets
           title: How many?
           widget: :number_select
           min_value: 1
           max_value: 10
-    pet_type:
-      template: :questions
-      questions:
-        - name: :section
-          current_section: Tell us about your pets
-          widget: :title
-        - name: :sub_section
-          title: What types of pets do you have?
-          widget: :title
+          classes: 'extra hidden'
         - name: :pet_type
-          title: Enter the type of pet you have
+          title: What kind of pets do you have?
           widget: :input
-    breed_pets:
-      template: :single_question
-      questions:
-        - name: :section
-          current_section: Pets
-          widget: :title
-        - name: :sub_section
-          title: Do you breed pets?
-          widget: :title
-        - name: :breed_pets
-          widget: :boolean
-    where_breed_pets:
-      template: :single_question
-      questions:
-        - name: :section
-          current_section: Pets
-          widget: :title
-        - name: :sub_section
-          title: Where does the breeding take place?
-          widget: :title
-        - name: :where_breed_pets
-          widget: :input
-    offspring:
-      template: :single_question
-      questions:
-        - name: :section
-          current_section: Pets
-          widget: :title
-        - name: :sub_section
-          title: What happens to any offspring? Where are they kept?
-          widget: :title
-        - name: :offspring_kept
-          widget: :textarea
-    breeding_risks:
-      template: :single_question
-      questions:
-        - name: :section
-          current_section: Pets
-          widget: :title
-        - name: :sub_section
-          title: What actions will you take to reduce any risks before a child is placed?
-          widget: :title
-        - name: :breeding_risks
-          widget: :textarea
-    breeding_other:
-      template: :single_question
-      questions:
-        - name: :section
-          current_section: Pets
-          widget: :title
-        - name: :sub_section
-          title: Any other information you consider to be relevant?
-          widget: :title
-        - name: :breeding_other
-          widget: :textarea
+          with_title: true
+          classes: 'extra hidden'

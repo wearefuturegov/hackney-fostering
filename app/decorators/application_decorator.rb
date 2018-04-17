@@ -7,7 +7,6 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
            :adults_living_at_home,
            :adults_living_elsewhere,
            :have_pets,
-           :breed_pets,
            :family_court,
            :previous_applications,
            :other_previous_applications,
@@ -140,22 +139,6 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   
   def pet_type
     standard_wrapper('Pet type(s)', application.pet_type)
-  end
-  
-  def where_breed_pets
-    standard_wrapper('Where breeding takes place', application.where_breed_pets)
-  end
-  
-  def offspring_kept
-    standard_wrapper('Where offspring are kept', application.offspring_kept)
-  end
-  
-  def breeding_risks
-    standard_wrapper('Actions to be taken to mitigate risk', application.breeding_risks)
-  end
-  
-  def breeding_other
-    standard_wrapper('Other information', application.breeding_other)
   end
   
   def court_date

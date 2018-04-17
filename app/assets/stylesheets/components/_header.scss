@@ -71,6 +71,8 @@ nav {
   }
 }
 
+
+
 // .children_living_at_home, ., ., ., ., ., ., ., . {
 //   #family_link a {
 //     font-weight: 700;
@@ -79,10 +81,10 @@ nav {
 //   }
 // }
 
-// ., ., ., ., ., ., ., ., . {
-//   #pets_link a {
-//     font-weight: 700;
-//     opacity: 1 !important;
-//     font-style: normal;
-//   }
-// }
+.pets_welcome {
+  #pets_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+  }
+}
