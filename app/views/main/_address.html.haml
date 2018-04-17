@@ -1,5 +1,6 @@
-= form.input :postcode, as: :string, label: 'Enter postcode', input_html: { id: 'postcode_search' }, wrapper_html: { class: form.object.errors.any? ? 'hidden' : '' }, required: false
-%p.error.hidden
+.with_title
+  = form.input :postcode, as: :string, label: 'Enter postcode', input_html: { id: 'postcode_search' }, wrapper_html: { class: form.object.errors.any? ? 'hidden' : '' }, required: false
+  %p.error.hidden
 
 %p
   %a#manual_entry{ href: '#', class: form.object.errors.any? ? 'hidden' : '' }
@@ -17,7 +18,7 @@
 .input
   %a.button#find_address{ class: form.object.errors.any? ? 'hidden' : '' }
     Find Address
-    
+
 #address_elements{ class: form.object.errors.any? ? '' : 'hidden' }
   - questions.each do |q|
     = render partial: q['widget'].to_s, locals: { form: form, question: q }
