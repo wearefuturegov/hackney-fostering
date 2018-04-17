@@ -11,6 +11,7 @@ module Applications
       if person.update(person_params)
         redirect_to application_you_and_your_family_path(application_id: application.code, id: form_id)
       else
+        application.reload
         render template
       end
     end
@@ -19,6 +20,7 @@ module Applications
       if person.save
         redirect_to application_you_and_your_family_path(application_id: application.code, id: form_id)
       else
+        application.reload
         render template
       end
     end
