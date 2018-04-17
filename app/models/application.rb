@@ -1,4 +1,4 @@
-class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
+class Application < ApplicationRecord
   extend ::FriendlyId
   friendly_id :code
 
@@ -59,13 +59,8 @@ class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   validates :adults_living_at_home, inclusion: [true, false], if: -> { on_step?(%w[adults_living_at_home]) }
   validates :adults_living_elsewhere, inclusion: [true, false], if: -> { on_step?(%w[adults_living_elsewhere]) }
   validates :have_pets, inclusion: [true, false], if: -> { on_step?(%w[pets]) }
-  validates :number_of_pets, presence: true, if: -> { on_step?(%w[number_of_pets]) }
-  validates :pet_type, presence: true, if: -> { on_step?(%w[pet_type]) }
-  validates :breed_pets, inclusion: [true, false], if: -> { on_step?(%w[breed_pets]) }
-  validates :where_breed_pets, presence: true, if: -> { on_step?(%w[where_breed_pets]) }
-  validates :offspring_kept, presence: true, if: -> { on_step?(%w[offspring]) }
-  validates :breeding_risks, presence: true, if: -> { on_step?(%w[breeding_risks]) }
-  validates :breeding_other, presence: true, if: -> { on_step?(%w[breeding_other]) }
+  validates :number_of_pets, presence: true, if: -> { on_step?(%w[pets]) }
+  validates :pet_type, presence: true, if: -> { on_step?(%w[pets]) }
   validates :family_court, inclusion: [true, false], if: -> { on_step?(%w[family_court]) }
   validates :court_date, presence: true, if: -> { on_step?(%w[court_date]) }
   validates :court_name, presence: true, if: -> { on_step?(%w[court_name]) }
