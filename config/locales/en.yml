@@ -45,6 +45,38 @@ en:
     add: Add
     update: Update
   activerecord:
+    errors:
+      models:
+        application:
+          attributes:
+            over_21:
+              inclusion: Please select 'Yes' or 'No'
+            name_change:
+              inclusion: Please select 'Yes' or 'No'
+            religious:
+              inclusion: Please select 'Yes' or 'No'
+            practicing:
+              inclusion: Please select 'Yes' or 'No'
+            children_at_home:
+              inclusion: Please select 'Yes' or 'No'
+            children_living_elsewhere:
+              inclusion: Please select 'Yes' or 'No'
+            adults_living_at_home:
+              inclusion: Please select 'Yes' or 'No'
+            adults_living_elsewhere:
+              inclusion: Please select 'Yes' or 'No'
+            have_pets:
+              inclusion: Please select 'Yes' or 'No'
+            breed_pets:
+              inclusion: Please select 'Yes' or 'No'
+            family_court:
+              inclusion: Please select 'Yes' or 'No'
+            previous_applications:
+              inclusion: Please select 'Yes' or 'No'
+            other_previous_applications:
+              inclusion: Please select 'Yes' or 'No'
+            previous_fostering:
+              inclusion: Please select 'Yes' or 'No'
     attributes:
       application:
         type_of_fosterings:
