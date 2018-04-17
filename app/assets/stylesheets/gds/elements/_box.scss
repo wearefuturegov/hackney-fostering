@@ -21,8 +21,8 @@
   ul, li {
     margin-bottom: 0;
   }
-  li {
-
+  @include mob_tab {
+    padding: $baseline/2;
   }
 }
 
