@@ -1,13 +1,13 @@
 .with_title.postcode_search
-  = form.input :postcode, as: :string, label: 'Enter postcode', input_html: { id: 'postcode_search' }, wrapper_html: { class: form.object.errors.any? ? 'hidden' : '' }, required: false
+  = form.input :postcode, as: :string, label: 'Enter postcode to search', input_html: { id: 'postcode_search' }, wrapper_html: { class: form.object.errors.any? ? 'hidden' : '' }, required: false
   .input
     %a.button.secondary#find_address{ class: form.object.errors.any? ? 'hidden' : '' }
       Find Address
-%p.error.hidden
+  %p.error.hidden
 
 %p
   %a#manual_entry{ href: '#', class: form.object.errors.any? ? 'hidden' : '' }
-    Enter address manually
+    Or enter address manually
 
 %h3#your_postcode.hidden
   Postcode
