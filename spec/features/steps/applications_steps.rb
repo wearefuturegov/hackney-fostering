@@ -53,12 +53,12 @@ module ApplicationSteps
     click_on I18n.t('continue_ineligible')
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
     answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
-    click_on I18n.t('continue_ineligible')
+    click_on I18n.t('continue')
     answer_question(@form.address.postcode, 'application_address_attributes_postcode')
-    click_on I18n.t('continue_ineligible')
+    click_on I18n.t('continue')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.contacting_yous.#{@form.contacting_you}"))
     answer_question(@form.email, 'application_email')
-    click_on I18n.t('continue_ineligible')
+    click_on I18n.t('continue')
   end
 
   step 'my application should be stored' do
