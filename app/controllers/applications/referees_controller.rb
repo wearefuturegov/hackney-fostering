@@ -1,6 +1,6 @@
 module Applications
   class RefereesController < MainController # rubocop:disable Metrics/ClassLength
-    layout "main_application"
+    layout 'main_application'
 
     expose :application, -> { Application.friendly.find(params[:application_id]) }
     expose :referee, model: 'Referee', build: -> { application.referees.new }
@@ -140,6 +140,5 @@ module Applications
     def set_current_step
       application.update_attribute(:current_step, 'referees')
     end
-
   end
 end

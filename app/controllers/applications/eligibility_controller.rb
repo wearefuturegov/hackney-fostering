@@ -31,6 +31,5 @@ module Applications
 
     # Don't set the current path in the eligibility questionnaire
     def set_current_path; end
-
   end
 end
