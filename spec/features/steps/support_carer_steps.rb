@@ -3,7 +3,7 @@ module SupportCarerSteps
   step 'I add a support carer' do
     @carer = Fabricate(:support_carer)
     click_on I18n.t('continue')
-    fill_in 'First name(s)', with: @carer.first_name
+    fill_in 'First name', with: @carer.first_name
     fill_in 'Last name', with: @carer.last_name
     click_on I18n.t('continue')
     fill_in 'Email', with: @carer.email

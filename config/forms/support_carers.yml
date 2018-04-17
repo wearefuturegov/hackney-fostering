@@ -11,7 +11,7 @@ form:
           title: Your support carer's name
           widget: :title
         - name: :first_name
-          title: First name(s)
+          title: First name
           model: :support_carer
           with_title: true
           widget: :input
