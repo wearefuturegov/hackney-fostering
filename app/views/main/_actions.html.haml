@@ -1,6 +1,6 @@
 %section.actions
   -if request.path_parameters[:id] == "other_ways"
-    = form.submit "Enter your details", class: "confirm"
+    = form.submit t('continue_ineligible'), class: "confirm"
   -else
     = form.submit t('continue'), class: "confirm"
   = back_link
