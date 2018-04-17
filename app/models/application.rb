@@ -60,7 +60,7 @@ class Application < ApplicationRecord
   validates :adults_living_elsewhere, inclusion: [true, false], if: -> { on_step?(%w[adults_living_elsewhere]) }
   validates :have_pets, inclusion: [true, false], if: -> { on_step?(%w[pets]) }
   validates :number_of_pets, presence: true, if: -> { on_step?(%w[pets]) }
-  validates :pet_type, presence: true, if: -> { on_step?(%w[pets]) }
+  validates :pet_type, presence: true, if: -> { on_step?(%w[pets]) && have_pets == true }
   validates :family_court, inclusion: [true, false], if: -> { on_step?(%w[family_court]) }
   validates :court_date, presence: true, if: -> { on_step?(%w[court_date]) }
   validates :court_name, presence: true, if: -> { on_step?(%w[court_name]) }
