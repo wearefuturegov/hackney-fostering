@@ -91,7 +91,7 @@ form:
           widget: :notice
         - name: :section
           widget: text
-          content: If you are interested in finding out about other ways of supporting children and young people in Hackney then please continue below, enter your contact details and someone from our tema will be in contact with you in a couple of days.
+          content: If you are interested in finding out about other ways of supporting children and young people in Hackney then please continue below, enter your contact details and someone from our team will be in contact with you in a couple of days.
 
         # - name: :other_ways
         #   title: Sorry, you are unable to be a foster carer at the moment
