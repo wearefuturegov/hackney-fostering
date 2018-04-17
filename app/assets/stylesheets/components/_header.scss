@@ -92,3 +92,21 @@ nav {
     color: $brand;
   }
 }
+
+.legal_history {
+  #legal_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+    color: $brand;
+  }
+}
+
+.confirmations {
+  #consent_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+    color: $brand;
+  }
+}

@@ -92,22 +92,27 @@ form:
       questions:
         - name: :line_1
           title: Address Line 1
+          with_title: true
           widget: :input
           model: :address
         - name: :line_2
           title: Address Line 2
+          with_title: true
           widget: :input
           model: :address
         - name: :line_3
           title: Address Line 3
+          with_title: true
           widget: :input
           model: :address
         - name: :post_town
           title: Address Line 4
+          with_title: true
           widget: :input
           model: :address
         - name: :postcode
           title: Postcode
+          with_title: true
           widget: :input
     type_of_application:
       template: :single_question
@@ -154,22 +159,27 @@ form:
       questions:
         - name: :line_1
           title: Address Line 1
+          with_title: true
           widget: :input
           model: :address
         - name: :line_2
           title: Address Line 2
+          with_title: true
           widget: :input
           model: :address
         - name: :line_3
           title: Address Line 3
+          with_title: true
           widget: :input
           model: :address
         - name: :post_town
           title: Address Line 4
+          with_title: true
           widget: :input
           model: :address
         - name: :postcode
           title: Postcode
+          with_title: true
           widget: :input
     other_type_of_application:
       template: :single_question
@@ -208,16 +218,21 @@ form:
       questions:
         - name: :line_1
           title: Address Line 1
+          with_title: true
           widget: :input
         - name: :line_2
           title: Address Line 2
+          with_title: true
           widget: :input
         - name: :line_3
           title: Address Line 3
+          with_title: true
           widget: :input
         - name: :post_town
           title: Address Line 4
+          with_title: true
           widget: :input
         - name: :postcode
           title: Postcode
+          with_title: true
           widget: :input
