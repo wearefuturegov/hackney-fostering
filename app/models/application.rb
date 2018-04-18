@@ -1,5 +1,7 @@
 class Application < ApplicationRecord
   extend ::FriendlyId
+  extend Memoist
+  
   friendly_id :code
 
   enum spare_room: %i[yes no not_yet],
@@ -101,6 +103,47 @@ class Application < ApplicationRecord
   
   def send_full_application_email!
     ApplicationsMailer.application(id).deliver
+  end
+  
+  def about_you_complete?
+    religious == true && religion.present? || religious == false
+  end
+  memoize :about_you_complete?
+  
+  def working_experience_complete?
+    unemployed? || employer_phone_number.present?
+  end
+  memoize :working_experience_complete?
+  
+  def address_history_complete?
+    address.years_ago >= 5 || (address.years_ago + addresses.sum(&:years_ago) >= 5)
+  end
+  memoize :address_history_complete?
+  
+  def family_complete?
+    adults_living_elsewhere == false || adults_living_elsewhere == true && adults_elsewhere.count.positive?
+  end
+  memoize :family_complete?
+  
+  def pets_complete?
+    have_pets == false || have_pets == true && pet_type.present?
+  end
+  memoize :pets_complete?
+  
+  def you_and_your_family_complete?
+    about_you_complete? && working_experience_complete? && address_history_complete? && family_complete? && pets_complete?
+  end
+  
+  def support_carer_complete?
+    support_carer&.email.present?
+  end
+  
+  def references_complete?
+    referees.count == 6
+  end
+  
+  def legal_history_complete?
+    previous_fostering == false || previous_fostering == true && previous_agency_address.present?
   end
   
   private
