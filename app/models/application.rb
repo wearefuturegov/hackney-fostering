@@ -1,4 +1,4 @@
-class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
+class Application < ApplicationRecord
   extend ::FriendlyId
   extend Memoist
 
