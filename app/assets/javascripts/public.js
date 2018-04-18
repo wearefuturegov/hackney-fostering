@@ -10,4 +10,8 @@ $(document).ready(function() {
   $('.application_adults_living_elsewhere').showHideExtra();
   $('.application_have_pets').showHideExtra();
 
+  $('.disabled a').click(function(e) {
+    console.log('test');
+    e.preventDefault();
+  });
 });

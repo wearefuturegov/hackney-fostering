@@ -1,7 +1,7 @@
 class Application < ApplicationRecord
   extend ::FriendlyId
   extend Memoist
-  
+
   friendly_id :code
 
   enum spare_room: %i[yes no not_yet],
@@ -12,7 +12,7 @@ class Application < ApplicationRecord
        contacting_you: %i[contact_phone contact_email],
        best_way_to_contact: %i[phone email],
        employment_type: %i[full_time part_time self_employed director unemployed]
-           
+
   has_many :children
   has_many :adults
   has_many :children_elsewhere, class_name: 'ChildElsewhere'
@@ -20,15 +20,15 @@ class Application < ApplicationRecord
   has_many :referees
 
   has_many :addresses
-  
+
   belongs_to :applicant, optional: true
   belongs_to :address, optional: true
   belongs_to :support_carer, optional: true
-  
+
   belongs_to :agency_address, class_name: 'Address', foreign_key: :agency_address_id, optional: true
   belongs_to :other_agency_address, class_name: 'Address', foreign_key: :other_agency_address_id, optional: true
   belongs_to :previous_agency_address, class_name: 'Address', foreign_key: :previous_agency_address_id, optional: true
-  
+
   # Validations for eligibility form
   validates :type_of_fostering, presence: true, if: -> { on_step?(%w[fostering_type]) }
   validates :spare_room, presence: true, if: -> { on_step?(%w[spare_room]) }
@@ -94,60 +94,64 @@ class Application < ApplicationRecord
     :support_carer,
     update_only: true
   )
-    
+
   after_create :generate_code
-  
+
   def on_step?(steps)
     steps.include?(current_step)
   end
-  
+
   def send_full_application_email!
     ApplicationsMailer.application(id).deliver
   end
-  
+
   def about_you_complete?
     religious == true && religion.present? || religious == false
   end
   memoize :about_you_complete?
-  
+
   def working_experience_complete?
     unemployed? || employer_phone_number.present?
   end
   memoize :working_experience_complete?
-  
+
   def address_history_complete?
     address.years_ago >= 5 || (address.years_ago + addresses.sum(&:years_ago) >= 5)
   end
   memoize :address_history_complete?
-  
+
   def family_complete?
     adults_living_elsewhere == false || adults_living_elsewhere == true && adults_elsewhere.count.positive?
   end
   memoize :family_complete?
-  
+
   def pets_complete?
     have_pets == false || have_pets == true && pet_type.present?
   end
   memoize :pets_complete?
-  
+
   def you_and_your_family_complete?
     about_you_complete? && working_experience_complete? && address_history_complete? && family_complete? && pets_complete?
   end
-  
+
   def support_carer_complete?
     support_carer&.email.present?
   end
-  
+
   def references_complete?
     referees.count == 6
   end
-  
+
   def legal_history_complete?
     previous_fostering == false || previous_fostering == true && previous_agency_address.present?
   end
-  
+
+  def all_application_complete?
+    you_and_your_family_complete? && support_carer_complete? && references_complete? && legal_history_complete?
+  end
+
   private
-  
+
   def generate_code
     code = nil
     loop do

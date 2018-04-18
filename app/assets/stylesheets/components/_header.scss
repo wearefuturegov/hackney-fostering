@@ -67,6 +67,16 @@ nav {
       text-decoration: line-through;
     }
   }
+  .disabled {
+    a:not(.currentPage) {
+      color: rgba($black, 0.5);
+      opacity: 0.7 !important;
+      &:hover {
+        cursor: not-allowed;
+        color: rgba($black, 0.5);
+      }
+    }
+  }
   .sub_nav {
     margin-bottom: 0;
     li {

@@ -50,4 +50,5 @@
       %li#legal_link{ class: application.legal_history_complete? ? 'complete' : '' }
         = link_to 'Legal history', application_legal_history_path(application_id: application.code, id: 'intro')
         .complete_icon=fa_icon "check"
-      %li#consent_link= link_to 'Consent', '#'
+      %li#consent_link{ class: application.all_application_complete? ? 'complete' : 'disabled' }
+        = link_to 'Consent', new_application_confirmation_path(application_id: application.code)
