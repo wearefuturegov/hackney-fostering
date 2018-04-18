@@ -1,4 +1,4 @@
-class Application < ApplicationRecord
+class Application < ApplicationRecord # rubocop:disable Metrics/ClassLength
   extend ::FriendlyId
   friendly_id :code
 
