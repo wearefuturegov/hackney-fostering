@@ -45,6 +45,9 @@ en:
   person:
     add: Add
     update: Update
+  confirm:
+    agree_to_checks: I agree to what checks I will be undertaking
+    agree_to_la_contact: I consent to Hackney Council contacting my previous local authority
   activerecord:
     errors:
       models:
@@ -78,6 +81,10 @@ en:
               inclusion: Please select 'Yes' or 'No'
             previous_fostering:
               inclusion: Please select 'Yes' or 'No'
+            agree_to_la_contact:
+              blank: You must consent to Hackney Council contacting your previous local authority
+            agree_to_checks:
+              blank: You must agree to the checks before submitting your application
     attributes:
       application:
         type_of_fosterings:
