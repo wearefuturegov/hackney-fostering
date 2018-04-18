@@ -5,6 +5,6 @@ class PreviousFosteringRule < ApplicationRule
   end
   
   def previous_fostering?
-    params[:application][:previous_fostering] == '1'
+    params[:application][:previous_fostering] == 'true'
   end
 end

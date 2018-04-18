@@ -1,6 +1,6 @@
 class AdultsElsewhereRule < ApplicationRule
   def process
-    @next_step = adults_living_elsewhere == '0' ? :pets : :adults_living_elsewhere
+    @next_step = adults_living_elsewhere == 'false' ? :pets : :adults_living_elsewhere
   end
   
   def adults_living_elsewhere

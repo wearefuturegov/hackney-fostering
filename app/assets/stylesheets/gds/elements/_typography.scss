@@ -1,6 +1,6 @@
 h1 {
   font-size: 36px;
-  line-height: 1.11111;
+  line-height: 47px;
 }
 
 h2 {
@@ -26,4 +26,15 @@ a {
   font-weight: 400;
   margin-bottom: 5px;
   color: #96a09e;
+}
+
+@include mob_tab {
+  h1 {
+    font-size: 31px;
+    line-height: 36px;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 29px;
+  }
 }

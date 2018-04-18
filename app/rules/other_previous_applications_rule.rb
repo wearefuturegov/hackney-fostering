@@ -1,5 +1,5 @@
 class OtherPreviousApplicationsRule < ApplicationRule
   def process
-    @next_step = params[:application][:other_previous_applications] == '1' ? :other_application_date : :previous_fostering
+    @next_step = params[:application][:other_previous_applications] == 'true' ? :other_application_date : :previous_fostering
   end
 end

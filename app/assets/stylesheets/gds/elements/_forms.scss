@@ -148,6 +148,8 @@ label.required:after {
     color: $negative;
     border-left: 5px solid $negative;
     padding-left: 10px;
+    font-size: 75%;
+    font-weight: 700;
   }
   .answer {
     margin-bottom: 0;

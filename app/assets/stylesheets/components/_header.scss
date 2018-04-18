@@ -45,8 +45,26 @@ header {
 
 .back_links {
   margin-bottom: 25px;
+  &.hackney {
+    display: none;
+  }
   @include mob_tab {
     margin-bottom: 15px;
+  }
+}
+
+.pages.show.eligibility {
+  .back_links.hackney {
+    display: block;
+  }
+}
+
+.eligibility.show.other_ways {
+  .back_links.hackney {
+    display: block;
+  }
+  .actions .other_actions {
+    display: none;
   }
 }
 

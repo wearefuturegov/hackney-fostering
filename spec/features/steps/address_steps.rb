@@ -18,6 +18,10 @@ module AddressSteps
     fill_in_date_from(years)
   end
   
+  step 'I fill in my address manually with a moved in date of :number year(s) ago' do |years|
+    fill_in_address_and_date_manually(years.to_i)
+  end
+  
   step 'I fill in a postcode that does not exist' do
     enter_postcode('ID1 KFA')
   end
@@ -44,7 +48,7 @@ module AddressSteps
     expect(address.date_from).to eq(@addresses[index][:date])
   end
   
-  def fill_in_address_and_date_manually # rubocop:disable Metrics/AbcSize
+  def fill_in_address_and_date_manually(years = 6) # rubocop:disable Metrics/AbcSize
     find('#manual_entry').click
     address = {}
     address[:line1] = 'Flat 1'
@@ -59,7 +63,7 @@ module AddressSteps
     fill_in 'Postcode', with: address[:postcode]
     @addresses ||= []
     @addresses << address
-    fill_in_date_from(6)
+    fill_in_date_from(years)
     first('.add-address').click
   end
   

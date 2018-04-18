@@ -2,6 +2,8 @@ module Applications
   class PeopleController < MainController
     expose :application, -> { Application.friendly.find(params[:application_id]) }
     before_action :load_questions
+    
+    layout 'main_application'
 
     def edit
       render template

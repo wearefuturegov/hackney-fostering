@@ -1,3 +1,4 @@
+@javascript
 Feature: Are you practicing
 
   Background:

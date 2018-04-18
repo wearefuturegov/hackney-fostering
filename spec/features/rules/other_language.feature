@@ -1,3 +1,4 @@
+@javascript
 Feature: Other languages
 
   Background:

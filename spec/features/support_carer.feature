@@ -8,4 +8,4 @@ Feature: Support Carer
   Scenario: Adding a support carer
     When I add a support carer
     Then my support carer should be saved
-    And I should be on the 'intro' step
+    And I should be on the 'referees' step

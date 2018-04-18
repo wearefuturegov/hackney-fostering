@@ -8,9 +8,13 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = render '/layouts/layouts/favicon'
-  %body{ class: "#{page_class}" }
+  %body{ class: "#{page_class} #{request.path_parameters[:id]}" }
     = render '/layouts/layouts/header'
     .container
+      .back_links.hackney
+        =link_to "https://www.hackney.gov.uk/fostering", target: "_blank" do
+          =fa_icon "caret-left"
+          Return to Hackney Fostering
       = yield
     = render '/layouts/layouts/footer'
 
