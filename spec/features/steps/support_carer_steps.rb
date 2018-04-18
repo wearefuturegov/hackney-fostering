@@ -6,7 +6,7 @@ module SupportCarerSteps
     fill_in 'First name', with: @carer.first_name
     fill_in 'Last name', with: @carer.last_name
     click_on I18n.t('continue')
-    fill_in 'Email', with: @carer.email
+    fill_in 'Your support carer\'s email address', with: @carer.email
     click_on I18n.t('continue')
   end
   
