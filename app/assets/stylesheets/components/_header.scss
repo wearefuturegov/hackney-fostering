@@ -47,12 +47,24 @@ nav {
       opacity: 1 !important;
       font-style: normal;
       color: $brand;
+      text-decoration: none !important;
     }
   }
   ul {
     li {
       font-weight: 600;
       margin-bottom: 10px;
+      .complete_icon {
+        display: none;
+      }
+    }
+  }
+  .complete {
+    .complete_icon {
+      display: inline-block;
+    }
+    a {
+      text-decoration: line-through;
     }
   }
   .sub_nav {
