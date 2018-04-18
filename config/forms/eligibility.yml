@@ -29,7 +29,7 @@ form:
           widget: :title
         - name: :spare_room
           widget: :radio
-    over_21:
+    age:
       template: :single_question
       next_step: :experience
       questions:

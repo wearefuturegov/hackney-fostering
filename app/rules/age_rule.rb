@@ -1,8 +1,8 @@
-class SpareRoomRule < ApplicationRule
+class AgeRule < ApplicationRule
   def process
-    @next_step = if params[:application][:spare_room] == 'yes'
+    @next_step = if params[:application][:over_21] == 'true'
                    application.update_attribute(:eligible, true)
-                   :age
+                   :experience
                  else
                    application.update_attribute(:eligible, false)
                    :other_ways
