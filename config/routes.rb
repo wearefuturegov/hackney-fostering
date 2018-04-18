@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :user_logins
   resources :applications do
     collection { get :find }
     resources :eligibility, controller: 'applications/eligibility'

@@ -1,5 +1,6 @@
 class Applicant < Person
   has_one :application
+  has_one :login, class_name: 'UserLogin', as: :user, autosave: true  
   
   validates :first_name, presence: true, if: -> { application&.on_step?(%w[what_is_your_name]) }
   validates :last_name, presence: true, if: -> { application&.on_step?(%w[what_is_your_name]) }
