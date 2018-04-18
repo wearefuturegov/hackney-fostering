@@ -9,6 +9,7 @@ form:
       questions:
         - name: :section
           title: Your support carer's name
+          current_section: Your support carer
           widget: :title
         - name: :first_name
           title: First name
@@ -23,11 +24,8 @@ form:
     support_carer_email:
       template: :questions
       questions:
-        - name: :section
-          title: Your support carer's email address
-          widget: :title
         - name: :email
           model: :support_carer
-          title: Email
-          with_title: true
+          title: Your support carer's email address
+          current_section: Your support carer
           widget: :email

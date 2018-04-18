@@ -1,2 +1,4 @@
+-if question['current_section']
+  .gds_sub_title=question['current_section']
 .input_container{ class: (question['with_title'] ? 'with_title' : '') }
   = form.input question['name'], as: :tel, label: question['title']
