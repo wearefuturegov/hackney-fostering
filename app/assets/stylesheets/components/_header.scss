@@ -85,12 +85,34 @@ nav.side_nav {
       opacity: 1 !important;
       font-style: normal;
       color: $brand;
+      text-decoration: none !important;
     }
   }
   ul {
     li {
       font-weight: 600;
       margin-bottom: 10px;
+      .complete_icon {
+        display: none;
+      }
+    }
+  }
+  .complete {
+    .complete_icon {
+      display: inline-block;
+    }
+    a {
+      text-decoration: line-through;
+    }
+  }
+  .disabled {
+    a:not(.currentPage) {
+      color: rgba($black, 0.5);
+      opacity: 0.7 !important;
+      &:hover {
+        cursor: not-allowed;
+        color: rgba($black, 0.5);
+      }
     }
   }
   .sub_nav {

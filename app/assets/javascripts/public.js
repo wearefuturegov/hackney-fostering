@@ -11,4 +11,8 @@ $(document).ready(function() {
   $('.application_have_pets').showHideExtra();
   $('header .menu_btn').menuToggle();
 
+  $('.disabled a').click(function(e) {
+    console.log('test');
+    e.preventDefault();
+  });
 });

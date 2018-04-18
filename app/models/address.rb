@@ -13,6 +13,7 @@ class Address < ApplicationRecord
   end
   
   def years_ago
+    return 0 unless date_from
     Time.now.utc.to_date.year - date_from.year
   end
 end
