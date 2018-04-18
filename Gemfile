@@ -42,6 +42,7 @@ gem 'linguistics'
 gem 'draper'
 gem 'airbrake', require: false
 gem 'memoist'
+gem 'devise'
 
 if ENV['USE_LOCAL_INCREDIBLE']
   gem 'incredible', path: '../incredible'
