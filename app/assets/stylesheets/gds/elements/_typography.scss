@@ -20,6 +20,14 @@ a {
   margin-top: 50px;
 }
 
+.gds_sub_title {
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #96a09e;
+}
+
 @include mob_tab {
   h1 {
     font-size: 31px;

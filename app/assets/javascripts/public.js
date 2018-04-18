@@ -9,5 +9,6 @@ $(document).ready(function() {
   $('.application_adults_living_at_home').showHideExtra();
   $('.application_adults_living_elsewhere').showHideExtra();
   $('.application_have_pets').showHideExtra();
+  $('header .menu_btn').menuToggle();
 
 });

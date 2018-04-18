@@ -6,12 +6,50 @@ header {
     width: 186px;
     vertical-align: middle;
   }
+  .menu_btn { display: none; }
+
+  @include mob_tab {
+    margin-bottom: 15px;
+    .container {
+      padding-bottom: 17px;
+      padding-top: 10px;
+    }
+    .logo {
+      vertical-align: middle;
+      img {
+        width: 130px;
+        margin-top: 7px;
+      }
+    }
+    .menu_btn {
+      display: inline-block;
+      .button {
+        padding: 8px 11px;
+      }
+      &.active {
+        .button {
+          background-color: $brand;
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.welcome.you_and_your_family {
+  .menu_btn {
+    display: none;
+  }
 }
 
 .back_links {
   margin-bottom: 25px;
   &.hackney {
     display: none;
+  }
+  @include mob_tab {
+    margin-bottom: 15px;
   }
 }
 
@@ -30,7 +68,7 @@ header {
   }
 }
 
-nav {
+nav.side_nav {
   a {
     color: $black;
     text-decoration: none;
@@ -61,11 +99,29 @@ nav {
       font-weight: 300;
       margin-bottom: 0;
       &:before {
-        content: '–';
+        content: '– ';
+      }
+    }
+  }
+
+  @include mob_tab {
+    display: none;
+
+    li {
+      background-color: #eee;
+      padding: 5px 10px;
+      margin-bottom: 1px !important;
+    }
+    a {
+      &.currentPage {
+        &:before {
+          content: '> '
+        }
       }
     }
   }
 }
+
 .gender, .dob, .country_of_birth, .town_of_birth, .nationality, .language, .other_language, .are_you_religious, .what_is_your_name_change, .previous_name_period, .other_language_select, .what_is_your_religion {
   #about_link a {
     font-weight: 700;

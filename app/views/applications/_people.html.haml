@@ -1,6 +1,7 @@
 %section.section
+  .gds_sub_title Your Family
   %h1= title
-  
+
   - if people.count > 0
     %table.table
       %thead
@@ -13,9 +14,9 @@
           %th
       %tbody
         = render partial: 'people/person', collection: people
-  
+
   %h2= subtitle
-  
+
   = simple_form_for [application, (defined?(person) ? person : people.new)] do |f|
     - @questions.each do |q|
       = render partial: q['widget'].to_s, locals: { form: f, question: q }
@@ -23,9 +24,9 @@
       = f.submit t('person.update'), class: "confirm"
     - else
       = f.submit t('person.add'), class: "button"
-  
+
   - if defined?(wizard_path)
-  
+
     %hr/
     
     - if people.count > 0
