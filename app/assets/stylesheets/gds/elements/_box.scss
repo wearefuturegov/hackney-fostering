@@ -15,8 +15,14 @@
   p {
     font-weight: 600;
   }
-  ul {
+  .bold {
+    margin-bottom: 5px;
+  }
+  ul, li {
     margin-bottom: 0;
+  }
+  @include mob_tab {
+    padding: $baseline/2;
   }
 }
 

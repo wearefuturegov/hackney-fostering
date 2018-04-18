@@ -21,6 +21,7 @@ form:
       questions:
         - name: :sub_section
           title: Have you ever been in any family court proceeding or in any proceedings about children and/or family?
+          current_section: Legal history
           widget: :title
         - name: :family_court
           widget: :boolean
@@ -31,6 +32,7 @@ form:
       questions:
         - name: :sub_section
           title: Date of court proceeding
+          current_section: Legal history
           widget: :title
         - name: :court_date
           with_title: true
@@ -40,11 +42,13 @@ form:
       questions:
         - name: :court_name
           title: Name of court
+          current_section: Legal history
           widget: :input
     type_of_order:
       template: :single_question
       questions:
         - name: :type_of_order
+          current_section: Legal history
           widget: :input
           title: Type of order made
     parties_involved:
@@ -52,18 +56,21 @@ form:
       questions:
         - name: :parties_involved
           title: Names of children or adults involved
+          current_section: Legal history
           widget: :textarea
     court_details:
       template: :single_question
       questions:
         - name: :court_details
           title: Details of the case
+          current_section: Legal history
           widget: :textarea
     previous_applications:
       template: :single_question
       questions:
         - name: :sub_section
           title: Have you previously applied to become a foster carer, adopter or child-minder?
+          current_section: Legal history
           widget: :title
         - name: :previous_applications
           widget: :boolean
@@ -74,6 +81,7 @@ form:
       questions:
         - name: :sub_section
           title: Date you applied
+          current_section: Legal history
           widget: :title
         - name: :application_date
           with_title: true
@@ -83,11 +91,13 @@ form:
       questions:
         - name: :agency_name
           title: Name of agency/service
+          current_section: Legal history
           widget: :input
     agency_address:
       template: :single_question
       template: :address
       reference: :agency_address
+      current_section: Legal history
       title: Address of agency/service
       questions:
         - name: :line_1
@@ -119,18 +129,21 @@ form:
       questions:
         - name: :type_of_application
           title: Type of application
+          current_section: Legal history
           widget: :input
     application_outcome:
       template: :single_question
       questions:
         - name: :application_outcome
           title: What was the outcome of the application?
+          current_section: Legal history
           widget: :textarea
     other_previous_applications:
       template: :single_question
       questions:
         - name: :sub_section
           title: Has any member of your household previously applied to become a foster carer, adopter or child-minder?
+          current_section: Legal history
           widget: :title
         - name: :other_previous_applications
           widget: :boolean
@@ -141,6 +154,7 @@ form:
       questions:
         - name: :sub_section
           title: Date they applied
+          current_section: Legal history
           widget: :title
         - name: :other_application_date
           with_title: true
@@ -150,10 +164,12 @@ form:
       questions:
         - name: :other_agency_name
           title: Name of agency/service
+          current_section: Legal history
           widget: :input
     other_agency_address:
       template: :single_question
       template: :address
+      current_section: Legal history
       reference: :other_agency_address
       title: Address of agency/service
       questions:
@@ -186,18 +202,21 @@ form:
       questions:
         - name: :other_type_of_application
           title: Type of application
+          current_section: Legal history
           widget: :input
     other_application_outcome:
       template: :single_question
       questions:
         - name: :other_application_outcome
           title: What was the outcome of the application?
+          current_section: Legal history
           widget: :input
     previous_fostering:
       template: :single_question
       questions:
         - name: :sub_section
           title: Have you been an approved foster carer in the preceding 12 months?
+          current_section: Legal history
           widget: :title
         - name: :previous_fostering
           widget: :boolean
@@ -208,10 +227,12 @@ form:
       questions:
         - name: :previous_agency_name
           title: Name of agency/service
+          current_section: Legal history
           widget: :input
     previous_agency_address:
       template: :single_question
       template: :address
+      current_section: Legal history
       reference: :previous_agency_address
       title: Tell us your legal history
       sub_title: Address of agency/service

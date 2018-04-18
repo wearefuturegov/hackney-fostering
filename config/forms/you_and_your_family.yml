@@ -21,7 +21,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          current_section: You & your family
+          current_section: About you
           title: Have you ever had any other names?
           widget: :title
         - name: :name_change
@@ -32,7 +32,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          current_section: You & your family
+          current_section: About you
           title: What is your previous full name?
           widget: :title
         - name: :previous_first_name
@@ -49,7 +49,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          current_section: You & your family
+          current_section: About you
           title: When did you change your name?
           widget: :title
         - name: :date_changed
@@ -61,7 +61,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          current_section: You & your family
+          current_section: About you
           title: What is your gender?
           widget: :title
         - name: :gender
@@ -71,7 +71,7 @@ form:
       template: :questions
       questions:
         - name: :section
-          current_section: You & your family
+          current_section: About you
           title: What is your date of birth?
           widget: :title
         - name: :date_of_birth
@@ -84,6 +84,7 @@ form:
       questions:
         - name: :country_of_birth
           title: What is your country of birth?
+          current_section: About you
           widget: :input
           model: :applicant
     town_of_birth:
@@ -91,6 +92,7 @@ form:
       questions:
         - name: :town_of_birth
           title: What is your town of birth?
+          current_section: About you
           widget: :input
           model: :applicant
     nationality:
@@ -99,6 +101,7 @@ form:
       questions:
         - name: :nationality
           title: What is your nationality?
+          current_section: About you
           widget: :input
           model: :applicant
     language:
@@ -106,13 +109,15 @@ form:
       questions:
         - name: :primary_language
           title: What is the main language spoken at home?
+          current_section: About you
           widget: :input
     other_language:
       template: :questions
       questions:
         - name: :section
-          current_section: You & your family
+          current_section: About you
           title: Are there other languages spoken at home?
+          current_section: About you
           widget: :title
         - name: :other_language
           widget: :boolean
@@ -123,12 +128,13 @@ form:
       questions:
         - name: :secondary_languages
           title: What other languages are spoken at home?
+          current_section: About you
           widget: :input
     are_you_religious:
       template: :single_question
       questions:
         - name: :section
-          current_section: You & your family
+          current_section: About you
           title: Are you religious?
           info: It is helpful for us to know your religious and cultural background. This will be useful when finding the right foster child for you.
           widget: :title
@@ -141,6 +147,7 @@ form:
       questions:
         - name: :religion
           title: What is your religion?
+          current_section: About you
           widget: :input
     welcome_working:
       template: :questions
@@ -175,12 +182,14 @@ form:
       questions:
         - name: :occupation
           title: What is current occupation?
+          current_section: Your employment history
           widget: :input
     name_of_employer:
       template: :questions
       questions:
         - name: :employer
           title: What is the name of your employer or organisation?
+          current_section: Your employment history
           widget: :input
     name_of_employer_contact:
       template: :questions
@@ -199,12 +208,14 @@ form:
       questions:
         - name: :employer_phone_number
           title: What is the phone number of your reference?
+          current_section: Your employment history
           widget: :tel
     email_for_employer_contact:
       template: :questions
       questions:
         - name: :employer_phone_number
           title: What is the email address of your reference?
+          current_section: Your employment history
           widget: :email
     address_welcome:
       template: :questions
@@ -216,6 +227,7 @@ form:
     full_address:
       template: :address
       reference: :address
+      current_section: Your address history
       title: What is your current address?
       questions:
         - name: :line_1
@@ -434,6 +446,7 @@ form:
       questions:
         - name: :sub_section
           title: Do you have any pets?
+          current_section: Your Pets
           widget: :title
         - name: :have_pets
           widget: :boolean

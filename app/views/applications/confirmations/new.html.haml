@@ -7,5 +7,18 @@
     I undertake to be truthful and honest in providing full and accurate information for this assessment, both verbally and in writing.
 
   = simple_form_for application, url: application_confirmations_path(application_id: application.code), method: :post do |form|
+    %section.section
+      %div.input.check_boxes{ class: application.valid? ? '' : 'field_with_errors' }
+        %span.checkbox
+          = check_box_tag 'application[agree_to_checks]', 1, application.agree_to_checks.present?, class: 'check_boxes'
+          %label{ for: 'application_agree_to_checks' }= t('confirm.agree_to_checks')
+        %span.error= application.errors.messages[:agree_to_checks].first if application.errors.messages[:agree_to_checks].present?
+
+        %span.checkbox
+          = check_box_tag 'application[agree_to_la_contact]', 1, application.agree_to_checks.present?, class: 'check_boxes'
+          %label{ for: 'application_agree_to_la_contact' }= t('confirm.agree_to_la_contact')
+        %span.error= application.errors.messages[:agree_to_la_contact].first if application.errors.messages[:agree_to_la_contact].present?
+        
+        = form.input :current_step, as: :hidden, input_html: { value: 'consent' }
     %section.actions
       = render partial: 'actions', locals: { form: form }

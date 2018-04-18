@@ -1,14 +1,13 @@
 %section.section
-
+  -if @incredible_step.data[:current_section]
+    .gds_sub_title=@incredible_step.data[:current_section]
   %h1= @incredible_step.data[:title]
-
-  %h2= @incredible_step.data[:sub_title]
 
 = simple_form_for setup_application(application), url: wizard_path, html: { class: 'address_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } }, method: :put do |f|
 
   = f.fields_for @incredible_step.data[:reference], application.send(@incredible_step.data[:reference]) do |ff|
     = render partial: 'address', locals: { form: ff, hide_to: true, questions: @questions }
-    
+
   %section.actions
     = f.submit t('continue'), class: "confirm add-address #{f.object.errors.any? ? '' : 'hidden'}"
     = back_link
