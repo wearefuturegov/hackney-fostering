@@ -27,7 +27,7 @@ module ApplicationSteps
 
   def complete_form # rubocop:disable Metrics/AbcSize
     visit application_eligibility_index_path(@application)
-    @form = Fabricate.build(:application, applicant: Fabricate.build(:applicant_with_email))
+    @form = Fabricate.build(:application, applicant: @applicant)
     # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     fill_in_radio_button(@form.over_21 ? 'Yes' : 'No')
@@ -47,7 +47,7 @@ module ApplicationSteps
 
   def complete_form_ineligible # rubocop:disable Metrics/AbcSize
     visit application_eligibility_index_path(@application)
-    @form = Fabricate.build(:application, spare_room: 1, applicant: Fabricate.build(:applicant_with_email))
+    @form = Fabricate.build(:application, spare_room: 1, applicant: @applicant)
     # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     click_on I18n.t('continue_ineligible')
@@ -79,6 +79,11 @@ module ApplicationSteps
 
   step 'I have started an application' do
     @application = Fabricate(:blank_application)
+    @applicant = Fabricate.build(:applicant_with_email)
+  end
+  
+  step 'there is an applicant with my email' do
+    Fabricate.create(:applicant_with_email, email: @applicant.email)
   end
 
   step 'I have completed an application' do
@@ -121,6 +126,10 @@ module ApplicationSteps
 
   step 'I should be on the confirmation page' do
     expect(current_path).to eq(new_application_confirmation_path(application_id: @application.code))
+  end
+  
+  step 'I should see an error telling me the email is already used' do
+    expect(page.body).to match(I18n.t('activerecord.errors.models.applicant.attributes.email.taken'))
   end
 end
 

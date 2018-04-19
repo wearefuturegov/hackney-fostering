@@ -51,6 +51,10 @@ en:
   activerecord:
     errors:
       models:
+        applicant:
+          attributes:
+            email:
+              taken: This email has already been used. Please use another email.
         application:
           attributes:
             over_21:
