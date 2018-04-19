@@ -77,6 +77,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'rails-controller-testing'
+  gem 'que'
 end
 
 group :development do
