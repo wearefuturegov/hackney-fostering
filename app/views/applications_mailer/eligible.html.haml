@@ -26,7 +26,8 @@
 = @application.age_experience
 
 %p
-  The code for the resident's application is
-  %strong
-    = @application.code
-  \. Please send this to them with the link to start their application: #{applications_url}
+  When you're ready for the applicant to start their application, click the link
+  below to send them an activation email:
+  
+%p
+  = link_to nil, send_instructions_url(token: @application.applicant.login.confirmation_token)

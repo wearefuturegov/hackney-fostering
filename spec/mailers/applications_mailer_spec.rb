@@ -6,7 +6,7 @@ RSpec.describe ApplicationsMailer, type: :mailer do
     let(:mail) { ApplicationsMailer.eligibility(application.id) }
 
     context 'when eligible' do
-      let(:application) { Fabricate(:application, eligible: true) }
+      let(:application) { Fabricate(:eligible_application) }
 
       it 'renders the headers' do
         expect(mail.subject).to eq('New eligibility enquiry')
@@ -25,7 +25,7 @@ RSpec.describe ApplicationsMailer, type: :mailer do
         expect(mail.body.encoded).to match(application.spare_room)
         expect(mail.body.encoded).to match('Yes')
         expect(mail.body.encoded).to match(application.experience)
-        expect(mail.body.encoded).to match(application.code)
+        expect(mail.body.encoded).to match(application.applicant.login.confirmation_token)
       end
     end
     

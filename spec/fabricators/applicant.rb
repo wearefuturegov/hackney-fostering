@@ -8,3 +8,7 @@ end
 Fabricator(:applicant_with_email, from: :applicant) do
   email { FFaker::Internet.email }
 end
+
+Fabricator(:applicant_with_login, from: :applicant_with_email) do
+  after_create { |applicant| applicant.create_user_login! }
+end

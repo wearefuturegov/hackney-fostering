@@ -23,3 +23,8 @@ Fabricator(:complete_application, from: :application) do
   phone_number  { FFaker::PhoneNumber.phone_number }
   support_carer { Fabricate(:support_carer) }
 end
+
+Fabricator(:eligible_application, from: :application) do
+  eligible            1
+  applicant           { Fabricate(:applicant_with_login) }
+end

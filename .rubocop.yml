@@ -34,3 +34,6 @@ Style/WordArray:
 Metrics/LineLength:
   Exclude:
     - 'db/**/*.rb'
+Style/SymbolProc:
+  Exclude:
+    - 'spec/fabricators/*.rb'
