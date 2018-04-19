@@ -4,6 +4,7 @@ class Applicant < Person
   
   validates :first_name, presence: true, if: -> { application&.on_step?(%w[what_is_your_name]) }
   validates :last_name, presence: true, if: -> { application&.on_step?(%w[what_is_your_name]) }
+  validates :email, presence: true, if: -> { application&.on_step?(%w[contact_email]) }
   validates :previous_first_name, presence: true, if: -> { application&.on_step?(%w[what_is_your_name_change]) }
   validates :previous_last_name, presence: true, if: -> { application&.on_step?(%w[what_is_your_name_change]) }
   validates :date_changed, presence: true, if: -> { application&.on_step?(%w[previous_name_period]) }

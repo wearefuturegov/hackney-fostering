@@ -164,5 +164,6 @@ form:
         - name: :email
           title: What is your email address?
           widget: :email
+          model: :applicant
     thank_you:
       template: :thank_you

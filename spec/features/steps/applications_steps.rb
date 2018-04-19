@@ -27,7 +27,7 @@ module ApplicationSteps
 
   def complete_form # rubocop:disable Metrics/AbcSize
     visit application_eligibility_index_path(@application)
-    @form = Fabricate.build(:application)
+    @form = Fabricate.build(:application, applicant: Fabricate.build(:applicant_with_email))
     # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     fill_in_radio_button(@form.over_21 ? 'Yes' : 'No')
@@ -41,13 +41,13 @@ module ApplicationSteps
     answer_question(@form.address.postcode, 'application_address_attributes_postcode')
     click_on I18n.t('continue')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.contacting_yous.#{@form.contacting_you}"))
-    answer_question(@form.email, 'application_email')
+    answer_question(@form.applicant.email, 'application_applicant_attributes_email')
     click_on I18n.t('continue')
   end
 
   def complete_form_ineligible # rubocop:disable Metrics/AbcSize
     visit application_eligibility_index_path(@application)
-    @form = Fabricate.build(:application, spare_room: 1)
+    @form = Fabricate.build(:application, spare_room: 1, applicant: Fabricate.build(:applicant_with_email))
     # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     click_on I18n.t('continue_ineligible')
@@ -57,7 +57,7 @@ module ApplicationSteps
     answer_question(@form.address.postcode, 'application_address_attributes_postcode')
     click_on I18n.t('continue')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.contacting_yous.#{@form.contacting_you}"))
-    answer_question(@form.email, 'application_email')
+    answer_question(@form.applicant.email, 'application_applicant_attributes_email')
     click_on I18n.t('continue')
   end
 
@@ -74,7 +74,7 @@ module ApplicationSteps
     expect(application.applicant.last_name).to eq(@form.applicant.last_name)
     expect(application.address.postcode).to eq(@form.address.postcode)
     expect(application.contacting_you).to eq(@form.contacting_you)
-    expect(application.email).to eq(@form.email)
+    expect(application.applicant.email).to eq(@form.applicant.email)
   end
 
   step 'I have started an application' do

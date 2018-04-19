@@ -12,9 +12,8 @@ Fabricator(:application) do
   contacting_you      1
   phone_number        1232323
   contact_phone_time  %w[morning evening]
-  applicant           { Fabricate(:applicant) }
+  applicant           { Fabricate(:applicant_with_email) }
   address             { Fabricate(:address) }
-  email               { FFaker::Internet.email }
   best_way_to_contact 1
   over_21             true
   other_ways          1
