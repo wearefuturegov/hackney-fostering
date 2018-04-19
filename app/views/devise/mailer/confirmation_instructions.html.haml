@@ -1,0 +1,13 @@
+%p
+  Dear #{@resource.user.first_name}
+
+%p
+  Thank you for applying to become a foster carer with the Hackney fostering service.
+  You can continue your online application at the following link:
+
+%p= link_to nil, confirmation_url(@resource, confirmation_token: @token)
+
+%p
+  Thanks
+  %br/
+  Hackney Fostering

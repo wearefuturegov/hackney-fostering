@@ -26,6 +26,9 @@ module EmailSteps
   
   step 'the user should recieve an email with instructions on how to access their application' do
     should_receive_email(@applicant.email)
+    expect(current_email.subject).to eq('Continue your Hackney Fostering application')
+    expect(current_email.body.raw_source).to match('Thank you for applying to become a foster carer')
+    expect(current_email.body.raw_source).to match(@applicant.login.confirmation_token)
   end
   
 end
