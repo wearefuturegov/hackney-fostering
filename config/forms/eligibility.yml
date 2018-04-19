@@ -141,7 +141,7 @@ form:
           widget: :tel
     contact_phone_time:
       template: :questions
-      next_step: :thank_you
+      next_step: :contact_email
       questions:
         - name: :section
           title: When are good times to contact you?
