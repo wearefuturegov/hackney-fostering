@@ -119,7 +119,7 @@ class Application < ApplicationRecord
   memoize :working_experience_complete?
 
   def address_history_complete?
-    address.years_ago >= 5 || (address.years_ago + addresses.sum(&:years_ago) >= 5)
+    address&.years_ago.to_i >= 5 || (address&.years_ago.to_i + addresses.sum(&:years_ago) >= 5)
   end
   memoize :address_history_complete?
 
