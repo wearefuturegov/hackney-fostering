@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  as :user_login do
+    patch '/user/confirmation' => 'user_logins/confirmations#update', via: :patch, as: :update_user_confirmation
+  end
   devise_for :user_logins, controllers: { confirmations: 'user_logins/confirmations' }
   devise_scope :user_login do
     get ':token/send_instuctions', to: 'user_logins/confirmations#send_instructions', as: 'send_instructions'

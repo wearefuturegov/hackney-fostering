@@ -33,6 +33,7 @@ en:
   back: Back to previous question
   start: Start now
   continue: Continue
+  set_password_continue: Set password and continue
   continue_ineligible: Enter your details
   continue_b: Continue to questions
   submit: Submit
@@ -55,6 +56,12 @@ en:
           attributes:
             email:
               taken: This email has already been used. Please use another email.
+        user_login:
+          attributes:
+            password:
+              blank: You must set a password
+            password_confirmation:
+              confirmation: Passwords do not match
         application:
           attributes:
             over_21:

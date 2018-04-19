@@ -16,7 +16,7 @@ class Applicant < Person
   validates :nationality, presence: true, if: -> { application&.on_step?(%w[nationality]) }
   
   def create_user_login!
-    UserLogin.create(email: email, password: default_password, user: self)
+    UserLogin.create(email: email, user: self)
   end
   
   def default_password
