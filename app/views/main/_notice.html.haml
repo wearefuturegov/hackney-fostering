@@ -1,16 +1,9 @@
-%section.section
-  %h1
-    = question['heading']
-  %p.box
+%section
+  %p.box.info
+    %span.bold= question['notice_title']
+    %br
     = question['notice']
-  %p
-    = question['intro']
 
-  %p
-    = question['extra']
+%br
 
-%h2
-  = question['title']
-
-%p
-  = question['info']
+%p.bold= question['h2_title']
