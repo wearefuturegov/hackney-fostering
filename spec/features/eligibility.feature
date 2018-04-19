@@ -11,6 +11,10 @@ Feature: Eligibility
   Scenario: Sending an email
     And I complete the form
     Then the fostering team should recieve an eligible email
+
+  Scenario: Creating a user
+    And I complete the form
+    Then a user should be generated
   
   Scenario: Sending an email when ineligible
     And I complete the form and am ineligible

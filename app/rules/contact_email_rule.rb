@@ -1,5 +1,5 @@
 class ContactEmailRule < ApplicationRule
   def process
-    ApplicationsMailer.eligibility(params[:application_id]).deliver
+    SetupApplicationJob.enqueue(params[:application_id])
   end
 end
