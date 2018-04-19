@@ -24,6 +24,10 @@ module EmailSteps
     expect(current_email.subject).to eq('New fostering application')
   end
   
+  step 'the user should recieve an email with instructions on how to access their application' do
+    should_receive_email(@applicant.email)
+  end
+  
 end
 
 RSpec.configure do |config|

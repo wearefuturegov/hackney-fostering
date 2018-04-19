@@ -131,6 +131,10 @@ module ApplicationSteps
   step 'I should see an error telling me the email is already used' do
     expect(page.body).to match(I18n.t('activerecord.errors.models.applicant.attributes.email.taken'))
   end
+  
+  step 'there is an eligibility request' do
+    @application = Fabricate(:eligibility_application)
+  end
 end
 
 RSpec.configure do |config|

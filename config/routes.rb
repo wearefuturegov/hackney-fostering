@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :user_logins
+  devise_for :user_logins, controllers: { confirmations: 'user_logins/confirmations' }
+  devise_scope :user_login do
+    get ':token/send_instuctions', to: 'user_logins/confirmations#send_instructions', as: 'send_instructions'
+  end
   resources :applications do
     collection { get :find }
     resources :eligibility, controller: 'applications/eligibility'
