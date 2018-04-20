@@ -25,9 +25,9 @@ module ApplicationSteps
     click_on I18n.t('continue')
   end
 
-  def complete_form # rubocop:disable Metrics/AbcSize
+  def complete_form # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     visit application_eligibility_index_path(@application)
-    @form = Fabricate.build(:application, applicant: @applicant)
+    @form ||= Fabricate.build(:application, applicant: @applicant)
     # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(@form.over_21 ? 'Yes' : 'No')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
@@ -38,11 +38,16 @@ module ApplicationSteps
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
     answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
     click_on I18n.t('continue')
+    answer_question(@form.applicant.email, 'application_applicant_attributes_email')
+    click_on I18n.t('continue')
+    return unless page.has_css?('#application_address_attributes_postcode')
     answer_question(@form.address.postcode, 'application_address_attributes_postcode')
     click_on I18n.t('continue')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.contacting_yous.#{@form.contacting_you}"))
-    answer_question(@form.applicant.email, 'application_applicant_attributes_email')
+    return unless page.has_css?('#application_phone_number')
+    answer_question(@form.phone_number, 'application_phone_number')
     click_on I18n.t('continue')
+    check_boxes(@form.contact_phone_time)
   end
 
   def complete_form_ineligible # rubocop:disable Metrics/AbcSize
@@ -55,11 +60,16 @@ module ApplicationSteps
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
     answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
     click_on I18n.t('continue')
+    answer_question(@form.applicant.email, 'application_applicant_attributes_email')
+    click_on I18n.t('continue')
     answer_question(@form.address.postcode, 'application_address_attributes_postcode')
     click_on I18n.t('continue')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.contacting_yous.#{@form.contacting_you}"))
-    answer_question(@form.applicant.email, 'application_applicant_attributes_email')
-    click_on I18n.t('continue')
+  end
+  
+  step 'I complete the form with a phone number' do
+    @form = Fabricate.build(:application, applicant: @applicant, contacting_you: 0)
+    complete_form
   end
 
   step 'my application should be stored' do

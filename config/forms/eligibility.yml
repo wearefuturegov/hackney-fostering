@@ -112,6 +112,15 @@ form:
           widget: :input
           with_title: true
           model: :applicant
+    contact_email:
+      template: :questions
+      questions:
+        - name: :section
+          widget: :title
+        - name: :email
+          title: Email address
+          widget: :email
+          model: :applicant
     address:
       template: :questions
       questions:
@@ -137,7 +146,6 @@ form:
           widget: :tel
     contact_phone_time:
       template: :questions
-      next_step: :contact_email
       questions:
         - name: :section
           title: When can we contact you?
@@ -149,15 +157,5 @@ form:
               value: :morning
             - title: Afternoon
               value: :afternoon
-    contact_email:
-      template: :questions
-      next_step: :thank_you
-      questions:
-        - name: :section
-          widget: :title
-        - name: :email
-          title: Email address
-          widget: :email
-          model: :applicant
     thank_you:
       template: :thank_you

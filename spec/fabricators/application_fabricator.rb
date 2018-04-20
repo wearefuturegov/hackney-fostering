@@ -11,7 +11,7 @@ Fabricator(:application) do
   be_in_touch         0
   contacting_you      1
   phone_number        1232323
-  contact_phone_time  %w[morning evening]
+  contact_phone_time  %w[morning]
   applicant           { Fabricate(:applicant_with_email) }
   address             { Fabricate(:address) }
   best_way_to_contact 1

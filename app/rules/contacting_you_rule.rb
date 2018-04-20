@@ -5,7 +5,8 @@ class ContactingYouRule < ApplicationRule
                  when 'contact_phone'
                    :contact_phone
                  when 'contact_email'
-                   :contact_email
+                   SetupApplicationJob.enqueue(params[:application_id])
+                   :thank_you
                  end
   end
   

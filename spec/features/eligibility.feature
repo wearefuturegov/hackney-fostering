@@ -2,7 +2,6 @@ Feature: Eligibility
 
   Background:
     Given I have started an application
-    And I am logged in
 
   Scenario: Intial enquiry form
     And I complete the form
@@ -11,6 +10,10 @@ Feature: Eligibility
   
   Scenario: Sending an email
     And I complete the form
+    Then the fostering team should recieve an eligible email
+
+  Scenario: Sending an email with phone number
+    And I complete the form with a phone number
     Then the fostering team should recieve an eligible email
   
   Scenario: Email address should be unique
