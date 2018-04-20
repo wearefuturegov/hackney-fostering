@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   devise_for :user_logins, controllers: { confirmations: 'user_logins/confirmations' }
   devise_scope :user_login do
     get ':token/send_instuctions', to: 'user_logins/confirmations#send_instructions', as: 'send_instructions'
+    get '/user_logins/sign_out', to: 'devise/sessions#destroy'
   end
   resources :applications do
-    collection { get :find }
     resources :eligibility, controller: 'applications/eligibility'
     resources :you_and_your_family, controller: 'applications/you_and_your_family'
     resources :legal_history, controller: 'applications/legal_history'

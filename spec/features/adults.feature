@@ -3,6 +3,7 @@ Feature: Adding adults
 
   Background:
     Given I have started an application
+    And I am logged in
     And I am answering the adults at home step of the you and your family form
     
   Scenario: One adult

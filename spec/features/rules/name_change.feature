@@ -3,6 +3,7 @@ Feature: Name Change
 
   Background:
     Given I have started an application
+    And I am logged in
     And I am answering the name change step of the you and your family form
     
   Scenario: Yes redirects correctly

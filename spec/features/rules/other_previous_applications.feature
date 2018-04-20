@@ -3,6 +3,7 @@ Feature: Previous Applications
 
   Background:
     Given I have started an application
+    And I am logged in
     And I am answering the other previous applications step of the legal history form
     
   Scenario: Yes redirects to give more information

@@ -16,7 +16,7 @@
   });
 
 %nav.side_nav
-  - unless current_page?(applications_path) || current_page?(find_applications_path)
+  - unless current_page?(applications_path)
     %ul
       %li#welcome_link
         = link_to 'Welcome', application_you_and_your_family_path(application_id: application.code, id: 'welcome'), :data => {:visited => true}

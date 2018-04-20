@@ -3,6 +3,8 @@ class ApplicationsController < MainController
   
   prepend_before_action :update_application
   before_action :set_current_path, only: [:show]
+  before_action :authenticate_user_login!, unless: -> { %w[eligibility applications].include?(controller_name) }
+  append_before_action :check_application!, unless: -> { %w[eligibility applications].include?(controller_name) }
   
   def index; end
   
@@ -24,17 +26,6 @@ class ApplicationsController < MainController
   
   def create
     redirect_to new_application_eligibility_path(application_id: application.code) if application.save
-  end
-  
-  def find
-    if application.current_path
-      redirect_to application.current_path
-    else
-      redirect_to new_application_you_and_your_family_path(application)
-    end
-  rescue ActiveRecord::RecordNotFound
-    flash[:error] = I18n.t('application.invalid_code')
-    render :index
   end
     
   private

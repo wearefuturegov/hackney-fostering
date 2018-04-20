@@ -3,6 +3,7 @@ Feature: Are you practicing
 
   Background:
     Given I have started an application
+    And I am logged in
     And I am answering the are you religious step of the you and your family form
     
   Scenario: Practicing redirects correctly

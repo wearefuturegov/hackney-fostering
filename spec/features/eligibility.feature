@@ -2,6 +2,7 @@ Feature: Eligibility
 
   Background:
     Given I have started an application
+    And I am logged in
 
   Scenario: Intial enquiry form
     And I complete the form

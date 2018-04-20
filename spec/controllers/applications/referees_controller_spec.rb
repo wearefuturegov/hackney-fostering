@@ -5,6 +5,8 @@ module Applications
     let(:application) { Fabricate(:application, current_step: 'referees') }
     let(:referee) { Fabricate(:referee, application: application) }
     
+    login_user
+    
     describe 'GET edit' do
       let(:subject) { get :edit, params: { application_id: application.code, id: referee.id } }
       

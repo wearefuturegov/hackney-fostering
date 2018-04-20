@@ -4,8 +4,19 @@ require 'spec_helper'
 
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'devise'
 
 ActiveRecord::Migration.maintain_test_schema!
+
+def login_user
+  let(:applicant) { Fabricate.create(:applicant_with_login, application: application) }
+
+  before(:each) do
+    @request.env['devise.mapping'] = Devise.mappings[:admin]
+    applicant.login.confirm
+    sign_in(applicant.login, scope: :user_login)
+  end
+end
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -46,4 +57,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.filter_rails_from_backtrace!
+  
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end

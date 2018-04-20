@@ -1,7 +1,42 @@
 module UserLoginSteps
   
-  step 'there is a user who wants to apply' do
-    @applicant = Fabricate.create(:applicant_with_login, application: Fabricate.create(:application))
+  step :there_is_a_user_who_wants_to_apply, 'there is a user who wants to apply'
+  step :i_am_a_confirmed_user, 'I am a confirmed user'
+  step :i_login, 'I login'
+  
+  def i_am_a_confirmed_user
+    there_is_a_user_who_wants_to_apply
+    @password = 'password'
+    @applicant.login.confirm
+    @applicant.login.password = @password
+    @applicant.login.password_confirmation = @password
+    @applicant.save
+  end
+  
+  def there_is_a_user_who_wants_to_apply
+    @application ||= Fabricate.create(:application)
+    @applicant = Fabricate.create(:applicant_with_login, application: @application)
+  end
+  
+  def i_login
+    visit new_user_login_session_path
+    fill_in 'user_login_email', with: @applicant.email
+    fill_in 'user_login_password', with: @password
+    click_on 'Log in'
+  end
+  
+  step 'I logout and login again' do
+    click_on 'Logout'
+    i_login
+  end
+  
+  step 'I logout' do
+    click_on 'Logout'
+  end
+  
+  step 'I am logged in' do
+    i_am_a_confirmed_user
+    i_login
   end
   
   step 'I go to the send instructions link' do

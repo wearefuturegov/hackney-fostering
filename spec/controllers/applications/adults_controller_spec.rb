@@ -5,6 +5,8 @@ module Applications
     let(:application) { Fabricate(:application, current_step: 'adults_living_at_home', adults_living_at_home: true) }
     let(:person) { Fabricate(:adult, application: application) }
     
+    login_user
+    
     describe 'GET edit' do
       let(:subject) { get :edit, params: { application_id: application.code, id: person.id } }
       

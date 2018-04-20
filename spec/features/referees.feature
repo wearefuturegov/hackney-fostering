@@ -3,6 +3,7 @@ Feature: Referees
   
   Background:
     Given I have started an application
+    And I am logged in
     And I am adding a referee
   
   Scenario: Adding a single referee

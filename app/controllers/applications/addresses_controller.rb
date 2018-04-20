@@ -2,6 +2,9 @@ module Applications
   class AddressesController < MainController
     expose :application, -> { Application.friendly.find(params[:application_id]) }
     expose :address
+    
+    before_action :authenticate_user_login!
+    append_before_action :check_application!
         
     def edit
       render 'addresses/edit'

@@ -3,6 +3,9 @@ module Applications
     expose :application, -> { Application.friendly.find(params[:application_id]) }
     before_action :load_questions
     
+    before_action :authenticate_user_login!
+    append_before_action :check_application!
+    
     layout 'main_application'
 
     def edit
