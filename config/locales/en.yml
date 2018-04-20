@@ -113,9 +113,9 @@ en:
           little_experience: Little experience (I babysit occasionally / infrequently help with family)
           no_experience: No experience
         housing_types:
-          own_property: Own property
-          renting_council: Renting (council)
-          renting_private: Renting (private landlord)
+          own_property: I own my property (with a mortgage or outright)
+          renting_council: I rent from the council
+          renting_private: I rent from a private landlord
         be_in_touches:
           contact_me: 'Yes'
           info_pack: 'No, just let me download an information pack'
@@ -136,7 +136,7 @@ en:
         genders:
           male: Male
           female: Female
-          other: Other
+          other: Unspecified
         nationalities:
           british: British
           british_english: British English

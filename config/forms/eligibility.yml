@@ -20,30 +20,31 @@ form:
     #           value: :long_term_fostering
     #         - title: Don't Know
     #           value: :dont_know
-    spare_room:
-      template: single_question
-      next_step: :next_step
-      questions:
-        - name: :section
-          title: Do you have a spare room?
-          widget: :title
-        - name: :spare_room
-          widget: :radio
     age:
       template: :single_question
-      next_step: :experience
+      next_step: :next_step
       questions:
         - name: :section
           title: Are you over 21 years of age?
           widget: :title
         - name: :over_21
           widget: :boolean
+    spare_room:
+      template: single_question
+      next_step: :experience
+      questions:
+        - name: :section
+          title: Do you have a spare room?
+          widget: :title
+        - name: :spare_room
+          widget: :radio
+
     experience:
       template: :single_question
       next_step: :age_experience
       questions:
         - name: :section
-          title: How experienced are you working with children or young people?
+          title: How much childcare experience do you have?
           widget: :title
         - name: :experience
           widget: :radio
@@ -52,7 +53,7 @@ form:
       next_step: :housing_type
       questions:
         - name: :section
-          title: What age of children have you had the most experience with?
+          title: What age group do you have the most experience with?
           widget: :title
         - name: :age_experience
           widget: :checkbox
@@ -76,36 +77,33 @@ form:
       template: :questions
       questions:
         - name: :section
-          title: You're eligible to be a foster carer
+          title: You're eligible to apply to be a foster carer
           widget: :title
         - name: :section
-          content: Based on your answers, you are eligible to be a foster carer. Continue to download an information pack. If you would like one of our fostering team to call or email you then feel free to enter your details below.
+          content: Based on your answers you're eligible to be a foster carer. Thank you for taking the time, if you're interested in speaking to our fostering team then enter your contact details.
           widget: :text
         - name: :be_in_touch
           title: Would you be interested in speaking to someone from our fostering team?
+          with_title: true
           widget: :radio
     other_ways:
       template: :single_question
       questions:
         - name: :section
-          notice_title: Unfortunately you are not eligible to be a foster carer at the moment.
-          notice: Having a spare bedroom and being over the age of 21 is a policy requirement to becoming a foster carer.
+          notice_title: Unfortunately you're not eligible to be a foster carer at the moment.
+          notice: Having a spare room and being over the age of 21 is a requirement to becoming a foster carer.
           widget: :notice
           h2_title: Would you like to find out other ways of helping young people in Hackney?
         - name: :section
           widget: text
-          content: If you are interested in finding out about other ways of supporting children and young people in Hackney then please continue below, enter your contact details and someone from our team will be in contact with you in a couple of days.
+          content: If you're interested in finding out about other ways of supporting children and young people in Hackney then please enter your contact details below, and someone from our team will be in contact with you.
 
-        # - name: :other_ways
-        #   title: Sorry, you are unable to be a foster carer at the moment
-        #   widget: :radio
-        #   next_button_label: Provide contact details
     what_is_your_name:
       template: :questions
       questions:
         - name: :section
           widget: :title
-          title: What is your name?
+          title: Your details
         - name: :first_name
           title: First name
           widget: :input
@@ -121,14 +119,14 @@ form:
       questions:
         - name: :postcode
           model: :address
-          title: What is your postcode?
+          title: Enter your home postcode?
           widget: :find_input
     contacting_you:
       template: single_question
       next_step: :next_step
       questions:
         - name: :section
-          title: What is the best way for us to contact you?
+          title: What's the best way for us to contact you?
           widget: :title
         - name: :contacting_you
           widget: :radio
@@ -137,14 +135,14 @@ form:
       next_step: :contact_phone_time
       questions:
         - name: :phone_number
-          title: What is your phone number?
+          title: Phone number
           widget: :tel
     contact_phone_time:
       template: :questions
       next_step: :contact_email
       questions:
         - name: :section
-          title: When are good times to contact you?
+          title: When can we contact you?
           widget: :title
         - name: :contact_phone_time
           widget: :checkbox
@@ -153,8 +151,6 @@ form:
               value: :morning
             - title: Afternoon
               value: :afternoon
-            - title: Evening
-              value: :evening
     contact_email:
       template: :questions
       next_step: :thank_you
@@ -162,7 +158,7 @@ form:
         - name: :section
           widget: :title
         - name: :email
-          title: What is your email address?
+          title: Email address
           widget: :email
           model: :applicant
     thank_you:

@@ -1,26 +1,27 @@
-@mixin button-shadow {
+@mixin gds_button_shadow {
   top: 0;
   -moz-box-shadow: 0 2px 0 0 $black;
   -webkit-box-shadow: 0 2px 0 0 $black;
   box-shadow: 0 2px 0 0 $black;
 }
 
-@mixin button-active-shadow {
+@mixin gds_button_shadow_active {
   top: 2px;
   -moz-box-shadow: 0 0 0 0 $black;
   -webkit-box-shadow: 0 0 0 0 $black;
   box-shadow: 0 0 0 0 $black;
 }
 
-@mixin shadow-none {
+@mixin gds_button_shadow_none {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-@mixin focus {
-  box-shadow: 0 0 0 $border-width*3 $focus;
-  outline: 0;
+@mixin gds_input_focus($color: $brand) {
+  -webkit-box-shadow: 0 0 0 3px rgba($color, 0.8);
+  box-shadow: 0 0 0 3px rgba($color, 0.8);
+  outline: none;
   outline-offset: 0;
 }
 

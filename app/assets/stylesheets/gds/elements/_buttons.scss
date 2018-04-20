@@ -1,41 +1,37 @@
 #{$all-buttons}, .button {
-  @include button-shadow;
-  position: relative;
-  appearance: none;
-  background-color: $black;
-  border: $border-style $border-width $black;
-  border-radius: 0;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $stack;
-  font-size: $body;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  color: $white;
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  appearance: none;
+  background-color: $brand;
+  -webkit-appearance: none;
+  font-size: $body;
   font-weight: 500;
   line-height: 1;
   padding: $baseline*0.5 $gutter;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+  @include gds_button_shadow;
+
   &:hover {
-    background-color: $black;
-    color: $white;
+    background-color: rgba($brand, 0.9);
   }
   &:active {
     background-color: $white;
+    @include gds_button_shadow_active;
   }
   &:focus {
     outline: none;
-    outline-offset: none;
   }
   &.confirm {
     background-color: $brand;
     border-color: $brand;
-    &:active {
-      @include button-active-shadow;
-    }
     &:hover {
       background-color: rgba($brand, 0.9);
     }
@@ -46,24 +42,23 @@
     &:hover {
       background-color: rgba($negative, 0.9);
     }
-    &:active {
-      @include button-active-shadow;
-    }
   }
   &.secondary {
     background: #fff;
     color: $black;
+    border: $border-style $border-width $black;
     &:hover {
       background: #eaeaea;
     }
-    &:active {
-      @include button-active-shadow;
-    }
+  }
+  &.small {
+    padding: 10px 13px;
+    font-size: 14px;
   }
 }
 
 
-.button_start {
+.gds_start_btn {
   font-weight: 700;
   text-transform: none;
   font-size: 24px;

@@ -10,11 +10,11 @@ form:
           widget: :title
         - name: :sub_section
           info: |
-            Safety is important for the future child, knowing if you have been
+            Safety is important for the foster child, knowing if you have been
             in a family court proceeding is essential. Please provide as much
             detail as possible.
 
-            We may contact the councils to get further information (with your consent).
+            We may contact the related council to get further information (with your consent).
           widget: :title
     family_court:
       template: :single_question
@@ -55,7 +55,7 @@ form:
       template: :single_question
       questions:
         - name: :parties_involved
-          title: Names of children or adults involved
+          title: Full names of all children or adults involved
           current_section: Legal history
           widget: :textarea
     court_details:
@@ -90,7 +90,7 @@ form:
       template: :single_question
       questions:
         - name: :agency_name
-          title: Name of agency/service
+          title: Name of agency or service
           current_section: Legal history
           widget: :input
     agency_address:
@@ -98,7 +98,7 @@ form:
       template: :address
       reference: :agency_address
       current_section: Legal history
-      title: Address of agency/service
+      title: Address of agency or service
       questions:
         - name: :line_1
           title: Address Line 1
@@ -163,7 +163,7 @@ form:
       template: :single_question
       questions:
         - name: :other_agency_name
-          title: Name of agency/service
+          title: Name of agency or service
           current_section: Legal history
           widget: :input
     other_agency_address:
@@ -171,7 +171,7 @@ form:
       template: :address
       current_section: Legal history
       reference: :other_agency_address
-      title: Address of agency/service
+      title: Address of agency or service
       questions:
         - name: :line_1
           title: Address Line 1
@@ -215,7 +215,7 @@ form:
       template: :single_question
       questions:
         - name: :sub_section
-          title: Have you been an approved foster carer in the preceding 12 months?
+          title: Have you been an approved foster carer in the previous 12 months?
           current_section: Legal history
           widget: :title
         - name: :previous_fostering
@@ -226,7 +226,7 @@ form:
       template: :single_question
       questions:
         - name: :previous_agency_name
-          title: Name of agency/service
+          title: Name of agency or service
           current_section: Legal history
           widget: :input
     previous_agency_address:
@@ -234,8 +234,7 @@ form:
       template: :address
       current_section: Legal history
       reference: :previous_agency_address
-      title: Tell us your legal history
-      sub_title: Address of agency/service
+      title: Address of agency or service
       questions:
         - name: :line_1
           title: Address Line 1

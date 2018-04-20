@@ -4,18 +4,33 @@ form:
   steps:
     welcome:
       template: :welcome
+    what_is_your_name:
+      template: :questions
+      questions:
+        - name: :section
+          widget: :title
+          title: Your details
+        - name: :first_name
+          title: First name
+          widget: :input
+          with_title: true
+          model: :applicant
+        - name: :last_name
+          title: Last name
+          widget: :input
+          with_title: true
+          model: :applicant
     name_change_info:
       template: :questions
       questions:
         - name: :section
-          title: You & your family
-          info: Information will be requested about yourself, any partners, family or children.
+          title: You and your family
+          info: You will be asked to provide information about yourself, any partners, family or children.
           widget: :title
         - name: section
-          intro: "For this section please have the following items prepared:"
+          intro: "For this section you will need:"
           list_1: Your address history for the past 7 years
           list_2: National Insurance Number
-          list_3: Contact details for 6 personal references
           widget: :info
     name_change:
       template: :questions
@@ -79,19 +94,19 @@ form:
           with_title: true
           widget: :date
           model: :applicant
-    country_of_birth:
-      template: :questions
-      questions:
-        - name: :country_of_birth
-          title: What is your country of birth?
-          current_section: About you
-          widget: :input
-          model: :applicant
+    # country_of_birth:
+    #   template: :questions
+    #   questions:
+    #     - name: :country_of_birth
+    #       title: What is your nationality?
+    #       current_section: About you
+    #       widget: :input
+    #       model: :applicant
     town_of_birth:
       template: :questions
       questions:
         - name: :town_of_birth
-          title: What is your town of birth?
+          title: What is your place of birth?
           current_section: About you
           widget: :input
           model: :applicant
@@ -154,14 +169,14 @@ form:
       questions:
         - name: :section
           title: Your employment history
-          info: Your lifestyle changes when you foster a child. In order to know how this will impact your working life, we would like to know about your current employment.
+          info: Your lifestyle changes when you foster a child. In order to know how this will impact your working life, we'd like to know about your current employment.
           widget: :title
     employment_history:
       template: :questions
       questions:
         - name: :section
           current_section: Your employment history
-          title: Are you employed?
+          title: What is your employment status?
           widget: :title
         - name: :employment_type
           widget: :radio
@@ -171,7 +186,7 @@ form:
         - name: :section
           current_section: Your employment history
           title: What is your national insurance number?
-          info: Your National Insurance (NI) number s required for the DBS background check.
+          info: Your National Insurance (NI) number is required for background checks of any criminal record.
           widget: :title
         - name: :ni_number
           title: Enter your national insurance number
@@ -196,8 +211,8 @@ form:
       questions:
         - name: :section
           current_section: Your employment history
-          title: Name someone who works with you.
-          info: You will need one professional reference from HR or a line manager.
+          title: Name someone who works with you
+          info: You will need one professional reference from someone who works for you regularly.
           widget: :title
         - name: :employer_contact_name
           title: Please provide the full name of your reference
@@ -291,13 +306,13 @@ form:
           info: |
             It is important that other children and adults in your family and household consent to a foster child joining the family.
 
-            If there are adults (over the age of 18), they will need to have a DBS background check.
+            If there are adults (over the age of 18), they will be required to have a background check for any criminal record.
     children_at_home:
       template: :questions
       questions:
         - name: :section
           current_section: Your family
-          title: Are there any children under 18 living in the household?
+          title: Do you have any children under 18 living in the household?
           widget: :title
         - name: :children_at_home
           widget: :boolean
@@ -336,7 +351,7 @@ form:
       questions:
         - name: :section
           current_section: Your family
-          title: Are there any children under 18 from a previous relationship living elsewhere?
+          title: Do you have any children under 18 from a previous relationship living elsewhere?
           widget: :title
         - name: :children_living_elsewhere
           widget: :boolean
@@ -375,8 +390,8 @@ form:
       questions:
         - name: :section
           current_section: Your family
-          title: Are there any other adults living in the household?
-          info: Any adults living in the same household need to undergo a DBS background check.
+          title: Are there any adults (over 18) living with you?
+          info: Any adults living in the same household will be required to have a background check for any criminal record.
           widget: :title
         - name: :adults_living_at_home
           widget: :boolean
@@ -407,8 +422,8 @@ form:
       questions:
         - name: :section
           current_section: Your family
-          title: Are there any adults (over 18) from a previous relationship living elsewhere?
-          info: Any adults living elsewhere who visit on a very frequent basis will be asked to undergo a DBS background check.
+          title: Are there any other adults (over 18) from a previous relationship living elsewhere?
+          info: Any adults living elsewhere who visit on a very frequent basis will be required to have a background check for any criminal record.
           widget: :title
         - name: :adults_living_elsewhere
           widget: :boolean
@@ -459,7 +474,7 @@ form:
           max_value: 10
           classes: 'extra hidden'
         - name: :pet_type
-          title: What kind of pets do you have?
+          title: What pets do you have?
           widget: :input
           with_title: true
           classes: 'extra hidden'

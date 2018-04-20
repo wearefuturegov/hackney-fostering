@@ -1,21 +1,21 @@
 %section.section
   %h1 Your support carer
 
-  %p When becoming a foster parent, having a support network is very important.
+  %p When fostering a child, having a support network is very important. As part of that network you will need to choose someone you know to be your support carer.
 
-  %h2 Why do i need a support carer?
+  %h2 What is a support carer and why do I need one?
 
-  %p Your support carer will be able to be a legal delegate in an emergency instance. For example: If you are unable to pick child up from school or unexpectedly taken into hospital, your support carer will be able to take care of your child - overnight if needed. The support carer has the same legal responsibility (known as delegated authority).
+  %p Your support carer will have the same legal responsibility as you in an emergency (known as delegated authority). For example, if you are unable to pick the child up from school or are unexpectedly taken into hospital, your support carer will be able to take care of them - overnight if needed.
 
   %h2 What should my potential support carer know?
 
-  %p They will be required to undergo background checks as well as getting references. We will be visiting your support carers home during their checks.
+  %p They will be required to undergo background checks as well as getting two references. We will be visiting your support carers home during their checks.
 
-  %p The support carer would be going through a similar process as you are now, please do inform them so they will know what to expect
+  %p Please inform them so they know what to expect.
 
-  %h2 What do you do next?
+  %h2 What will happen next?
 
-  %p When you click the button below, you will be prompted to provide the support form to your support carer. Upon completion, their responses will be sent directly to the fostering team
+  %p When you click the button below, you will be prompted to provide the name and email address of your support carer. Once completed, someone from our fostering team will be in contact with them to complete their support carer application.
 
   = simple_form_for application, url: wizard_path, method: :put do |f|
     = render partial: 'actions', locals: { form: f }

@@ -21,7 +21,7 @@
       %li#welcome_link
         = link_to 'Welcome', application_you_and_your_family_path(application_id: application.code, id: 'welcome'), :data => {:visited => true}
       %li#your_family_link{ class: application.you_and_your_family_complete? ? 'complete' : '' }
-        = link_to 'You & your family', application_you_and_your_family_path(application_id: application.code, id: 'name_change_info')
+        = link_to 'You and your family', application_you_and_your_family_path(application_id: application.code, id: 'name_change_info')
         .complete_icon=fa_icon "check"
 
         %ul.sub_nav

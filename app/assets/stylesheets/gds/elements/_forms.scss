@@ -36,7 +36,7 @@ textarea {
   width: 100%;
 
   &:focus {
-    @include focus;
+    @include gds_input_focus;
   }
 
   &:disabled {
@@ -64,12 +64,11 @@ textarea {
   width: 100%;
 }
 
-[type="checkbox"],
 [type="radio"],
 [type="file"],
 select {
   &:focus {
-    @include focus;
+    @include gds_input_focus;
   }
 }
 
@@ -113,12 +112,6 @@ span.error, span.hint {
   padding-left: 15px;
 }
 
-.string.question, .tel.question, .email.question, .text.question {
-  font-size: 36px;
-  line-height: 1.11111;
-  margin-bottom: 27px;
-}
-
 .with_title {
   .text.question, .string.question, .tel.question, .email.question {
     font-size: 18px;
@@ -138,7 +131,7 @@ label.required:after {
 
   #find_address {
     display: inline-block;
-    margin-top: 11px;
+    margin-top: 10px;
     margin-bottom: 15px;
   }
   .question {

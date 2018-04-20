@@ -9,7 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = render '/layouts/layouts/favicon'
   %body{ class: "#{page_class} #{request.path_parameters[:id]}" }
-    = render '/layouts/layouts/header'
+    = render '/layouts/layouts/header_application'
     .container
       .third
         = render 'application_nav'
