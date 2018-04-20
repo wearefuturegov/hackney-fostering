@@ -1,0 +1,11 @@
+%h2
+  Log in
+  
+= simple_form_for(setup_user(UserLogin.new), url: user_login_session_path) do |f|
+  
+  = f.input :email, as: :email, label: 'Email'
+  = f.input :password, as: :password, label: 'Password'
+
+  = f.submit 'Log in'
+
+= render 'devise/shared/links'

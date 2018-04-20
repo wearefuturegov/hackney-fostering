@@ -3,9 +3,7 @@ class UserLogin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          
   belongs_to :user, polymorphic: true
-  
-  delegate :email, to: :user
-  
+    
   def send_confirmation_notification?
     false
   end
