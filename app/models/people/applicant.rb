@@ -18,8 +18,4 @@ class Applicant < Person
   def create_user_login!
     UserLogin.create(email: email, user: self)
   end
-  
-  def default_password
-    Devise.friendly_token.first(20)
-  end
 end
