@@ -1,6 +1,7 @@
-h1 {
+h1, .string.question, .tel.question, .email.question, .text.question {
   font-size: 36px;
   line-height: 47px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -31,7 +32,7 @@ a {
 }
 
 @include mob_tab {
-  h1 {
+  h1, .string.question, .tel.question, .email.question, .text.question {
     font-size: 31px;
     line-height: 36px;
   }
