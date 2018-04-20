@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('#alerts').alerts();
 
   $('.address_form').getAddress();
   $('.previous_addresses').getAddress();

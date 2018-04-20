@@ -1,11 +1,20 @@
 %header
   .container
     = link_to image_tag('logo_white.svg'), '/', class: 'logo'
-    .right.menu_btn
-      .button.secondary Menu
-    - if user_login_signed_in?
-      = link_to('Logout', destroy_user_login_session_path, method: :delete)
-    - else
-      = link_to('Login', new_user_login_session_path)
-  
+    .right
+      .login_button.hide_for_checker
+        - if user_login_signed_in?
+          = link_to('Log out', destroy_user_login_session_path, method: :delete)
+        - else
+          = link_to('Sign in', new_user_login_session_path)
   .supergraphic
+
+- flash.each do |name, msg|
+  - next unless msg.is_a?(String) && msg.present?
+  #alerts
+    .container
+      .columns
+        .column
+          = content_tag :div, msg, :id => "flash_#{name}"
+          #alert_close
+            =fa_icon "times"

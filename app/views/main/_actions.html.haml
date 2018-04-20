@@ -1,5 +1,5 @@
 %section.actions
-  -if request.path_parameters[:id] == "other_ways"
+  -if request.path_parameters[:id] == "other_ways" || request.path_parameters[:id] == "be_in_touch"
     = form.submit t('continue_ineligible'), class: "confirm"
   -else
     = form.submit t('continue'), class: "confirm"

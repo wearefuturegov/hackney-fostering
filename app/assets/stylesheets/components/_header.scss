@@ -8,6 +8,19 @@ header {
   }
   .menu_btn { display: none; }
 
+  .login_button {
+    display: inline-block;
+    vertical-align: middle;
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.9;
+        text-decoration: underline;
+      }
+    }
+  }
+
   @include mob_tab {
     margin-bottom: 15px;
     .container {
@@ -23,6 +36,7 @@ header {
     }
     .menu_btn {
       display: inline-block;
+      margin-left: 20px;
       .button {
         padding: 8px 11px;
       }
@@ -214,4 +228,15 @@ nav.side_nav {
     font-style: normal;
     color: $brand;
   }
+}
+
+.hide_for_checker {
+  display: none !important;
+}
+.you_and_your_family.welcome .hide_for_checker {
+  display: inline-block !important;
+}
+
+#alerts {
+  margin-top: -22px;
 }
