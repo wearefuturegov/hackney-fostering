@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_scope :user_login do
     get ':token/send_instuctions', to: 'user_logins/confirmations#send_instructions', as: 'send_instructions'
     get '/user_logins/sign_out', to: 'devise/sessions#destroy'
+    get '/', to: 'devise/sessions#new'
   end
   resources :applications do
     resources :eligibility, controller: 'applications/eligibility'
@@ -22,5 +23,4 @@ Rails.application.routes.draw do
   end
   
   resources :pages, only: [:show], path: '/'
-  get '/', to: 'pages#show', id: 'eligibility'
 end
