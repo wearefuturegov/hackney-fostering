@@ -4,13 +4,12 @@
     %p
       A member from our team will
       -if application.contacting_you == "contact_phone"
-        ="give you a call some time in the " + application.contact_phone_time.to_sentence(last_word_connector: ' or ')
+        give you a call.
       - else
-        send you an email
-      within 1 to 2 days.
-  %p You will receive a confirmation email, in the meantime please download the information brochure to learn more about Hackney Fostering.
+        send you an email.
+  %p You will receive a confirmation email, in the meantime please download the information pack to learn more about Hackney Fostering.
 
-  = link_to 'Download information brochure', 'https://www.hackney.gov.uk/media/10812/fostering-information-pack/pdf/Hackney-fostering-information-pack', class: 'button confirm'
+  = link_to 'Download information pack', 'https://www.hackney.gov.uk/media/10812/fostering-information-pack/pdf/Hackney-fostering-information-pack', class: 'button confirm'
 
   %br
   %br
