@@ -229,3 +229,10 @@ nav.side_nav {
     color: $brand;
   }
 }
+
+.hide_for_checker {
+  display: none !important;
+}
+.you_and_your_family.welcome .hide_for_checker {
+  display: inline-block !important;
+}
