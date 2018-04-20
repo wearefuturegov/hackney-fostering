@@ -146,6 +146,11 @@ module ApplicationSteps
   step 'there is an eligibility request' do
     @application = Fabricate(:eligibility_application)
   end
+  
+  step 'I enter my national insurance number' do
+    fill_in 'application_ni_number', with: 'AB12345'
+    click_on I18n.t('continue')
+  end
 end
 
 RSpec.configure do |config|

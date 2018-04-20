@@ -7,9 +7,11 @@ Feature: Employment Type
     
   Scenario: Full Time redirects correctly
     And I check the 'Full time' option
-    Then I should be on the 'national_insurance' step
+    And I enter my national insurance number
+    Then I should be on the 'occupation' step
 
   Scenario: Unemployed redirects correctly
     And I check the 'Unemployed' option
+    And I enter my national insurance number
     Then I should be on the 'full_address' step
     
