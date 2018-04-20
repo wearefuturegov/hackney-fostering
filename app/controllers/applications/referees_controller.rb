@@ -5,6 +5,9 @@ module Applications
     expose :application, -> { Application.friendly.find(params[:application_id]) }
     expose :referee, model: 'Referee', build: -> { application.referees.new }
     expose :referees, -> { application.referees }
+    
+    before_action :authenticate_user_login!
+    append_before_action :check_application!
 
     before_action :load_questions
 
