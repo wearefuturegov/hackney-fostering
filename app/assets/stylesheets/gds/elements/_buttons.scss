@@ -23,8 +23,8 @@
     background-color: rgba($brand, 0.9);
   }
   &:active {
-    background-color: $white;
     @include gds_button_shadow_active;
+    background-color: $brand;
   }
   &:focus {
     outline: none;

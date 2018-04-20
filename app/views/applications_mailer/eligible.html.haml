@@ -1,6 +1,6 @@
 %p
   Someone has filled in an eligibility checker on the Hackney Fostering website. Their details are as follows:
-    
+
 %hr/
 
 %h2 Contact Details
@@ -28,6 +28,6 @@
 %p
   When you're ready for the applicant to start their application, click the link
   below to send them an activation email:
-  
+
 %p
-  = link_to nil, send_instructions_url(token: @application.applicant.login.confirmation_token)
+  = link_to "Send email now", send_instructions_url(token: @application.applicant.login.confirmation_token)
