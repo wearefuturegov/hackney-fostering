@@ -4,6 +4,18 @@ form:
   steps:
     welcome:
       template: :welcome
+    name_change_info:
+      template: :questions
+      questions:
+        - name: :section
+          title: You and your family
+          info: You will be asked to provide information about yourself, any partners, family or children.
+          widget: :title
+        - name: section
+          intro: "For this section you will need:"
+          list_1: Your address history for the past 7 years
+          list_2: National Insurance Number
+          widget: :info
     what_is_your_name:
       template: :questions
       questions:
@@ -20,18 +32,6 @@ form:
           widget: :input
           with_title: true
           model: :applicant
-    name_change_info:
-      template: :questions
-      questions:
-        - name: :section
-          title: You and your family
-          info: You will be asked to provide information about yourself, any partners, family or children.
-          widget: :title
-        - name: section
-          intro: "For this section you will need:"
-          list_1: Your address history for the past 7 years
-          list_2: National Insurance Number
-          widget: :info
     name_change:
       template: :questions
       questions:
