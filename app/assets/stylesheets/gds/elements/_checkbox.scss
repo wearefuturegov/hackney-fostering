@@ -71,3 +71,19 @@ span.checkbox {
   }
 }
 
+
+
+.consent_check {
+  margin-bottom: 0;
+}
+.consent_check_accord {
+  .accord-toggle {
+    color: $brand;
+    text-decoration: underline;
+  }
+  .accord-cont {
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 10px;
+  }
+}

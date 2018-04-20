@@ -1,23 +1,42 @@
 %section.section
   %h1 Consent
 
-  %p
-    The information I've provided is accurate and correct.
-  %p
-    I undertake to be truthful and honest in providing full and accurate information for this assessment, both verbally and in writing.
-
   = simple_form_for application, url: application_confirmations_path(application_id: application.code), method: :post do |form|
     %section.section
       %div.input.check_boxes{ class: application.valid? ? '' : 'field_with_errors' }
-        %span.checkbox
+        %span.checkbox.consent_check
           = check_box_tag 'application[agree_to_checks]', 1, application.agree_to_checks.present?, class: 'check_boxes'
           %label{ for: 'application_agree_to_checks' }= t('confirm.agree_to_checks')
-        %span.error= application.errors.messages[:agree_to_checks].first if application.errors.messages[:agree_to_checks].present?
+        -if application.errors.messages[:agree_to_checks].present?
+          %span.error= application.errors.messages[:agree_to_checks].first
 
-        %span.checkbox
+        .accordion.consent_check_accord
+          .accord-single
+            .accord-toggle
+              Learn more about your declaration
+              =fa_icon "caret-down"
+            .accord-cont
+              %p I undertake to be truthful and honest in providing full and accurate information for this assessment, both verbally and in writing. I understand that the fostering service may seek verification of any information that I have supplied or will supply, and that if any of this information is found to be false or misleading, this may result in the fostering service deciding not to proceed with my application.
+
+              %p I understand that any information supplied by me in respect of this application may be held and/or processed in an electronic form and is subject to the relevant provisions in the Data Protection Act 1998 and other statutes. I/we understand that any information supplied will form part of the fostering services case record held in respect of this application to be a foster carer.
+
+        %br
+        %span.checkbox.consent_check
           = check_box_tag 'application[agree_to_la_contact]', 1, application.agree_to_checks.present?, class: 'check_boxes'
           %label{ for: 'application_agree_to_la_contact' }= t('confirm.agree_to_la_contact')
-        %span.error= application.errors.messages[:agree_to_la_contact].first if application.errors.messages[:agree_to_la_contact].present?
+        -if application.errors.messages[:agree_to_la_contact].present?
+          %span.error= application.errors.messages[:agree_to_la_contact].first
+
+        .accordion.consent_check_accord
+          .accord-single
+            .accord-toggle
+              Learn more about your consent
+              =fa_icon "caret-down"
+            .accord-cont
+              %p I give consent to the fostering service undertaking a check with the Disclosure and Barring Service and agree to complete the appropriate forms to progress this.
+              %p I give consent to the fostering service contacting my/our home local authority and any previous local authority areas to undertake a check regarding my/our suitability to be a foster carer.
+              %p I give consent to the fostering service seeking written and verbal references from personal referee/s where I/we have provided their details in my/our application form.
+
 
         = form.input :current_step, as: :hidden, input_html: { value: 'consent' }
     %section.actions
