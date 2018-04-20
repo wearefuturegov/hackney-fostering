@@ -6,7 +6,7 @@ Feature: Spare Room
     
   Scenario: I have a spare room
     And I check the 'Yes' option
-    Then I should be on the 'age' step
+    Then I should be on the 'experience' step
     And my application should be marked as eligible
 
   Scenario: No redirects correctly

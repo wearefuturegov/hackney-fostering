@@ -7,7 +7,7 @@ Feature: Over 21
     
   Scenario: Yes redirects correctly
     And I check the 'Yes' option
-    Then I should be on the 'experience' step
+    Then I should be on the 'spare_room' step
     
   Scenario: No redirects correctly
     And I check the 'No' option

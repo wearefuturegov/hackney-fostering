@@ -4,6 +4,22 @@ form:
   steps:
     welcome:
       template: :welcome
+    what_is_your_name:
+      template: :questions
+      questions:
+        - name: :section
+          widget: :title
+          title: Your details
+        - name: :first_name
+          title: First name
+          widget: :input
+          with_title: true
+          model: :applicant
+        - name: :last_name
+          title: Last name
+          widget: :input
+          with_title: true
+          model: :applicant
     name_change_info:
       template: :questions
       questions:
