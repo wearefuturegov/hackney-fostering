@@ -11,7 +11,7 @@ class Application < ApplicationRecord
        be_in_touch: %i[contact_me info_pack],
        contacting_you: %i[contact_phone contact_email],
        best_way_to_contact: %i[phone email],
-       employment_type: %i[full_time part_time self_employed director unemployed]
+       employment_type: %i[full_time part_time self_employed unemployed]
 
   has_many :children
   has_many :adults
