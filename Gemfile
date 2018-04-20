@@ -43,6 +43,7 @@ gem 'draper'
 gem 'airbrake', require: false
 gem 'memoist'
 gem 'devise'
+gem 'que'
 
 if ENV['USE_LOCAL_INCREDIBLE']
   gem 'incredible', path: '../incredible'
@@ -77,7 +78,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'rails-controller-testing'
-  gem 'que'
 end
 
 group :development do
