@@ -5,6 +5,8 @@ module Applications
     let!(:application) { Fabricate(:application) }
     let!(:address) { Fabricate(:address, application: application) }
     
+    login_user
+    
     describe 'DELETE destroy' do
       it 'deletes an address' do
         expect do

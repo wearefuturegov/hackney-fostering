@@ -3,6 +3,7 @@ Feature: Previous Applications
 
   Background:
     Given I have started an application
+    And I am logged in
     And I am answering the previous agency address step of the legal history form
     
   Scenario: Redirects to the consent step

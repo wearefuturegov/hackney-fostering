@@ -4,6 +4,8 @@ describe Applications::YouAndYourFamilyController, type: :controller do
   
   let(:application) { Fabricate(:application) }
   
+  login_user
+  
   describe 'show' do
     
     it 'saves the current path' do

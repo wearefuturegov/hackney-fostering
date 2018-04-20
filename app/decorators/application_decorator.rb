@@ -67,10 +67,6 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
     application.contact_phone_time.to_sentence(last_word_connector: ' or ')
   end
   
-  def email
-    standard_wrapper('Email', application.email)
-  end
-  
   def other_ways
     standard_wrapper('Interested in', application.other_ways)
   end

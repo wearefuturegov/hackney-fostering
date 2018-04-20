@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417121210) do
+ActiveRecord::Schema.define(version: 20180419082625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20180417121210) do
     t.integer "contacting_you"
     t.string "phone_number"
     t.text "contact_phone_time", default: [], null: false, array: true
-    t.string "email"
     t.integer "other_ways"
     t.integer "applicant_id"
     t.integer "address_id"
@@ -131,6 +130,41 @@ ActiveRecord::Schema.define(version: 20180417121210) do
     t.string "type"
     t.index ["address_id"], name: "index_people_on_address_id"
     t.index ["application_id"], name: "index_people_on_application_id"
+  end
+
+  create_table "que_jobs", primary_key: ["queue", "priority", "run_at", "job_id"], force: :cascade, comment: "3" do |t|
+    t.integer "priority", limit: 2, default: 100, null: false
+    t.datetime "run_at", default: -> { "now()" }, null: false
+    t.bigserial "job_id", null: false
+    t.text "job_class", null: false
+    t.json "args", default: [], null: false
+    t.integer "error_count", default: 0, null: false
+    t.text "last_error"
+    t.text "queue", default: "", null: false
+  end
+
+  create_table "user_logins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_type"
+    t.bigint "user_id"
+    t.index ["confirmation_token"], name: "index_user_logins_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_user_logins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_user_logins_on_reset_password_token", unique: true
+    t.index ["user_type", "user_id"], name: "index_user_logins_on_user_type_and_user_id"
   end
 
 end

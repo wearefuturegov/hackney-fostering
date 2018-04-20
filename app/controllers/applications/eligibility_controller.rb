@@ -16,14 +16,13 @@ module Applications
         :be_in_touch,
         :contacting_you,
         :phone_number,
-        :email,
         :other_ways,
         :postcode,
         :practicing,
         type_of_fostering: [],
         age_experience: [],
         contact_phone_time: [],
-        applicant_attributes: %i[first_name last_name],
+        applicant_attributes: %i[first_name last_name email],
         address_attributes: %i[postcode],
         addresses_attributes: %i[postcode date_from]
       )

@@ -3,6 +3,7 @@ Feature: Entering addresses for agencies
 
   Background:
     Given I have started an application
+    And I am logged in
   
   Scenario: Entering the agency's address
     When I am answering the agency address step of the legal history form

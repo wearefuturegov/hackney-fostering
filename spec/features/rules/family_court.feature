@@ -3,6 +3,7 @@ Feature: Family Court
 
   Background:
     Given I have started an application
+    And I am logged in
     And I am answering the family court step of the legal history form
     
   Scenario: Yes redirects to give more information

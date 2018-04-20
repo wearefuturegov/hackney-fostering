@@ -40,7 +40,6 @@ class Application < ApplicationRecord
   validates :contacting_you, presence: true, if: -> { on_step?(%w[contacting_you]) }
   validates :phone_number, presence: true, if: -> { on_step?(%w[contact_phone]) }
   validates :contact_phone_time, presence: true, if: -> { on_step?(%w[contact_phone_time]) }
-  validates :email, presence: true, if: -> { on_step?(%w[contact_email]) }
 
   # Validations for you and your family form
   validates :name_change, inclusion: [true, false], if: -> { on_step?(%w[name_change]) }

@@ -3,5 +3,8 @@
     = link_to image_tag('logo_white.svg'), '/', class: 'logo'
     .right.menu_btn
       .button.secondary Menu
+    - if user_login_signed_in?
+      = link_to('Logout', destroy_user_login_session_path, method: :delete)
+    - else
+      = link_to('Login', new_user_login_session_path)
   .supergraphic
-

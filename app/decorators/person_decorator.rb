@@ -1,6 +1,8 @@
 class PersonDecorator < MainDecorator
   decorates_association :address
   
+  delegate :login
+  
   def first_name
     standard_wrapper('First Name', person.first_name)
   end

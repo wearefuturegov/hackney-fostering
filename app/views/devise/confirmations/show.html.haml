@@ -1,0 +1,7 @@
+%h2 Start your application
+
+= simple_form_for user_login, as: resource_name, url: update_user_confirmation_path, html: { method: :patch }, id: 'activation-form' do |f|
+  = f.input :password, as: :password, label: 'Choose a password'
+  = f.input :password_confirmation, as: :password, label: 'Password Confirmation'
+  = hidden_field_tag :confirmation_token, @confirmation_token
+  = f.submit t('set_password_continue')

@@ -3,6 +3,7 @@ Feature: Consent
 
   Background:
     Given I have completed an application
+    And I am logged in
     And I go to the application consent page
     
   Scenario: Consenting sends an email

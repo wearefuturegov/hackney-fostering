@@ -139,7 +139,7 @@ form:
           widget: :tel
     contact_phone_time:
       template: :questions
-      next_step: :thank_you
+      next_step: :contact_email
       questions:
         - name: :section
           title: When can we contact you?
@@ -160,5 +160,6 @@ form:
         - name: :email
           title: Email address
           widget: :email
+          model: :applicant
     thank_you:
       template: :thank_you
