@@ -10,5 +10,5 @@ Feature: Experience
 
   Scenario: Unemployed redirects correctly
     And I check the 'No experience' option
-    Then I should be on the 'housing_type' step
+    Then I should be on the 'be_in_touch' step
     

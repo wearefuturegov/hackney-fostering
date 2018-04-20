@@ -38,7 +38,15 @@ form:
           widget: :title
         - name: :spare_room
           widget: :radio
-
+    housing_type:
+      template: :questions
+      help: help
+      questions:
+        - name: :section
+          title: What type of housing do you live in?
+          widget: :title
+        - name: :housing_type
+          widget: :radio
     experience:
       template: :single_question
       next_step: :age_experience
@@ -50,7 +58,6 @@ form:
           widget: :radio
     age_experience:
       template: :single_question
-      next_step: :housing_type
       questions:
         - name: :section
           title: What age group do you have the most experience with?
@@ -64,15 +71,6 @@ form:
               value: :2_10
             - title: 11-18 years old
               value: :11_18
-    housing_type:
-      template: :questions
-      help: help
-      questions:
-        - name: :section
-          title: What type of housing do you live in?
-          widget: :title
-        - name: :housing_type
-          widget: :radio
     be_in_touch:
       template: :questions
       questions:
