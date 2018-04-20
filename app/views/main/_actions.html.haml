@@ -1,6 +1,20 @@
 %section.actions
   -if request.path_parameters[:id] == "other_ways" || request.path_parameters[:id] == "be_in_touch"
     = form.submit t('continue_ineligible'), class: "confirm"
+
+    .hackney_contact_details
+      %p If you would like to talk to someone about how to be a foster carer in the future, please contact us:
+
+      %ul
+        %li
+          %span.bold
+            Freephone:
+          0800 0730 418
+        %li
+          %span.bold
+            Email:
+          fostering.recruitment@hackney.gov.uk
+
   -else
     = form.submit t('continue'), class: "confirm"
   = back_link

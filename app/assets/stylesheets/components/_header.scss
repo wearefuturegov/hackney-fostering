@@ -81,6 +81,20 @@ header {
     display: none;
   }
 }
+.hackney_contact_details {
+  margin-top: 50px;
+  display: none;
+}
+.eligibility.show.be_in_touch {
+  .actions .other_actions {
+    display: none;
+  }
+  .hackney_contact_details {
+    display: block;
+  }
+}
+
+
 
 nav.side_nav {
   a {
