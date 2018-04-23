@@ -24,6 +24,11 @@ module EmailSteps
     expect(current_email.subject).to eq('New fostering application')
   end
   
+  step 'I should recieve a confirmation email' do
+    should_receive_email(@application.applicant.email)
+    expect(current_email.subject).to eq('Your fostering application')
+  end
+  
   step 'the user should recieve an email with instructions on how to access their application' do
     should_receive_email(@applicant.email)
     expect(current_email.subject).to eq('Continue your Hackney Fostering application')

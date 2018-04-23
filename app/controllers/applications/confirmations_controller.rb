@@ -6,7 +6,7 @@ module Applications
 
     def create
       if @valid
-        application.send_full_application_email!
+        application.send_full_application_emails!
         flash[:notice] = 'Your application has been sent. You will hear from us in the next 5 - 10 working days'
         redirect_to page_path(id: 'fostering')
       else

@@ -101,8 +101,9 @@ class Application < ApplicationRecord
     steps.include?(current_step)
   end
 
-  def send_full_application_email!
+  def send_full_application_emails!
     ApplicationsMailer.application(id).deliver
+    ApplicationsMailer.confirmation(id).deliver
   end
 
   def about_you_complete?
