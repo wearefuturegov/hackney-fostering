@@ -23,10 +23,6 @@ class PersonDecorator < MainDecorator
     standard_wrapper('Date of Birth', person.date_of_birth&.to_s(:long))
   end
   
-  def country_of_birth
-    standard_wrapper('Country of Birth', person.country_of_birth)
-  end
-  
   def town_of_birth
     standard_wrapper('Town of Birth', person.town_of_birth)
   end

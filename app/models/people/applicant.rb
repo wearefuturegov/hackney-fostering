@@ -11,7 +11,6 @@ class Applicant < Person
   validates :date_changed, presence: true, if: -> { application&.on_step?(%w[previous_name_period]) }
   validates :gender, presence: true, if: -> { application&.on_step?(%w[gender]) }
   validates :date_of_birth, presence: true, if: -> { application&.on_step?(%w[dob]) }
-  validates :country_of_birth, presence: true, if: -> { application&.on_step?(%w[country_of_birth]) }
   validates :town_of_birth, presence: true, if: -> { application&.on_step?(%w[town_of_birth]) }
   validates :nationality, presence: true, if: -> { application&.on_step?(%w[nationality]) }
   

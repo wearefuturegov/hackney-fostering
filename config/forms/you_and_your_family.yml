@@ -94,14 +94,6 @@ form:
           with_title: true
           widget: :date
           model: :applicant
-    # country_of_birth:
-    #   template: :questions
-    #   questions:
-    #     - name: :country_of_birth
-    #       title: What is your nationality?
-    #       current_section: About you
-    #       widget: :input
-    #       model: :applicant
     town_of_birth:
       template: :questions
       questions:
