@@ -21,8 +21,6 @@ end
 Fabricator(:complete_application, from: :application) do
   phone_number  { FFaker::PhoneNumber.phone_number }
   support_carer { Fabricate(:support_carer) }
-  agree_to_checks true
-  agree_to_la_contact true
 end
 
 Fabricator(:eligible_application, from: :application) do

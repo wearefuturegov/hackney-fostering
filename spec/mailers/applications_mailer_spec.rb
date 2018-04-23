@@ -43,7 +43,7 @@ RSpec.describe ApplicationsMailer, type: :mailer do
   
   describe 'application' do
     
-    let(:application) { Fabricate(:complete_application) }
+    let(:application) { Fabricate(:complete_application, agree_to_checks: true, agree_to_la_contact: true) }
     let(:mail) { ApplicationsMailer.application(application.id) }
     
     it 'renders the headers' do
