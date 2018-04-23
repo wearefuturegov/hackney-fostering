@@ -4,9 +4,7 @@
   - if referees.count > 0
     -if referees.count != 6
       %h2
-        You need
-        =(6-referees.count)
-        more references
+        You need #{pluralize(6 - referees.count, 'more reference', 'more references')}
     %table.table
       %thead
         %tr
