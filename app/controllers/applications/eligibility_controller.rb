@@ -13,7 +13,6 @@ module Applications
         :experience,
         :age_experience,
         :housing_type,
-        :be_in_touch,
         :contacting_you,
         :phone_number,
         :other_ways,

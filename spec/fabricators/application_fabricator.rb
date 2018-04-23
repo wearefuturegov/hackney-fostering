@@ -8,7 +8,6 @@ Fabricator(:application) do
   experience          1
   age_experience      %w[0_2 2_10]
   housing_type        1
-  be_in_touch         0
   contacting_you      1
   phone_number        1232323
   contact_phone_time  %w[morning]

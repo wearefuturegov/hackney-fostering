@@ -34,7 +34,7 @@ module ApplicationSteps
     fill_in_radio_button(I18n.t("activerecord.attributes.application.housing_types.#{@form.housing_type}"))
     fill_in_radio_button(I18n.t("activerecord.attributes.application.experiences.#{@form.experience}"))
     check_boxes(@form.age_experience)
-    fill_in_radio_button(I18n.t("activerecord.attributes.application.be_in_touches.#{@form.be_in_touch}"))
+    click_on I18n.t('continue_ineligible')
     answer_question(@form.applicant.first_name, 'application_applicant_attributes_first_name')
     answer_question(@form.applicant.last_name, 'application_applicant_attributes_last_name')
     click_on I18n.t('continue')
