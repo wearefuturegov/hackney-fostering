@@ -2,24 +2,6 @@ form:
   name: 'Continue'
   template: :check_if_you_can_foster
   steps:
-    # fostering_type:
-    #   template: :questions
-    #   questions:
-    #     - name: :section
-    #       heading: Check if you can be a foster carer
-    #       title: What type of fostering are you interested in?
-    #       widget: :title
-    #     - name: :type_of_fostering
-    #       widget: :checkbox
-    #       answers:
-    #         - title: Emergency Fostering
-    #           value: :emergency_fostering
-    #         - title: Short Term Fostering
-    #           value: :short_term_fostering
-    #         - title: Long Term Fostering
-    #           value: :long_term_fostering
-    #         - title: Don't Know
-    #           value: :dont_know
     age:
       template: :single_question
       next_step: :next_step
@@ -108,6 +90,10 @@ form:
           widget: :input
           with_title: true
           model: :applicant
+        - name: :live_in_hackney
+          title: Do you live in Hackney?
+          widget: :boolean
+          with_title: true
     contact_email:
       template: :questions
       questions:
@@ -117,13 +103,6 @@ form:
           title: Email address
           widget: :email
           model: :applicant
-    address:
-      template: :questions
-      questions:
-        - name: :postcode
-          model: :address
-          title: Enter your home postcode?
-          widget: :find_input
     contacting_you:
       template: single_question
       next_step: :next_step

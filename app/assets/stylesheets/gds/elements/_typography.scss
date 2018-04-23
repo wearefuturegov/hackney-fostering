@@ -1,4 +1,4 @@
-h1, .string.question, .tel.question, .email.question, .text.question {
+h1, .string.question, .tel.question, .email.question, .text.question, .radio_buttons.question {
   font-size: 36px;
   line-height: 47px;
   font-weight: 700;
@@ -32,7 +32,7 @@ a {
 }
 
 @include mob_tab {
-  h1, .string.question, .tel.question, .email.question, .text.question {
+  h1, .string.question, .tel.question, .email.question, .text.question, .radio_buttons.question {
     font-size: 31px;
     line-height: 36px;
   }

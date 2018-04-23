@@ -64,6 +64,8 @@ en:
               confirmation: Passwords do not match
         application:
           attributes:
+            live_in_hackney:
+              inclusion: Please select 'Yes' or 'No'
             over_21:
               inclusion: Please select 'Yes' or 'No'
             name_change:

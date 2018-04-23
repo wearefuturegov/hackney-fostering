@@ -6,7 +6,7 @@ module Applications
 
     private
 
-    def permitted_params # rubocop:disable Metrics/MethodLength
+    def permitted_params
       params.require(:application).permit(
         :spare_room,
         :over_21,
@@ -16,14 +16,12 @@ module Applications
         :contacting_you,
         :phone_number,
         :other_ways,
-        :postcode,
         :practicing,
+        :live_in_hackney,
         type_of_fostering: [],
         age_experience: [],
         contact_phone_time: [],
-        applicant_attributes: %i[first_name last_name email],
-        address_attributes: %i[postcode],
-        addresses_attributes: %i[postcode date_from]
+        applicant_attributes: %i[first_name last_name email]
       )
     end
 

@@ -7,6 +7,14 @@
   }
 }
 
+.with_title {
+  .radio_buttons {
+    > label {
+      display: block;
+    }
+  }
+}
+
 .radio {
   $radio: 40px; // Set the size and tune in.
   position: relative;

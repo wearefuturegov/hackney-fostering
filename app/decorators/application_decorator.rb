@@ -209,6 +209,12 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
     standard_wrapper('Previous agency address', application.previous_agency_address.full_address)
   end
   
+  def live_in_hackney
+    h.content_tag :p do
+      application.live_in_hackney ? 'The applicant lives in Hackney' : 'The applicant does not live in Hackney'
+    end
+  end
+  
   def agree_to_checks
     return unless application.agree_to_checks
     h.content_tag :p do

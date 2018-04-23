@@ -16,6 +16,7 @@ Fabricator(:application) do
   best_way_to_contact 1
   over_21             true
   other_ways          1
+  live_in_hackney     1
 end
 
 Fabricator(:complete_application, from: :application) do

@@ -35,6 +35,7 @@ class Application < ApplicationRecord
   validates :experience, presence: true, if: -> { on_step?(%w[experience]) }
   validates :age_experience, presence: true, if: -> { on_step?(%w[age_experience]) }
   validates :housing_type, presence: true, if: -> { on_step?(%w[housing_type]) }
+  validates :live_in_hackney, inclusion: [true, false], if: -> { on_step?(%w[what_is_your_name]) }
   validates :contacting_you, presence: true, if: -> { on_step?(%w[contacting_you]) }
   validates :phone_number, presence: true, if: -> { on_step?(%w[contact_phone]) }
   validates :contact_phone_time, presence: true, if: -> { on_step?(%w[contact_phone_time]) }
