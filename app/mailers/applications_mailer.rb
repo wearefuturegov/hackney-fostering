@@ -1,12 +1,10 @@
 class ApplicationsMailer < ApplicationMailer
-  default from: 'from@example.com'
+  default to: ENV['FOSTERING_EMAIL_ADDRESS'], from: ENV['FOSTERING_EMAIL_ADDRESS']
   layout 'mailer'
     
   def eligibility(application_id)
     @application = Application.friendly.find(application_id).decorate
     mail(
-      to: ENV['FOSTERING_EMAIL_ADDRESS'],
-      from: ENV['FOSTERING_EMAIL_ADDRESS'],
       subject: 'New eligibility enquiry',
       template_name: template_name
     )
@@ -15,10 +13,17 @@ class ApplicationsMailer < ApplicationMailer
   def application(application_id)
     @application = Application.friendly.find(application_id).decorate
     mail(
-      to: ENV['FOSTERING_EMAIL_ADDRESS'],
-      from: ENV['FOSTERING_EMAIL_ADDRESS'],
       subject: 'New fostering application',
       template_name: 'application'
+    )
+  end
+  
+  def confirmation(application_id)
+    @application = Application.friendly.find(application_id).decorate
+    mail(
+      subject: 'Your fostering application',
+      to: @application.applicant.model.email,
+      template_name: 'confirmation'
     )
   end
   

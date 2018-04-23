@@ -75,4 +75,24 @@ RSpec.describe ApplicationsMailer, type: :mailer do
     end
     
   end
+  
+  describe 'confirmation' do
+    
+    let(:applicant) { Fabricate(:applicant, first_name: 'Bruce', last_name: 'Wayne', email: 'bruce@wayneenterprises.com') }
+    let(:application) { Fabricate(:complete_application, agree_to_checks: true, agree_to_la_contact: true, applicant: applicant) }
+    let(:mail) { ApplicationsMailer.confirmation(application.id) }
+    
+    it 'renders the headers' do
+      expect(mail.subject).to eq('Your fostering application')
+      expect(mail.to).to eq(['bruce@wayneenterprises.com'])
+      expect(mail.from).to eq([ENV['FOSTERING_EMAIL_ADDRESS']])
+    end
+    
+    it 'renders the body' do
+      expect(mail.body.encoded).to match('Hello Bruce Wayne')
+      expect(mail.body.encoded).to match('Your application has been submitted and the fostering service will be in contact.')
+    end
+     
+  end
+  
 end

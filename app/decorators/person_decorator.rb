@@ -11,6 +11,10 @@ class PersonDecorator < MainDecorator
     standard_wrapper('Last Name', person.last_name)
   end
   
+  def full_name
+    [person.first_name, person.last_name].join(' ')
+  end
+  
   def gender
     standard_wrapper('Gender', person.gender)
   end
