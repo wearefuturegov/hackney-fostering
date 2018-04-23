@@ -208,5 +208,31 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   def previous_agency_address
     standard_wrapper('Previous agency address', application.previous_agency_address.full_address)
   end
+  
+  def agree_to_checks
+    return unless application.agree_to_checks
+    h.content_tag :p do
+      h.content_tag :strong do
+        "The applicant agreed to checks at #{timestamp} on #{datestamp}"
+      end
+    end
+  end
+  
+  def agree_to_la_contact
+    return unless application.agree_to_la_contact
+    h.content_tag :p do
+      h.content_tag :strong do
+        "The applicant agreed to be contacted at #{timestamp} on #{datestamp}"
+      end
+    end
+  end
+  
+  def timestamp
+    application.updated_at.strftime('%I:%M%p')
+  end
+  
+  def datestamp
+    application.updated_at.strftime('%A %m %A %Y')
+  end
     
 end

@@ -56,6 +56,13 @@ RSpec.describe ApplicationsMailer, type: :mailer do
       expect(mail.body.encoded).to match(application.applicant.first_name)
     end
     
+    it 'adds a timestamp' do
+      timestamp = application.updated_at.strftime('%I:%M%p')
+      datestamp = application.updated_at.strftime('%A %m %A %Y')
+      expect(mail.body.encoded).to match("The applicant agreed to checks at #{timestamp} on #{datestamp}")
+      expect(mail.body.encoded).to match("The applicant agreed to be contacted at #{timestamp} on #{datestamp}")
+    end
+    
     context 'with pets' do
       
       let(:application) { Fabricate(:complete_application, have_pets: true, number_of_pets: 1, pet_type: 'Dog') }
