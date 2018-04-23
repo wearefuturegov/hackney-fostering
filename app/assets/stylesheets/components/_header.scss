@@ -217,6 +217,16 @@ nav.side_nav {
   }
 }
 
+.referees {
+  #reference_link a {
+    font-weight: 700;
+    opacity: 1 !important;
+    font-style: normal;
+    color: $brand;
+  }
+}
+
+
 .pets_welcome {
   #pets_link a {
     font-weight: 700;
