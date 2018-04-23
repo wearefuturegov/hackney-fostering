@@ -44,6 +44,7 @@ gem 'airbrake', require: false
 gem 'memoist'
 gem 'devise'
 gem 'que'
+gem 'appsignal'
 
 if ENV['USE_LOCAL_INCREDIBLE']
   gem 'incredible', path: '../incredible'
