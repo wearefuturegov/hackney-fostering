@@ -21,6 +21,7 @@ form:
       questions:
         - name: :section
           widget: :title
+          current_section: About you
           title: Your details
         - name: :first_name
           title: First name
