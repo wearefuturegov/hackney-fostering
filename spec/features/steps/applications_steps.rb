@@ -80,7 +80,6 @@ module ApplicationSteps
     expect(application.experience).to eq(@form.experience)
     expect(application.age_experience.reject(&:blank?)).to eq(@form.age_experience)
     expect(application.housing_type).to eq(@form.housing_type)
-    expect(application.be_in_touch).to eq(@form.be_in_touch)
     expect(application.applicant.first_name).to eq(@form.applicant.first_name)
     expect(application.applicant.last_name).to eq(@form.applicant.last_name)
     expect(application.address.postcode).to eq(@form.address.postcode)
