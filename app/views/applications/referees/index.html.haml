@@ -1,10 +1,12 @@
 %section.section
-  %h1 Your References
 
+  -if referees.count != 6
+    .gds_sub_title Your References
+    %h1
+      You need #{pluralize(6 - referees.count, 'more reference', 'more references')}
+  -else
+    %h1 Your References
   - if referees.count > 0
-    -if referees.count != 6
-      %h2
-        You need #{pluralize(6 - referees.count, 'more reference', 'more references')}
     %table.table
       %thead
         %tr
@@ -24,7 +26,7 @@
   - else
 
     %h2
-      Add a referee
+      Add a new referee
 
     = simple_form_for [application, (defined?(referee) ? referee : referees.new)], html: { class: 'referee_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |f|
       - @questions.each do |q|
