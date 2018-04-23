@@ -228,7 +228,7 @@ form:
     email_for_employer_contact:
       template: :questions
       questions:
-        - name: :employer_phone_number
+        - name: :employer_email
           title: What is the email address of your reference?
           current_section: Your employment history
           widget: :email

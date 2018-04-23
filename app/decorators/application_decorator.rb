@@ -129,6 +129,10 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
     standard_wrapper('Employer phone number', application.employer_phone_number)
   end
   
+  def employer_email
+    standard_wrapper('Employer email', application.employer_email)
+  end
+  
   def number_of_pets
     standard_wrapper('Number of pets', application.number_of_pets.to_s)
   end
