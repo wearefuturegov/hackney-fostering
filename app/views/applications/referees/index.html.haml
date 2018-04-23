@@ -2,6 +2,11 @@
   %h1 Your References
 
   - if referees.count > 0
+    -if referees.count != 6
+      %h2
+        You need
+        =(6-referees.count)
+        more references
     %table.table
       %thead
         %tr
