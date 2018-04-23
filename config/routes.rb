@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   as :user_login do
     patch '/user/confirmation' => 'user_logins/confirmations#update', via: :patch, as: :update_user_confirmation
   end
@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     resources :children_elsewhere, controller: 'applications/children_elsewhere'
     resources :adults, controller: 'applications/adults'
     resources :adults_elsewhere, controller: 'applications/adults_elsewhere'
-    resources :referees, controller: 'applications/referees'
+    resources :referees, controller: 'applications/referees' do
+      collection do
+        get 'intro'
+      end
+    end
     resources :confirmations, controller: 'applications/confirmations'
   end
   

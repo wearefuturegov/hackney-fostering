@@ -12,6 +12,8 @@ module Applications
     before_action :load_questions
 
     def index; end
+    
+    def intro; end
 
     def edit; end
 
