@@ -26,7 +26,7 @@
 
         %ul.sub_nav
           %li#about_link{ class: application.about_you_complete? ? 'complete' : '' }
-            = link_to 'About you', application_you_and_your_family_path(application_id: application.code, id: 'name_change')
+            = link_to 'About you', application_you_and_your_family_path(application_id: application.code, id: 'what_is_your_name')
             .complete_icon=fa_icon "check"
           %li#work_link{ class: application.working_experience_complete? ? 'complete' : '' }
             = link_to 'Your employment history', application_you_and_your_family_path(application_id: application.code, id: 'welcome_working')
