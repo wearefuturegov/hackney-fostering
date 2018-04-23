@@ -26,12 +26,12 @@ module UserLoginSteps
   end
   
   step 'I logout and login again' do
-    click_on 'Logout'
+    click_on 'Log out'
     i_login
   end
   
   step 'I logout' do
-    click_on 'Logout'
+    click_on 'Log out'
   end
   
   step 'I am logged in' do
