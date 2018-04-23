@@ -1,0 +1,11 @@
+%h2
+  Edit
+
+= simple_form_for [application, (defined?(person) ? person : people.new)] do |f|
+  - @questions.each do |q|
+    = render partial: q['widget'].to_s, locals: { form: f, question: q }
+  = f.submit t('person.update'), class: "confirm"
+
+.other_actions
+  = link_to 'javascript:history.go(-1)', class: 'back' do
+    #{fa_icon 'caret-left'} Back to previous page

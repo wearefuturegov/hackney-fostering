@@ -11,7 +11,7 @@ module Applications
       let(:subject) { get :edit, params: { application_id: application.code, id: person.id } }
       
       it 'renders the template' do
-        expect(subject).to render_template('applications/adults')
+        expect(subject).to render_template('applications/people/edit')
       end
     end
     

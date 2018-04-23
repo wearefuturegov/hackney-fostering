@@ -9,7 +9,7 @@ module Applications
     layout 'main_application'
 
     def edit
-      render template
+      render :edit
     end
     
     def update
