@@ -24,6 +24,23 @@
   @include mob_tab {
     padding: $baseline/2;
   }
+
+  &.complete {
+    border: none;
+    background: $brand;
+    text-align: center;
+    color: #fff;
+    padding: 40px 30px;
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 43px;
+      line-height: 50px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 ul.box {
