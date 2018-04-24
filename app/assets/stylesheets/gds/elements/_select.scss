@@ -1,4 +1,8 @@
 select {
   margin-bottom: $baseline;
   border: $border-width $border-style $black;
+  width: 100%;
+  font-size: 19px;
+  line-height: 1.25;
+  height: 40px;
 }
