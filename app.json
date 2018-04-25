@@ -1,0 +1,78 @@
+{
+  "name": "hackney-fostering",
+  "scripts": {
+  },
+  "env": {
+    "APPSIGNAL_PUSH_API_KEY": {
+      "required": true
+    },
+    "DEVISE_PEPPER": {
+      "generator": "secret"
+    },
+    "DEVISE_SECRET_KEY": {
+      "generator": "secret"
+    },
+    "ERRBIT_API_KEY": {
+      "required": true
+    },
+    "FOSTERING_EMAIL_ADDRESS": {
+      "required": true
+    },
+    "HASHID_SALT": {
+      "generator": "secret"
+    },
+    "HOST_URL": {
+      "required": true
+    },
+    "IDEAL_POSTCODES_API_KEY": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "SENDGRID_PASSWORD": {
+      "required": true
+    },
+    "SENDGRID_USERNAME": {
+      "required": true
+    },
+    "SENDGRID_API_KEY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "sendgrid"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
