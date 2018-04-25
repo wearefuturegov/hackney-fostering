@@ -175,6 +175,7 @@ GEM
     mountain_view (0.13.0)
       rails (>= 3.2.0)
     multi_json (1.13.1)
+    mustermann (1.0.2)
     neat (2.1.0)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -194,6 +195,8 @@ GEM
     puma (3.11.4)
     que (0.14.3)
     rack (2.0.5)
+    rack-protection (2.0.1)
+      rack
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
@@ -265,6 +268,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
+    ruby_http_client (3.3.0)
     rubyzip (1.2.1)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
@@ -280,6 +284,11 @@ GEM
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    sendgrid-ruby (5.2.0)
+      ruby_http_client (~> 3.2)
+      sinatra (>= 1.4.7, < 3)
+    sendgrid_actionmailer_adapter (0.2.2)
+      sendgrid-ruby (~> 5.0)
     simple_form (4.0.0)
       actionpack (> 4)
       activemodel (> 4)
@@ -288,6 +297,11 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    sinatra (2.0.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.1)
+      tilt (~> 2.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -374,6 +388,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
+  sendgrid_actionmailer_adapter
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
