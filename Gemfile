@@ -45,6 +45,7 @@ gem 'memoist'
 gem 'devise'
 gem 'que'
 gem 'appsignal'
+gem 'sendgrid_actionmailer_adapter'
 
 if ENV['USE_LOCAL_INCREDIBLE']
   gem 'incredible', path: '../incredible'
