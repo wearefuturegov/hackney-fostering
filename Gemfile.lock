@@ -145,7 +145,7 @@ GEM
     htmlentities (4.3.4)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
-    incredible (0.0.7.pre)
+    incredible (0.0.8.pre)
       rails (~> 5.1.4)
       wicked (~> 1.3.2)
     io-like (0.3.0)
