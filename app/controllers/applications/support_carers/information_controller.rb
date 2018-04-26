@@ -2,7 +2,7 @@ module Applications
   module SupportCarers
     class InformationController < MainController
       include Incredible::Wizard
-      expose :application, -> { Application.friendly.find(params[:application_id]) }
+      expose :application, -> { current_user_login.application }
       expose :person, -> { application.support_carer }
       
       form 'support_carers'

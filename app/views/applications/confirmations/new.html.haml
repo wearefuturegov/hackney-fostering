@@ -1,7 +1,7 @@
 %section.section
   %h1 Consent
 
-  = simple_form_for application, url: application_confirmations_path(application_id: application.code), method: :post do |form|
+  = simple_form_for application, url: applications_confirmations_path, method: :post do |form|
     %section.section
       %div.input.check_boxes{ class: application.valid? ? '' : 'field_with_errors' }
         %span.checkbox.consent_check

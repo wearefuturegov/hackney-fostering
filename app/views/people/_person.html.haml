@@ -4,6 +4,6 @@
   %td
     = person.last_name
   %td
-    = link_to 'Edit', [:edit, application, person]
+    = link_to 'Edit', [:edit, :applications, person]
   %td
-    = button_to 'Delete', [application, person], method: :delete, class: 'button negative small', form_class: 'delete_child', data: { confirm: 'Are you sure you want to delete this child?' }
+    = button_to 'Delete', [:applications, person], method: :delete, class: 'button negative small', form_class: 'delete_child', data: { confirm: 'Are you sure you want to delete this child?' }

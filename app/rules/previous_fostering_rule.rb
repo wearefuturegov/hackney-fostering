@@ -1,6 +1,6 @@
 class PreviousFosteringRule < ApplicationRule
   def process
-    @redirect = new_application_confirmation_path(application_id: application.code) unless previous_fostering?
+    @redirect = new_applications_confirmation_path unless previous_fostering?
     @next_step = :previous_agency_name if previous_fostering?
   end
   

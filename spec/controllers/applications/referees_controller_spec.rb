@@ -40,7 +40,7 @@ module Applications
         
         it 'redirects correctly' do
           expect(subject).to redirect_to(
-            application_referees_path(application_id: application.code)
+            applications_referees_path
           )
         end
       end
@@ -108,7 +108,7 @@ module Applications
         
         it 'redirects correctly' do
           expect(subject).to redirect_to(
-            application_referees_path(application_id: application.code)
+            applications_referees_path
           )
         end
       end

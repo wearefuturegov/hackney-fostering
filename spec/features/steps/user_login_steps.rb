@@ -44,6 +44,7 @@ module UserLoginSteps
   end
   
   step 'a user should be generated' do
+    @application.reload
     expect(@application.applicant.login).to_not be_nil
   end
   

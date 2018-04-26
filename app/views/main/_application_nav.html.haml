@@ -19,36 +19,36 @@
   - unless current_page?(applications_path)
     %ul
       %li#welcome_link
-        = link_to 'Welcome', application_you_and_your_family_path(application_id: application.code, id: 'welcome'), :data => {:visited => true}
+        = link_to 'Welcome', applications_you_and_your_family_path(id: 'welcome'), :data => {:visited => true}
       %li#your_family_link{ class: application.you_and_your_family_complete? ? 'complete' : '' }
-        = link_to 'You and your family', application_you_and_your_family_path(application_id: application.code, id: 'name_change_info')
+        = link_to 'You and your family', applications_you_and_your_family_path(id: 'name_change_info')
         .complete_icon=fa_icon "check"
 
         %ul.sub_nav
           %li#about_link{ class: application.about_you_complete? ? 'complete' : '' }
-            = link_to 'About you', application_you_and_your_family_path(application_id: application.code, id: 'what_is_your_name')
+            = link_to 'About you', applications_you_and_your_family_path(id: 'what_is_your_name')
             .complete_icon=fa_icon "check"
           %li#work_link{ class: application.working_experience_complete? ? 'complete' : '' }
-            = link_to 'Your employment history', application_you_and_your_family_path(application_id: application.code, id: 'welcome_working')
+            = link_to 'Your employment history', applications_you_and_your_family_path(id: 'welcome_working')
             .complete_icon=fa_icon "check"
           %li#home_link{ class: application.address_history_complete? ? 'complete' : '' }
-            = link_to 'Your address history', application_you_and_your_family_path(application_id: application.code, id: 'address_welcome')
+            = link_to 'Your address history', applications_you_and_your_family_path(id: 'address_welcome')
             .complete_icon=fa_icon "check"
-          / %li#address_link= link_to 'remove this link once address sorted', application_you_and_your_family_path(application_id: application.code, id: 'previous_addresses')
+          / %li#address_link= link_to 'remove this link once address sorted', applications_you_and_your_family_path(id: 'previous_addresses')
           %li#family_link{ class: application.family_complete? ? 'complete' : '' }
-            = link_to 'Your family', application_you_and_your_family_path(application_id: application.code, id: 'your_family')
+            = link_to 'Your family', applications_you_and_your_family_path(id: 'your_family')
             .complete_icon=fa_icon "check"
           %li#pets_link{ class: application.pets_complete? ? 'complete' : '' }
-            = link_to 'Your pets', application_you_and_your_family_path(application_id: application.code, id: 'pets')
+            = link_to 'Your pets', applications_you_and_your_family_path(id: 'pets')
             .complete_icon=fa_icon "check"
       %li#carer_link{ class: application.support_carer_complete? ? 'complete' : '' }
-        = link_to 'Your support carer', application_support_carer_path(application_id: application.code, id: 'intro')
+        = link_to 'Your support carer', applications_support_carer_path(id: 'intro')
         .complete_icon=fa_icon "check"
       %li#reference_link{ class: application.references_complete? ? 'complete' : '' }
-        = link_to 'Your references', intro_application_referees_path(application_id: application.code)
+        = link_to 'Your references', intro_applications_referees_path
         .complete_icon=fa_icon "check"
       %li#legal_link{ class: application.legal_history_complete? ? 'complete' : '' }
-        = link_to 'Legal history', application_legal_history_path(application_id: application.code, id: 'intro')
+        = link_to 'Legal history', applications_legal_history_path(id: 'intro')
         .complete_icon=fa_icon "check"
       %li#consent_link{ class: application.all_application_complete? ? 'complete' : 'disabled' }
-        = link_to 'Consent', new_application_confirmation_path(application_id: application.code)
+        = link_to 'Consent', new_applications_confirmation_path

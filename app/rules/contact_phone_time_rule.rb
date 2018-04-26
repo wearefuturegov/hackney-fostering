@@ -1,5 +1,5 @@
 class ContactPhoneTimeRule < ApplicationRule
   def process
-    SetupApplicationJob.enqueue(params[:application_id])
+    SetupApplicationJob.enqueue(application.id)
   end
 end

@@ -1,6 +1,6 @@
 module Applications
   class AddressesController < MainController
-    expose :application, -> { Application.friendly.find(params[:application_id]) }
+    expose :application, -> { current_user_login.application }
     expose :address
     
     before_action :authenticate_user_login!
@@ -13,15 +13,15 @@ module Applications
     def create
       address = application.addresses.create(address_params)
       if address.years_ago >= 5
-        redirect_to application_you_and_your_family_path(application_id: application.code, id: :your_family)
+        redirect_to applications_you_and_your_family_path(id: :your_family)
       else
-        redirect_to application_you_and_your_family_path(application_id: application.code, id: :previous_addresses)
+        redirect_to applications_you_and_your_family_path(id: :previous_addresses)
       end
     end
     
     def update
       address.update_attributes(address_params)
-      redirect_to application_you_and_your_family_path(application_id: application.code, id: :previous_addresses)
+      redirect_to applications_you_and_your_family_path(id: :previous_addresses)
     end
 
     def destroy

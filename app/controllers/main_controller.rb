@@ -22,8 +22,8 @@ class MainController < ActionController::Base
     if user_login.application.current_path
       user_login.application.current_path
     else
-      new_application_you_and_your_family_path(user_login.application)
-    end    
+      new_applications_you_and_your_family_path
+    end
   end
   
   private

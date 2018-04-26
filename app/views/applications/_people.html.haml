@@ -17,7 +17,7 @@
 
   %h2= subtitle
 
-  = simple_form_for [application, (defined?(person) ? person : people.new)] do |f|
+  = simple_form_for [:applications, (defined?(person) ? person : people.new)] do |f|
     - @questions.each do |q|
       = render partial: q['widget'].to_s, locals: { form: f, question: q }
     - if defined?(person)

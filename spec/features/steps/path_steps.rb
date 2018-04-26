@@ -14,5 +14,5 @@ step 'I am on the :path' do |path|
 end
 
 step 'I go to the application consent page' do
-  visit new_application_confirmation_path(application_id: @application.code)
+  visit new_applications_confirmation_path
 end
