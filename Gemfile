@@ -37,7 +37,6 @@ gem 'decent_exposure', '3.0.2'
 gem 'simple_form'
 gem 'dotenv-rails'
 gem 'hashids'
-gem 'friendly_id', '~> 5.2.4'
 gem 'linguistics'
 gem 'draper'
 gem 'airbrake', require: false

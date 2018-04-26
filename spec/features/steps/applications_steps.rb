@@ -105,17 +105,7 @@ module ApplicationSteps
     @application.reload
     expect(@application.type_of_fostering).to eq('emergency_fostering')
   end
-
-  step 'I enter the correct code' do
-    fill_in 'application_application_id', with: @application.code
-    click_on I18n.t('continue_b')
-  end
-
-  step 'I enter an incorrect code' do
-    fill_in 'application_application_id', with: 'sdsdfdfsdf'
-    click_on I18n.t('continue_b')
-  end
-
+  
   step 'I should see an invalid code error' do
     expect(page.body).to match(I18n.t('application.invalid_code'))
   end

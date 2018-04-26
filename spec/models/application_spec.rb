@@ -49,11 +49,6 @@ RSpec.describe Application, type: :model do
     
   end
   
-  it 'generates a code' do
-    application.reload
-    expect(application.code.length).to eq(6)
-  end
-  
   it 'has an agency address' do
     application.agency_address = address
     application.save
