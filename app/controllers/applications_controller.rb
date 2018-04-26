@@ -21,7 +21,7 @@ class ApplicationsController < MainController
   end
   
   def new
-    redirect_to wizard_path(steps.first, application_id: application.code)
+    redirect_to wizard_path(steps.first)
   end
   
   def create

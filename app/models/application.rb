@@ -1,8 +1,5 @@
 class Application < ApplicationRecord
-  extend ::FriendlyId
   extend Memoist
-
-  friendly_id :code
 
   enum spare_room: %i[yes no not_yet],
        experience: %i[very_experienced somewhat_experienced little_experience no_experience],
@@ -96,8 +93,6 @@ class Application < ApplicationRecord
     update_only: true
   )
 
-  after_create :generate_code
-
   def on_step?(steps)
     steps.include?(current_step)
   end
@@ -150,16 +145,5 @@ class Application < ApplicationRecord
 
   def all_application_complete?
     you_and_your_family_complete? && support_carer_complete? && references_complete? && legal_history_complete?
-  end
-
-  private
-
-  def generate_code
-    code = nil
-    loop do
-      code = Hashids.new(ENV['HASHID_SALT'], 6, 'ABCDEFG123456789').encode(id)
-      break unless Application.where(code: code).exists?
-    end
-    update_attribute(:code, code)
   end
 end

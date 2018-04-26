@@ -3,7 +3,7 @@ class ApplicationsMailer < ApplicationMailer
   layout 'mailer'
     
   def eligibility(application_id)
-    @application = Application.friendly.find(application_id).decorate
+    @application = Application.find(application_id).decorate
     mail(
       subject: 'New eligibility enquiry',
       template_name: template_name
@@ -11,7 +11,7 @@ class ApplicationsMailer < ApplicationMailer
   end
   
   def application(application_id)
-    @application = Application.friendly.find(application_id).decorate
+    @application = Application.find(application_id).decorate
     mail(
       subject: 'New fostering application',
       template_name: 'application'
@@ -19,7 +19,7 @@ class ApplicationsMailer < ApplicationMailer
   end
   
   def confirmation(application_id)
-    @application = Application.friendly.find(application_id).decorate
+    @application = Application.find(application_id).decorate
     mail(
       subject: 'Your fostering application',
       to: @application.applicant.model.email,

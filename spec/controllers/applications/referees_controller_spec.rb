@@ -8,7 +8,7 @@ module Applications
     login_user
     
     describe 'GET edit' do
-      let(:subject) { get :edit, params: { application_id: application.code, id: referee.id } }
+      let(:subject) { get :edit, params: { id: referee.id } }
       
       it 'renders the template' do
         expect(subject).to render_template('applications/referees/edit')
@@ -23,7 +23,6 @@ module Applications
         let(:params) do
           {
             params: {
-              application_id: application.code,
               id: referee.id,
               referee: {
                 first_name: 'New Name'
@@ -49,7 +48,6 @@ module Applications
         let(:params) do
           {
             params: {
-              application_id: application.code,
               id: referee.id,
               referee: {
                 first_name: ''
@@ -73,7 +71,6 @@ module Applications
         let(:params) do
           {
             params: {
-              application_id: application.code,
               referee: {
                 first_name: referee_template.first_name,
                 last_name: referee_template.last_name,
@@ -117,7 +114,6 @@ module Applications
         let(:params) do
           {
             params: {
-              application_id: application.code,
               referee: {
                 first_name: ''
               }
@@ -133,7 +129,7 @@ module Applications
     
     describe 'DELETE destroy' do
       it 'deletes an adult' do
-        delete :destroy, params: { application_id: application.code, id: referee.id }
+        delete :destroy, params: { id: referee.id }
         application.reload
         expect(application.adults.count).to eq(0)
       end
