@@ -4,7 +4,6 @@ module Applications
     before_action :load_questions
     
     before_action :authenticate_user_login!
-    append_before_action :check_application!
     
     layout 'main_application'
 

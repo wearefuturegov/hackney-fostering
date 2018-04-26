@@ -7,7 +7,6 @@ module Applications
     expose :referees, -> { application.referees }
     
     before_action :authenticate_user_login!
-    append_before_action :check_application!
 
     before_action :load_questions
 
