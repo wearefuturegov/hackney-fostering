@@ -33,11 +33,5 @@ class MainController < ActionController::Base
     response.headers['Pragma'] = 'no-cache'
     response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
   end
-  
-  def check_application!
-    return unless current_user_login
-    return if current_user_login.application == application
-    sign_out current_user_login
-  end
     
 end

@@ -4,7 +4,6 @@ class ApplicationsController < MainController
   prepend_before_action :update_application
   before_action :set_current_path, only: [:show]
   before_action :authenticate_user_login!, unless: -> { %w[eligibility applications].include?(controller_name) }
-  append_before_action :check_application!, unless: -> { %w[eligibility applications].include?(controller_name) }
   
   def index; end
   

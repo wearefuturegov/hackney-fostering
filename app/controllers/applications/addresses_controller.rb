@@ -4,7 +4,6 @@ module Applications
     expose :address
     
     before_action :authenticate_user_login!
-    append_before_action :check_application!
         
     def edit
       render 'addresses/edit'
