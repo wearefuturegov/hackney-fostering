@@ -39,8 +39,6 @@ class ApplicationsController < MainController
   def get_application # rubocop:disable Naming/AccessorMethodName
     if current_user_login
       current_user_login.application
-    elsif session[:application_id]
-      Application.find(session[:application_id])
     else
       Application.create
     end
