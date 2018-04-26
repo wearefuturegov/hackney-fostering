@@ -11,8 +11,8 @@ placeholder :form do
 end
 
 step 'I am answering the :step step of the :form form' do |step, form|
-  @path = "application_#{form}_path".to_sym
-  visit send(@path, @application, step)
+  @path = "applications_#{form}_path".to_sym
+  visit send(@path, step)
 end
 
 step 'I should be on the :text step' do |step|

@@ -1,7 +1,7 @@
 %section.section
   %h1 Edit Address
   
-= simple_form_for [address.application, address], method: :put do |form|
+= simple_form_for [:applications, address], method: :put do |form|
   
   = render partial: 'fields', locals: { form: form }
 

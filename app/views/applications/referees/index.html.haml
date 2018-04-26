@@ -21,14 +21,14 @@
 
   - if referees.count == 6
 
-    = link_to t('continue'), application_legal_history_path(application_id: application.code, id: :intro), class: 'button confirm'
+    = link_to t('continue'), applications_legal_history_path(id: :intro), class: 'button confirm'
 
   - else
 
     %h2
       Add a new referee
 
-    = simple_form_for [application, (defined?(referee) ? referee : referees.new)], html: { class: 'referee_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |f|
+    = simple_form_for [:applications, (defined?(referee) ? referee : referees.new)], html: { class: 'referee_form', data: { api_key: ENV['IDEAL_POSTCODES_API_KEY'] } } do |f|
       - @questions.each do |q|
         = render partial: q['widget'].to_s, locals: { form: f, question: q, questions: q['questions'] }
       = f.submit t('referee.add'), class: "button"

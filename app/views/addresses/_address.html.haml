@@ -6,6 +6,6 @@
   %td.to
     = address.date_to&.strftime('%d/%m/%y')
   %td
-    = link_to 'Edit', edit_application_address_path(application, address)
+    = link_to 'Edit', edit_applications_address_path(address)
   %td
-    = button_to 'Delete', application_address_path(application, address), method: :delete, class: 'button negative', form_class: 'delete_address', data: { confirm: 'Are you sure you want to delete this address?' }
+    = button_to 'Delete', applications_address_path(address), method: :delete, class: 'button negative', form_class: 'delete_address', data: { confirm: 'Are you sure you want to delete this address?' }

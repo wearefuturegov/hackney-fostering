@@ -29,7 +29,7 @@ module UserLogins
       user_login.confirm
       set_flash_message :notice, :confirmed
       sign_in(user_login, scope: :user_login)
-      redirect_to new_application_you_and_your_family_path(user_login.user.application)
+      redirect_to new_applications_you_and_your_family_path
     end
     
   end

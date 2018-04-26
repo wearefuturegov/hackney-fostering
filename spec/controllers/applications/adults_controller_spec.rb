@@ -40,7 +40,7 @@ module Applications
         
         it 'redirects correctly' do
           expect(subject).to redirect_to(
-            application_you_and_your_family_path(application_id: application.code, id: :adults_living_at_home)
+            applications_you_and_your_family_path(id: :adults_living_at_home)
           )
         end
       end
@@ -98,7 +98,7 @@ module Applications
         
         it 'redirects correctly' do
           expect(subject).to redirect_to(
-            application_you_and_your_family_path(application_id: application.code, id: :adults_living_at_home)
+            applications_you_and_your_family_path(id: :adults_living_at_home)
           )
         end
       end

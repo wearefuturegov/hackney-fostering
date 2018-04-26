@@ -1,6 +1,8 @@
 module Applications
   class EligibilityController < ApplicationsController
     include Incredible::Wizard
+    
+    expose :application, -> { Application.find(session[:application_id]) }
 
     form 'eligibility'
 

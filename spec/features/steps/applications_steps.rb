@@ -26,9 +26,11 @@ module ApplicationSteps
   end
 
   def complete_form # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-    visit application_eligibility_index_path(@application)
+    visit page_path(id: :eligibility)
+    click_on I18n.t('start')
+    @application = Application.last
+    @applicant ||= Fabricate.build(:applicant_with_email)
     @form ||= Fabricate.build(:application, applicant: @applicant)
-    # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(@form.over_21 ? 'Yes' : 'No')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     fill_in_radio_button(I18n.t("activerecord.attributes.application.housing_types.#{@form.housing_type}"))
@@ -48,9 +50,10 @@ module ApplicationSteps
   end
 
   def complete_form_ineligible # rubocop:disable Metrics/AbcSize
-    visit application_eligibility_index_path(@application)
+    visit page_path(id: :eligibility)
+    click_on I18n.t('start')
+    @applicant = Fabricate.build(:applicant_with_email)
     @form = Fabricate.build(:application, spare_room: 1, applicant: @applicant)
-    # check_boxes(@form.type_of_fostering)
     fill_in_radio_button(@form.over_21 ? 'Yes' : 'No')
     fill_in_radio_button(I18n.t("activerecord.attributes.application.spare_rooms.#{@form.spare_room}"))
     click_on I18n.t('continue_ineligible')
@@ -63,13 +66,13 @@ module ApplicationSteps
   end
   
   step 'I complete the form with a phone number' do
+    @applicant ||= Fabricate.build(:applicant_with_email)
     @form = Fabricate.build(:application, applicant: @applicant, contacting_you: 0)
     complete_form
   end
 
   step 'my application should be stored' do
     application = Application.first
-    expect(application.type_of_fostering.reject(&:blank?)).to eq(@form.type_of_fostering)
     expect(application.spare_room).to eq(@form.spare_room)
     expect(application.over_21).to eq(@form.over_21)
     expect(application.experience).to eq(@form.experience)
@@ -83,12 +86,15 @@ module ApplicationSteps
   end
 
   step 'I have started an application' do
-    @application = Fabricate(:blank_application)
+    visit page_path(id: :eligibility)
+    click_on I18n.t('start')
+    @application = Application.last
     @applicant = Fabricate.build(:applicant_with_email)
   end
   
   step 'there is an applicant with my email' do
-    Fabricate.create(:applicant_with_email, email: @applicant.email)
+    other_applicant = Fabricate.create(:applicant_with_email)
+    @applicant = Fabricate.build(:applicant_with_email, email: other_applicant.email)
   end
 
   step 'I have completed an application' do
@@ -130,7 +136,7 @@ module ApplicationSteps
   end
 
   step 'I should be on the confirmation page' do
-    expect(current_path).to eq(new_application_confirmation_path(application_id: @application.code))
+    expect(current_path).to eq(new_applications_confirmation_path)
   end
   
   step 'I should see an error telling me the email is already used' do

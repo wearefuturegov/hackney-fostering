@@ -2,7 +2,7 @@ module Applications
   class RefereesController < MainController # rubocop:disable Metrics/ClassLength
     layout 'main_application'
 
-    expose :application, -> { Application.friendly.find(params[:application_id]) }
+    expose :application, -> { current_user_login.application }
     expose :referee, model: 'Referee', build: -> { application.referees.new }
     expose :referees, -> { application.referees }
     
@@ -16,10 +16,10 @@ module Applications
     def intro; end
 
     def edit; end
-
+    
     def update
       if referee.update_attributes(referee_params)
-        redirect_to application_referees_path(application_id: application.code)
+        redirect_to applications_referees_path
       else
         render :edit
       end
@@ -27,7 +27,7 @@ module Applications
 
     def create
       if referee.update_attributes(referee_params)
-        redirect_to application_referees_path(application_id: application.code)
+        redirect_to applications_referees_path
       else
         render :index
       end
@@ -35,7 +35,7 @@ module Applications
 
     def destroy
       referee.destroy
-      redirect_to application_referees_path(application_id: application.code)
+      redirect_to applications_referees_path
     end
 
     private

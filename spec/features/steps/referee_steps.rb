@@ -3,7 +3,7 @@ module RefereeSteps
   step :add_a_referee, 'I add a referee'
 
   step 'I am adding a referee' do
-    visit application_referees_path(@application)
+    visit applications_referees_path
   end
   
   step 'I add :integer referees' do |num|

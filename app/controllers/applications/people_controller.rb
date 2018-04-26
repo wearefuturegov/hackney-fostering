@@ -1,6 +1,6 @@
 module Applications
   class PeopleController < MainController
-    expose :application, -> { Application.friendly.find(params[:application_id]) }
+    expose :application, -> { current_user_login.application }
     before_action :load_questions
     
     before_action :authenticate_user_login!
@@ -14,7 +14,7 @@ module Applications
     
     def update
       if person.update(person_params)
-        redirect_to application_you_and_your_family_path(application_id: application.code, id: form_id)
+        redirect_to applications_you_and_your_family_path(id: form_id)
       else
         application.reload
         render template
@@ -23,7 +23,7 @@ module Applications
     
     def create
       if person.save
-        redirect_to application_you_and_your_family_path(application_id: application.code, id: form_id)
+        redirect_to applications_you_and_your_family_path(id: form_id)
       else
         application.reload
         render template
@@ -32,7 +32,7 @@ module Applications
     
     def destroy
       person.destroy
-      redirect_to application_you_and_your_family_path(application_id: application.code, id: form_id)
+      redirect_to applications_you_and_your_family_path(id: form_id)
     end
     
     private

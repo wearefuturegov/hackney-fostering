@@ -1,5 +1,5 @@
 class PreviousAgencyAddressRule < ApplicationRule
   def process
-    @redirect = new_application_confirmation_path(application_id: application.code)
+    @redirect = new_applications_confirmation_path
   end
 end

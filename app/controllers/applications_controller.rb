@@ -25,7 +25,9 @@ class ApplicationsController < MainController
   end
   
   def create
-    redirect_to new_application_eligibility_path(application_id: application.code) if application.save
+    return unless application.save
+    session[:application_id] = application.id
+    redirect_to new_applications_eligibility_path
   end
     
   private
@@ -36,8 +38,10 @@ class ApplicationsController < MainController
   end
   
   def get_application # rubocop:disable Naming/AccessorMethodName
-    if params[:application_id]
-      Application.friendly.find(params[:application_id])
+    if current_user_login
+      current_user_login.application
+    elsif session[:application_id]
+      Application.find(session[:application_id])
     else
       Application.create
     end

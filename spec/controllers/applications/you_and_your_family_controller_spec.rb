@@ -11,7 +11,7 @@ describe Applications::YouAndYourFamilyController, type: :controller do
     it 'saves the current path' do
       get :show, params: { application_id: application.code, id: :dob }
       application.reload
-      expect(application.current_path).to eq("/applications/#{application.code}/you_and_your_family/dob")
+      expect(application.current_path).to eq('/applications/you_and_your_family/dob')
     end
     
   end

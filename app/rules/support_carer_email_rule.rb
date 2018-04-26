@@ -1,5 +1,5 @@
 class SupportCarerEmailRule < ApplicationRule
   def process
-    @redirect = intro_application_referees_path(application_id: application.code)
+    @redirect = intro_applications_referees_path
   end
 end
