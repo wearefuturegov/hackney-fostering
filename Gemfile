@@ -59,7 +59,9 @@ gem 'geff', git: 'https://github.com/wearefuturegov/geff.git'
 # else
 # end
 
+# For seeding test data
 gem 'fabrication'
+gem 'ffaker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -76,7 +78,6 @@ group :development, :test do
   gem 'capybara-selenium'
   gem 'chromedriver-helper'
   gem 'launchy'
-  gem 'ffaker'
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'rails-controller-testing'
