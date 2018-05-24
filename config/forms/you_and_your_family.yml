@@ -299,7 +299,7 @@ form:
           info: |
             It is important that other children and adults in your family and household consent to a foster child joining the family.
 
-            If there are adults (over the age of 18), they will be required to have a background check for any criminal record.
+            If there are adults (over the age of 16), they will be required to have a background check for any criminal record.
     children_at_home:
       template: :questions
       questions:

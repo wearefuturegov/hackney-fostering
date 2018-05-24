@@ -5,7 +5,7 @@ class Referee < Person
   
   accepts_nested_attributes_for :address
   
-  enum relationship: %i[friend neighbour partner co_worker other]
+  enum relationship: %i[friend neighbour ex_partner co_worker other]
   
   delegate :line_1, :line_2, :line_3, :post_town, :postcode, to: :address, allow_nil: true
   delegate :line_1=, :line_2=, :line_3=, :post_town=, :postcode=, to: :address

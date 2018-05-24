@@ -41,7 +41,7 @@ form:
       template: :single_question
       questions:
         - name: :court_name
-          title: Name of court
+          title: Name of local authority
           current_section: Legal history
           widget: :input
     type_of_order:
