@@ -19,11 +19,7 @@ class MainController < ActionController::Base
   end
   
   def after_sign_in_path_for(user_login)
-    if user_login.application.current_path
-      user_login.application.current_path
-    else
-      new_applications_you_and_your_family_path
-    end
+    user_login.application.current_path || new_applications_you_and_your_family_path
   end
   
   private
