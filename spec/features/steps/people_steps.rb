@@ -35,8 +35,8 @@ module PeopleSteps
     people = @application.send(type.to_sym)
     expect(people.count).to eq(count.to_i)
     @people.reverse!
-    people.each_with_index do |person, i|
-      person_should_be_saved person, i
+    people.each_with_index do |person|
+      person_should_be_saved person
     end
   end
   
@@ -44,14 +44,18 @@ module PeopleSteps
     find("#application_#{field} > option[value='#{option}']").click
   end
   
-  def person_should_be_saved(person, index) # rubocop:disable Metrics/AbcSize
-    expect(person.first_name).to eq(@people[index].first_name)
-    expect(person.last_name).to eq(@people[index].last_name)
-    expect(person.gender).to eq(@people[index].gender)
-    expect(person.date_of_birth).to eq(@people[index].date_of_birth)
-    expect(person.relationship).to eq(@people[index].relationship)
-    expect(person.school).to eq(@people[index].school) if @people[index].school
-    expect(person.school_contact).to eq(@people[index].school_contact) if @people[index].school
+  def person_should_be_saved(person) # rubocop:disable Metrics/AbcSize
+    expect(find_person_by(person, :first_name)).to_not be_nil
+    expect(find_person_by(person, :last_name)).to_not be_nil
+    expect(find_person_by(person, :gender)).to_not be_nil
+    expect(find_person_by(person, :date_of_birth)).to_not be_nil
+    expect(find_person_by(person, :relationship)).to_not be_nil
+    expect(find_person_by(person, :school)).to_not be_nil if person.school
+    expect(find_person_by(person, :school_contact)).to_not be_nil if person.school
+  end
+  
+  def find_person_by(person, attr)
+    @people.find { |p| p.send(attr) == person.send(attr) }
   end
   
   def fill_in_person
