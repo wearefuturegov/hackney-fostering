@@ -34,8 +34,7 @@ module PeopleSteps
   def should_have_people(count, type)
     people = @application.send(type.to_sym)
     expect(people.count).to eq(count.to_i)
-    @people.reverse!
-    people.each_with_index do |person|
+    people.each do |person|
       person_should_be_saved person
     end
   end
