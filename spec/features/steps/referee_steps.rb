@@ -16,17 +16,17 @@ module RefereeSteps
   step 'my referees should be saved' do
     expect(@people.count).to eq(@application.referees.count)
     @people.reverse!
-    @application.referees.each_with_index do |person, i|
-      referee_should_be_saved(person, i)
+    @application.referees.each do |person|
+      referee_should_be_saved(person)
     end
   end
   
   step 'my referee should be saved' do
     referee = @application.referees.first
-    referee_should_be_saved(referee, 0)
+    referee_should_be_saved(referee)
   end
   
-  def referee_should_be_saved(referee, index) # rubocop:disable Metrics/AbcSize
+  def referee_should_be_saved(referee) # rubocop:disable Metrics/AbcSize
     expect(find_person_by(referee, :first_name)).to_not be_nil
     expect(find_person_by(referee, :last_name)).to_not be_nil
 
