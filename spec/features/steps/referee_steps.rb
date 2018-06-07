@@ -27,18 +27,29 @@ module RefereeSteps
   end
   
   def referee_should_be_saved(referee, index) # rubocop:disable Metrics/AbcSize
-    expect(referee.first_name).to eq(@people[index].first_name)
-    expect(referee.last_name).to eq(@people[index].last_name)
+    expect(find_person_by(referee, :first_name)).to_not be_nil
+    expect(find_person_by(referee, :last_name)).to_not be_nil
+
     address = referee.address
-    expect(address.line_1).to eq(@addresses[index][:line1])
-    expect(address.line_2).to eq(@addresses[index][:line2])
-    expect(address.line_3).to eq(@addresses[index][:line3])
-    expect(address.post_town).to eq(@addresses[index][:post_town])
-    expect(address.postcode).to eq(@addresses[index][:postcode])
-    expect(referee.email).to eq(@people[index].email)
-    expect(referee.phone_number).to eq(@people[index].phone_number)
-    expect(referee.relationship).to eq(@people[index].relationship)
-    expect(referee.years_known).to eq(@people[index].years_known)
+    
+    expect(find_address_by(address, :line_1)).to_not be_nil
+    expect(find_address_by(address, :line_2)).to_not be_nil
+    expect(find_address_by(address, :line_3)).to_not be_nil
+    expect(find_address_by(address, :post_town)).to_not be_nil
+    expect(find_address_by(address, :postcode)).to_not be_nil
+
+    expect(find_person_by(referee, :email)).to_not be_nil
+    expect(find_person_by(referee, :phone_number)).to_not be_nil
+    expect(find_person_by(referee, :relationship)).to_not be_nil
+    expect(find_person_by(referee, :years_known)).to_not be_nil
+  end
+  
+  def find_person_by(person, attr)
+    @people.find { |p| p.send(attr) == person.send(attr) }
+  end
+  
+  def find_address_by(address, attr)
+    @addresses.find { |a| a[attr] == address.send(attr) }
   end
   
   def add_a_referee # rubocop:disable Metrics/AbcSize

@@ -40,9 +40,9 @@ module AddressSteps
   end
   
   def address_should_be_saved(address, index) # rubocop:disable Metrics/AbcSize
-    expect(address.line_1).to eq(@addresses[index][:line1])
-    expect(address.line_2).to eq(@addresses[index][:line2])
-    expect(address.line_3).to eq(@addresses[index][:line3])
+    expect(address.line_1).to eq(@addresses[index][:line_1])
+    expect(address.line_2).to eq(@addresses[index][:line_2])
+    expect(address.line_3).to eq(@addresses[index][:line_3])
     expect(address.post_town).to eq(@addresses[index][:post_town])
     expect(address.postcode).to eq(@addresses[index][:postcode])
     expect(address.date_from).to eq(@addresses[index][:date])
@@ -51,14 +51,14 @@ module AddressSteps
   def fill_in_address_and_date_manually(years = 6) # rubocop:disable Metrics/AbcSize
     find('#manual_entry').click
     address = {}
-    address[:line1] = 'Flat 1'
-    address[:line2] = '123 Test Street'
-    address[:line3] = 'Testington'
+    address[:line_1] = 'Flat 1'
+    address[:line_2] = '123 Test Street'
+    address[:line_3] = 'Testington'
     address[:post_town] = 'Test Town'
     address[:postcode] = 'TEST 123'
-    fill_in 'Line 1', with: address[:line1]
-    fill_in 'Line 2', with: address[:line2]
-    fill_in 'Line 3', with: address[:line3]
+    fill_in 'Line 1', with: address[:line_1]
+    fill_in 'Line 2', with: address[:line_2]
+    fill_in 'Line 3', with: address[:line_3]
     fill_in 'Line 4', with: address[:post_town]
     fill_in 'Postcode', with: address[:postcode]
     @addresses ||= []
@@ -84,9 +84,9 @@ module AddressSteps
     enter_postcode(postcode)
     find('#addresses > option:nth-child(2)').click
     address = {}
-    address[:line1] = find_field('Line 1').value
-    address[:line2] = find_field('Line 2').value
-    address[:line3] = find_field('Line 3').value
+    address[:line_1] = find_field('Line 1').value
+    address[:line_2] = find_field('Line 2').value
+    address[:line_3] = find_field('Line 3').value
     address[:post_town] = find_field('Line 4').value
     address[:postcode] = postcode
     @addresses ||= []
