@@ -121,9 +121,6 @@ en:
         be_in_touches:
           contact_me: 'Yes'
           info_pack: 'No, just let me download an information pack'
-        contacting_yous:
-          contact_phone: 'Telephone'
-          contact_email: 'Email'
         employment_types:
           full_time: Full time
           part_time: Part time
