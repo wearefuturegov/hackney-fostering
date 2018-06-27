@@ -8,12 +8,10 @@ Fabricator(:application) do
   experience          1
   age_experience      %w[0_2 2_10]
   housing_type        1
-  contacting_you      1
   phone_number        1232323
   contact_phone_time  %w[morning]
   applicant           { Fabricate(:applicant_with_email) }
   address             { Fabricate(:address) }
-  best_way_to_contact 1
   over_21             true
   other_ways          1
   live_in_hackney     1

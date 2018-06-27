@@ -5,8 +5,6 @@ class Application < ApplicationRecord
        experience: %i[very_experienced somewhat_experienced little_experience no_experience],
        housing_type: %i[own_property renting_council renting_private],
        other_ways: %i[mentoring specialist_support other_support],
-       contacting_you: %i[contact_phone contact_email],
-       best_way_to_contact: %i[phone email],
        employment_type: %i[full_time part_time self_employed unemployed]
 
   has_many :children
@@ -33,7 +31,6 @@ class Application < ApplicationRecord
   validates :age_experience, presence: true, if: -> { on_step?(%w[age_experience]) }
   validates :housing_type, presence: true, if: -> { on_step?(%w[housing_type]) }
   validates :live_in_hackney, inclusion: [true, false], if: -> { on_step?(%w[what_is_your_name]) }
-  validates :contacting_you, presence: true, if: -> { on_step?(%w[contacting_you]) }
   validates :phone_number, presence: true, if: -> { on_step?(%w[contact_phone]) }
   validates :contact_phone_time, presence: true, if: -> { on_step?(%w[contact_phone_time]) }
 

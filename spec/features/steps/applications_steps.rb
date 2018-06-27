@@ -42,7 +42,6 @@ module ApplicationSteps
     fill_in_radio_button(@form.live_in_hackney ? 'Yes' : 'No')
     answer_question(@form.applicant.email, 'application_applicant_attributes_email')
     click_on I18n.t('continue')
-    fill_in_radio_button(I18n.t("activerecord.attributes.application.contacting_yous.#{@form.contacting_you}"))
     return unless page.has_css?('#application_phone_number')
     answer_question(@form.phone_number, 'application_phone_number')
     click_on I18n.t('continue')
@@ -62,12 +61,14 @@ module ApplicationSteps
     fill_in_radio_button(@form.live_in_hackney ? 'Yes' : 'No')
     answer_question(@form.applicant.email, 'application_applicant_attributes_email')
     click_on I18n.t('continue')
-    fill_in_radio_button(I18n.t("activerecord.attributes.application.contacting_yous.#{@form.contacting_you}"))
+    answer_question(@form.phone_number, 'application_phone_number')
+    click_on I18n.t('continue')
+    check_boxes(@form.contact_phone_time)
   end
   
   step 'I complete the form with a phone number' do
     @applicant ||= Fabricate.build(:applicant_with_email)
-    @form = Fabricate.build(:application, applicant: @applicant, contacting_you: 0)
+    @form = Fabricate.build(:application, applicant: @applicant)
     complete_form
   end
 
@@ -81,7 +82,6 @@ module ApplicationSteps
     expect(application.applicant.first_name).to eq(@form.applicant.first_name)
     expect(application.applicant.last_name).to eq(@form.applicant.last_name)
     expect(application.live_in_hackney).to eq(@form.live_in_hackney)
-    expect(application.contacting_you).to eq(@form.contacting_you)
     expect(application.applicant.email).to eq(@form.applicant.email)
   end
 

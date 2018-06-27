@@ -15,7 +15,6 @@ module Applications
         :experience,
         :age_experience,
         :housing_type,
-        :contacting_you,
         :phone_number,
         :other_ways,
         :practicing,

@@ -103,15 +103,6 @@ form:
           title: Email address
           widget: :email
           model: :applicant
-    contacting_you:
-      template: single_question
-      next_step: :next_step
-      questions:
-        - name: :section
-          title: What's the best way for us to contact you?
-          widget: :title
-        - name: :contacting_you
-          widget: :radio
     contact_phone:
       template: :questions
       next_step: :contact_phone_time

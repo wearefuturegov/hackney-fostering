@@ -50,10 +50,6 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
   def postcode
     standard_wrapper('Postcode', application.postcode)
   end
-  
-  def best_way_to_contact
-    standard_wrapper('Best way to contact', application.contacting_you)
-  end
 
   def phone_number
     standard_wrapper('Phone Number', application.phone_number)
