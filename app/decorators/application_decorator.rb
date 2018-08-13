@@ -79,6 +79,10 @@ class ApplicationDecorator < MainDecorator # rubocop:disable Metrics/ClassLength
     standard_wrapper('Date of Name Change', application.applicant.date_changed&.to_s(:long))
   end
   
+  def full_name_with_wrapper
+    standard_wrapper('Applicant Name', application.applicant.decorate.full_name)
+  end
+  
   def primary_language
     standard_wrapper('Primary language', application.primary_language)
   end
