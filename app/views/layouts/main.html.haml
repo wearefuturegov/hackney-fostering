@@ -20,3 +20,26 @@
 
   :javascript
     $("select.answer").find("option").eq(0).remove();
+  
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '306481769774114');
+    fbq('track', 'PageView');
+
+    var google_conversion_id = 947187023;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+  
+  = javascript_include_tag '//www.googleadservices.com/pagead/conversion.js'
+    
+  %noscript
+    = image_tag '//www.facebook.com/tr?id=306481769774114&ev=PageView&noscript=1', height: 1, width: 1, style: 'display:none'
+    = image_tag '//googleads.g.doubleclick.net/pagead/viewthroughconversion/947187023/?guid=ON&amp;script=0', height: 1, width: 1, style: 'display:none'
+  
+  = tracking_code
