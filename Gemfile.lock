@@ -70,13 +70,14 @@ GEM
       thor (~> 0.19)
     builder (3.2.3)
     byebug (10.0.2)
-    capybara (3.3.1)
+    capybara (3.11.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      xpath (~> 3.1)
+      regexp_parser (~> 1.2)
+      xpath (~> 3.2)
     capybara-selenium (0.0.6)
       capybara
       selenium-webdriver
@@ -190,7 +191,7 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     puma (3.11.4)
     que (0.14.3)
     rack (2.0.6)
@@ -232,6 +233,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    regexp_parser (1.3.0)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (2.4.0)
@@ -350,7 +352,7 @@ GEM
     websocket-extensions (0.1.3)
     wicked (1.3.2)
       railties (>= 3.0.7)
-    xpath (3.1.0)
+    xpath (3.2.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
@@ -360,7 +362,7 @@ DEPENDENCIES
   airbrake
   appsignal
   byebug
-  capybara (~> 3.3)
+  capybara (~> 3.11)
   capybara-selenium
   chromedriver-helper
   coffee-rails (~> 4.2)
