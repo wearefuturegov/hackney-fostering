@@ -57,7 +57,7 @@ GEM
     airbrake (7.3.4)
       airbrake-ruby (~> 2.10)
     airbrake-ruby (2.10.0)
-    appsignal (2.6.1)
+    appsignal (2.9.13)
       rack
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
@@ -193,7 +193,7 @@ GEM
     public_suffix (3.0.2)
     puma (3.11.4)
     que (0.14.3)
-    rack (2.0.6)
+    rack (2.0.7)
     rack-protection (2.0.2)
       rack
     rack-proxy (0.6.4)
