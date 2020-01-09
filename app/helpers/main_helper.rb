@@ -44,3 +44,17 @@ module MainHelper
   end
   
 end
+
+def siteimprove_tracking_code
+  <<~HEREDOC
+    <script type="text/javascript">
+      /*<![CDATA[*/
+      (function() {
+        var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+        sz.src = '//siteimproveanalytics.com/js/siteanalyze_368737.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+      })();
+      /*]]>*/
+    </script>
+  HEREDOC
+end
