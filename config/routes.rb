@@ -1,4 +1,5 @@
 Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
+  get 'download_information_pack_pdf', to: "downloads#information_pack", as: 'download_info_pdf'
   as :user_login do
     patch '/user/confirmation' => 'user_logins/confirmations#update', via: :patch, as: :update_user_confirmation
   end
