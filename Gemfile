@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'webpacker'
 
 gem 'haml'
-gem 'decent_exposure', '3.0.2'
+gem 'decent_exposure', '3.0.4'
 gem 'simple_form'
 gem 'dotenv-rails'
 gem 'hashids'
