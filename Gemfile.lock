@@ -139,7 +139,7 @@ GEM
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
-    hashids (1.0.4)
+    hashids (1.0.6)
     htmlentities (4.3.4)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
