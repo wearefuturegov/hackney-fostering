@@ -191,7 +191,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (5.6.2)
+      nio4r (~> 2.0)
     que (0.14.3)
     rack (2.0.6)
     rack-protection (2.0.2)
@@ -384,7 +385,7 @@ DEPENDENCIES
   memoist
   pg
   pry
-  puma (~> 3.11)
+  puma (~> 5.6)
   que
   rails (~> 5.1.6)
   rails-controller-testing
